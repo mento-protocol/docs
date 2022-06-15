@@ -4,8 +4,10 @@
 
 ## Core
 
+* [Overview](core/overview.md)
+* [Stable Value Assets](core/stable-value-assets.md)
 * [Oracles](core/oracles/README.md)
-  * [Report Filter](core/oracles/report-filter.md)
+  * [Report Filtering](core/oracles/report-filtering.md)
 * [The Reserve](core/the-reserve/README.md)
   * [Reserve Decentralization](core/the-reserve/reserve-decentralization.md)
   * [Natural Capital Backed Assets](core/the-reserve/natural-capital-backed-assets.md)
@@ -28,6 +30,9 @@
 
 * [Deployment Addresses](developers/deployment-addresses.md)
 * [Oracles](developers/oracles.md)
+* [Stable Tokens](developers/stable-tokens.md)
+* [Buy & Sell](developers/buy-and-sell.md)
+* [The Reserve](developers/the-reserve.md)
 
 ## FAQ
 
@@ -37,6 +42,6 @@
 
 * [Twitter](https://twitter.com/MentoProtocol)
 * [Github](https://github.com/mento-protocol)
-* [Website](https://twitter.com/MentoProtocol)
-* [Discord](https://twitter.com/MentoProtocol)
-* [Feedback](https://twitter.com/MentoProtocol)
+* [Website](https://mento.org)
+* [Discord](http://chat.mento.org/)
+* [Feedback](https://mento.canny.io/mento-roadmap)
