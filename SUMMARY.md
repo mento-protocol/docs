@@ -1,29 +1,42 @@
 # Table of contents
 
-* [What is MyProduct?](README.md)
+* [Introduction](README.md)
 
-## Guides
+## Core
 
-* [Creating your first project](guides/creating-your-first-project.md)
-* [Creating your first task](guides/creating-your-first-task.md)
-* [Advanced permissions](guides/advanced-permissions.md)
+* [Oracles](core/oracles/README.md)
+  * [Report Filter](core/oracles/report-filter.md)
+* [The Reserve](core/the-reserve/README.md)
+  * [Reserve Decentralization](core/the-reserve/reserve-decentralization.md)
+  * [Natural Capital Backed Assets](core/the-reserve/natural-capital-backed-assets.md)
+* [Buy & Sell](core/buy-and-sell/README.md)
+  * [Circuit Breaker](core/buy-and-sell/circuit-breaker.md)
 
-## Fundamentals
+## Mento 2.0
 
-* [Projects](fundamentals/projects.md)
-* [Members](fundamentals/members.md)
-* [Task Lists](fundamentals/task-lists.md)
-* [Tasks](fundamentals/tasks.md)
+* [Overview](mento-2.0/overview.md)
+* [Simulation](mento-2.0/simulation.md)
+* [Collateral Providing](mento-2.0/collateral-providing.md)
+* [Interaction Providing](mento-2.0/interaction-providing.md)
+* [Borrow & Repay Minting](mento-2.0/borrow-and-repay-minting.md)
 
-## Use Cases
+## Economics
 
-* [For Designers](use-cases/for-designers/README.md)
-  * [Figma Integration](use-cases/for-designers/figma-integration.md)
-* [For Engineers](use-cases/for-engineers/README.md)
-  * [GitHub Integration](use-cases/for-engineers/github-integration.md)
-* [For Support](use-cases/for-support/README.md)
-  * [Intercom Integration](use-cases/for-support/intercom-integration.md)
+* [Projects](economics/projects.md)
 
-## Extras
+## Developers
 
-* [Keyboard Shortcuts](extras/keyboard-shortcuts.md)
+* [Deployment Addresses](developers/deployment-addresses.md)
+* [Oracles](developers/oracles.md)
+
+## FAQ
+
+* [General](faq/general.md)
+
+## Links
+
+* [Twitter](https://twitter.com/MentoProtocol)
+* [Github](https://github.com/mento-protocol)
+* [Website](https://twitter.com/MentoProtocol)
+* [Discord](https://twitter.com/MentoProtocol)
+* [Feedback](https://twitter.com/MentoProtocol)
