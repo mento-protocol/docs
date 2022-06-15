@@ -5,14 +5,16 @@
 ## Core
 
 * [Overview](core/overview.md)
-* [Stable Value Assets](core/stable-value-assets.md)
+* [Stable Value Assets](core/stable-value-assets/README.md)
+  * [Adding Stable Assets](core/stable-value-assets/adding-stable-assets.md)
 * [Oracles](core/oracles/README.md)
-  * [Report Filtering](core/oracles/report-filtering.md)
+  * [Report Filtering](core/oracles/report-filter.md)
 * [The Reserve](core/the-reserve/README.md)
   * [Reserve Decentralization](core/the-reserve/reserve-decentralization.md)
   * [Natural Capital Backed Assets](core/the-reserve/natural-capital-backed-assets.md)
 * [Buy & Sell](core/buy-and-sell/README.md)
   * [Circuit Breaker](core/buy-and-sell/circuit-breaker.md)
+* [Stability Fees](core/stability-fees.md)
 
 ## Mento 2.0
 
