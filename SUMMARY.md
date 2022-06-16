@@ -4,7 +4,7 @@
 
 ## Core
 
-* [Overview](core/overview.md)
+* [Stability Algorithm](core/overview.md)
 * [Stable Value Assets](core/stable-value-assets/README.md)
   * [Adding Stable Assets](core/stable-value-assets/adding-stable-assets.md)
 * [Oracles](core/oracles/README.md)
