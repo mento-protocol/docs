@@ -1,2 +1,0 @@
-# Natural Capital Backed Assets
-
