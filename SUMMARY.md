@@ -15,6 +15,7 @@
 * [Buy & Sell](core/buy-and-sell/README.md)
   * [Circuit Breaker](core/buy-and-sell/circuit-breaker.md)
 * [Stability Fees](core/stability-fees.md)
+* [Tobin Tax](core/tobin-tax.md)
 
 ## Mento 2.0
 
