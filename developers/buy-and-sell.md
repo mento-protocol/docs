@@ -20,6 +20,10 @@ There are three ways how the one can buy or sell mento stable assets:
       * Coinlist Pro
         * cUSD/USD trading pair
         * cUSD/USDC trading pair
+      * Gate.io
+        * cUSD/USDT trading pair
+      * OkCoin
+        * cUSD/USD trading pair
     * cEUR
     * cREAL
 * Acquire assets through one of the on-ramp partners:
