@@ -8,11 +8,11 @@ description: >-
 
 There are three ways how the one can buy or sell mento stable assets:
 
-## Purchase mento stable assets in the open market
+## Purchase mento stable assets on the open market
 
-### Purchase from one of the centralized exchanges (CEX for short)
+### Purchase from one of the centralized exchanges
 
-Works best when you have fiat currency in your bank account, to begin with, and seek to exchange it for stable assets on the blockchain. The user must have an account with one of the exchanges in question, and in most cases will require some sort of identity verification (a procedure called Know Your Customer, KYC for short).
+Centralised exchanges (CEX for short) work best when you have fiat currency in your bank account, to begin with, and seek to exchange it for stable assets on the blockchain. You will have to create an account with an exchange, and in most cases they will require some sort of identity verification (a procedure called Know Your Customer, KYC for short).
 
 #### List of trading pairs for Mento stable assets on CEXes:
 
@@ -58,8 +58,16 @@ It really depends from couple of factors:
 
 * We will be updating this page when the new exchanges are going live. On Coinmarketcap you can find the complete list of markets for majority of popular tokens. For example, if you go to [Celo Dollars](https://coinmarketcap.com/currencies/celo-dollar/) page, scroll down to 'Celo Dollar Markets' section you will see the list of all available exchanges and their trading volumes, updated in real time.
 
-## Acquire assets through one of the on-ramp partners:
+## Acquire assets through one of the on-ramp partners
 
+You can acquire mento stable assets with credit card or form bank account with one of our payment providers partners.
 
+You will have to create an account with them, do identity verification and you must have created celo account where you will receive your funds.&#x20;
+
+[Ramp network](https://ramp.network/) has the best coverage around the globe and best fees (free).
+
+If it doesn't work for you for some reason, you can try using [Moonpay](https://www.moonpay.com/) or [Simplex](https://www.simplex.com/) instead.
+
+[Valora](https://valoraapp.com/) is a mobile crypto wallet native to Celo blockchain. They aggregate all available cash in/out options in their app. Check [this support article](https://support.valoraapp.com/hc/en-us/categories/360006359592-Adding-and-Withdrawing-Funds) on their website for more info.&#x20;
 
 ## Mint stable assets into existence against collateral with Mento protocol directly
