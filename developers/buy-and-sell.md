@@ -32,9 +32,9 @@ Centralised exchanges (CEX for short) work best when you have fiat currency in y
 * cEUR
 * cREAL
 
-### Purchase from one of Decentralised exchanges (DEX for short)
+### Purchase from one of Decentralised exchanges
 
-Decentralised exchanges are good in a way that they are permissionless and available to practically anyone around the globe, without any restrictions applied. (Your local government still might impose some regulations prohibiting their citizens from accessing DEXes, so do your own research).&#x20;
+Decentralised exchanges (DEX for short) are good in a way that they are permissionless and available to practically anyone around the globe, without any restrictions applied. (Your local government still might impose some regulations prohibiting their citizens from accessing DEXes, so do your own research).&#x20;
 
 You will have to know how to use non-custodial wallet (e.g Metamask, Ledger, Valora, TrustWallet, etc.) and have some crypto currency in your wallet to begin with. Majority of DEXes have smart routing built in, so it doesn't really matter which asset do you start with - as long as mento token is listed there, it will find a way to perform a trade.
 
@@ -72,10 +72,12 @@ If it doesn't work for you for some reason, you can try using [Moonpay](https://
 
 Cashing out to credit card / bank account is not supported by any of the existing providers atm.
 
-## Mint stable assets into existence with Mento protocol directly
+## Mint/burn stable assets into existence with Mento protocol directly
 
 Mento protocol allows users to deposit CELO and mint new stable assets into existence. Users can also burn stable assets they have on hands to receive back the deposited CELO from the reserve.
 
 Usually it is not recommended way for end users, because transactions with Mento might be subject to higher slippage, then performing the same trade through CEX or DEX.
+
+When you are looking to exchange relatively high amount and can't do that because of high slippage, we recommend to user [celo trading bot](https://github.com/celo-org/celo-exchange-bot) (requires technical knowledge to be able to implement and run the bot). The bot allows you to brake down big trade in a chain of smaller ones that will be executed over prolonged interval of time. This helps to avoid slippage, but doesn't work when you need to exchange big amount immediately.
 
 ##
