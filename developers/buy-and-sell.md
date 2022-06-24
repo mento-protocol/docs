@@ -38,7 +38,7 @@ Decentralised exchanges are good in a way that they are permissionless and avail
 
 You will have to know how to use non-custodial wallet (e.g Metamask, Ledger, Valora, TrustWallet, etc.) and have some crypto currency in your wallet to begin with. Majority of DEXes have smart routing built in, so it doesn't really matter which asset do you start with - as long as mento token is listed there, it will find a way to perform a trade.
 
-#### List of DEXes we can recommend:
+#### List of DEXes listing mento stable assets:
 
 * Ubeswap
 * Mobius.money
