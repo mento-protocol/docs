@@ -72,7 +72,7 @@ If it doesn't work for you for some reason, you can try using [Moonpay](https://
 
 Cashing out to credit card / bank account is not supported by any of the existing providers atm.
 
-## Mint/burn stable assets into existence with Mento protocol directly
+## Mint stable assets into existence with Mento protocol directly
 
 Mento protocol allows users to deposit CELO and mint new stable assets into existence. Users can also burn stable assets they have on hands to receive back the deposited CELO from the reserve.
 
