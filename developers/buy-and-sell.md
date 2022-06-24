@@ -56,7 +56,7 @@ It really depends from couple of factors:
 
 ### Where can I find an up to date list?
 
-* We will be updating this page when the new exchanges are going live. On Coinmarketcap you can find the complete list of markets for majority of popular tokens. For example, if you go to [Celo Dollars](https://coinmarketcap.com/currencies/celo-dollar/) page, scroll down to 'Celo Dollar Markets' section you will see the list of all available exchanges and their trading volumes, updated in real time.
+We will be updating this page when the new exchanges are going live. On Coinmarketcap you can find the complete list of markets for majority of popular tokens. For example, if you go to [Celo Dollars](https://coinmarketcap.com/currencies/celo-dollar/) page, scroll down to 'Celo Dollar Markets' section you will see the list of all available exchanges and their trading volumes, updated in real time.
 
 ## Acquire assets through one of the on-ramp partners
 
