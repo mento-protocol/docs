@@ -32,7 +32,7 @@ Centralised exchanges (CEX for short) work best when you have fiat currency in y
 * cEUR
 * cREAL
 
-### Purchase form one of Decentralised exchanges (DEX for short)
+### Purchase from one of Decentralised exchanges (DEX for short)
 
 Decentralised exchanges are good in a way that they are permissionless and available to practically anyone around the globe, without any restrictions applied. (Your local government still might impose some regulations prohibiting their citizens from accessing DEXes, so do your own research).&#x20;
 
@@ -56,7 +56,7 @@ It really depends from couple of factors:
 
 ### Where can I find an up to date list?
 
-We will be updating this page when the new exchanges are going live. On Coinmarketcap you can find the complete list of markets for majority of popular tokens. For example, if you go to [Celo Dollars](https://coinmarketcap.com/currencies/celo-dollar/) page, scroll down to 'Celo Dollar Markets' section you will see the list of all available exchanges and their trading volumes, updated in real time.
+We will be updating this page when our assets are listed on new exchanges. On Coinmarketcap you can find the complete list of markets for majority of popular tokens. For example, if you go to [Celo Dollars](https://coinmarketcap.com/currencies/celo-dollar/) page, scroll down to 'Celo Dollar Markets' section you will see the list of all available exchanges and their trading volumes, updated in real time.
 
 ## Acquire assets through one of the on-ramp partners
 
@@ -70,4 +70,12 @@ If it doesn't work for you for some reason, you can try using [Moonpay](https://
 
 [Valora](https://valoraapp.com/) is a mobile crypto wallet native to Celo blockchain. They aggregate all available cash in/out options in their app. Check [this support article](https://support.valoraapp.com/hc/en-us/categories/360006359592-Adding-and-Withdrawing-Funds) on their website for more info.&#x20;
 
-## Mint stable assets into existence against collateral with Mento protocol directly
+Cashing out to credit card / bank account is not supported by any of the existing providers atm.
+
+## Mint/burn stable assets into existence with Mento protocol directly
+
+Mento protocol allows users to deposit CELO and mint new stable assets into existence. Users can also burn stable assets they have on hands to receive back the deposited CELO from the reserve.
+
+Usually it is not recommended way for end users, because transactions with Mento might be subject to higher slippage, then performing the same trade through CEX or DEX.
+
+##
