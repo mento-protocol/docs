@@ -1,11 +1,9 @@
 # Table of contents
 
-* [Introduction](README.md)
-
 ## Core
 
-* [Stability Algorithm](core/overview.md)
-* [Oracles](core/oracles.md)
+* [Stability Algorithm](README.md)
+* [Oracles](core/oracles/README.md)
 * [Stability Fees](core/stability-fees.md)
 * [Tobin Tax](core/tobin-tax.md)
 
