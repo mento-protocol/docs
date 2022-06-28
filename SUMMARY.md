@@ -31,9 +31,9 @@
 
 ## Trading guide
 
-* [Overview](trading-guide/buy-and-sell.md)
+* [Overview](developers/buy-and-sell.md)
 * [Mint/burn with Mento](trading-guide/mint-burn-with-mento.md)
-* [Limit orders & max slippage](trading-guide/limit-orders-and-max-slippage.md)
+* [Limit order & max slippage](trading-guide/limit-order-and-max-slippage.md)
 * [Untitled](trading-guide/untitled.md)
 
 ## Developers

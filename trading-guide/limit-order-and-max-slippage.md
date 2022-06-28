@@ -1,4 +1,4 @@
-# Limit orders & max slippage
+# Limit order & max slippage
 
 ### Limit orders
 
@@ -16,4 +16,6 @@ This is not the case when it comes to DEXes. At the moment of writing this, [Ube
 
 ### Max slippage parameter
 
-While the limit orders feature is not available at all DEXes, user can set max
+While the limit orders feature is not available at all DEXes, you can always set the **max slippage** parameter. Usually, it is set to 0.5% or 1%.
+
+If the slippage is higher than the parameter (the actual price of the trade deviates from the expected price by %), the transaction will be reverted.
