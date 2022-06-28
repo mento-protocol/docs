@@ -29,14 +29,14 @@
 
 * [Projects](economics/projects.md)
 
-## Trading guide
+## Users
 
-* [Overview](developers/buy-and-sell.md)
-* [Centralized exchanges](trading-guide/centralized-exchanges.md)
-* [Decentralized exchanges](trading-guide/decentralized-exchanges.md)
-* [Limit order & max slippage](trading-guide/limit-order-and-max-slippage.md)
-* [Mint/burn with Mento](trading-guide/mint-burn-with-mento.md)
-* [On-ramp providers](trading-guide/on-ramp-providers.md)
+* [Trading guide](users/buy-and-sell/README.md)
+  * [Centralized exchanges](users/buy-and-sell/centralized-exchanges.md)
+  * [Decentralized exchanges](users/buy-and-sell/decentralized-exchanges.md)
+  * [Mint/burn with Mento](users/buy-and-sell/mint-burn-with-mento.md)
+  * [Limit order & max slippage](users/buy-and-sell/limit-order-and-max-slippage.md)
+  * [On-ramp providers](users/buy-and-sell/on-ramp-providers.md)
 
 ## Developers
 
