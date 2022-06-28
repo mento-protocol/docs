@@ -5,29 +5,9 @@
 ## Core
 
 * [Stability Algorithm](core/overview.md)
-* [Stable Value Assets](core/stable-value-assets/README.md)
-  * [Adding Stable Assets](core/stable-value-assets/adding-stable-assets.md)
-* [Oracles](core/oracles/README.md)
-  * [Report Filtering](core/oracles/report-filter.md)
-* [The Reserve](core/the-reserve/README.md)
-  * [Reserve Decentralization](core/the-reserve/reserve-decentralization.md)
-  * [Natural Capital Backed Assets](core/the-reserve/natural-capital-backed-assets.md)
-* [Buy & Sell](core/buy-and-sell/README.md)
-  * [Circuit Breaker](core/buy-and-sell/circuit-breaker.md)
+* [Oracles](core/oracles.md)
 * [Stability Fees](core/stability-fees.md)
 * [Tobin Tax](core/tobin-tax.md)
-
-## Mento 2.0
-
-* [Overview](mento-2.0/overview.md)
-* [Simulation](mento-2.0/simulation.md)
-* [Collateral Providing](mento-2.0/collateral-providing.md)
-* [Interaction Providing](mento-2.0/interaction-providing.md)
-* [Borrow & Repay Minting](mento-2.0/borrow-and-repay-minting.md)
-
-## Economics
-
-* [Projects](economics/projects.md)
 
 ## Users
 
@@ -37,17 +17,6 @@
   * [Mint/burn with Mento](users/buy-and-sell/mint-burn-with-mento.md)
   * [Limit order & max slippage](users/buy-and-sell/limit-order-and-max-slippage.md)
   * [On-ramp providers](users/buy-and-sell/on-ramp-providers.md)
-
-## Developers
-
-* [Deployment Addresses](developers/deployment-addresses.md)
-* [Oracles](developers/oracles.md)
-* [Stable Tokens](developers/stable-tokens.md)
-* [The Reserve](developers/the-reserve.md)
-
-## FAQ
-
-* [General](faq/general.md)
 
 ## Links
 
