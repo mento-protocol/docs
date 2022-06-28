@@ -31,7 +31,7 @@
 
 ## Users
 
-* [Trading guide](users/buy-and-sell/README.md)
+* [Trading guide](developers/buy-and-sell.md)
   * [Centralized exchanges](users/buy-and-sell/centralized-exchanges.md)
   * [Decentralized exchanges](users/buy-and-sell/decentralized-exchanges.md)
   * [Mint/burn with Mento](users/buy-and-sell/mint-burn-with-mento.md)
