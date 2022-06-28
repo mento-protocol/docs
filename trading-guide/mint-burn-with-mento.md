@@ -2,8 +2,6 @@
 
 Mento protocol allows users to deposit CELO and mint new stable assets into existence. Users can also burn stable assets they have on hands to receive back the deposited CELO from the reserve.
 
-Usually,&#x20;
-
 {% hint style="info" %}
 it is not recommended for users to trade with Mento directly. Because of the specifics of the stability mechanism, transactions performed with Mento smart contracts might be subject to high slippage.
 {% endhint %}
