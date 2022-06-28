@@ -1,83 +1,26 @@
 ---
 description: >-
-  If you are looking to acquire or sell mento stable assets, this article will
-  explain how you can
+  If you are looking to acquire or sell mento stable assets, this section
+  explains where you can do that.
 ---
 
-# Buy & Sell
+# Trading guide
 
 There are three ways how the one can buy or sell mento stable assets:
 
-## Purchase mento stable assets on the open market
+1. Through one of the [centralized](../users/buy-and-sell/centralized-exchanges.md) or [decentralized](../users/buy-and-sell/decentralized-exchanges.md) exchanges.
+2. [Through one of the on-ramp partners.](../users/buy-and-sell/on-ramp-providers.md)
+3. [Through mento protocol directly.](../users/buy-and-sell/mint-burn-with-mento.md)
 
-### Purchase from one of the centralized exchanges
+In [this article](../users/buy-and-sell/limit-order-and-max-slippage.md) you will find information on how to use limit orders and max slippage parameter.
 
-Centralised exchanges (CEX for short) work best when you have fiat currency in your bank account, to begin with, and seek to exchange it for stable assets on the blockchain. You will have to create an account with an exchange, and in most cases they will require some sort of identity verification (a procedure called Know Your Customer, KYC for short).
+## Which way is best for you?
 
-#### List of trading pairs for Mento stable assets on CEXes:
+It really depends on a couple of factors:
 
-* cUSD
-  * Kucoin
-    * [cUSD/USDT trading pair](https://www.kucoin.com/trade/CUSD-USDT)
-    * [cUSD/BTC trading pair](https://www.kucoin.com/trade/CUSD-BTC)
-  * Huobi Global
-    * [cUSD/USDT trading pair](https://www.huobi.com/en-us/exchange/cusd\_usdt)
-  * Coinlist Pro
-    * cUSD/USD trading pair
-    * cUSD/USDC trading pair
-  * Gate.io
-    * [cUSD/USDT trading pair](https://www.gate.io/trade/cusd\_usdt)
-  * OkCoin
-    * [cUSD/USD trading pair](https://www.okcoin.com/spot/trade#product=cusd\_usd)
-* cEUR
-* cREAL
+**Your geographical location**. Some centralized exchanges can be accessed from certain regions, and some governments allow their citizens to access only some exchanges. Depending on where you are, you will have to find an exchange that operates in your jurisdiction.
 
-### Purchase from one of Decentralised exchanges
+**Which asset do you start with**. For example, if you have US dollars in your bank account you might prefer an exchange that has a direct pair cUSD/USD.
 
-Decentralised exchanges (DEX for short) are good in a way that they are permissionless and available to practically anyone around the globe, without any restrictions applied. (Your local government still might impose some regulations prohibiting their citizens from accessing DEXes, so do your own research).&#x20;
+**Total amount you want to trade**. All exchanges have different trading volumes at different times. The rule of thumb - the higher the daily trading volume is, the better.
 
-You will have to know how to use non-custodial wallet (e.g Metamask, Ledger, Valora, TrustWallet, etc.) and have some crypto currency in your wallet to begin with. Majority of DEXes have smart routing built in, so it doesn't really matter which asset do you start with - as long as mento token is listed there, it will find a way to perform a trade.
-
-#### List of DEXes listing mento stable assets:
-
-* Ubeswap
-* Mobius.money
-* Sushi.com
-
-## Which exchange is right for you?
-
-It really depends from couple of factors:
-
-**Your geographical location**. Some CEXes can be accessed from certain regions, and some governments allow their citizens to access only some exchanges. Depending from where you are, you will have to find an exchange that works in your jurisdiction.
-
-**Which asset do you start with**. For example, if you have US dollars in your bank account you might prefer an exchange that has direct pair cUSD/USD.
-
-**Total amount you want to trade**. All exchanges have different trading volume at different times. The rule of thumb - the higher the daily trading volume is, the better.
-
-### Where can I find an up to date list?
-
-We will be updating this page when our assets are listed on new exchanges. On Coinmarketcap you can find the complete list of markets for majority of popular tokens. For example, if you go to [Celo Dollars](https://coinmarketcap.com/currencies/celo-dollar/) page, scroll down to 'Celo Dollar Markets' section you will see the list of all available exchanges and their trading volumes, updated in real time.
-
-## Acquire assets through one of the on-ramp partners
-
-You can acquire mento stable assets with credit card or form bank account with one of our payment providers partners.
-
-You will have to create an account with them, do identity verification and you must have created celo account where you will receive your funds.&#x20;
-
-[Ramp network](https://ramp.network/) has the best coverage around the globe and best fees (free).
-
-If it doesn't work for you for some reason, you can try using [Moonpay](https://www.moonpay.com/) or [Simplex](https://www.simplex.com/) instead.
-
-[Valora](https://valoraapp.com/) is a mobile crypto wallet native to Celo blockchain. They aggregate all available cash in/out options in their app. Check [this support article](https://support.valoraapp.com/hc/en-us/categories/360006359592-Adding-and-Withdrawing-Funds) on their website for more info.&#x20;
-
-Cashing out to credit card / bank account is not supported by any of the existing providers atm.
-
-## Mint/burn stable with Mento protocol directly
-
-Mento protocol allows users to deposit CELO and mint new stable assets into existence. Users can also burn stable assets they have on hands to receive back the deposited CELO from the reserve.
-
-Usually it is not recommended way for end users, because transactions with Mento might be subject to higher slippage, then performing the same trade through CEX or DEX.
-
-When you are looking to exchange relatively high amount and can't do that because of high slippage, we recommend to user [celo trading bot](https://github.com/celo-org/celo-exchange-bot) (requires technical knowledge to be able to implement and run the bot). The bot allows you to brake down big trade in a chain of smaller ones that will be executed over prolonged interval of time. This helps to avoid slippage, but doesn't work when you need to exchange big amount immediately.
-
-##
