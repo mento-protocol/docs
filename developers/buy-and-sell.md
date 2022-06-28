@@ -1,40 +1,22 @@
 ---
 description: >-
-  If you are looking to acquire or sell mento stable assets, this article will
-  explain how you can
+  If you are looking to acquire or sell mento stable assets, this section
+  explains where you can do that.
 ---
 
-# Buy & Sell
+# Overview
 
 There are three ways how the one can buy or sell mento stable assets:
 
+1. Through one of the centralized or decentralized exchanges.
+2. Through one of the on-ramp partners.
+3. Through mento protocol directly.
+
 ## Purchase mento stable assets on the open market
 
-### Purchase from one of the centralized exchanges
+### Purchase from one of the decentralised exchanges
 
-Centralised exchanges (CEX for short) work best when you have fiat currency in your bank account, to begin with, and seek to exchange it for stable assets on the blockchain. You will have to create an account with an exchange, and in most cases they will require some sort of identity verification (a procedure called Know Your Customer, KYC for short).
-
-#### List of trading pairs for Mento stable assets on CEXes:
-
-* cUSD
-  * Kucoin
-    * [cUSD/USDT trading pair](https://www.kucoin.com/trade/CUSD-USDT)
-    * [cUSD/BTC trading pair](https://www.kucoin.com/trade/CUSD-BTC)
-  * Huobi Global
-    * [cUSD/USDT trading pair](https://www.huobi.com/en-us/exchange/cusd\_usdt)
-  * Coinlist Pro
-    * cUSD/USD trading pair
-    * cUSD/USDC trading pair
-  * Gate.io
-    * [cUSD/USDT trading pair](https://www.gate.io/trade/cusd\_usdt)
-  * OkCoin
-    * [cUSD/USD trading pair](https://www.okcoin.com/spot/trade#product=cusd\_usd)
-* cEUR
-* cREAL
-
-### Purchase from one of Decentralised exchanges
-
-Decentralised exchanges (DEX for short) are good in a way that they are permissionless and available to practically anyone around the globe, without any restrictions applied. (Your local government still might impose some regulations prohibiting their citizens from accessing DEXes, so do your own research).&#x20;
+Decentralized exchanges (DEX for short) are permissionless protocols and available to practically anyone around the globe, without any restrictions applied. (Your local government still might impose some regulations prohibiting their citizens from accessing DEXes, so do your own research).&#x20;
 
 You will have to know how to use non-custodial wallet (e.g Metamask, Ledger, Valora, TrustWallet, etc.) and have some crypto currency in your wallet to begin with. Majority of DEXes have smart routing built in, so it doesn't really matter which asset do you start with - as long as mento token is listed there, it will find a way to perform a trade.
 
@@ -50,7 +32,7 @@ It really depends from couple of factors:
 
 **Your geographical location**. Some CEXes can be accessed from certain regions, and some governments allow their citizens to access only some exchanges. Depending from where you are, you will have to find an exchange that works in your jurisdiction.
 
-**Which asset do you start with**. For example, if you have US dollars in your bank account you might prefer an exchange that has direct pair cUSD/USD.
+**Which asset do you start with**. For example, if you have US dollars in your bank account you might prefer an exchange that has a direct pair cUSD/USD.
 
 **Total amount you want to trade**. All exchanges have different trading volume at different times. The rule of thumb - the higher the daily trading volume is, the better.
 
@@ -60,9 +42,9 @@ We will be updating this page when our assets are listed on new exchanges. On Co
 
 ## Acquire assets through one of the on-ramp partners
 
-You can acquire mento stable assets with credit card or form bank account with one of our payment providers partners.
+You can acquire mento stable assets with a credit card or form a bank account with one of our payment providers partners.
 
-You will have to create an account with them, do identity verification and you must have created celo account where you will receive your funds.&#x20;
+You will have to create an account with them, do identity verification and you must have celo account where you will receive your funds.&#x20;
 
 [Ramp network](https://ramp.network/) has the best coverage around the globe and best fees (free).
 
@@ -80,4 +62,17 @@ Usually it is not recommended way for end users, because transactions with Mento
 
 When you are looking to exchange relatively high amount and can't do that because of high slippage, we recommend to user [celo trading bot](https://github.com/celo-org/celo-exchange-bot) (requires technical knowledge to be able to implement and run the bot). The bot allows you to brake down big trade in a chain of smaller ones that will be executed over prolonged interval of time. This helps to avoid slippage, but doesn't work when you need to exchange big amount immediately.
 
-##
+## Limit orders
+
+There are two main trading modes when you perform a transaction at an exchange: **limit order** and **market order**.
+
+When a **market order** is created, the trade will be performed at the current market price at the moment when you submit a transaction. This way your orders can be executed faster, almost instantly.
+
+When a **limit order** is selected, you can determine the price that the trade must be performed at. Instead of executing your order immediately, the exchange will wait until there is enough supply to match your price. It is possible, that it might take some time because there is not always a counterparty available to perform your trade.
+
+**Example.**  Let's imagine you want to trade 1000 cReal to fiat Reals. Because of the stability mechanism's design, the price of cReal floats around 1 Real, but rarely stays at 1 sharp. If you choose to perform a market order, it can be executed at 0.98, 0.99, or 1.02, etc. If you choose a limit order and set it to 1.00 sharp, your trade will be executed at that price and you will receive the exact amount in fiat currency (minus the exchange's fee).
+
+Pretty much any CEX has limit order functionality.&#x20;
+
+This is not the case when it comes to all DEXes. At the moment of writing this, [Ubeswap](https://app.ubeswap.org/#/limit-order) is the only exchange in Celo ecosystem allowing the limit orders feature.
+

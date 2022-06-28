@@ -33,6 +33,7 @@
 
 * [Overview](developers/buy-and-sell.md)
 * [Centralized exchanges](trading-guide/centralized-exchanges.md)
+* [Decentralized exchanges](trading-guide/decentralized-exchanges.md)
 * [Mint/burn with Mento](trading-guide/mint-burn-with-mento.md)
 * [Limit order & max slippage](trading-guide/limit-order-and-max-slippage.md)
 * [Untitled](trading-guide/untitled.md)
