@@ -29,12 +29,18 @@
 
 * [Projects](economics/projects.md)
 
+## Trading guide
+
+* [Overview](trading-guide/buy-and-sell.md)
+* [Mint/burn with Mento](trading-guide/mint-burn-with-mento.md)
+* [Limit orders & max slippage](trading-guide/limit-orders-and-max-slippage.md)
+* [Untitled](trading-guide/untitled.md)
+
 ## Developers
 
 * [Deployment Addresses](developers/deployment-addresses.md)
 * [Oracles](developers/oracles.md)
 * [Stable Tokens](developers/stable-tokens.md)
-* [Buy & Sell](developers/buy-and-sell.md)
 * [The Reserve](developers/the-reserve.md)
 
 ## FAQ

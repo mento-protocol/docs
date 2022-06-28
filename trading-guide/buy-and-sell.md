@@ -1,10 +1,10 @@
 ---
 description: >-
-  If you are looking to acquire or sell mento stable assets, this article is
-  explaining where you can do that.
+  If you are looking to acquire or sell mento stable assets, this section
+  explains where you can do that.
 ---
 
-# Buy & Sell
+# Overview
 
 There are three ways how the one can buy or sell mento stable assets:
 
@@ -35,7 +35,9 @@ Centralised exchanges (CEX for short) work best when you have fiat currency in y
     * [cUSD/USD trading pair](https://www.okcoin.com/spot/trade#product=cusd\_usd)
 * cEUR
 * cREAL
-  *
+  * Bitcointrade
+    * [cREAL/BRL trading pair](https://broker.bitcointrade.com.br/market-out?pairCode=BRLCREAL)
+    *
 
 ### Purchase from one of the decentralised exchanges
 
