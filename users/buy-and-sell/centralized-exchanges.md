@@ -2,6 +2,8 @@
 
 Centralized exchanges (CEX for short) work best when you have fiat currency in your bank account, to begin with, and seek to exchange it for stable assets on the blockchain. You will have to create an account with an exchange, and in most cases, they will require some sort of identity verification (a procedure called Know Your Customer, KYC for short).
 
+Keep in mind that transactions with the exchanges are subject to fees.
+
 #### List of trading pairs for Mento stable assets on CEXes:
 
 * cUSD
