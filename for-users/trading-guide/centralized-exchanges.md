@@ -20,6 +20,11 @@ Keep in mind that transactions with the exchanges are subject to fees.
   * OkCoin
     * [cUSD/USD trading pair](https://www.okcoin.com/spot/trade#product=cusd\_usd)
 * cEUR
+  * KuCoin
+    * [cEUR/USDT trading pair](https://www.kucoin.com/trade/CEUR-USDT)
+    * [cEUR/BTC trading pair](https://www.kucoin.com/trade/CEUR-BTC)
+  * Gate.io
+    * [cEUR/USDT trading pair](https://www.gate.io/trade/ceur\_usdt)
 * cREAL
   * Bitcointrade
     * [cREAL/BRL trading pair](https://broker.bitcointrade.com.br/market-out?pairCode=BRLCREAL)
