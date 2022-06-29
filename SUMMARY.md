@@ -7,14 +7,6 @@
 * [Stability Fees](core/stability-fees.md)
 * [Tobin Tax](core/tobin-tax.md)
 
-## Links
-
-* [Twitter](https://twitter.com/MentoProtocol)
-* [Github](https://github.com/mento-protocol)
-* [Website](https://mento.org)
-* [Discord](http://chat.mento.org/)
-* [Feedback](https://mento.canny.io/mento-roadmap)
-
 ## For users
 
 * [Trading guide](for-users/trading-guide/README.md)
@@ -23,3 +15,11 @@
   * [Mint/burn with Mento](for-users/trading-guide/mint-burn-with-mento.md)
   * [Limit order & max slippage](for-users/trading-guide/limit-order-and-max-slippage.md)
   * [On-ramp providers](for-users/trading-guide/on-ramp-providers.md)
+
+## Links
+
+* [Twitter](https://twitter.com/MentoProtocol)
+* [Github](https://github.com/mento-protocol)
+* [Website](https://mento.org)
+* [Discord](http://chat.mento.org/)
+* [Feedback](https://mento.canny.io/mento-roadmap)
