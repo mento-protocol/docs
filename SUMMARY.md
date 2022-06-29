@@ -14,3 +14,10 @@
 * [Website](https://mento.org)
 * [Discord](http://chat.mento.org/)
 * [Feedback](https://mento.canny.io/mento-roadmap)
+
+## For users
+
+* [Trading guide](for-users/trading-guide/README.md)
+  * [Centralized exchanges](for-users/trading-guide/centralized-exchanges.md)
+  * [Decentralized exchanges](for-users/trading-guide/decentralized-exchanges.md)
+  * [Mint/burn with Mento](for-users/trading-guide/mint-burn-with-mento.md)
