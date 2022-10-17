@@ -6,6 +6,7 @@
 * [Oracles](core/oracles.md)
 * [Stability Fees](core/stability-fees.md)
 * [Tobin Tax](core/tobin-tax.md)
+* [Deployment Addresses](core/deployment-addresses.md)
 
 ## For users
 
