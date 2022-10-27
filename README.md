@@ -8,7 +8,7 @@ description: >-
 
 ### What is Stability Algorithm?
 
-On a high level, Mento Stability Algorithm allows user demand to determine the supply of Mento stable assets by enabling users to create, for example, a new Celo Dollar by sending 1 US Dollar worth of CELO to the reserve, or to burn a Celo Dollar by redeeming it for 1 US Dollar worth of CELO. The mechanism requires an accurate [Oracle](https://docs.celo.org/celo-codebase/protocol/stability/oracles) value of the CELO to US Dollar market rate to work.
+On a high level, Mento allows user demand to determine the supply of Mento stable assets by enabling users to create, for example, a new Celo Dollar by sending 1 US Dollar worth of CELO to the reserve, or to burn a Celo Dollar by redeeming it for 1 US Dollar worth of CELO. The mechanism requires an accurate [Oracle](https://docs.mento.org/mento-protocol/core/oracles) value of the CELO to US Dollar market rate to work.
 
 ### Incentives
 
