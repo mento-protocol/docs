@@ -2,7 +2,7 @@
 
 ## Core
 
-* [Stability Algorithm](README.md)
+* [What is Mento?](README.md)
 * [Oracles](core/oracles.md)
 * [Stability Fees](core/stability-fees.md)
 * [Tobin Tax](core/tobin-tax.md)

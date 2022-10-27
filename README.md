@@ -4,9 +4,7 @@ description: >-
   constant-product decentralized one-to-one mechanism.
 ---
 
-# Stability Algorithm
-
-### What is Stability Algorithm?
+# What is Mento?
 
 On a high level, Mento allows user demand to determine the supply of Mento stable assets by enabling users to create, for example, a new Celo Dollar by sending 1 US Dollar worth of CELO to the reserve, or to burn a Celo Dollar by redeeming it for 1 US Dollar worth of CELO. The mechanism requires an accurate [Oracle](https://docs.mento.org/mento-protocol/core/oracles) value of the CELO to US Dollar market rate to work.
 
