@@ -1,5 +1,5 @@
 ---
-description: The addresses of the deployed core contract proxies.
+description: The addresses of the deployed core contract proxies on the Celo blockchain.
 ---
 
 # Deployment Addresses
