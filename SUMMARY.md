@@ -37,6 +37,10 @@
 
 * [Governance](governance/governance.md)
 
+## Audits
+
+* [Audit reports](audits/audit-reports.md)
+
 ## Roadmap
 
 * [Roadmap](roadmap/roadmap.md)

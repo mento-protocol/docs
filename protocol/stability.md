@@ -4,7 +4,7 @@
 
 Mento allows people to create crypto assets pegged to fiat currencies or a basket of goods. The Mento stability protocol can be thought of as a hybrid crypto-collateralization / seigniorage-style model in which the reserve is used to adjust the supply of Mento stable assets in response to changes in demand.
 
-The protocol relies on a number of [Broken link](broken-reference "mention") external to the blockchain to provide feeds of the Mento stable assets in their respective fiat denomination. To maintain the peg, the protocol allows users to create new Mento stable assets by sending 1 fiat unit worth of a reserve asset to the reserve, or to destroy Mento stable assets by redeeming 1 fiat unit worth of a reserve asset from the reserve.&#x20;
+The protocol relies on a number of [oracles](oracles/ "mention") external to the blockchain to provide feeds of the Mento stable assets in their respective fiat denomination. To maintain the peg, the protocol allows users to create new Mento stable assets by sending 1 fiat unit worth of a reserve asset to the reserve, or to destroy Mento stable assets by redeeming 1 fiat unit worth of a reserve asset from the reserve.&#x20;
 
 ### Issuance and Redemption Mechanism
 
