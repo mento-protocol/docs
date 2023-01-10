@@ -18,8 +18,8 @@
 
 * [Mento Core](developers/mento-core/README.md)
   * [Architecture](developers/mento-core/architecture.md)
-  * [Design Principles](developers/mento-core/design-principles.md)
   * [Smart Contracts](developers/mento-core/smart-contracts.md)
+  * [Design Principles](developers/mento-core/design-principles.md)
   * [SDK](developers/mento-core/sdk.md)
 * [Running an Oracle](developers/running-an-oracle.md)
 * [Deployment Addresses](developers/deployment-addresses.md)
@@ -40,10 +40,6 @@
 ## Audits
 
 * [Audit reports](audits/audit-reports.md)
-
-## Roadmap
-
-* [Roadmap](roadmap/roadmap.md)
 
 ## Resources
 
