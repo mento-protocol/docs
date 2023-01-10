@@ -4,8 +4,6 @@ description: The addresses of the deployed core contract proxies on the Celo blo
 
 # Deployment Addresses
 
-## Celo Mainnet
-
 | Contract Name  | Address                                    | Explorer Link                                                                                                |
 | -------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | Reserve        | 0x9380fA34Fd9e4Fd14c06305fd7B6199089eD4eb9 | [View ->](https://explorer.celo.org/mainnet/address/0x9380fA34Fd9e4Fd14c06305fd7B6199089eD4eb9/transactions) |
