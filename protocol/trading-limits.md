@@ -6,7 +6,7 @@ The protocol aims to protect the reserve against possible exploits and smart con
 
 ### Trading Limits Implementation
 
-The TradingLimits.sol library provides data structs and utility functions for defining and verifying trading limits on the net flow of an asset. There are three limits that can be enabled. There are two time-window-based limits that reset at a configurable time span and one global limit that does not reset until the limit is disabled via config change. When a trading limit is reached, trading will be suspended until it resets.&#x20;
+The [TradingLimits](../developers/mento-core/smart-contracts/broker/tradinglimits.md) library provides data structures and utility functions for defining and verifying trading limits on the net flow of an asset. There are three limits that can be enabled. There are two time-window-based limits that reset at a configurable time span and one global limit that does not reset until the limit is disabled via config change. When a trading limit is reached, trading will be suspended until it resets.&#x20;
 
 The library ensures that the net flows are reset during the update phase, but does not control how the full state gets updated if the config changes, this is left to the library consumer.
 
