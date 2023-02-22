@@ -4,7 +4,7 @@ description: The addresses of the deployed core contract proxies on the Celo blo
 
 # Deployment Addresses
 
-## Mento V2
+## Mento (MU01)
 
 ### Baklava
 
@@ -12,7 +12,7 @@ description: The addresses of the deployed core contract proxies on the Celo blo
 
 \*BridgedUSDC is a Mock ERC20 token that we use on testnets as a surrogate for the bridged USDC that will be used in pools Celo Mainnet.
 
-## Mento V1
+## Mento Legacy
 
 ### Celo Mainnet
 
