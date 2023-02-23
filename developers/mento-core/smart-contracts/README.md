@@ -1,6 +1,12 @@
 # Smart Contracts
 
-### Introduction
+{% hint style="info" %}
+This documentation covers the new version of Mento, MU01, which is currently being deployed. Some of these contracts are not on Mainnet yet.&#x20;
+
+You can find the Mento [legacy docs here](https://docs.mento.org/legacy).&#x20;
+{% endhint %}
+
+Introduction
 
 The Mento protocol consists of a set of smart contracts, which are deployed on the[ Celo blockchain](https://celo.org/).
 

@@ -1,5 +1,11 @@
 # SDK
 
+{% hint style="info" %}
+This is the SDK documentation for the new version of Mento, MU01, which is currently being deployed. Some of these contracts are not on Mainnet yet.&#x20;
+
+You can find the Mento [legacy docs here](https://docs.mento.org/legacy).&#x20;
+{% endhint %}
+
 The [Mento SDK](https://github.com/mento-protocol/mento-sdk) is a typescript package that lets you interact with the protocol.
 
 ### Sample Usage
