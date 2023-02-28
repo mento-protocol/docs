@@ -182,10 +182,29 @@ Adds a new Oracle.
 
 ### Parameters
 
-| Name          | Type    | Description                |
-| ------------- | ------- | -------------------------- |
-| token         | address | The address of the token.  |
-| oracleAddress | address | The address of the oracle. |
+| Name          | Type    | Description                     |
+| ------------- | ------- | ------------------------------- |
+| token         | address | The unique rate feed identifier |
+| oracleAddress | address | The address of the oracle.      |
+
+#### Unique Rate Feed Identifier
+
+For \`CELO/cStable\` rate feeds, the unique identifier is the address of the stable token. Since this doesn't work for more than one pair including the same stable token, a new formula is used to create unique rate feed identifiers for rate feeds other than \`CELO/cStable\`.
+
+These identifiers can be derived using the following formula:
+
+```solidity
+address(uint160(uint256(keccak256(${asset0asset1}))))
+```
+
+For example, \`USDCUSD\` inserted gives the following formula:
+
+```solidity
+address(uint160(uint256(keccak256("USDCUSD"))))
+// == 0xA1A8003936862E7a15092A91898D69fa8bCE290c
+```
+
+An example can be found in this [Celo Governance Proposal](https://github.com/celo-org/governance/blob/roman/add-usdc-oracles/CGPs/cgp-0071.md#status).
 
 ## removeOracle
 
