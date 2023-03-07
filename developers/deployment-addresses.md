@@ -4,13 +4,14 @@ description: The addresses of the deployed contracts on the Celo blockchain.
 
 # Deployment Addresses
 
+### Externally Owned Accounts (EOAs) and MultiSigs
+
+| Label                 | Address                                    | Notes                                                 |
+| --------------------- | ------------------------------------------ | ----------------------------------------------------- |
+| Mento Deployer        | 0x56fD3F2bEE130e9867942D0F463a16fBE49B8d81 | Used for contract creation on all environments        |
+| Mento Reserve Spender | 0x87647780180B8f55980C7D3fFeFe08a9B29e9aE1 | Used with the Partial Reserve for the MU01 deployment |
+
 ## Mento v2.0.0
-
-### Externally Owned Accounts (EOAs)&#x20;
-
-| Label          | Address                                    | Notes                                          |
-| -------------- | ------------------------------------------ | ---------------------------------------------- |
-| Mento Deployer | 0x56fD3F2bEE130e9867942D0F463a16fBE49B8d81 | Used for contract creation on all environments |
 
 ### Celo Baklava Testnet
 
