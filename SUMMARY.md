@@ -37,6 +37,7 @@
   * [SDK](developers/mento-core/sdk.md)
 * [Running an Oracle](developers/running-an-oracle.md)
 * [Deployment Addresses](developers/deployment-addresses.md)
+* [Deployment Parameters](developers/deployment-parameters.md)
 
 ## Protocol
 
