@@ -23,6 +23,7 @@
       * [TradingLimits](developers/mento-core/smart-contracts/broker/tradinglimits.md)
     * [IExchangeProvider](developers/mento-core/smart-contracts/iexchangeprovider/README.md)
       * [BiPoolManager](developers/mento-core/smart-contracts/iexchangeprovider/bipoolmanager/README.md)
+        * [PoolExchange](developers/mento-core/smart-contracts/iexchangeprovider/bipoolmanager/poolexchange.md)
         * [ConstantProductPricingModule](developers/mento-core/smart-contracts/iexchangeprovider/bipoolmanager/constantproductpricingmodule.md)
         * [ConstantSumPricingModule](developers/mento-core/smart-contracts/iexchangeprovider/bipoolmanager/constantsumpricingmodule.md)
     * [SortedOracles](developers/mento-core/smart-contracts/sortedoracles.md)

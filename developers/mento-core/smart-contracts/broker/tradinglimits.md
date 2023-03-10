@@ -16,6 +16,8 @@ This library provides data structs and utility functions for defining and verify
 
 ## State
 
+The state holds the live data related to the trading limit. It gets updated with each swap.
+
 ```solidity
 struct State {
   uint32 lastUpdated0;
@@ -26,7 +28,17 @@ struct State {
 }
 ```
 
+| Field         | Type   | Description                                                                                           |
+| ------------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| lastUpdated0  | uint32 | The timestamp of the last update of limit0 is used to determine the next limit reset.                 |
+| lastUpdated1  | uint32 | The timestamp of the last update of limit1 is used to determine the next limit reset.                 |
+| netflow0      | int32  | The net amount of tokens (in units) that have flown through the exchange since the last limit0 reset. |
+| netflow1      | int32  | The net amount of tokens (in units) that have flown through the exchange since the last limit2 reset. |
+| netflowGlobal | int32  | The net amount of tokens (in units) that have flown through the exchange since the limit was set.     |
+
 ## Config
+
+The configuration is set once and holds which limits are enabled and their parameters.
 
 ```solidity
 struct Config {
@@ -38,6 +50,15 @@ struct Config {
   uint8 flags;
 }
 ```
+
+| Field       | Type   | Description                                                                                                                                                                  |
+| ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| timestep0   | uint32 | The amount of seconds until limit0 resets its netflow                                                                                                                        |
+| timestep1   | uint32 | The amount of seconds until limit1 resets its netflow                                                                                                                        |
+| limit0      | int48  | The size of limit0, netflow0 will always be between (-limit0, +limit0)                                                                                                       |
+| limit1      | int48  | The size of limit1, netflow1 will always be between (-limit1, +limit1)                                                                                                       |
+| limitGlobal | int48  | The size of limitGlobal, netflowGlobal will always be between (-limitGlobal, +limitGlobal)                                                                                   |
+| flags       | uint8  | <p>Binary flags which holds what limits are enabled:<br>flags &#x26; 1 != 0 => L0 enabled</p><p>flags &#x26; 2 != 0 => L1 enabled<br>flags &#x26; 4 != 0 => LG enabled  </p> |
 
 ## validate
 
