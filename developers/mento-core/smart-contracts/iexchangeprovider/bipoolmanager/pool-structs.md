@@ -2,7 +2,7 @@
 description: The Pool exchange structure
 ---
 
-# PoolExchange
+# Pool Structs
 
 The `PoolExchange` and `PoolConfig` structures are the underlying data structures used by the BiPoolManager to implement a vAMM bi-pool (i.e. a pool with two assets).&#x20;
 
