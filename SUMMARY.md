@@ -39,7 +39,8 @@
   * [Getting a Quote](developers/sdk/getting-a-quote.md)
   * [Initiating a Swap](developers/sdk/initiating-a-swap.md)
 * [Running an Oracle](developers/running-an-oracle.md)
-* [Deployment Addresses](developers/deployment-addresses.md)
+* [Deployment Addresses](developers/deployment-addresses/README.md)
+  * [Verifying deployments](developers/deployment-addresses/verifying-deployments.md)
 * [Deployment Parameters](developers/deployment-parameters.md)
 
 ## Protocol
