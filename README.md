@@ -13,5 +13,3 @@ Here you can find detailed documentation around the following areas:&#x20;
 * Information about [how](developers/deployments/parameters.md) and [where](developers/deployments/) Mento is deployed.
 * Economic research [foundations](protocol-concepts/stability.md) of and [insights](economics/research.md) into the protocol
 * How to create and where to exchange Mento assets in the trading guide.&#x20;
-
--> Test update
