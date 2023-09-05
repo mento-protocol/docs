@@ -1,70 +1,61 @@
 # Table of contents
 
-## Introduction
+## Mento Protocol
 
-* [What is Mento?](README.md)
-* [Why Mento?](introduction/why-mento.md)
+* [Home](README.md)
+* [What, why, who Mento?](mento-protocol/what-why-who-mento.md)
+* [Quick Links](mento-protocol/quick-links.md)
 
-## Users
+## User Trading Guide
 
-* [Trading guide](users/trading-guide/README.md)
-  * [Centralized exchanges](users/trading-guide/centralized-exchanges.md)
-  * [Decentralized exchanges](users/trading-guide/decentralized-exchanges.md)
-  * [Mint/burn with Mento](users/trading-guide/mint-burn-with-mento.md)
-  * [Limit order & max slippage](users/trading-guide/limit-order-and-max-slippage.md)
-  * [On-ramp providers](users/trading-guide/on-ramp-providers.md)
+* [On Celo](user-trading-guide/on-celo.md)
+* [From Ethereum](user-trading-guide/from-ethereum.md)
+* [Centralized Exchanges](user-trading-guide/centralized-exchanges.md)
+* [On-ramp Providers](user-trading-guide/on-ramp-providers.md)
+
+## Protocol Concepts
+
+* [Stability](protocol-concepts/stability.md)
+* [Reserve](protocol-concepts/reserve.md)
+* [Asset exchanges](protocol-concepts/asset-exchanges/README.md)
+  * [Broker](protocol-concepts/asset-exchanges/broker.md)
+  * [Trading Limits](protocol-concepts/asset-exchanges/trading-limits.md)
+  * [Exchange Providers](protocol-concepts/asset-exchanges/exchange-providers.md)
+  * [BiPoolManager](protocol-concepts/asset-exchanges/bipoolmanager.md)
+* [Oracles](protocol-concepts/oracles.md)
+* [On-Chain Circuit Breaker](protocol-concepts/on-chain-circuit-breaker.md)
+* [Governance](protocol-concepts/governance.md)
 
 ## Developers
 
-* [Mento Core](developers/mento-core/README.md)
-  * [Architecture](developers/mento-core/architecture.md)
-  * [Smart Contracts](developers/mento-core/smart-contracts/README.md)
-    * [Broker](developers/mento-core/smart-contracts/broker/README.md)
-      * [TradingLimits](developers/mento-core/smart-contracts/broker/tradinglimits.md)
-    * [IExchangeProvider](developers/mento-core/smart-contracts/iexchangeprovider/README.md)
-      * [BiPoolManager](developers/mento-core/smart-contracts/iexchangeprovider/bipoolmanager/README.md)
-        * [Pool Structs](developers/mento-core/smart-contracts/iexchangeprovider/bipoolmanager/pool-structs.md)
-        * [ConstantProductPricingModule](developers/mento-core/smart-contracts/iexchangeprovider/bipoolmanager/constantproductpricingmodule.md)
-        * [ConstantSumPricingModule](developers/mento-core/smart-contracts/iexchangeprovider/bipoolmanager/constantsumpricingmodule.md)
-    * [SortedOracles](developers/mento-core/smart-contracts/sortedoracles.md)
-    * [BreakerBox](developers/mento-core/smart-contracts/breakerbox/README.md)
-      * [IBreakerBox](developers/mento-core/smart-contracts/breakerbox/ibreakerbox.md)
-      * [IBreaker](developers/mento-core/smart-contracts/breakerbox/ibreaker.md)
-      * [MedianDeltaBreaker](developers/mento-core/smart-contracts/breakerbox/mediandeltabreaker.md)
-      * [ValueDeltaBreaker](developers/mento-core/smart-contracts/breakerbox/valuedeltabreaker.md)
-    * [Reserve](developers/mento-core/smart-contracts/reserve.md)
-    * [StableToken](developers/mento-core/smart-contracts/stabletoken.md)
-  * [Design Principles](developers/mento-core/design-principles.md)
-* [SDK](developers/sdk/README.md)
-  * [Getting Exchange Pairs](developers/sdk/getting-exchange-pairs.md)
-  * [Getting a Quote](developers/sdk/getting-a-quote.md)
-  * [Initiating a Swap](developers/sdk/initiating-a-swap.md)
-* [Running an Oracle](developers/running-an-oracle.md)
-* [Deployment Addresses](developers/deployment-addresses/README.md)
-  * [Verifying deployments](developers/deployment-addresses/verifying-deployments.md)
-* [Deployment Parameters](developers/deployment-parameters.md)
+* [Repository Overview](developers/repository-overview.md)
+* [Smart Contracts](developers/smart-contracts/README.md)
+  * [Broker](developers/smart-contracts/broker.md)
+  * [TradingLimits](developers/smart-contracts/tradinglimits.md)
+  * [BiPoolManager](developers/smart-contracts/bipoolmanager.md)
+  * [Pricing Modules](developers/smart-contracts/pricing-modules.md)
+  * [SortedOracles](developers/smart-contracts/sortedoracles.md)
+  * [BreakerBox](developers/smart-contracts/breakerbox.md)
+  * [Reserve](developers/smart-contracts/reserve.md)
+  * [StableToken](developers/smart-contracts/stabletoken.md)
+  * [Audits](developers/smart-contracts/audits.md)
+* [Deployments](developers/deployments/README.md)
+  * [Addresses](developers/deployments/addresses.md)
+  * [Verification](developers/deployments/verification.md)
+  * [Parameters](developers/deployments/parameters.md)
+* [Mento SDK](developers/mento-sdk/README.md)
+  * [Installation](developers/mento-sdk/installation.md)
+  * [Guides](developers/mento-sdk/guides/README.md)
+    * [Getting Exchange Pairs](developers/mento-sdk/guides/getting-exchange-pairs.md)
+    * [Getting a Quote](developers/mento-sdk/guides/getting-a-quote.md)
+    * [Initiating a Swap](developers/mento-sdk/guides/initiating-a-swap.md)
+* [Oracles](developers/oracles/README.md)
+  * [Oracle Client](developers/oracles/oracle-client/README.md)
+    * [Price Sources](developers/oracles/oracle-client/price-sources.md)
+  * [Becoming an Oracle Provider](developers/oracles/becoming-an-oracle-provider.md)
 
-## Protocol
+## Economics
 
-* [Stability](protocol/stability.md)
-* [Reserve](protocol/reserve.md)
-* [Oracles](protocol/oracles/README.md)
-  * [Circuit Breaker](protocol/oracles/circuit-breaker.md)
-* [Trading Limits](protocol/trading-limits.md)
-* [Risks](protocol/risks.md)
-
-## Governance
-
-* [Governance](governance/governance.md)
-
-## Audits
-
-* [Audit reports](audits/audit-reports.md)
-
-## Resources
-
-* [Website](https://www.mento.org/)
-* [Mento Reserve](https://reserve.mento.org/)
-* [Discord](https://discord.gg/pEeS4YDR)
-* [Twitter](https://twitter.com/MentoProtocol)
-* [Github](https://github.com/mento-protocol)
+* [Stability](economics/stability.md)
+* [Risks](economics/risks.md)
+* [Research](economics/research.md)
