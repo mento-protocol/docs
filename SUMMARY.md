@@ -24,7 +24,7 @@
   * [BiPoolManager](protocol-concepts/asset-exchanges/bipoolmanager.md)
 * [Oracles](protocol-concepts/oracles.md)
 * [On-Chain Circuit Breaker](protocol-concepts/on-chain-circuit-breaker.md)
-* [Governance](protocol-concepts/governance/README.md)
+* [Governance](protocol-concepts/governance.md)
   * [Verification](protocol-concepts/governance/verification.md)
 
 ## Developers
