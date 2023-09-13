@@ -4,7 +4,7 @@
 
 ### Unique Rate Feed Identifiers
 
-Each oracle rate, internally called rate feed, is uniquely identified by a `rateFeedID`. It is used when adding oracle rates to the [SortedOracle smart contract](sortedoracles.md) by calling the [`addOracle`](https://github.com/mento-protocol/mento-core/blob/develop/contracts/SortedOracles.sol#L152) function in a Celo governance proposal:
+Each oracle rate, internally called rate feed, is uniquely identified by a `rateFeedID`. It is used when adding oracle rates to the [SortedOracles smart contract](https://github.com/mento-protocol/mento-core/blob/main/contracts/oracles/SortedOracles.sol) by calling the [`addOracle`](https://github.com/mento-protocol/mento-core/blob/c2e344ebd5f3018253cf26cb39a50f81d8db7c21/contracts/oracles/SortedOracles.sol#L152) function in a Celo governance proposal:
 
 ```solidity
 addOracle(address token, address oracleAddress)

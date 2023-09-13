@@ -10,7 +10,7 @@ This repository contains the source code of the core smart contracts for the Men
 
 The GitHub repository of the official Mento Protocol SDK for interacting with Multi-Collateral Mento smart contracts on the Celo network.
 
-### [Mento SDK examples](http://127.0.0.1:5000/s/TTxQdBUOJwGkQLpLLxm8/developers/mento-core/smart-contracts/breakerbox/mediandeltabreaker)
+### [Mento SDK examples](broken-reference)
 
 A set of runnable example code snippets for using the [Mento Protocol SDK](https://www.npmjs.com/package/@mento-protocol/mento-sdk).
 

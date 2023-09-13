@@ -26,8 +26,8 @@ $ yarn verify:bytecodes -n celo -u MU01 -c v2.0.0
 
 In order to trust the results, you also have to trust the verification script. Luckily it's short enough to be able to read comfortably. You can find it here:
 
-{% embed url="https://github.com/mento-protocol/mento-deployment/blob/main/bin/verifyBytecodes.ts" %}
-Link to verification script
+{% embed url="https://github.com/mento-protocol/mento-deployment/blob/main/bin/verify-bytecodes.ts" %}
+verify-bytecodes.ts
 {% endembed %}
 
 The script flow is the following:

@@ -15,7 +15,7 @@ Decentralized exchanges (DEXs) are the primary way of exchanging assets in the d
 
 ## High-liquidity Curve Pool for cUSD
 
-The Mento reserve maintains a [high-liquidity Curve pool](https://curve.fi/#/celo/pools/factory-v2-35/deposit) with 20 million USD in liquidity, split between cUSD and USDCet. USDCet is USDC bridged from Ethereum via [Wormhole](https://wormhole.com/) and the [Portal Token Bridge](https://portabridge-token.com/?gclid=CjwKCAjw\_\_ihBhADEiwAXEazJvFqeif50hbkBCOIWfEMqVldKxl9t-0UBdjRhD-e2\_em1cvqjhI8ehoC3LoQAvD\_BwE). &#x20;
+The Mento reserve maintains a [high-liquidity Curve pool](https://curve.fi/#/celo/pools/factory-v2-35/deposit) with 20 million USD in liquidity, split between cUSD and USDCet. USDCet is USDC bridged from Ethereum via [Wormhole](https://wormhole.com/) and the [Portal Token Bridge](https://www.portalbridge.com/#/transfer). &#x20;
 
 ## Mento
 

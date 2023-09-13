@@ -15,8 +15,8 @@ npm i --save @mento-protocol/mento-sdk
 
 After you've installed the SDK using your favourite package manager, you can go through the following walkthrough guides:
 
-* [Discovering exchanges and pairs](broken-reference)
-* [Getting price quotes](broken-reference)
-* [Executing swaps](broken-reference)
+* [Discovering exchanges and pairs](guides/getting-exchange-pairs.md)
+* [Getting price quotes](guides/getting-a-quote.md)
+* [Executing swaps](guides/initiating-a-swap.md)
 
 All the codes snippets in the above guides can be found in [mento-sdk-examples](https://github.com/mento-protocol/mento-sdk-examples). We encourage you to clone the repository, and execute the different code snippets as you read through the guides.

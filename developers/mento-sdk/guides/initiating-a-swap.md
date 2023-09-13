@@ -1,6 +1,6 @@
 # Initiating a Swap
 
-After you have gotten a [price quote](broken-reference) from the Broker, you can use the sdk to create a swap transaction object which you can then submit to the network.
+After you have gotten a [price quote](getting-a-quote.md) from the Broker, you can use the sdk to create a swap transaction object which you can then submit to the network.
 
 So far in the previous examples we have used only a `JsonRpcProvider` for interacting with the contracts. This is fine for read-only contract calls, but in order to generate a signed transaction object you will need to instantiate the SDK with an Ethers signer.&#x20;
 

@@ -1,6 +1,6 @@
 # Getting a Quote
 
-After you have already [fetched all tradeable pairs](broken-reference), you are ready to get price quotes directly from the `Broker` contract. In the example below we will do so for the `CELO/cUSD` exchange.
+After you have already [fetched all tradeable pairs](getting-exchange-pairs.md), you are ready to get price quotes directly from the `Broker` contract. In the example below we will do so for the `CELO/cUSD` exchange.
 
 We start by importing the SDK and instantiating it on the Alfajores Celo testnet:
 
