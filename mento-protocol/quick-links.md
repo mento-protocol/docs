@@ -18,6 +18,7 @@ description: Quick access to all things Mento ecosystem
 
 * [Website (mentolabs.xyz)](https://mentolabs.xyz)
 * [Mento Labs on Twitter](https://twitter.com/MentoLabs)
+* [Mento Labs on LinkedIn](https://www.linkedin.com/company/mento-labs)
 
 ## Celo Governance
 
