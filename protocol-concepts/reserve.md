@@ -6,7 +6,7 @@ This page describes the Mento Reserve conceptually, while information about hold
 
 ### Introduction
 
-The Mento reserve is a diversified portfolio of crypto-assets that support the ability of the Mento protocol to allow everyone to expand and contract the supply of Mento stable assets in-line with user demand.
+The Mento Reserve is a diversified portfolio of crypto-assets that support the ability of the Mento protocol to allow everyone to expand and contract the supply of Mento stable assets in-line with user demand.
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-03-10 at 18.49.17.png" alt=""><figcaption></figcaption></figure>
 
@@ -14,7 +14,7 @@ The Mento reserve is a diversified portfolio of crypto-assets that support the a
 
 Reserve asset selection is done by Celo governance. Reserve assets must be freely traded and settled 24/7 on liquid markets, and should be based on an open-source protocol.
 
-The reserve has the mandate to collateralize 110% of the Mento stable assets outstanding in the stable assets USDC and DAI and diversify the remainder into crypto assets BTC, ETH, and CELO. There is also a small experimental allocation in nature-backed assets, with the goal of supporting their adoption and liquidity. With this mandate, the Mento Protocol would be able to safely wind down all Mento stable assets in exchange for other stable assets at every moment in time.&#x20;
+The reserve has the mandate to collateralize 110% of the Mento stable assets outstanding in the stable assets USDC and DAI and diversify the remainder into crypto assets BTC, ETH, and CELO. There is also a small experimental allocation in nature-backed assets, with the goal of supporting their adoption and liquidity. With this mandate, the Mento protocol would be able to safely wind down all Mento stable assets in exchange for other stable assets at every moment in time.&#x20;
 
 The live status of the reserve including asset allocation and wallet addresses can be found on the[ Mento Reserve website](https://reserve.mento.org/):
 
