@@ -8,5 +8,5 @@ The contracts can be found in the [mento-protocol/mento-core](https://github.com
 
 Here you will find everything from an overview to a detailed technical reference.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption><p>Mento Smart Contracts</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-12-12 at 14.37.20.png" alt=""><figcaption><p>Mento Smart Contracts</p></figcaption></figure>
 

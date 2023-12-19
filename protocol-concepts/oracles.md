@@ -10,4 +10,6 @@ Oracles usually consist of an off-chain client and one or multiple on-chain smar
 
 Oracles on Celo for Mento are an essential part of the stability mechanism. The protocol uses the reported rates to allow the exchange of Mento collateral with stable assets at correct market prices. For this, the oracles report one exchange rate, internally also referenced as rate feed, for each exchange pair.&#x20;
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>How the protocol uses oracles</p></figcaption></figure>
+
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-12-12 at 14.03.17.png" alt=""><figcaption><p>How the protocol uses oracles</p></figcaption></figure>
