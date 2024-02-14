@@ -1,4 +1,4 @@
-# From Ethereum
+# From Other Chains
 
 [SquidRouter V2](https://v2.app.squidrouter.com/) serves as an easy tool to access Mento stables. It allows you to mint and redeem Mento stables with other Celo assets and assets on various other blockchains. SquidRouter routes through the Mento Reserve, eliminating the risk of slippage commonly associated with traditional liquidity pools. This makes it highly efficient for large-volume transactions. You can mint cUSD with USDC 1:1 without any slippage. 
 
