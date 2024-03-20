@@ -41,7 +41,7 @@
 
 \*Bridged USDC/EUROC are Mock ERC20 tokens that we use on testnets as a surrogate for the bridged USDC/EUROC that will be used in pools Celo Mainnet.
 
-\*mockNativeUSDC is a Mock ERC20 token that we use on Baklava as a surrogate for the native USDC that will be used in pools and is only deployed on Alfajores and Mainnet.
+\*mockNativeUSDC is a Mock ERC20 token that we use on Baklava as a surrogate for the native USDC. It's important to not that this is only used in pools on Baklava as native USDC is deployed on both Alfajores and Mainnet.
 {% endtab %}
 {% endtabs %}
 
