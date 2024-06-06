@@ -24,8 +24,8 @@ Rate Feed identifiers are the [report targets for oracles](../../developers/smar
 <tr><td>EUROC/EUR</td><td>0x26076B9702885d475ac8c3dB3Bd9F250Dc5A318B</td><td><code>address(uint160(uint256(keccak256("EUROCEUR"))))</code></td></tr>
 <tr><td>EUROC/XOF</td><td>0xed35e46b095197da30ddffa5b91d386886d5ce0d</td><td><code>address(uint160(uint256(keccak256("EUROCXOF"))))</code></td></tr>
 <tr><td>EUR/XOF</td><td>0x40dc8528167557353fdcd98548ab2139a670dd0b</td><td><code>address(uint160(uint256(keccak256("EURXOF"))))</code></td></tr>
-<tr><td>KES/USD</td><td>0xbAcEE37d31b9f022Ef5d232B9fD53F05a531c169</td><td><code>address(uint160(uint256(keccak256("USDTUSD"))))</code></td></tr>
-<tr><td>USDT/USD</td><td>0xE06C10C63377cD098b589c0b90314bFb55751558</td><td><code>address(uint160(uint256(keccak256("KESUSD"))))</code></td></tr>
+<tr><td>KES/USD</td><td>0xbAcEE37d31b9f022Ef5d232B9fD53F05a531c169</td><td><code>address(uint160(uint256(keccak256("KESUSD"))))</code></td></tr>
+<tr><td>USDT/USD</td><td>0xE06C10C63377cD098b589c0b90314bFb55751558</td><td><code>address(uint160(uint256(keccak256("USDTUSD"))))</code></td></tr>
 </tbody></table>
 
 ### Exchange IDs
