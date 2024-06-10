@@ -62,3 +62,11 @@
 * [Stability](economics/stability.md)
 * [Risks](economics/risks.md)
 * [Research](economics/research.md)
+
+## Governance & Token
+
+* [Overview](governance-and-token/overview.md)
+* [Governance Components](governance-and-token/governance-components.md)
+* [Governance Scope](governance-and-token/governance-scope.md)
+* [MENTO Token](governance-and-token/mento-token.md)
+* [Airdrop](governance-and-token/airdrop.md)
