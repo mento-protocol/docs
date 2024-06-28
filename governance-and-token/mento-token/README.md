@@ -2,13 +2,13 @@
 
 ## Total Supply
 
-The MENTO token has a maximum **total supply of 1,000,000,000 (one billion)** tokens. The rest of the tokens are subject to either vesting periods (i.e., team, investors, partners) or a long-term emission schedule detailed in the [Mento Community Treasury](mento-token.md#mento-community-treasury-45-allocation) section below
+The MENTO token has a maximum **total supply of 1,000,000,000 (one billion)** tokens. The rest of the tokens are subject to either vesting periods (i.e., team, investors, partners) or a long-term emission schedule detailed in the [Mento Community Treasury](./#mento-community-treasury-45-allocation) section below
 
 ## Initial Token Distribution
 
 Initial distribution as [defined by the Mento Community](https://forum.celo.org/t/mento-spin-off-and-launch-of-the-mento-token/7747):
 
-<figure><img src="../.gitbook/assets/Proposed_Mento_Distribution.png" alt=""><figcaption><p>Initial MENTO Token Distribution</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Proposed_Mento_Distribution.png" alt=""><figcaption><p>Initial MENTO Token Distribution</p></figcaption></figure>
 
 ### Mento Community Treasury \[45% Allocation]
 
@@ -16,7 +16,7 @@ Initial distribution as [defined by the Mento Community](https://forum.celo.org/
 
 **Distribution:** 450M tokens (45% of total supply) with 50M available at [the Genesis Block](https://celoscan.io/block/25901546). The tokens will be emitted to the treasury via an exponential decay function with a half-life of 10 years. The emission schedule over time is visualized in the graph below:
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>MENTO Total Supply over time</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption><p>MENTO Total Supply over time</p></figcaption></figure>
 
 **Voting rights:** No, the tokens inside the community treasury can not vote.
 
@@ -26,7 +26,7 @@ Initial distribution as [defined by the Mento Community](https://forum.celo.org/
 
 **Distribution:** 300M tokens (30% of total supply). Existing Mento Labs employees, investors, and advisors will receive their MENTO tokens split into two parts:
 
-<figure><img src="../.gitbook/assets/Untitled.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Untitled.png" alt=""><figcaption></figcaption></figure>
 
 1.  <mark style="color:red;">**veMENTO portion**</mark> (25% of the allocation)
 

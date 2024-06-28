@@ -68,5 +68,6 @@
 * [Overview](governance-and-token/overview.md)
 * [Governance Components](governance-and-token/governance-components.md)
 * [Governance Scope](governance-and-token/governance-scope.md)
-* [MENTO Token](governance-and-token/mento-token.md)
+* [MENTO Token](governance-and-token/mento-token/README.md)
+  * [Listing information](governance-and-token/mento-token/listing-information.md)
 * [Airdrop](governance-and-token/airdrop.md)
