@@ -71,3 +71,4 @@
 * [MENTO Token](governance-and-token/mento-token/README.md)
   * [Listing information](governance-and-token/mento-token/listing-information.md)
 * [Airdrop](governance-and-token/airdrop.md)
+* [Governance Watchdogs](governance-and-token/governance-watchdogs.md)
