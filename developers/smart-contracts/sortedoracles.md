@@ -25,4 +25,10 @@ address(uint160(uint256(keccak256("USDCUSD"))))
 // == 0xA1A8003936862E7a15092A91898D69fa8bCE290c
 ```
 
+Rates that are relayed from Chainlink price feeds have the prefix "relayed:" added to the pair.
+```solidity
+address(uint160(uint256(keccak256("relayed:PHPUSD"))))
+// == 0xab921d6ab1057601A9ae19879b111fC381a2a8E9
+```
+
 An example can be found in this [Celo Governance Proposal](https://github.com/celo-org/governance/blob/roman/add-usdc-oracles/CGPs/cgp-0071.md#status).
