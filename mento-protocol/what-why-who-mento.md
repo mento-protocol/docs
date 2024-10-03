@@ -2,7 +2,7 @@
 
 ### What?
 
-Mento is a decentralized and transparent protocol that enables the creation of stable value digital assets, such as assets that track the value of fiat currencies (commonly referred to as "stablecoins"). The goal of Mento is to support the real-world adoption of digital currencies by enabling the creation of stable value assets for users around the world. Mento is currently live on the Celo blockchain where it operates the Celo Dollar (cUSD), the Celo Euro (cEUR), the Celo Brazilian Real (cReal), and the eXOF local stablecoin tracking the CFA Franc. All Mento assets are fully collateralized with a diversified portfolio of exogenous crypto assets.
+Mento is a decentralized and transparent protocol that enables the creation of stable value digital assets, such as assets that track the value of fiat currencies (commonly referred to as "stablecoins"). The goal of Mento is to support the real-world adoption of digital currencies by enabling the creation of stable value assets for users around the world. Mento is currently live on the Celo blockchain, supporting various stablecoins including the Celo Dollar (cUSD), Euro (cEUR), Brazilian Real (cReal), CFA Franc (eXOF), Celo Kenyan Shilling (cKES), and Puso (PUSO). All Mento assets are fully collateralized with a diversified portfolio of exogenous crypto assets.
 
 ### Why?
 
