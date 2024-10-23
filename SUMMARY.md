@@ -6,13 +6,13 @@
 * [What, why, who Mento?](mento-protocol/what-why-who-mento.md)
 * [Quick Links](mento-protocol/quick-links.md)
 
-## On and Off-ramps
+## HOW TO SOURCE MENTO STABLES
 
-* [On Celo](on-and-offramp/on-celo.md)
-* [From other Chains](on-and-offramp/from-other-chains.md)
-* [Centralized Exchanges](on-and-offramp/centralized-exchanges.md)
-* [On-ramp Providers](on-and-offramp/on-ramp-providers.md)
-* [Automation via MATE](on-and-offramp/automation-via-mate.md)
+* [Overview](how-to-source-mento-stables/on-celo.md)
+* [CEXs, DEXs, Pools](how-to-source-mento-stables/centralized-exchanges.md)
+* [From other Chains](how-to-source-mento-stables/from-other-chains.md)
+* [On-ramp Providers](how-to-source-mento-stables/on-ramp-providers.md)
+* [Automation via MATE](how-to-source-mento-stables/automation-via-mate.md)
 
 ## Protocol Concepts
 
