@@ -21,6 +21,9 @@ Rate Feed identifiers are the [report targets for oracles](../../developers/smar
 <tr><td>CELO/PHP</td><td>0xaFc02368A174Cd08e01c373de6D0B537CECF43C8</td><td>
 <code>address(uint160(uint256(keccak256("relayed:CELOPHP"))))</code>
 </td></tr>
+<tr><td>CELO/COP</td><td>0x32ABF1cBdFdcD56790f427694be2658d4B1A83bC</td><td>
+<code>address(uint160(uint256(keccak256("relayed:CELOCOP"))))</code>
+</td></tr>
 <tr><td>USDC/USD</td><td>0xA1A8003936862E7a15092A91898D69fa8bCE290c</td><td><code>address(uint160(uint256(keccak256("USDCUSD"))))</code></td>
 </tr><tr><td>USDC/EUR</td><td>0x206B25Ea01E188Ee243131aFdE526bA6E131a016</td><td><code>address(uint160(uint256(keccak256("USDCEUR"))))</code></td></tr>
 <tr><td>USDC/BRL</td><td>0x25F21A1f97607Edf6852339fad709728cffb9a9d</td><td><code>address(uint160(uint256(keccak256("USDCBRL"))))</code></td></tr>
@@ -30,9 +33,9 @@ Rate Feed identifiers are the [report targets for oracles](../../developers/smar
 <tr><td>KES/USD</td><td>0xbAcEE37d31b9f022Ef5d232B9fD53F05a531c169</td><td><code>address(uint160(uint256(keccak256("KESUSD"))))</code></td></tr>
 <tr><td>USDT/USD</td><td>0xE06C10C63377cD098b589c0b90314bFb55751558</td><td><code>address(uint160(uint256(keccak256("USDTUSD"))))</code></td></tr>
 <tr><td>PHP/USD</td><td>0xab921d6ab1057601A9ae19879b111fC381a2a8E9</td><td><code>address(uint160(uint256(keccak256("relayed:PHPUSD"))))</code></td></tr>
+<tr><td>COP/USD</td><td>0x0196D1F4FdA21fA442e53EaF18Bf31282F6139F1</td><td><code>address(uint160(uint256(keccak256("relayed:COPUSD"))))</code></td></tr>
 </tbody></table>
-*For Rate Feeds with the prefix "relayed:" in the identifier calculation, the data is relayed from Chainlink Price Feed contracts. 
-
+*For Rate Feeds with the prefix "relayed:" in the identifier calculation, the data is relayed from Chainlink Price Feed contracts.
 
 ### Exchange IDs
 
@@ -60,8 +63,9 @@ exchangeId = keccak256(
 <tr><td>eXOF/EUROC</td><td>0xcc68743c58a31c4ec3c56bca3d579409b4e2424e5f37e54a85f917b22af74e7c</td><td><code>keccak256(abi.encodePacked("eXOF", "axlEUROC", "ConstantSum"))</code></td></tr>
 <tr><td>cUSD/nativeUSDC</td><td>0xacc988382b66ee5456086643dcfd9a5ca43dd8f428f6ef22503d8b8013bcffd7</td><td><code>keccak256(abi.encodePacked("cUSD", "USDC", "ConstantSum"))</code></td></tr>
 <tr><td>cEUR/nativeUSDC</td><td>0x99be8b8341ba00914600cda701568ab27eea9aca7a32fa48c26e07b86841020c</td><td><code>keccak256(abi.encodePacked("cEUR", "USDC", "ConstantSum"))</code></td></tr>
-<tr><td>cBRL/nativeUSDC</td><td>0xe8693b17c0f002f6a2fe839525557cef10dfeacef9e16c9bbdcb01c57933ce58</td><td><code>keccak256(abi.encodePacked("cREAL", "USDC", "ConstantSum"))</code></td>
-<tr><td>cUSD/USDT</td><td>0x773bcec109cee923b5e04706044fd9d6a5121b1a6a4c059c36fdbe5b845d4e9b</td><td><code>keccak256(abi.encodePacked("cUSD", "USD₮", "ConstantSum"))</code></td>
+<tr><td>cBRL/nativeUSDC</td><td>0xe8693b17c0f002f6a2fe839525557cef10dfeacef9e16c9bbdcb01c57933ce58</td><td><code>keccak256(abi.encodePacked("cREAL", "USDC", "ConstantSum"))</code></td></tr>
+<tr><td>cUSD/USDT</td><td>0x773bcec109cee923b5e04706044fd9d6a5121b1a6a4c059c36fdbe5b845d4e9b</td><td><code>keccak256(abi.encodePacked("cUSD", "USD₮", "ConstantSum"))</code></td></tr>
 <tr><td>cUSD/cKES</td><td>0x89de88b8eb790de26f4649f543cb6893d93635c728ac857f0926e842fb0d298b</td><td><code>keccak256(abi.encodePacked("cUSD", "cKES", "ConstantSum"))</code></td></tr>
-<tr><td>cUSD/PUSO</td><td>0x7952984d7278ca3417febf52815c321984ac3147ced2c02bb6a02b0bcab08413</td><td><code>keccak256(abi.encodePacked("cUSD", "PUSO", "ConstantSum"))</code></td>
-</tr></tbody></table>
+<tr><td>cUSD/PUSO</td><td>0x7952984d7278ca3417febf52815c321984ac3147ced2c02bb6a02b0bcab08413</td><td><code>keccak256(abi.encodePacked("cUSD", "PUSO", "ConstantSum"))</code></td></tr>
+<tr><td>cUSD/cCOP</td><td>0x1c9378bd0973ff313a599d3effc654ba759f8ccca655ab6d6ce5bd39a212943b</td><td><code>keccak256(abi.encodePacked("cUSD", "cCOP", "ConstantSum"))</code></td></tr>
+</tbody></table>
