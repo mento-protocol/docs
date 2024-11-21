@@ -1,14 +1,18 @@
 # Research
 
-### Stability Analysis
+### Stability Analysis for Mento Stable Assets
 
-A stability analysis was conducted that investigates the stability characteristics of Mento stable value assets through a series of simulations under various market conditions. In this analysis, simulation techniques are used to understand the behavior of the protocol and its potential vulnerabilities over a wide range of possible developments — including severe shocks, attacks, extremely positive and extremely negative market movements. A wide range of possibilities was modeled, rather than relying on historical data, because the space is too new to rely on historical prices for modeling purposes.
+The **Stability Analysis** provides a comprehensive examination of the stability characteristics of Mento's stable assets through robust simulations under diverse market conditions. The goal is to understand how the protocol behaves and to identify potential vulnerabilities across a wide range of scenarios, including:
+- Severe market shocks
+- Adversarial attacks
+- Extreme positive and negative market movements
 
-A good introduction into the stability analysis - especially for users not used to reading economic research papers - can be found in this blog post (Mento stable assets were previously called Celo stable assets):&#x20;
+With this approach, we simulated various scenarios rather than relying solely on historical data, given the nascent state of crypto markets. By modeling a broad spectrum of possibilities, our analysis maintains a resilient framework for Mento stable assets.
 
-{% embed url="https://blog.celo.org/a-look-at-the-celo-stability-analysis-white-paper-part-1-23edd5ef8b5" %}
+### Mento White Paper
+This comprehensive document outlines the technical details, methodology, and results of the stability analysis.
+- [Mento Protocol White Paper](https://github.com/mento-protocol/whitepaper)
 
-And here you can find the full stability analysis research paper (Mento stable assets were previously called Celo stable assets, and Mento Labs spun out of cLabs): &#x20;
-
-{% embed url="https://celo.org/papers/Celo_Stability_Analysis.pdf" %}
-
+### Mento Stability Analysis Article
+For users less familiar with economic research or simulation methodologies, the following resource provides the analyses and the findings in a digestible format. 
+- [Mento Stability Analysis](https://blog.celo.org/a-look-at-the-celo-stability-analysis-white-paper-part-1-23edd5ef8b5)
