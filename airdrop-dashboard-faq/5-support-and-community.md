@@ -12,7 +12,7 @@ Report any technical issues in the Discord \#support channel, providing:
 
 * Your wallet address  
 * A description of the issue  
-* Screenshots if applicable
+* Screenshots, if applicable
 
 ### **Where can I find updates about new tasks and events?**
 
