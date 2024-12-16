@@ -2,7 +2,7 @@
 
 ### **How does the referral system work?**
 
-Users can refer others to join the program. Successful referrals (where the referred user completes certain tasks) will earn additional M-Score for the referrer.
+Users can refer others to join the program. Successful referrals (where the referred user completes specific tasks) earn the referrer an additional M-Score.
 
 ### **Are there limits to referrals?**
 
