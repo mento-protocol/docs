@@ -13,4 +13,4 @@ Each season (month) has its own set of tasks. While you can't complete tasks fro
 
 ### **Is there a maximum amount of M-Score I can earn?**
 
-There isn’t a fixed cap for the M-Score. The total you can earn depends on your participation across the various activities and tasks available on the dashboard.
+There isn't a fixed cap for the M-Score. The total you can earn depends on your participation across the various activities and tasks on the dashboard.
