@@ -2,7 +2,7 @@
 
 ### **What should I do if a task doesn't register as complete?**
 
-1. Verify that your wallet is properly connected  
+1. Verify that your wallet is connected correctly  
 2. Check that you've met all task requirements  
 3. Allow some time for on-chain transactions to be processed  
 4. If issues persist, reach out in the Discord support channel
