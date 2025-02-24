@@ -20,12 +20,13 @@ Decentralized exchanges (DEXs) are the primary way of exchanging assets in the d
 * [Curve](https://curve.fi/#/celo/swap)
 * [Sushi](https://www.sushi.com/swap?fromChainId=42220)
 * [Ubeswap](https://app.ubeswap.org/#/swap)
+* [Carbon DeFi](https://app.carbondefi.xyz/trade)
 
 
 
 ## Mento Asset Exchange
 
-The [Mento web app](https://app.mento.org/) is a direct gateway to the Mento Platform. The web app is maintained by the Mento Labs’ Core team and allows the exchange of stable assets with collateral assets. Depending on the direction of the trade, stable assets are either created or burned directly by the Mento Reserve.
+The [Mento web app](https://app.mento.org/) is a direct gateway to the Mento Platform. The web app is maintained by the Mento Labs’ core team and allows the exchange of stable assets with collateral assets. Depending on the direction of the trade, stable assets are either created or burned directly by the Mento Reserve.
 
 Please be aware, that for large orders against non-USDC collateral assets for cUSD and non-EUROC assets for cEUR, slippage might increase since the mechanism protects itself against oracle manipulation risk. For larger amounts, USDC and EUROC pairs on Mento or the high-liquidity Curve pool are good places to trade.
 
