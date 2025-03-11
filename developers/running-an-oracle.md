@@ -1,6 +1,6 @@
 # Running an Oracle
 
-Oracles on Celo for Mento are an essential part of the stability mechanism. As of December 2022, there are 10 oracle clients, of which Mento Labs manages 8. There are[ ongoing decentralization efforts to add partners, community members, and validators](https://forum.celo.org/t/decentralized-oracles/3610). As of December 2022, one oracle is operated by a community member, and one by T-Systems MMS, a subsidiary of Deutsche Telekom.
+Oracles on Celo for Mento are an essential part of the stability mechanism. As of December 2022, there are 10 oracle clients, of which Mento Labs manages 8. There are[ongoing decentralization efforts to add partners, community members, and validators](https://forum.celo.org/t/decentralized-oracles/3610). As of December 2022, one oracle is operated by a community member, and one by T-Systems MMS, a subsidiary of Deutsche Telekom.
 
 The plan is to move these oracles to different entities, ecosystem projects, and potentially even validators of the Celo Protocol, to have community members run the majority of oracles.
 
@@ -12,7 +12,7 @@ In order to run an oracle, you can not have any conflicts of interest and have t
 
 ## Oracle client code
 
-The public repository for the oracle client, including technical documentation, can be found[ here](https://github.com/celo-org/celo-oracle) on GitHub.
+The public repository for the oracle client, including technical documentation, can be found[here](https://github.com/celo-org/celo-oracle) on GitHub.
 
 ## How to get added as an oracle provider
 
