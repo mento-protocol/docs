@@ -8,7 +8,7 @@ This is a continuation of the introduction to the Mento exchange mechanism in th
 
 In theory, a stablecoin will keep its peg as long as demand and supply meet at the target price. A stablecoin with an excess of supply will lead to it being devalued; a stablecoin with a deficit of supply will lead to exceeding the value of its peg.&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 An exploration of the economics behind  Mento stable assets, previously called Celo stable assets, can be found in the following article:
 

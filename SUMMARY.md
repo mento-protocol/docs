@@ -66,9 +66,13 @@
 ## Governance & Token
 
 * [Overview](governance-and-token/overview.md)
-* [Governance Components](governance-and-token/governance-components.md)
+* [Participating in Governance](governance-and-token/participating-in-governance/README.md)
+  * [veMENTO & Voting Power](governance-and-token/participating-in-governance/vemento-and-voting-power.md)
+  * [Creating Proposals](governance-and-token/participating-in-governance/creating-proposals.md)
+  * [Voting Process](governance-and-token/participating-in-governance/voting-process.md)
 * [Governance Scope](governance-and-token/governance-scope.md)
 * [MENTO Token](governance-and-token/mento-token/README.md)
   * [Listing information](governance-and-token/mento-token/listing-information.md)
 * [Airdrop](governance-and-token/airdrop.md)
+* [Governance Components](governance-and-token/governance-components.md)
 * [Governance Watchdogs](governance-and-token/governance-watchdogs.md)

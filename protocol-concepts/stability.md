@@ -6,7 +6,7 @@ Mento allows everyone to create and exchange crypto assets pegged to fiat curren
 
 The protocol allows users to exchange Mento stable assets with [reserve collateral assets](https://reserve.mento.org). Users can expand the supply of a stable asset by sending one reference unit worth of a [reserve collateral asset](https://reserve.mento.org/) to the reserve and receiving one stable asset in exchange. Users can also contract the supply of a stable asset by sending one stable asset to the reserve in exchange for one reference unit worth of a [reserve collateral asset](https://reserve.mento.org/).
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>A visualization of the exchange mechanism. The Mento reserve was previously called the Celo reserve. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>A visualization of the exchange mechanism. The Mento reserve was previously called the Celo reserve. </p></figcaption></figure>
 
 ### Exchange Mechanism
 
