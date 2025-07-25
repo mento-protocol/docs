@@ -96,12 +96,3 @@ All participants benefit from the protocol's success, creating natural alignment
 Mento governance is designed to evolve. Initial safeguards like the watchdog multisig provide security during early stages but can be removed or modified as the system demonstrates stability. This progressive decentralization ensures both immediate safety and long-term autonomy.
 
 The governance system itself is governed, the community can vote to improve processes, adjust parameters, or implement new features that enhance participation and decision quality.
-
-### **Next Steps**
-
-To participate in shaping Mento's future:
-
-* [Participating in Governance](https://www.notion.so/Participating-in-Governance-22ba2148cc5c80e58b57c717ed7b6f45?pvs=21) - How to vote and create proposals
-* [MENTO Tokenomics](https://www.notion.so/MENTO-Tokenomics-22ba2148cc5c80a6938acbcb1681dea7?pvs=21) - Understanding token distribution and incentives
-* [Watchdogs & Safety](https://www.notion.so/Watchdogs-Safety-22ba2148cc5c80c0ab83c187e9770629?pvs=21) - Protection mechanisms and safeguards
-* [Governance Forum](https://forum.mento.org/) - Join the discussion
