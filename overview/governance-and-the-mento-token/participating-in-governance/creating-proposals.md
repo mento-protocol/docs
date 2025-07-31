@@ -38,7 +38,7 @@ For proposals requiring code execution:
 
 Navigate to [governance.mento.org](https://governance.mento.org/) and click "Create Proposal" in the header or the main proposal list.
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Enter Proposal Details
 
@@ -52,7 +52,7 @@ Proposal Details → Execution Code → Review
 * Maximum impact in minimum words
 * Include proposal type, if possible (e.g., "Parameter Update:", "Treasury Request:")
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 **Description**
 
@@ -62,7 +62,7 @@ Proposal Details → Execution Code → Review
 * Include problem statement, proposed solution, expected impact
 * Link to forum discussion
 
-<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 **Preview Tab**
 
@@ -70,7 +70,7 @@ Proposal Details → Execution Code → Review
 * Verify formatting appears correctly
 * Check all links work properly
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: Add Execution Code
 
@@ -105,7 +105,7 @@ json
 ]
 ```
 
-<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 **Common Actions**:
 
@@ -122,9 +122,9 @@ json
 * ✓ All addresses are correct
 * ✓ Forum discussion linked
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 **Submit Transaction**:
 
@@ -234,7 +234,7 @@ Monitor each stage and be available to answer questions throughout.
 #### Contract References
 
 * [Mento Contracts GitHub](https://github.com/mento-protocol)
-* [Deployed addresses documentation](../../developers/deployments/addresses.md)
+* [Deployed addresses documentation](../../../build-on-mento/deployments/addresses.md)
 
 #### Support Channels
 

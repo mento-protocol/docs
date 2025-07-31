@@ -41,7 +41,7 @@ Before locking:
 
 Navigate to [governance.mento.org/voting-power](https://governance.mento.org/voting-power) and connect your wallet.
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 The interface displays:
 
@@ -57,14 +57,14 @@ The interface displays:
 * Minimum lock amount: 1 MENTO (1e18 wei)
 * The interface shows your maximum available MENTO balance
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 **Select Lock Duration**
 
 * Choose how long you want to lock your MENTO (up to \~2 years)
 * Longer lock periods = slower veMENTO decay = more sustained voting power
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 #### Step 3: Review and Execute Transaction
 
@@ -85,7 +85,7 @@ Now:
 
 You will be prompted to confirm the transaction in your wallet
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 Your veMENTO balance appears immediately after the transaction confirms.
 
@@ -100,7 +100,7 @@ The voting power page displays:
 * **Withdrawable MENTO:** The amount of MENTO that has unlocked and is withdrawable
 * **Expires:** When the lock expires, all your MENTO will be withdrawable
 
-<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 ### Modifying Your Lock
 
@@ -117,7 +117,7 @@ Add more MENTO to your existing lock without changing the unlock date:
 
 This increases your veMENTO proportionally while maintaining your current unlock schedule.
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 #### Extend Your Lock
 
@@ -130,7 +130,7 @@ Extend your unlock date to slow decay and maintain voting power longer:
 
 Extending resets your veMENTO for your locked amount and restarts the decay from the new duration.
 
-<figure><img src="../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 #### Top Up and Extend
 
@@ -143,7 +143,7 @@ Combine both actions to add more MENTO and extend your lock period:
 
 This maximizes your voting power by increasing both the amount locked and the time commitment.
 
-<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 **Key Points**:
 

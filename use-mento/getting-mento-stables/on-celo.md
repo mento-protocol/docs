@@ -1,0 +1,48 @@
+# On Celo
+
+Mento stables are native to the Celo blockchain, giving you multiple options to acquire them directly on-chain. This guide covers the various methods available for obtaining cUSD, cEUR, cREAL, and eXOF on Celo.
+
+## Direct Swaps via Mento Protocol
+
+The most direct way to get Mento stables is by swapping through the Mento protocol itself, which offers oracle-based rates with minimal slippage.
+
+### Using Mento Web App
+
+The easiest method for most users:
+
+1. Visit [app.mento.org](https://app.mento.org/)
+2. Connect your Celo-compatible wallet
+3. Select your input token (CELO, USDC, etc.)
+4. Choose your desired stable (cUSD, cEUR, cREAL, eXOF)
+5. Enter amount and confirm the swap
+
+The Mento app provides:
+
+* Real-time oracle prices
+* Minimal slippage for most trade sizes
+* Direct protocol access without intermediaries
+* Support for all Mento stable assets
+
+## Decentralized Exchanges (DEXs)
+
+Several DEXs on Celo offer liquidity pools with Mento stables:
+
+### Uniswap v3
+
+* Deep liquidity for cUSD/USDC pairs
+* Available at [uniswap.org](https://app.uniswap.org/) (select Celo network)
+* Best for: Large trades, limit orders
+
+### Need Help?
+
+* Join the [Mento Discord](https://discord.gg/mento)
+* Visit [Celo Forum](https://forum.celo.org/) for community support
+* Check [app.mento.org](https://app.mento.org/) for current rates
+
+### Next Steps
+
+* [Using on Mobile](https://www.notion.so/mentolabs/on-mobile) - Get stables via mobile wallets
+* [Bridge from Other Chains](https://www.notion.so/mentolabs/from-other-chains) - Cross-chain options
+* [Via Centralized Exchanges](https://www.notion.so/mentolabs/via-centralized-exchanges) - CEX listings
+
+###

@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Oracles
 
 {% hint style="info" %}

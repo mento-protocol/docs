@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Repository Overview
 
 Here you can find an overview of relevant [Mento GitHub repositories](https://github.com/mento-protocol).&#x20;

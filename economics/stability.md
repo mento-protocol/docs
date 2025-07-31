@@ -37,7 +37,7 @@ Mento uses a virtual automated market maker (vAMM) setup for pricing exchanges b
 
 ### Slippage
 
-Below you can find a summary table of different slippage levels for Mento cUSD/CELO and cUSD/USDC pools configured with deployment parameters ([parameters.md](../developers/deployments/parameters.md "mention")). These values are for a 5min bucket reset period, which can also be understood as the speed of contraction per 5 minutes.&#x20;
+Below you can find a summary table of different slippage levels for Mento cUSD/CELO and cUSD/USDC pools configured with deployment parameters ([parameters.md](../build-on-mento/deployments/parameters.md "mention")). These values are for a 5min bucket reset period, which can also be understood as the speed of contraction per 5 minutes.&#x20;
 
 <table><thead><tr><th width="155">Exchange</th><th>0.02% slippage</th><th>2% slippage</th><th>25% slippage</th></tr></thead><tbody><tr><td>cUSD/Celo</td><td>-</td><td>~165_600 cUSD</td><td>~2_440_800 cUSD</td></tr><tr><td>cUSD/USDC</td><td>11_988_000 cUSD</td><td>-</td><td>-</td></tr></tbody></table>
 
@@ -52,7 +52,7 @@ celo_usd_price = 0.6
 stable_asset_bucket_size = 7_200_000
 ```
 
-which is what the pool has initially been deployed with, as in [parameters.md](../developers/deployments/parameters.md "mention"). The spread is determined by the constant product formula, implemented as&#x20;
+which is what the pool has initially been deployed with, as in [parameters.md](../build-on-mento/deployments/parameters.md "mention"). The spread is determined by the constant product formula, implemented as&#x20;
 
 $$
 amountOut = \frac{tokenOutBucketSize * amountIn * (1-spread) } {tokenInBucketSize + amountIn * (1-spread)}
@@ -75,7 +75,7 @@ celo_usd_price = 1
 stable_asset_bucket_size = 12_000_000
 ```
 
-which is what the pool has initially been deployed with, as in [parameters.md](../developers/deployments/parameters.md "mention"). The slippage is determined by the constant sum formula, implemented as&#x20;
+which is what the pool has initially been deployed with, as in [parameters.md](../build-on-mento/deployments/parameters.md "mention"). The slippage is determined by the constant sum formula, implemented as&#x20;
 
 $$
 amountOut = amountIn * (1 - spread)
@@ -101,4 +101,4 @@ Here you can find a list of parameters that determine the slippage and speed of 
   * 1 day: [https://github.com/mento-protocol/mento-deployment/blob/53b5102119dba566e3f820f9211815a47f1f9a3f/script/upgrades/MU01/Config.sol#L136](https://github.com/mento-protocol/mento-deployment/blob/53b5102119dba566e3f820f9211815a47f1f9a3f/script/upgrades/MU01/Config.sol#L136)
   * global: [https://github.com/mento-protocol/mento-deployment/blob/53b5102119dba566e3f820f9211815a47f1f9a3f/script/upgrades/MU01/Config.sol#L139](https://github.com/mento-protocol/mento-deployment/blob/53b5102119dba566e3f820f9211815a47f1f9a3f/script/upgrades/MU01/Config.sol#L139)
 
-The current on-chain parameters can be found with the [addresses.md](../developers/deployments/addresses.md "mention")and respective block explorers. The deployed parameters can be found in the [parameters.md](../developers/deployments/parameters.md "mention") section.
+The current on-chain parameters can be found with the [addresses.md](../build-on-mento/deployments/addresses.md "mention")and respective block explorers. The deployed parameters can be found in the [parameters.md](../build-on-mento/deployments/parameters.md "mention") section.

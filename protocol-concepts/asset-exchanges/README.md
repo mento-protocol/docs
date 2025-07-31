@@ -10,4 +10,4 @@ Asset swaps in the Mento protocol happen with the aid of these components:
 
 * The [**Broker**](broker.md) is responsible for orchestrating exchanges, managing the treasury, and enforcing trading limits.
 * [**Exchange providers**](exchange-providers.md) are abstract components responsible for pricing asset swaps, that implement a unified interface. The **Broker** relies on them when orchestrating the trades.
-* The [**BiPoolManager**](../../developers/smart-contracts/bipoolmanager.md) is the first **exchange provider** implemented. It is a generalization of the vAMM pools in Mento v1.0.0.
+* The [**BiPoolManager**](../../build-on-mento/smart-contracts/bipoolmanager.md) is the first **exchange provider** implemented. It is a generalization of the vAMM pools in Mento v1.0.0.

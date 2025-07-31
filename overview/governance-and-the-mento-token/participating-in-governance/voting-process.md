@@ -8,7 +8,7 @@ Voting is how you shape Mento's future. Every proposal that affects the protocol
 
 Navigate to [governance.mento.org](https://governance.mento.org/) to view all proposals.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Proposal List
 
@@ -27,7 +27,7 @@ Proposals are listed chronologically with the most recent first.
 
 Click any proposal from the list to view its details. Active proposals display "Active" while completed ones show their final status.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Review Proposal Information
 
@@ -53,7 +53,7 @@ Each proposal page includes:
 * Expected impacts
 * Forum discussion link
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: Cast Your Vote
 
@@ -63,7 +63,7 @@ For active proposals, three voting options appear:
 * **Abstain** - Neutral
 * **Vote NO** - Oppose the proposal
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 Click your choice to initiate the voting transaction.
 
@@ -76,7 +76,7 @@ Click your choice to initiate the voting transaction.
 3. Wait for on-chain confirmation
 4. The interface updates to show "Your vote: \[CHOICE]"
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 Your vote is permanent and cannot be changed.
 
@@ -107,7 +107,7 @@ Proposals must meet minimum participation thresholds:
 * Exact requirement shown (e.g., "Min. 4.6M veMENTO")
 * Quorum is dynamically calculated as a percentage of total veMENTO supply
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 **Outcome Determination**
 
@@ -127,7 +127,7 @@ During active voting, the interface displays:
 * Visual progress bar showing vote weight
 * Real-time updates as votes are cast
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ### **Participation Metrics**
 
@@ -135,7 +135,7 @@ During active voting, the interface displays:
 * Total veMENTO voted vs. available
 * Individual voter addresses and weights
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 ### Understanding Status Changes
 
