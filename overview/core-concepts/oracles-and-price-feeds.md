@@ -135,7 +135,8 @@ This ensures the oracle system evolves with the protocol's needs while maintaini
 
 To understand how oracles enable Mento's operations:
 
-* [Stability Mechanisms](https://www.notion.so/learn-about-mento/core-concepts/stability-mechanisms) - How oracle prices enable arbitrage
-* [Trading Limits & Circuit Breakers](https://www.notion.so/learn-about-mento/core-concepts/trading-limits-circuit-breakers) - Oracle monitoring for safety
-* [Asset Exchanges & Pools](https://www.notion.so/learn-about-mento/core-concepts/asset-exchanges-pools) - Using oracle prices in swaps
+* [Stability Mechanisms](stability-mechanisms.md) - How oracle prices enable arbitrage
+* [Trading Limits & Circuit Breakers](trading-limits-and-circuit-breakers.md) - Oracle monitoring for safety
+* [The Broker & Virtual AMMs](the-broker-and-virtual-amms.md) - Using oracle prices in swaps
 * [GitHub: Oracle Relayer](https://github.com/mento-protocol/oracle-relayer) - Technical implementation details
+

@@ -103,7 +103,7 @@ Mento's protection mechanisms follow key principles:
 
 To understand how these protections fit into Mento's architecture:
 
-* [Oracles & Price Feeds](https://www.notion.so/learn-about-mento/core-concepts/oracles-price-feeds) - The data that triggers protections
-* [Asset Exchanges & Pools](https://www.notion.so/learn-about-mento/core-concepts/asset-exchanges-pools) - What gets protected
-* [Stability Mechanisms](https://www.notion.so/learn-about-mento/core-concepts/stability-mechanisms) - Why protection enables stability
-* [Research & Economics](https://www.notion.so/learn-about-mento/core-concepts/research-economics) - Academic foundations of risk management
+* [Oracles & Price Feeds](oracles-and-price-feeds.md) - The data that triggers protections
+* [The Broker & Virtual AMMs](the-broker-and-virtual-amms.md) - What gets protected
+* [Stability Mechanisms](stability-mechanisms.md) - Why protection enables stability
+* [Research & Economics](research-and-economics.md) - Academic foundations of risk management

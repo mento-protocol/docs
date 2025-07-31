@@ -2,7 +2,7 @@
 
 The Broker serves as the central exchange router in Mento V2, orchestrating all asset swaps through virtual Automated Market Makers (vAMMs). This architecture provides efficient exchanges between stable assets and collateral.
 
-> Note: This page describes Mento V2 architecture, which is currently in production. The next generation (V3) will transition to direct FPMM interactions without the Broker intermediary. See [Fixed-Price Market Makers](https://www.notion.so/Fixed-Price-Market-Makers-FPMMs-22ba2148cc5c803187f4f6e097589625?pvs=21) for the future architecture.
+> Note: This page describes Mento V2 architecture, which is currently in production. The next generation (V3) will transition to direct FPMM interactions without the Broker intermediary. See [Fixed-Price Market Makers](fixed-price-market-makers-fpmms.md) for the future architecture.
 
 ## Architecture Overview
 
@@ -105,16 +105,17 @@ For developers integrating with V2:
 * Check trading limits before large swaps
 * Monitor oracle freshness for accurate pricing
 
-See the [Developer Documentation](https://www.notion.so/build-on-mento) for detailed integration guides and contract addresses.
+See the [Developer Documentation](broken-reference) for detailed integration guides and contract addresses.
 
 ### Next Steps
 
 To understand how V2 components work together:
 
-* [Trading Limits & Circuit Breakers](https://www.notion.so/learn-about-mento/core-concepts/trading-limits-circuit-breakers) - Protection mechanisms
-* [Oracles & Price Feeds](https://www.notion.so/learn-about-mento/core-concepts/oracles-price-feeds) - External price anchoring
-* [The Reserve](https://www.notion.so/learn-about-mento/core-concepts/the-reserve) - Asset backing for exchanges
+* [Trading Limits & Circuit Breakers](trading-limits-and-circuit-breakers.md) - Protection mechanisms
+* [Oracles & Price Feeds](oracles-and-price-feeds.md) - External price anchoring
+* [The Reserve](the-reserve.md) - Asset backing for exchanges
 
 To learn about the future architecture:
 
-* [Fixed-Price Market Makers](https://www.notion.so/learn-about-mento/core-concepts/fixed-price-market-makers) - Mento V3's approach
+* [Fixed-Price Market Makers](fixed-price-market-makers-fpmms.md) - Mento V3's approach
+

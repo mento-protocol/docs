@@ -133,7 +133,8 @@ FPMMs integrate seamlessly with the broader DeFi ecosystem:
 
 To explore how FPMMs enable Mento's ecosystem:
 
-* [Stability Mechanisms](https://www.notion.so/learn-about-mento/core-concepts/stability-mechanisms) - How fixed prices maintain pegs
-* [The Reserve](https://www.notion.so/learn-about-mento/core-concepts/the-reserve) - Collateral backing for exchanges
-* [Oracles & Price Feeds](https://www.notion.so/learn-about-mento/core-concepts/oracles-price-feeds) - Price discovery for FPMMs
-* [Trading Limits & Circuit Breakers](https://www.notion.so/learn-about-mento/core-concepts/trading-limits-circuit-breakers) - Safety mechanisms for pools
+* [Stability Mechanisms](stability-mechanisms.md) - How fixed prices maintain pegs
+* [The Reserve](the-reserve.md) - Collateral backing for exchanges
+* [Oracles & Price Feeds](oracles-and-price-feeds.md) - Price discovery for FPMMs
+* [Trading Limits & Circuit Breakers](trading-limits-and-circuit-breakers.md) - Safety mechanisms for pools
+

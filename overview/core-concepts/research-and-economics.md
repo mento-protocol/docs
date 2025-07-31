@@ -16,7 +16,7 @@ Mento's economics rest on three pillars:
 
 For a comprehensive technical and economic analysis of the Mento Protocol:
 
-📄[https://github.com/mento-protocol/whitepaper](https://github.com/mento-protocol/whitepaper)
+📄 [https://github.com/mento-protocol/whitepaper](https://github.com/mento-protocol/whitepaper)
 
 The whitepaper details the mathematical foundations of FPMMs, liquidity strategies, incentive mechanisms, and the path toward becoming the definitive on-chain FX layer.
 
@@ -28,18 +28,15 @@ Explore specific aspects of Mento's economic design:
 
 Deep dive into the mathematical models behind Mento's stability mechanisms, including simulations of various market conditions and stress scenarios.
 
-### [Risk Assessment](https://docs.mento.org/mento/economics/risks)
+### [Risk Assessment](../security-and-risk/overview.md)
 
 Comprehensive analysis of protocol risks including oracle manipulation, inventory imbalances, and extreme market events, along with mitigation strategies.
-
-#### Research Papers (?)
-
-Collection of academic research, economic modeling, and theoretical foundations that inform Mento's design decisions.
 
 ## Contributing to Research
 
 The Mento community welcomes economic research and analysis. If you're interested in contributing:
 
 * Review our [GitHub repositories](https://github.com/mento-protocol)
-* Join discussions in our [research forum](https://www.notion.so/Research-Economics-22ba2148cc5c8004bebff001d47d0e84?pvs=21)
-* Propose improvements through [governance](https://www.notion.so/learn-about-mento/governance)
+* Join discussions in our [forum](https://forum.mento.org/)
+* Propose improvements through [governance](https://governance.mento.org/)
+
