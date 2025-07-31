@@ -2,23 +2,19 @@
 
 Select the guide that matches your needs to get started with Mento Protocol.
 
-### For Users
+## For Users
 
 Learn how to swap between stable assets and interact with Mento-powered applications.
 
-Get Started →
+[Get Started →](../../use-mento/getting-mento-stables/)
 
-### For Developers
+## For Developers
 
 Build on Mento Protocol. Access smart contract documentation, integration guides, and code examples for creating applications with multi-currency stable assets.
 
-View Developer Docs →
+[View Developer Docs →](../../build-on-mento/integration-overview/)
 
-### For Traders
 
-Learn how Mento's stability mechanism works and how to execute trades between the protocol and external markets.
-
-Start Trading →
 
 ***
 

@@ -54,7 +54,7 @@ Governance is driven by MENTO token holders through transparent onchain voting. 
 
 ### Where Can I Learn More?
 
-* **Technical documentation**: [docs.mento.org](https://docs.mento.org/mento)
 * **Governance and MENTO token**: [governance.mento.org](https://governance.mento.org/)
 * **Live reserve data and metrics**: [reserve.mento.org](https://reserve.mento.org/)
-* **Research and whitepapers**: [mento-core GitHub](https://github.com/mento-protocol/mento-core/tree/develop/docs/whitepaper)
+* **Whitepaper**: [github.com/mento-protocol](https://github.com/mento-protocol/whitepaper)
+
