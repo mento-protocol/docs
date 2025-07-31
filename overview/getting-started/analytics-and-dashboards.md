@@ -34,13 +34,6 @@ Explore comprehensive on-chain analytics including trading volumes, user activit
 
 _Coming soon: Additional analytics platforms and community-built dashboards_
 
-\<!-- Future additions:
-
-* Token Terminal - Financial metrics and protocol revenue
-* DeFiLlama - TVL and cross-chain metrics
-* CoinGecko/CoinMarketCap - Market data and rankings
-* The purple one, can’t remember the name -->
-
 ### Understanding the Data
 
 For deeper insights into what these metrics mean:

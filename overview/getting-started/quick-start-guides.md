@@ -20,4 +20,4 @@ Build on Mento Protocol. Access smart contract documentation, integration guides
 
 ***
 
-Not sure where to start? Check out our [Core Concepts](https://www.notion.so/New-Docs-Structure-Proposal-22ba2148cc5c80458d6dc28d0baa630b?pvs=21) to understand how Mento works.
+Not sure where to start? Check out our [Core Concepts](../core-concepts/) to understand how Mento works.
