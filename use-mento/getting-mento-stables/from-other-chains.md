@@ -83,12 +83,8 @@ Mento is expanding its decentralized onchain FX capabilities to other blockchain
 ## Need Help?
 
 * Check bridge documentation for specific issues
-* Join [Mento Discord](https://discord.gg/mento) for support
+* Join [Mento Discord](https://discord.com/invite/7CXxS5ub96) for support
 * Verify transactions on [Celo Explorer](https://explorer.celo.org/)
 
-## Next Steps
 
-* [Getting Stables on Celo](https://www.notion.so/mentolabs/on-celo) - Native Celo options
-* [Via Centralized Exchanges](https://www.notion.so/mentolabs/via-centralized-exchanges) - CEX with Celo support
-* [Using the Mento Web App](https://www.notion.so/trading-swapping/using-mento-web-app) - How to swap
 

@@ -35,14 +35,8 @@ Several DEXs on Celo offer liquidity pools with Mento stables:
 
 ### Need Help?
 
-* Join the [Mento Discord](https://discord.gg/mento)
-* Visit [Celo Forum](https://forum.celo.org/) for community support
+* Join the [Mento Discord](https://discord.com/invite/7CXxS5ub96)
 * Check [app.mento.org](https://app.mento.org/) for current rates
 
-### Next Steps
 
-* [Using on Mobile](https://www.notion.so/mentolabs/on-mobile) - Get stables via mobile wallets
-* [Bridge from Other Chains](https://www.notion.so/mentolabs/from-other-chains) - Cross-chain options
-* [Via Centralized Exchanges](https://www.notion.so/mentolabs/via-centralized-exchanges) - CEX listings
 
-###
