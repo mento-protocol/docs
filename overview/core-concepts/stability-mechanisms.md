@@ -75,7 +75,7 @@ These mechanisms operate based on pre-defined parameters, ensuring protection wi
 
 To understand the complete stability architecture:
 
-* [Asset Exchanges & Pools](https://www.notion.so/learn-about-mento/core-concepts/asset-exchanges-pools) - How swaps execute at fixed prices
-* [Oracles & Price Feeds](https://www.notion.so/learn-about-mento/core-concepts/oracles-price-feeds) - Accurate pricing for stability
-* [Trading Limits & Circuit Breakers](https://www.notion.so/learn-about-mento/core-concepts/trading-limits-circuit-breakers) - Protection during volatility
-* [The Reserve](https://www.notion.so/learn-about-mento/core-concepts/the-reserve) - Collateral backing for stable assets
+* [The Broker & Virtual AMMS](the-broker-and-virtual-amms.md) - How swaps execute
+* [Oracles & Price Feeds](oracles-and-price-feeds.md) - Accurate pricing for stability
+* [Trading Limits & Circuit Breakers](trading-limits-and-circuit-breakers.md) - Protection during volatility
+* [The Reserve](the-reserve.md) - Collateral backing for stable assets

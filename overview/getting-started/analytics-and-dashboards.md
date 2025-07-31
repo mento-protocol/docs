@@ -21,7 +21,7 @@ Access real-time data about Mento's reserve composition, collateralization ratio
 
 Explore comprehensive on-chain analytics including trading volumes, user activity, and protocol growth metrics.
 
-[View Dune Dashboard →](https://dune.com/mento)
+[View Dune Dashboard →](https://dune.com/mento-labs-eng/mento-overview)
 
 **Key Metrics:**
 
