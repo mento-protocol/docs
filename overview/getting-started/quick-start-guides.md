@@ -1,6 +1,8 @@
-# Quick Start Guides
+---
+description: Select the guide that matches your needs to get started with Mento Protocol.
+---
 
-Select the guide that matches your needs to get started with Mento Protocol.
+# Quick Start Guides
 
 ## For Users
 
