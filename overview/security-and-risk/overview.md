@@ -70,7 +70,7 @@ Public dashboards display real-time metrics, allowing anyone to monitor for anom
 
 To explore specific aspects of Mento's security architecture:
 
-* [Audit Reports](https://www.notion.so/mentolabs/audit-reports) - Comprehensive security assessments from leading firms
-* [Trading Limits & Circuit Breakers](https://www.notion.so/trading-limits-circuit-breakers) - Deep dive into protective mechanisms
-* [Watchdogs & Safety](https://www.notion.so/watchdogs-safety) - Governance safeguards and veto powers
-* [Analytics & Dashboards](https://www.notion.so/analytics-dashboards) - Monitor security metrics in real-time
+* [Audit Reports](audit-reports.md) - Comprehensive security assessments from leading firms
+* [Trading Limits & Circuit Breakers](../core-concepts/trading-limits-and-circuit-breakers.md) - Deep dive into protective mechanisms
+* [Watchdogs & Safety](../governance-and-the-mento-token/watchdogs-and-safety.md) - Governance safeguards and veto powers
+* [Analytics & Dashboards](../getting-started/analytics-and-dashboards.md) - Monitor metrics in real-time
