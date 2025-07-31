@@ -83,7 +83,7 @@ These integrations create a cohesive system where the Reserve's health directly 
 
 To understand how the Reserve enables Mento's operations:
 
-* [Stability Mechanisms](https://www.notion.so/learn-about-mento/core-concepts/stability-mechanisms) - How reserves enable elastic supply
-* [Asset Exchanges & Pools](https://www.notion.so/learn-about-mento/core-concepts/asset-exchanges-pools) - Reserve integration with exchanges
-* [Research & Economics](https://www.notion.so/learn-about-mento/core-concepts/research-economics) - Economic theory behind reserve management
-* [Analytics & Dashboards](https://www.notion.so/learn-about-mento/getting-started/analytics-dashboards) - Monitor reserve metrics in real-time
+* [Stability Mechanisms](stability-mechanisms.md) - How reserves enable elastic supply
+* [Research & Economics](research-and-economics.md) - Economic theory behind reserve management
+* [Analytics & Dashboards](../getting-started/analytics-and-dashboards.md) - Monitor reserve metrics in real-time
+
