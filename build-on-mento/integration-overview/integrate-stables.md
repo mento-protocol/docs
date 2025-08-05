@@ -77,7 +77,7 @@ Use your existing ERC-20 handling for:
 
 Mento stables maintain a peg with their respective fiat currencies under normal conditions (e.g., 1 cUSD ≈ 1 USD, 1 cEUR ≈ 1 EUR).
 
-For precise exchange rates, especially during high volatility, [query Sorted Oracles](https://www.notion.so/Oracles-Price-Feeds-22ba2148cc5c80128657c57547578625?pvs=21).
+For precise exchange rates, especially during high volatility, [query Sorted Oracles](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/stability/SortedOracles.sol).
 
 ### Step 5: Enable Cross-Stable Swaps (Optional)
 
@@ -144,7 +144,7 @@ const swapTx = await signer.sendTransaction(swapTxObj);
 const swapTxReceipt = await swapTx.wait();
 ```
 
-See [Integrate the Broker](https://www.notion.so/mentolabs/integrate-broker) for detailed swap integration.
+See [Integrate the Broker](integrate-the-broker.md) for detailed swap integration.
 
 ## Working Examples
 
@@ -190,7 +190,7 @@ Mento stables are native to Celo. For cross-chain use cases, work with official 
 
 ## Next Steps
 
-* For swap functionality, see [Integrate the Broker](https://www.notion.so/mentolabs/integrate-broker)
-* For accurate price feeds, see [Integrate Oracles](https://www.notion.so/mentolabs/integrate-oracles)
-* For technical reference, see [Smart Contracts](https://www.notion.so/smart-contracts)
+* For swap functionality, see [Integrate the Broker](integrate-the-broker.md)
+* For accurate price feeds, see [Integrate Oracles](integrate-oracles.md)
+* For technical reference, see [Smart Contracts](../smart-contracts/)
 
