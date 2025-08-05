@@ -8,11 +8,11 @@ Mento provides a decentralized platform for multi-currency stable assets with bu
 
 Add support for Mento stable assets in your DeFi protocol, wallet, payment system, or exchange. Learn how to handle cUSD, cEUR, cREAL, and eXOF tokens in your application.
 
-### [Integrate the Broker](./#integrate-the-broker)
+### [Integrate the Broker](integrate-the-broker.md)
 
 Connect directly to Mento's on-chain exchange infrastructure for gas-efficient swaps between stable assets. Build aggregators, trading interfaces, or arbitrage systems using Mento liquidity.
 
-### [Integrate Oracles](./#integrate-oracles)
+### [Integrate Oracles](integrate-oracles.md)
 
 Leverage Mento's decentralized price feed infrastructure for reliable FX rates. Use real-time data for DeFi protocols, analytics platforms, or risk management systems.
 
