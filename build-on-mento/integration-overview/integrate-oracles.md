@@ -205,6 +205,6 @@ const rate = Number(result.numerator) / Number(result.denominator);
 
 ## Next Steps
 
-* For swap functionality using oracle rates, see [Integrate the Broker](https://www.notion.so/mentolabs/integrate-broker)
-* For contract addresses and ABIs, see [Smart Contracts](https://www.notion.so/smart-contracts)
+* For swap functionality using oracle rates, see [Integrate the Broker](integrate-the-broker.md)
+* For contract addresses and ABIs, see [Smart Contracts](../smart-contracts/)
 
