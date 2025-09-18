@@ -79,6 +79,7 @@
 ## Economics
 
 * [Stability](economics/stability.md)
+* [Incentive Structure](economics/incentive-structure.md)
 * [Risks](economics/risks.md)
 * [Research](economics/research.md)
 
