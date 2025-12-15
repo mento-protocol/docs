@@ -21,17 +21,17 @@ const signer = new Wallet(privateKey, provider);
 const mento = await Mento.create(signer);
 ```
 
-We will follow along the previous of example of swapping `1 CELO` token into `cUSD`, so we can get a price quote in the same way we previously did:
+We will follow along the previous of example of swapping `1 CELO` token into `USDm`, so we can get a price quote in the same way we previously did:
 
 ```typescript
 const celoTokenAddr = "0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9";
-const cUSDTokenAddr = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
-const tokenUnits = 18; // both CELO and cUSD have 18 decimal places
+const USDmTokenAddr = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
+const tokenUnits = 18; // both CELO and USDm have 18 decimal places
 
 const amountIn = utils.parseUnits("1", tokenUnits);
 const quoteAmountOut = await mento.getAmountOut(
   celoTokenAddr,
-  cUSDTokenAddr,
+  USDmTokenAddr,
   amountIn
 );
 ```
@@ -58,7 +58,7 @@ After the transaction is included in a block and the allowance is increased we c
 const expectedAmountOut = quoteAmountOut.mul(99).div(100); // allow 1% slippage from quote
 const swapTxObj = await mento.swapIn(
   celoTokenAddr,
-  cUSDTokenAddr,
+  USDmTokenAddr,
   amountIn,
   expectedAmountOut
 );

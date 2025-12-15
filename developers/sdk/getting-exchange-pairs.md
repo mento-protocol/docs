@@ -32,7 +32,7 @@ Which will output the list of pairs alongside their token addresses and symbols 
   [
     {
       address: '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1',
-      symbol: 'cUSD'
+      symbol: 'USDm'
     },
     {
       address: '0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9',
@@ -42,7 +42,7 @@ Which will output the list of pairs alongside their token addresses and symbols 
   [
     {
       address: '0x10c892A6EC43a53E45D0B916B4b7D383B1b78C0F',
-      symbol: 'cEUR'
+      symbol: 'EURm'
     },
     {
       address: '0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9',

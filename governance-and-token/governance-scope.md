@@ -24,7 +24,7 @@ The Mento Protocol includes the following upgradeable Smart Contracts (proxies a
 * [BrokerProxy](https://celoscan.io/address/0x777A8255cA72412f0d706dc03C9D1987306B4CaD)
 * [MedianDeltaBreaker](https://celoscan.io/address/0x49349F92D2B17d491e42C8fdB02D19f072F9B5D9)
 * [ReserveProxy](https://celoscan.io/address/0x9380fA34Fd9e4Fd14c06305fd7B6199089eD4eb9)
-* [StableTokenXXXProxy](../build-on-mento/deployments/addresses.md) (one per Mento Stablecoin, i.e. cUSD)
+* [StableTokenXXXProxy](../build-on-mento/deployments/addresses.md) (one per Mento Stablecoin, i.e. USDm)
 * [ValueDeltaBreaker](https://celoscan.io/address/0x4DBC33B3abA78475A5AA4BC7A5B11445d387BF68)
 
 A Celo Governance Proposal to transfer ownership over all the above proxies and their implementations to Mento Governance will be submitted soon.

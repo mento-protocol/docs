@@ -8,7 +8,7 @@ Valora is a mobile-first crypto wallet that makes saving, sending and spending c
 
 #### Key Features
 
-* **Full Mento stable support**: Hold cUSD, cEUR, and cREAL in your Valora wallet
+* **Full Mento stable support**: Hold USDm, EURm, and BRLm in your Valora wallet
 * **Simple swaps**: Convert between CELO and Mento stables directly in-app
 * **Phone number sending**: Send to contacts using just their phone number
 * **DeFi integration**: Access Celo DeFi protocols directly from the wallet
@@ -21,7 +21,7 @@ Valora is a mobile-first crypto wallet that makes saving, sending and spending c
    * Bank transfer (through partners)
    * Crypto transfer from another wallet
    * On-ramp providers like Ramp
-4. Swap CELO to cUSD, cEUR, cREAL and others using the in-app exchange
+4. Swap CELO to USDm, EURm, BRLm and others using the in-app exchange
 
 Learn more at [valora.xyz](https://valora.xyz/)
 

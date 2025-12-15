@@ -37,13 +37,13 @@ Mento uses a virtual automated market maker (vAMM) setup for pricing exchanges b
 
 ### Slippage
 
-Below you can find a summary table of different slippage levels for Mento cUSD/CELO and cUSD/USDC pools configured with deployment parameters ([parameters.md](../build-on-mento/deployments/parameters.md "mention")). These values are for a 5min bucket reset period, which can also be understood as the speed of contraction per 5 minutes.&#x20;
+Below you can find a summary table of different slippage levels for Mento USDm/CELO and USDm/USDC pools configured with deployment parameters ([parameters.md](../build-on-mento/deployments/parameters.md "mention")). These values are for a 5min bucket reset period, which can also be understood as the speed of contraction per 5 minutes.&#x20;
 
-<table><thead><tr><th width="155">Exchange</th><th>0.02% slippage</th><th>2% slippage</th><th>25% slippage</th></tr></thead><tbody><tr><td>cUSD/Celo</td><td>-</td><td>~165_600 cUSD</td><td>~2_440_800 cUSD</td></tr><tr><td>cUSD/USDC</td><td>11_988_000 cUSD</td><td>-</td><td>-</td></tr></tbody></table>
+<table><thead><tr><th width="155">Exchange</th><th>0.02% slippage</th><th>2% slippage</th><th>25% slippage</th></tr></thead><tbody><tr><td>USDm/Celo</td><td>-</td><td>~165_600 USDm</td><td>~2_440_800 USDm</td></tr><tr><td>USDm/USDC</td><td>11_988_000 USDm</td><td>-</td><td>-</td></tr></tbody></table>
 
 In the following paragraphs, you can find more detailed information about what levels of slippage will be incurred in Mento pools. We will present some figures related to slippage and possible contraction amounts over time, which can also be interpreted as speed of contraction.&#x20;
 
-Let us look at the cUSD/CELO constant product pool configured to
+Let us look at the USDm/CELO constant product pool configured to
 
 ```notebook-python
 spread = 0.0025 # 0.25%
@@ -58,15 +58,15 @@ $$
 amountOut = \frac{tokenOutBucketSize * amountIn * (1-spread) } {tokenInBucketSize + amountIn * (1-spread)}
 $$
 
-contractingWhat you can see in the plot below is the slippage a trade would experience on the y-axis for a given cUSD trade size on the x-axis. A \~165\_600 cUSD exchange to CELO would experience 2% slippage, while a \~2\_440\_800 cUSD exchange would experience 25% slippage for one 5min bucket reset period. When thinking about speed of contraction, at 2% slippage the Mento cUSD/CELO pool allows contracting at a speed of \~165\_600 cUSD/5min, and at 25% slippage at a speed of \~2\_440\_800 cUSD/5min.
+contractingWhat you can see in the plot below is the slippage a trade would experience on the y-axis for a given USDm trade size on the x-axis. A \~165\_600 USDm exchange to CELO would experience 2% slippage, while a \~2\_440\_800 USDm exchange would experience 25% slippage for one 5min bucket reset period. When thinking about speed of contraction, at 2% slippage the Mento USDm/CELO pool allows contracting at a speed of \~165\_600 USDm/5min, and at 25% slippage at a speed of \~2\_440\_800 USDm/5min.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-03-16 at 10.48.54.png" alt=""><figcaption><p>cUSD/Celo slippage per 5 minute bucket update</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-03-16 at 10.48.54.png" alt=""><figcaption><p>USDm/Celo slippage per 5 minute bucket update</p></figcaption></figure>
 
-The next plot shows how much cUSD can be exchanged or contracted with CELO at 2% slippage including spread over time.
+The next plot shows how much USDm can be exchanged or contracted with CELO at 2% slippage including spread over time.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-03-16 at 10.48.11.png" alt=""><figcaption><p>cUSD/Celo amount of cUSD contraction at 2% slippage over time</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-03-16 at 10.48.11.png" alt=""><figcaption><p>USDm/Celo amount of USDm contraction at 2% slippage over time</p></figcaption></figure>
 
-Let us look at the cUSD/axlUSDC constant sum pool configured to
+Let us look at the USDm/axlUSDC constant sum pool configured to
 
 ```notebook-python
 spread = 0.0002 # 0.25%
@@ -81,13 +81,13 @@ $$
 amountOut = amountIn * (1 - spread)
 $$
 
-What you can see in the plot below is the slippage a trade would experience on the y-axis for a given cUSD trade size on the x-axis. Since this is a constant sum pool, the whole bucket size of 12\_000\_000 cUSD can be traded at zero slippage, only paying the spread of 0.02%. When thinking about speed of contraction, at 0.02% slippage the Mento cUSD/axlUSDC pool allows contracting at a speed of \~12\_000\_000 cUSD/5min.
+What you can see in the plot below is the slippage a trade would experience on the y-axis for a given USDm trade size on the x-axis. Since this is a constant sum pool, the whole bucket size of 12\_000\_000 USDm can be traded at zero slippage, only paying the spread of 0.02%. When thinking about speed of contraction, at 0.02% slippage the Mento USDm/axlUSDC pool allows contracting at a speed of \~12\_000\_000 USDm/5min.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-03-16 at 10.48.21.png" alt=""><figcaption><p>cUSD/USDC slippage per 5 minute bucket update</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-03-16 at 10.48.21.png" alt=""><figcaption><p>USDm/USDC slippage per 5 minute bucket update</p></figcaption></figure>
 
-The next plot shows how much cUSD can be exchanged or contracted with USDC at 0.02% slippage including spread over time.
+The next plot shows how much USDm can be exchanged or contracted with USDC at 0.02% slippage including spread over time.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-03-16 at 10.48.29 (1).png" alt=""><figcaption><p>amount of cUSD contraction at 2% slippage over time</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-03-16 at 10.48.29 (1).png" alt=""><figcaption><p>amount of USDm contraction at 2% slippage over time</p></figcaption></figure>
 
 ### Economics Parameters
 

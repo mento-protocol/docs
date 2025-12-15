@@ -45,7 +45,7 @@ Most users acquire Mento stables by:
 3. **Swap for Mento Stables**
    * Visit [app.mento.org](https://app.mento.org/)
    * Connect wallet with CELO
-   * Swap CELO → cUSD, cEUR, etc
+   * Swap CELO → USDm, EURm, etc
 
 ## Stablecoin Route
 

@@ -36,10 +36,10 @@ List Mento stable pairs for spot trading or include in routing algorithms.
 Add the contract addresses for the stables you want to support:
 
 ```jsx
-// Example addresses (cUSD and cEUR on mainnet)
+// Example addresses (USDm and EURm on mainnet)
 const STABLE_ADDRESSES = {
-  cUSD: "0x765DE816845861e75A25fCA122bb6898B8B1282a",
-  cEUR: "0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73",
+  USDm: "0x765DE816845861e75A25fCA122bb6898B8B1282a",
+  EURm: "0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73",
   // ... add other stables as needed
 };
 ```
@@ -52,11 +52,11 @@ Add token symbols, decimals, and display information:
 
 ```tsx
 const TOKEN_CONFIG = {
-  cUSD: {
-    symbol: "cUSD",
+  USDm: {
+    symbol: "USDm",
     decimals: 18,
-    name: "Celo Dollar",
-    icon: "path/to/cusd-icon.svg"
+    name: "Mento Dollar",
+    icon: "path/to/usdm-icon.svg"
   },
   // ... other tokens*
 };
@@ -75,7 +75,7 @@ Use your existing ERC-20 handling for:
 
 ### Step 4: Handle Fiat Display Values
 
-Mento stables maintain a peg with their respective fiat currencies under normal conditions (e.g., 1 cUSD ≈ 1 USD, 1 cEUR ≈ 1 EUR).
+Mento stables maintain a peg with their respective fiat currencies under normal conditions (e.g., 1 USDm ≈ 1 USD, 1 EURm ≈ 1 EUR).
 
 For precise exchange rates, especially during high volatility, [query Sorted Oracles](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/stability/SortedOracles.sol).
 
@@ -89,8 +89,8 @@ import { Mento } from "@mento-protocol/mento-sdk";
 
 // Using Mento SDK V1 & Ethers V5
 const STABLE_ADDRESSES = {
-  cUSD: "0x765DE816845861e75A25fCA122bb6898B8B1282a",
-  cEUR: "0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73",
+  USDm: "0x765DE816845861e75A25fCA122bb6898B8B1282a",
+  EURm: "0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73",
   // ... add other stables as needed*
 };
 
@@ -103,8 +103,8 @@ const mento = await Mento.create(signer);
 
 // Find the tradable pair path for the tokens to swap through the router
 const tradablePair = await mento.findPairForTokens(
-  STABLE_ADDRESSES.cUSD,
-  STABLE_ADDRESSES.cEUR
+  STABLE_ADDRESSES.USDm,
+  STABLE_ADDRESSES.EURm
 );
 
 // Convert 0.01 tokens to Wei (18 decimal places: 0.01 * 10^18)
@@ -112,15 +112,15 @@ const amountIn = utils.parseUnits("0.01", 18);
 
 // Get a quote for a swap with the given amount in
 const quoteAmountOut = await mento.getAmountOut(
-  STABLE_ADDRESSES.cUSD,
-  STABLE_ADDRESSES.cEUR,
+  STABLE_ADDRESSES.USDm,
+  STABLE_ADDRESSES.EURm,
   amountIn,
   tradablePair
 );
 
-// Increase cUSD allowance of the broker by amount in
+// Increase USDm allowance of the broker by amount in
 const allowanceTxObj = await mento.increaseTradingAllowance(
-    cUSDTokenAddr,
+    USDmTokenAddr,
     amountIn,
     tradablePair
   );
@@ -128,12 +128,12 @@ const allowanceTx = await signer.sendTransaction(allowanceTxObj);
 const allowanceReceipt = await allowanceTx.wait();
 
 // Allow 1% slippage from quote
-const expectedAmountOut = quoteAmountOut.mul(99).div(100); 
+const expectedAmountOut = quoteAmountOut.mul(99).div(100);
 
 // Build swap tx
 const swapTxObj = await mento.swapIn(
-  cUSDTokenAddr,
-  cEURTokenAddr,
+  USDmTokenAddr,
+  EURmTokenAddr,
   amountIn,
   expectedAmountOut,
   tradablePair
@@ -173,7 +173,7 @@ When supporting multiple operations, consider batching transactions or using mul
 
 Mento stables are native to Celo. For cross-chain use cases, work with official bridges:
 
-* Wormhole (cUSD)
+* Wormhole (USDm)
 * Portal Bridge
 
 ## Testing

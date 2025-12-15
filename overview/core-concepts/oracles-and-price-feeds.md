@@ -48,11 +48,11 @@ Rate feed identifiers are the report targets for oracles. They feature in govern
 
 | **Rate Feed** | **ID**                                     | **Explanation**                  |
 | ------------- | ------------------------------------------ | -------------------------------- |
-| CELO/USD      | 0x765DE816845861e75A25fCA122bb6898B8B1282a | The cUSD contract address        |
-| CELO/EUR      | 0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73 | The cEUR contract address        |
-| CELO/BRL      | 0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787 | The cREAL contract address       |
-| CELO/XOF      | 0x73F93dcc49cB8A239e2032663e9475dd5ef29A08 | The eXOF contract address        |
-| CELO/KES      | 0x456a3D042C0DbD3db53D5489e98dFb038553B0d0 | The cKES contract address        |
+| CELO/USD      | 0x765DE816845861e75A25fCA122bb6898B8B1282a | The USDm contract address        |
+| CELO/EUR      | 0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73 | The EURm contract address        |
+| CELO/BRL      | 0xe8537a3d056DA446677B9E9d6c5dB704EaAb4787 | The BRLm contract address        |
+| CELO/XOF      | 0x73F93dcc49cB8A239e2032663e9475dd5ef29A08 | The XOFm contract address        |
+| CELO/KES      | 0x456a3D042C0DbD3db53D5489e98dFb038553B0d0 | The KESm contract address        |
 | CELO/PHP      | 0xaFc02368A174Cd08e01c373de6D0B537CECF43C8 | Derived from "relayed:CELOPHP"\* |
 | CELO/COP      | 0x32ABF1cBdFdcD56790f427694be2658d4B1A83bC | Derived from "relayed:CELOCOP"\* |
 | CELO/GHS      | 0x5AD3817fE11971c1fd79c7D88485af560eD5470C | Derived from "relayed:CELOGHS"\* |

@@ -6,7 +6,7 @@ Mento provides a decentralized platform for multi-currency stable assets with bu
 
 ### [Integrate Stables](integrate-stables.md)
 
-Add support for Mento stable assets in your DeFi protocol, wallet, payment system, or exchange. Learn how to handle cUSD, cEUR, cREAL, and eXOF tokens in your application.
+Add support for Mento stable assets in your DeFi protocol, wallet, payment system, or exchange. Learn how to handle USDm, EURm, BRLm, and XOFm tokens in your application.
 
 ### [Integrate the Broker](integrate-the-broker.md)
 

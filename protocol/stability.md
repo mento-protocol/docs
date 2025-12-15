@@ -12,7 +12,7 @@ In economic terms, Mento stable assets follow an elastic coin supply rule that s
 
 Currently this expansion and contraction is possible with the reserve assets CELO and USDCet, which isUSDC bridged via the Portal Token Bridge of Wormhole.
 
-Let us dive into an example with the Celo Dollar: When demand for the Mento Dollar rises and the market price is above the $1 peg, arbitrageurs can profit by purchasing $1 worth of CELO or USDCet, exchanging it with the protocol for one Mento Dollar, and selling that Mento Dollar for the market price, pocketing the difference. Similarly, when demand for the Mento Dollar falls and the market price is below the peg, arbitrageurs can profit by purchasing a Mento Dollar for the market price, exchanging it with the protocol for $1 worth of CELO or USDCet, and selling the reserve asset to the market. These actions drive the market price of the Mento Dollar back towards $1.
+Let us dive into an example with the Mento Dollar: When demand for the Mento Dollar rises and the market price is above the $1 peg, arbitrageurs can profit by purchasing $1 worth of CELO or USDCet, exchanging it with the protocol for one Mento Dollar, and selling that Mento Dollar for the market price, pocketing the difference. Similarly, when demand for the Mento Dollar falls and the market price is below the peg, arbitrageurs can profit by purchasing a Mento Dollar for the market price, exchanging it with the protocol for $1 worth of CELO or USDCet, and selling the reserve asset to the market. These actions drive the market price of the Mento Dollar back towards $1.
 
 
 

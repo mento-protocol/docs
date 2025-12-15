@@ -1,6 +1,6 @@
 # From Other Chains
 
-Bridge assets from other blockchains to Celo and swap them for Mento stables. This guide covers the main bridging options and step-by-step instructions for obtaining cUSD, cEUR, cREAL, and eXOF from external chains.
+Bridge assets from other blockchains to Celo and swap them for Mento stables. This guide covers the main bridging options and step-by-step instructions for obtaining USDm, EURm, BRLm, and XOFm from external chains.
 
 ## Overview
 
@@ -9,7 +9,7 @@ To get Mento stables from other chains, you'll typically:
 1. Bridge assets (like USDC, ETH, or other tokens) to Celo
 2. Swap the bridged assets for Mento stables using the Mento protocol or DEXs
 
-The most common path is bridging USDC and then swapping it 1:1 for cUSD through Mento.
+The most common path is bridging USDC and then swapping it 1:1 for USDm through Mento.
 
 ## Squid Router
 
@@ -26,7 +26,7 @@ SquidRouter V2 serves as an easy tool to access Mento stables. It allows you to 
 2. Connect your wallet
 3. Select source chain and token (e.g., USDC on Ethereum)
 4. Select Celo as destination chain
-5. Choose your desired Mento stable (cUSD, cEUR, etc.)
+5. Choose your desired Mento stable (USDm, EURm, etc.)
 6. Review rates and fees
 7. Approve and execute the swap
 
