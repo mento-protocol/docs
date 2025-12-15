@@ -99,7 +99,7 @@ _Reverts if the limits are exceeded._
 function reset(struct TradingLimits.State self, struct TradingLimits.Config config) internal pure returns (struct TradingLimits.State)
 ```
 
-Reset an existing state with a new config. It keps netflows of enabled limits and resets when disabled. It resets all timestamp checkpoints to reset time-window limits on next swap.
+Reset an existing state with a new config. It keeps netflows of enabled limits and resets when disabled. It resets all timestamp checkpoints to reset time-window limits on next swap.
 
 ### Parameters
 

@@ -66,7 +66,7 @@ function shouldReset(address rateFeedID) external returns (bool resetBreaker)
 
 Check if the criteria to automatically reset the breaker have been met.
 
-_Allows the definition of additional critera to check before reset. If no additional criteria is needed set to !shouldTrigger();_
+_Allows the definition of additional criteria to check before reset. If no additional criteria is needed set to !shouldTrigger();_
 
 ### Parameters
 

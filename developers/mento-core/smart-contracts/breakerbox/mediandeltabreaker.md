@@ -122,7 +122,7 @@ Check if the current median report rate for a rate feed change, relative to the 
 function shouldReset(address rateFeedID) external returns (bool resetBreaker)
 ```
 
-Checks whether or not the conditions have been met for the specifed rate feed to be reset.
+Checks whether or not the conditions have been met for the specified rate feed to be reset.
 
 ### Return Values
 
