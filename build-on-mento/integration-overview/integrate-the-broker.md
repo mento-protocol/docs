@@ -91,14 +91,14 @@ for (uint i = 0; i < providers.length; i++) {
 Before executing a swap, query the expected output amount:
 
 ```solidity
-// Example: Quote cUSD to cEUR swap
-uint256 amountIn = 100 * 1e18; // 100 cUSD
+// Example: Quote USDm to EURm swap
+uint256 amountIn = 100 * 1e18; // 100 USDm
 
 uint256 expectedOut = broker.getAmountOut(
     exchangeProvider,  // Address of the exchange provider
     exchangeId,        // ID of the specific exchange pool
-    cUSD_ADDRESS,      // Token in
-    cEUR_ADDRESS,      // Token out
+    USDm_ADDRESS,      // Token in
+    EURm_ADDRESS,      // Token out
     amountIn          // Amount in
 );
 ```
@@ -138,7 +138,7 @@ For complete integration examples including quote aggregation and multi-hop swap
 
 ### Token Types
 
-* **Stable Assets**: Minted/burned on demand (cUSD, cEUR, etc.)
+* **Stable Assets**: Minted/burned on demand (USDm, EURm, etc.)
 * **Collateral Assets**: Held in reserve (CELO, USDC, etc.)
 * The Broker automatically handles minting/burning for stable assets
 

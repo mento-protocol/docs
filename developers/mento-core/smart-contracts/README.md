@@ -24,7 +24,7 @@ The Mento protocol consists of a set of smart contracts, which are deployed on t
 
 ****[**SortedOracles**](sortedoracles.md) stores and maintains the state of oracle reports. Oracle clients insert their rates into a sorted linked list and the contract checks newly inserted rates against the on-chain circuit breaker BreakerBox.sol. If valid, the rate can be used by the protocol to price swaps, otherwise, trading will be halted.
 
-****[**StableToken**](stabletoken.md) implements ERC-20 tokens and Celo-specific features for stable assets. Each stable asset has its own contract, with StableToken.sol for the Celo Dollar, StableTokenEUR.sol for the Celo Euro, and so forth for new stable assets.
+****[**StableToken**](stabletoken.md) implements ERC-20 tokens and Celo-specific features for stable assets. Each stable asset has its own contract, with StableToken.sol for the Mento Dollar, StableTokenEUR.sol for the Mento Euro, and so forth for new stable assets.
 
 ****[**Reserve**](reserve.md) **** stores and manages any ERC-20 Mento reserve asset on the Celo blockchain. Assets can be accessed and controlled only by Broker.sol as well as a MultiSig, guarded by trading limits from TradingLimits.sol.
 

@@ -20,9 +20,9 @@ Mento stable assets maintain their peg through virtual AMM buckets that reset pe
 
 The system uses two pricing modules:&#x20;
 
-**Constant Sum**: Used for stable-to-stable pairs (like cUSD/cEUR), provides minimal slippage around the oracle rate.
+**Constant Sum**: Used for stable-to-stable pairs (like USDm/EURm), provides minimal slippage around the oracle rate.
 
-**Constant Product**: Used for volatile pairs (like cUSD/CELO), follows a traditional x\*y=k curve.
+**Constant Product**: Used for volatile pairs (like USDm/CELO), follows a traditional x\*y=k curve.
 
 When the virtual buckets drift from the target ratio set by oracles, the system resets them, effectively:
 

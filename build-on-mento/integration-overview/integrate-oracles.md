@@ -43,15 +43,15 @@ See [Smart Contracts > Deployments](https://docs.mento.org/mento/developers/depl
 
 Get FX rates from the sorted oracles contract. Note that rate feed IDs can be either:
 
-* Stable token addresses (legacy format, e.g., cUSD address for CELO/USD)
+* Stable token addresses (legacy format, e.g., USDm address for CELO/USD)
 * Derived addresses for specific currency pairs (e.g., `keccak256("NGNUSD")` for NGN/USD)
 
 > **Note:** For the full list of rate feed IDs check out the [Oracles & Price Feeds page](../../overview/core-concepts/oracles-and-price-feeds.md#active-rate-feeds)
 
 ```solidity
-// Example: Get CELO/USD rate using cUSD address as rate feed ID
+// Example: Get CELO/USD rate using USDm address as rate feed ID
 ISortedOracles oracles = ISortedOracles(SORTED_ORACLES);
-address rateFeedId = cUSD_ADDRESS; // Rate feed ID for CELO/USD
+address rateFeedId = USDm_ADDRESS; // Rate feed ID for CELO/USD
 
 (uint256 numerator, uint256 denominator) = oracles.medianRate(rateFeedId);
 
@@ -62,7 +62,7 @@ uint256 celoPerUsd = numerator / denominator;
 For cross-currency rates:
 
 ```solidity
-// Example: Get NGN/USD rate for cUSD/cNGN pool pricing
+// Example: Get NGN/USD rate for USDm/NGNm pool pricing
 address ngnUsdFeedId = 0xC13D42556f1baeab4a8600C735afcd5344048d3C; // keccak256("relayed:NGNUSD")
 
 // This gives USD per 1 NGN
@@ -92,7 +92,7 @@ function usdToNgn(uint256 usdAmount) public view returns (uint256) {
 }
 ```
 
-These rates are crucial for Mento's pools - they determine the exchange ratios between stable assets (e.g., cUSD/cNGN uses the NGN/USD rate).
+These rates are crucial for Mento's pools - they determine the exchange ratios between stable assets (e.g., USDm/NGNm uses the NGN/USD rate).
 
 ### Step 4: Check Oracle Health
 
