@@ -7,6 +7,7 @@ Short definitions for terms used in the Mento v3 docs. For full context, see [Wh
 | Term | Definition |
 |------|------------|
 | **AMM** (automated market maker) | A pool that sets swap price by a rule (e.g. formula or oracle) rather than an order book. |
+| **CFMM** (constant-function market maker) | An AMM whose **trading function** depends only on **reserves** (e.g. constant product xy = k). Price is derived from reserves and moves only when someone trades; no oracle in the rule. LVR and slippage arise from this design. |
 | **CDP** (collateralized debt position) | A position where you deposit collateral and borrow a stablecoin (e.g. GBPm). Used for synthetic Mento stables. |
 | **Circuit breaker** | A rule that can halt trading when conditions are abnormal (e.g. oracle stale, price move too large). In v3, BreakerBox and OracleAdapter gate when the pool accepts swaps. |
 | **DEX** (decentralized exchange) | A place to swap tokens without a central custodian; trades are executed by smart contracts. |

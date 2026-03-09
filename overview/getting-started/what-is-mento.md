@@ -1,20 +1,59 @@
 # What is Mento?
 
-Mento v3 is a **DEX for onchain FX**: you swap two assets at a rate set by an external **oracle** (a price feed), not by the pool's reserves. This page explains what makes that approach special, how the protocol stays consistent, and how it protects against oracle imprecision.
+Mento v3 is a **DEX for onchain foreign exchange (FX)**. The **goal** is to let users swap stablecoins onchain at the **respective FX rates** — e.g. USDC ↔ GBPm at the USD/GBP rate, or USDC ↔ EURm at USD/EUR — so that onchain execution can compete with off-chain spot FX. This page explains why that requires a different design than standard AMMs, and how Mento v3’s building blocks (FPMMs, protection against oracle imprecision, liquidity strategies) fit together.
 
 ---
 
-## What makes this approach special
+## Why efficient rates matter: attracting spot FX onchain
 
-In a typical AMM, the **pool is the price**: the quoted rate comes from the reserves (e.g. a curve). That design has a cost: when the market moves, the pool is stale, so arbitrageurs trade at better-than-fair prices and **LPs lose value (LVR)**. Traders also get **slippage** along the curve. For **FX and stablecoins**, the fair rate is already known off-chain (CEX, spot). Paying for on-chain price discovery is unnecessary.
+To attract **spot FX volume** onchain, execution must be **at or very close to the FX rate**. If the rate is worse than off-chain (slippage, spread, or systematic mispricing), users stay on CEXs or OTC. So the design question is: how can an onchain pool offer **efficient rates** — i.e. swap at the fair FX rate with minimal leakage?
 
-**Mento uses the known price.** Each pool has an **oracle** that supplies the exchange rate. The pool **always quotes that rate** (minus a fee). So:
+**Standard AMMs do not deliver that.** The next section explains why; then we show how Mento’s oracle-priced design does.
 
-- **No curve-based slippage** — Execution is at the oracle rate regardless of trade size (subject to liquidity and limits).
-- **No LVR from a stale curve** — The pool is never "stale" in the reserve sense; the quote tracks the oracle.
-- **When the oracle rate is precise**, the design is **ideal** for LPs and traders: value is preserved, and no one extracts more than the fee margin.
+---
 
-Risks shift to **oracle quality**: wrong, stale, or manipulated rates. The protocol therefore adds **fees, value protection, trading limits, circuit breakers, and capped rebalance incentives** — all to bound the damage when the oracle is imprecise. See [Safety: when the oracle is wrong](#safety-when-the-oracle-is-wrong) below.
+## Why standard AMMs (CFMMs) don’t work well for FX
+
+Most onchain AMMs are **CFMMs** (constant-function market makers). In a CFMM:
+
+- **State** is reserves \(R\) (the tokens in the pool).
+- **Price is determined only by reserves**: the pool has a **trading function** \(\varphi(R)\) (e.g. constant product \(xy = k\)). A swap is accepted if \(\varphi(R') = \varphi(R)\) after the trade; the **execution price** comes from this rule (e.g. from the gradient of \(\varphi\)).
+- There is **no oracle** in the rule. External prices (e.g. the USD/GBP rate) enter only when **arbitrageurs** trade and move reserves so that the pool price aligns with the market.
+
+So in a CFMM the **pool is the price**: the quoted rate comes from reserves and **moves only when someone trades**. Between trades, when the external market moves, the pool’s quote is **stale**. That creates two problems:
+
+1. **LVR (loss-versus-rebalancing)** — Arbitrageurs trade against the stale quote at better-than-fair prices. LPs effectively “sell low and buy high” relative to the market; the loss to LPs equals arbitrageur profit. For constant-product pools, LVR scales with **price variance** and **marginal liquidity**; it is a structural cost of the design.
+2. **Slippage** — Traders don’t get “the” market rate; they execute **along the curve**. The execution price depends on trade size (price impact). So even for a small trade, the rate can be worse than the FX rate.
+
+**The tension:** In CFMMs, **curvature** (shape of the trading function) governs both slippage and LVR. A **flatter** curve gives **lower slippage** (better for traders) but **higher LVR** (worse for LPs), because the pool moves more when arbitrageurs trade. You **cannot** tune a CFMM so that everyone gets the fair rate with no cost: the same mechanism that sets the price from reserves creates both staleness (LVR) and slippage. So **efficient rates at the FX level are not achievable** with a reserve-only CFMM — either execution is worse than the FX rate (slippage) or LPs bleed (LVR), or both.
+
+**Mento’s answer:** For FX and stablecoins, the **fair rate already exists** off-chain (spot, CEX). So we don’t need the pool to *discover* the price; we need the pool to **use** it. That is what an **oracle-priced** design does.
+
+---
+
+## Mento v3: use the known price (FPMMs)
+
+In Mento v3, each pool uses an **oracle** (an external price feed) that supplies the exchange rate between the two tokens. The pool **always quotes that rate** (minus a fee). There is **no reserve-based curve**: execution is at the oracle, not derived from reserves.
+
+Such a pool is a **Fixed-Price Market Maker (FPMM)**:
+
+- **Swap price = oracle rate** (minus fee). No curve; no curve-based slippage; no LVR from a stale *curve*, because the quote is never stale from reserves — it tracks the oracle.
+- **When the oracle rate is precise**, the design is **ideal**: LPs are not drained by arbitrage (no LVR), and traders get the FX rate (minus fee). The only leakage is the fee and any **oracle imprecision**; the rest of the protocol exists to **protect against** that.
+
+So the **first building block** of Mento v3 is **FPMMs**: they are what allow onchain swaps at the FX rate. The remaining building blocks (limits, circuit breaker, liquidity strategies, fees, value protection) are there to **bound the damage when the oracle is wrong, stale, or manipulated**.
+
+---
+
+## Building blocks of Mento v3 (and why each is needed)
+
+| Building block | What it does | Why it is needed |
+|----------------|--------------|-------------------|
+| **FPMMs** | Pools that quote and execute at the **oracle rate** (minus fee). No reserve-based curve. | To deliver **efficient rates** at the FX level: swap at the known price instead of discovering it from reserves (which causes LVR and slippage in CFMMs). |
+| **One invariant for all operations: I = V / S** | Value at oracle per LP share is preserved on swap, mint, burn, and rebalance. | **Clear accounting** for LPs and **consistency**: when the oracle is precise, no value is extracted beyond the fee; when it isn’t, the rule still bounds what can happen (see value protection). |
+| **Protection against oracle imprecision** | **Trading limits** (per-token net flow caps over 5-min and 1-day windows); **on-chain circuit breaker** (halt trading when oracle is invalid, stale, or when breakers trip); **value protection** (no swap may decrease pool value at the oracle after fees); **fees**. | The oracle can be **wrong**, **stale**, or **manipulated**. Without limits, a bad oracle could let the pool be drained. Without a circuit breaker, trading would continue at an unsafe rate. Value protection and fees cap how much anyone can extract when the rate is slightly off. |
+| **Liquidity strategies (rebalancing)** | When the pool’s inventory drifts too far from the oracle (e.g. too much of one token, too little of the other), **allowlisted** strategies can **rebalance**: take one token from the pool and return the other at the oracle rate (with a **capped incentive**). | Because the pool **quotes the oracle** (no curve), inventory **drifts** with one-sided flow. Without rebalancing, the pool could become too imbalanced to serve trades. Rebalancing is a **service** that keeps the pool usable; only allowlisted strategies can do it, and the incentive is capped so value loss is bounded even if the oracle is wrong during rebalance. |
+
+In short: **FPMMs** give you the rate; **limits and circuit breaker** protect when the oracle is bad; **liquidity strategies** keep inventory in line; **invariant, value protection, and fees** keep accounting clean and extraction bounded.
 
 ---
 
@@ -28,8 +67,6 @@ Every Mento v3 pool keeps a single **invariant** across **all** operations:
 - **S** = total **LP share supply**.
 - **I** = value at the oracle **per LP share**.
 
-So "value per share at the oracle" is the one number the protocol keeps constant. That gives LPs a clear accounting: your share is always worth a well-defined amount at the oracle price.
-
 | Operation | What happens | I = V / S |
 |-----------|--------------|-----------|
 | **Swap** | You send token A, receive token B at oracle rate (minus fee). Reserves change; V and S unchanged. | Preserved |
@@ -37,30 +74,28 @@ So "value per share at the oracle" is the one number the protocol keeps constant
 | **Burn** (remove liquidity) | You burn LP tokens; receive a proportional share of both reserves. V and S decrease. | Preserved |
 | **Rebalance** | An allowlisted strategy takes one token from the pool and returns the other at the oracle rate (with a capped incentive). V and S unchanged. | Preserved |
 
-**When the oracle rate is precise**, this invariant means **no LVR**: the pool's value at the true market price is preserved (after fees), and LPs are not systematically drained by arbitrage. The only leakage is the fee and any **oracle imprecision**; the rest of the design exists to limit that.
+**When the oracle rate is precise**, this invariant implies **no LVR**: the pool’s value at the true market price is preserved (after fees), and LPs are not systematically drained. The only leakage is the fee and any **oracle imprecision**; fees, limits, circuit breaker, and rebalance caps are there to limit that.
 
-For definitions of DEX, oracle, FPMM, reserves, and other terms, see the [Glossary](../glossary.md).
+For definitions of CFMM, DEX, oracle, FPMM, LVR, reserves, and other terms, see the [Glossary](../glossary.md).
 
 ---
 
 ## What you can do on Mento v3
 
-1. **Swap** — Exchange one token for another at the **oracle rate** (minus fee). No curve slippage.
-2. **Add or remove liquidity** — Deposit both tokens in the pool's current ratio and receive **LP tokens** (shares); or burn shares and withdraw your share of the reserves. Value per share at the oracle is preserved.
+1. **Swap** — Exchange one token for another at the **oracle rate** (minus fee). E.g. USDC ↔ GBPm at the USD/GBP rate.
+2. **Add or remove liquidity** — Deposit both tokens in the pool’s current ratio and receive **LP tokens** (shares); or burn shares and withdraw your share of the reserves. Value per share at the oracle is preserved.
 3. **Get Mento stablecoins** — Swap from USDC, USDT, EUROC, etc. in an FPMM pool, or borrow (e.g. GBPm) via a CDP. See [Getting Mento stables](../../use-mento/getting-mento-stables/README.md).
-4. **Trigger rebalances** — If you run a keeper, you can call a liquidity strategy's rebalance function (permissionlessly); the strategy may pay a capped incentive.
+4. **Trigger rebalances** — If you run a keeper, you can call a liquidity strategy’s rebalance function (permissionlessly); the strategy may pay a capped incentive.
 
 ---
 
-## Safety: when the oracle is wrong
+## Safety in short: when the oracle is wrong
 
-The oracle can be **wrong**, **stale**, or **manipulated**. Fees, incentives, limits, and breakers are there to protect the pool and LPs when that happens:
-
-- **Fees** — A small fee per swap reduces the edge for anyone trading on a slightly wrong oracle; the pool keeps the fee.
-- **Value protection** — Every swap must not decrease the pool's **reserve value at the oracle** (after crediting the fee). So no one can extract more than the fee margin even if they try to game the rate.
-- **Trading limits** — Per-token net flow over **5-minute** and **1-day** windows is capped. If the oracle is wrong or stuck, the pool cannot be drained indefinitely.
-- **Circuit breakers** — Trading can be **halted** when the oracle is invalid, stale, or when breakers trip (e.g. trading mode, FX hours). That stops flow while the rate is unsafe.
-- **Rebalance rules** — Only **allowlisted** liquidity strategies can rebalance. The pool enforces a **minimum repayment** so the rebalance incentive is capped; value loss to the pool from a bad oracle during rebalance is bounded.
+- **Fees** — Reduce the edge for anyone trading on a slightly wrong oracle; the pool keeps the fee.
+- **Value protection** — No swap may decrease the pool’s reserve value at the oracle (after fees). No one can extract more than the fee margin.
+- **Trading limits** — Per-token net flow over 5-minute and 1-day windows is capped. The pool cannot be drained indefinitely even if the oracle is wrong or stuck.
+- **Circuit breaker** — Trading can be **halted** when the oracle is invalid, stale, or when breakers trip (e.g. trading mode, FX hours).
+- **Rebalance rules** — Only allowlisted strategies; **minimum repayment** so the rebalance incentive is capped and value loss during rebalance is bounded.
 
 Governance (parameters, allowlists, oracle config) is driven by MENTO token holders.
 
