@@ -8,10 +8,10 @@ Symptom → cause (one line) → fix. For **integrators** (reverts, SDK, address
 
 | Symptom | Cause | Fix |
 |---------|--------|-----|
-| I can’t get stables | Wrong app or chain | Use an app that supports Mento v3 on your chain; see [Getting stables](getting-stables.md). |
+| I can’t get stables | Wrong app or chain | Use the [Mento app](https://app.mento.org/) on a supported chain, or see [Getting stables](getting-stables.md). |
 | Swap failed / reverted | Oracle invalid or trading limit | Oracle may be stale or gated; or the pool’s trading limit for that token was hit. Try again later or smaller amount. See [Build: Troubleshooting](../build/troubleshooting.md). |
 | I got less than I expected | Fee and/or rate | You get oracle rate **minus fee**. Check pool fee; re-quote right before swapping. |
-| Wrong token or pair | Selected wrong asset or pool | Confirm the pair (e.g. CELO/USDm) and that you’re on the right network. |
+| Wrong token or pair | Selected wrong asset or pool | Confirm the pair (e.g. USDC/USDm, EUROC/EURm) and that you're on the right network. |
 
 ---
 

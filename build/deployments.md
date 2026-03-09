@@ -10,7 +10,7 @@ Addresses, parameters, verification. Source: `parameters/suggested_fpmm_*.tex` a
 |----------------------|-------|---------|--------|
 | FPMMFactory | Celo mainnet | *TBD* | From deployment |
 | Router | Celo mainnet | *TBD* | From deployment |
-| Pools (per pair) | Celo mainnet | *TBD* | e.g. USDm/CELO, EURm/EUR, GBPm/USDm |
+| Pools (per pair) | Celo mainnet | *TBD* | e.g. USDC/USDm, EUROC/EURm, GBPm/USDm |
 | OracleAdapter / BreakerBox | Celo mainnet | *TBD* | From deployment |
 | Reserve / CDP strategies | Celo mainnet | *TBD* | Per pool |
 

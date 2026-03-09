@@ -8,7 +8,7 @@
 
 **What:** Send one token, receive the other at **oracle rate** (external price feed minus fee). No curve; value per share unchanged.
 
-**Where:** Celo app (e.g. Valora), any app that integrates v3, or [SDK](../build/sdk.md) / Router. Pair (e.g. CELO/USDm) → amount → confirm.
+**Where:** [Mento app](https://app.mento.org/) (swap at oracle rate), or any app that integrates v3, or [SDK](../build/sdk.md) / Router. Pair (e.g. USDC/USDm, EUROC/EURm) → amount → confirm.
 
 **Fees:** Basis points; you get slightly less than raw oracle rate. Per-pool: [Deployments](../build/deployments.md) or parameters notes.
 
@@ -26,7 +26,7 @@
 
 Mint is at current pool ratio (Uniswap V2–style), not oracle-valued entry.
 
-**Where:** App that supports v3 LP, or Router/contracts ([Build](../build/README.md)). Need both tokens in pool ratio.
+**Where:** [Mento app](https://app.mento.org/) (add/remove liquidity), or any app that supports v3 LP, or Router/contracts ([Build](../build/README.md)). Need both tokens in pool ratio.
 
 **Risks/rewards:** Share of swap fees; exposure to composition (rebalancing keeps band). **Impermanent loss** (LP value vs holding) path-dependent; rebalance capped. [Rebalancing & strategies](../concepts/rebalancing-and-strategies.md), [Reserve & stability](../concepts/reserve-and-stability.md), [Contracts](../build/contracts.md).
 

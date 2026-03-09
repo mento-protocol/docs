@@ -2,11 +2,13 @@
 
 Pools that set price from reserves have a cost: LPs and traders lose to arbitrageurs. For FX the rate already exists—Mento uses it. **Swap at the oracle rate;** when composition drifts, strategies rebalance. No curve slippage, no structural loss to arbs.
 
-**What Mento offers:** FPMMs for stablecoins and FX (Celo and other chains). Swap at oracle rate; allowlisted strategies rebalance; value per share at oracle.
+**What Mento offers:** FPMMs for stablecoins and FX on supported chains. Pools pair Mento stables (USDm, EURm, GBPm) with external stables (USDC, USDT, EUROC, etc.). Swap at oracle rate; allowlisted strategies rebalance; value per share at oracle. The Celo token is not supported.
 
 ---
 
 ## Get started
+
+**Use the app:** [Mento app](https://app.mento.org/) — swap (FPMM), add/remove liquidity, borrow and repay CDP stablecoins, deposit to stability pool.
 
 | I want to… | Go to |
 |------------|--------|

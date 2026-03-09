@@ -27,7 +27,7 @@ More: [FPMMs](../concepts/fpmm.md) (comparison with curve-based AMMs, invariant)
 | USDm, EURm, etc. | Reserve | Mento Dollar, Mento Euro. Reserve supplies liquidity. |
 | GBPm | CDP | Mento Pound. Liquity-style: borrow, repay, stability pool. |
 
-Deployment details and parameters: [Deployments](../build/deployments.md). Pool lists: parameter notes in repo (e.g. `parameters/suggested_fpmm_*.tex`).
+Pools pair Mento stables with external stables (USDC, USDT, EUROC, etc.); the Celo token is not supported. Deployment details and parameters: [Deployments](../build/deployments.md). Pool lists: parameter notes in repo (e.g. `parameters/suggested_fpmm_*.tex`).
 
 *Legacy v2: [v2 docs](https://docs.mento.org).*
 
@@ -35,5 +35,6 @@ Deployment details and parameters: [Deployments](../build/deployments.md). Pool 
 
 ## Next steps
 
+- **Use the app:** [Mento app](https://app.mento.org/) — swap, add/remove liquidity, borrow, repay, stability pool.
 - [Getting stables](../use/getting-stables.md) · [FPMM operations](../use/fpmm-operations.md) · [CDP operations](../use/cdp-operations.md)
 - [FPMMs](../concepts/fpmm.md) · [Oracles](../concepts/oracles.md) · [Rebalancing & strategies](../concepts/rebalancing-and-strategies.md)
