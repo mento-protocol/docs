@@ -1,0 +1,7 @@
+# GitBook: use this folder as the book root when syncing from GitHub.
+# In GitBook (gitbook.com): Configure → GitHub Sync → set "Content path" / "Root directory"
+# to: vendor/docs_old  (so SUMMARY.md and README.md in this folder are used).
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md

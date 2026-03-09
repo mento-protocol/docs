@@ -1,9 +1,5 @@
 # Table of contents
 
-**These docs describe Mento v3.** The table below is ordered for v3: overview first, then Use (swap & liquidity before getting stables), then Build and other sections.
-
----
-
 ## Overview
 
 * [Getting Started](README.md)
@@ -33,8 +29,6 @@
   * [Overview](overview/security-and-risk/overview.md)
   * [Audit Reports](overview/security-and-risk/audit-reports.md)
 
----
-
 ## Use Mento
 
 * [Swap & liquidity (FPMM operations)](use-mento/swap-and-liquidity.md)
@@ -49,8 +43,6 @@
   * [From other Chains](how-to-source-mento-stables/from-other-chains.md)
   * [On-ramp Providers](how-to-source-mento-stables/on-ramp-providers.md)
   * [Automation via MATE](how-to-source-mento-stables/automation-via-mate.md)
-
----
 
 ## Build On Mento
 
@@ -85,16 +77,12 @@
     * [Price Sources](build-on-mento/oracles/oracle-client/price-sources.md)
   * [Becoming an Oracle Provider](build-on-mento/oracles/becoming-an-oracle-provider.md)
 
----
-
 ## Economics
 
 * [Stability](economics/stability.md)
 * [Incentive Structure (v3)](economics/incentive-structure-v3.md)
 * [Risks](economics/risks.md)
 * [Research](economics/research.md)
-
----
 
 ## Governance & Token
 
@@ -105,8 +93,6 @@
 * [Airdrop](governance-and-token/airdrop.md)
 * [Governance Components](governance-and-token/governance-components.md)
 * [Governance Watchdogs](governance-and-token/governance-watchdogs.md)
-
----
 
 ## Protocol Concepts
 
