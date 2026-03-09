@@ -1,60 +1,63 @@
-# What Is Mento?
+# What is Mento?
 
-Mento is a decentralized, multi-currency stable asset protocol built for creating and exchanging stablecoins without relying on centralized intermediaries. At its core is a set of audited smart contracts designed for transparency, decentralization, and capital efficiency, enabling Mento to operate as the most robust onchain foreign exchange (FX) infrastructure.
+This page explains Mento v3 in plain language and defines the main terms you will see in the rest of the docs. No prior knowledge of DeFi or AMMs is assumed.
 
-Unlike traditional fiat-backed stablecoins or fully algorithmic systems, Mento uses a **hybrid stability model**. Each stable asset is backed by a diversified, over-collateralized reserve of digital assets and stabilized through automated market operations. This includes smart contract-based minting, redemption, and price targeting, augmented by **on-chain circuit breakers** and **daily trading limits** that guard against volatility, oracle manipulation, or liquidity crises.
+---
 
-Mento currently supports 15+ stablecoins representing currencies from around the world. All assets are minted and redeemed **permissionlessly**, assuming the underlying blockchain infrastructure is functional. Governance is decentralized and driven by holders of the MENTO token.
+## In one sentence
 
-The protocol is designed to bring FX-grade stability to decentralized finance without sacrificing transparency, resilience, or global accessibility.
+**Mento v3 is a decentralized exchange (DEX) for onchain foreign exchange (FX).** You swap two assets (e.g. USDC and USDm) at a rate that comes from an external **oracle** (a price feed), not from the pool’s reserves. The pool always quotes that oracle rate (minus a small fee), so there is no curve-based slippage and no structural loss to arbitrageurs. When the pool’s inventory gets too one-sided, **allowlisted liquidity strategies** **rebalance** it. The same infrastructure supports **Mento stablecoins** (USDm, EURm, GBPm): you can get them by swapping (e.g. USDC → USDm) or by borrowing (e.g. GBPm via a CDP).
 
-### How Does the Mento Protocol Compare to Traditional Stablecoin Systems?
+---
 
-To understand how Mento differs from traditional stablecoin systems, it helps to examine two areas: the distinction between hybrid and fiat-backed models, and the contrast between single-currency versus multi-currency platforms.
+## Core terms (defined before use)
 
-### Fiat-Backed vs Hybrid Stability
+- **DEX (decentralized exchange):** A place where you can swap tokens without a central custodian. Trades are executed by smart contracts on a blockchain.
+- **FX (foreign exchange):** Exchange of one currency (or currency-like asset) for another at a rate (e.g. USD/EUR, USDC/USDm).
+- **Oracle:** An external source of price data (e.g. “1 USDC = 1 USD”) that the protocol trusts. In Mento v3, each pool uses an oracle to set the **swap rate**; the pool does not derive the rate from its own reserves.
+- **FPMM (Fixed-Price Market Maker):** A type of pool used by Mento v3. The **effective swap price is fixed to the oracle rate** (minus fee). There is no **reserve-based curve**: the pool does not move the price as you trade size. So you get the oracle rate (minus fee) regardless of trade size (subject to liquidity and limits).
+- **Reserves:** The two tokens held by a pool (e.g. USDC and USDm). When you swap, you send one token in and receive the other out; reserves change, but the **value** of the pool at the oracle price is preserved (minus fees).
+- **AMM (automated market maker):** A pool that sets prices by a rule (e.g. a formula) rather than an order book. Many AMMs use a **curve**: the price you get depends on how much you trade (slippage). An **FPMM** is a special case: the price is the oracle, so there is no curve-based slippage.
+- **LVR (loss-versus-rebalancing):** In curve-based AMMs, the pool’s quoted price can be “stale” between trades, so arbitrageurs can trade at better-than-fair prices and LPs lose value. In an FPMM the pool always quotes the oracle, so **LVR from a stale curve is zero**.
+- **Invariant:** A quantity that the protocol keeps unchanged by every allowed operation. In Mento v3 FPMMs, the invariant is **I = V / S**: the pool’s **value at the oracle price** (V) divided by the **total supply of LP shares** (S). So “value per LP share at the oracle” is preserved on swap, mint, burn, and rebalance.
+- **Rebalance:** When the pool holds too much of one token and too little of the other, a **liquidity strategy** (allowed by the protocol) can **rebalance**: it takes the surplus token from the pool and returns the other token at the oracle rate. This restores balance without changing the pool’s value (V) or LP share supply (S). In v3, rebalancing moves the pool toward a **threshold boundary**, not to exact 50/50.
+- **Liquidity strategy:** A smart contract that is **allowlisted** by a pool and is allowed to call the pool’s rebalance function. Different strategies use different liquidity sources (e.g. the **Reserve** for fully backed stables, or a **CDP** for synthetic stables like GBPm).
+- **Trading limits:** Caps on how much can flow in or out of a pool per token over a time window (e.g. 5 minutes, 1 day). They limit how much the pool can be drained even if the oracle is wrong or stale.
+- **Circuit breakers:** Rules that can **halt trading** when conditions are abnormal (e.g. oracle stale, price move too large). In v3, the **BreakerBox** and **OracleAdapter** gate when the pool will accept swaps.
+- **Value protection:** A rule that every swap must not decrease the pool’s **reserve value at the oracle** (after accounting for fees). So no one can extract more value than the fee margin.
 
-Most stablecoins on the market follow a fiat-backed model, where each token is backed 1:1 by traditional currency held in bank accounts managed by centralized entities. While familiar, this setup relies heavily on trusted intermediaries, lacks transparency, and often comes with geographic or regulatory limitations.
+---
 
-The Mento protocol takes a fundamentally different approach. It uses a **hybrid stability model** that combines:
+## What you can do on Mento v3
 
-**Over-collateralized Reserves**: The protocol maintains an over-collateralized ratio across a diversified basket of assets including CELO, BTC, ETH, USDC, and DAI. This substantial over-collateralization provides robust backing during market volatility.
+1. **Swap** — Exchange one token for another at the **oracle rate** (minus fee). No curve slippage; execution is at the oracle.
+2. **Add or remove liquidity** — Deposit both tokens in proportion to the pool’s current reserves and receive **LP (liquidity provider) tokens** (shares); or burn shares and withdraw your share of the reserves. Value per share at the oracle is preserved.
+3. **Get Mento stablecoins** — One use case of the DEX is to obtain USDm, EURm, or GBPm: swap from USDC, USDT, EUROC, etc. in an FPMM pool, or borrow (e.g. GBPm) via a CDP. See [Getting Mento stables](../use-mento/getting-mento-stables/README.md).
+4. **Trigger rebalances** — If you run a keeper, you can call a liquidity strategy’s rebalance function (permissionlessly); the strategy may pay a capped incentive.
 
-**Elastic Supply Management**: When demand increases (price above peg), users can mint new stablecoins by depositing collateral, and when demand decreases (price below peg), users can burn stablecoins to receive collateral. This creates natural arbitrage opportunities that help maintain price stability.
+---
 
-**Comprehensive Safety Systems:** The protocol includes multiple layers of protection:
+## Why “DEX for FX” and not only “stablecoins”?
 
-* Circuit breakers that automatically halt trading during unusual price movements
-* Trading limits that prevent market manipulation through volume restrictions
-* Oracle safety mechanisms using multiple independent price feeds with median aggregation
-* Emergency controls for extreme market conditions
+In v3 the **main product** is the **exchange**: oracle-priced pools where you swap at the rate provided by the oracle. **Mento stablecoins** (USDm, EURm, GBPm) are **one application** of that infrastructure: they are the “Mento” side of many pools (e.g. USDC/USDm, EUROC/EURm). So the docs lead with “swap and liquidity” and “how the DEX works”; “getting Mento stables” is one path on top of that.
 
-This hybrid design provides the transparency and permissionless access of DeFi, while incorporating proven safeguards to deliver dependable, stable assets at a global scale.
+---
 
-### Single-Currency vs Multi-Currency Platform
+## Safety in short
 
-While most stablecoin protocols concentrate on a single currency, usually USD, Mento is designed as a comprehensive, multi-currency FX infrastructure. This unlocks several key advantages:
+- **Value protection** — Swaps cannot reduce the pool’s value at the oracle (after fees).
+- **Trading limits** — Per-token net flow over 5-minute and 1-day windows is capped.
+- **Circuit breakers** — Trading can be suspended when the oracle is invalid, stale, or when breakers trip (e.g. trading mode, FX hours).
+- **Rebalance rules** — Only allowlisted strategies can rebalance; rebalance must improve deviation, not overshoot, and respect a minimum repayment (incentive cap).
 
-* Localized stable assets tailored for global users
-* Direct currency exchanges without needing USD as an intermediary
-* Reduced friction for cross-border payments
-* Native support for emerging market currencies underserved by traditional crypto
+Governance (e.g. parameters, allowlists) is driven by MENTO token holders.
 
-### Permissionless Systems
+---
 
-Mento is built around permissionless access and transparency, the core principles in DeFi. Anyone can interact with the protocol freely. There are no gatekeepers. No KYC. No geo-restrictions. This is a hard break from how traditional financial systems operate.
+## Where to go next
 
-With Mento, anyone can:
+- **Use the DEX:** [Swap & liquidity (FPMM operations)](../../use-mento/swap-and-liquidity.md) · [Getting Mento stables](../../use-mento/getting-mento-stables/README.md)
+- **Concepts:** [Fixed-Price Market Makers (FPMMs)](../core-concepts/fixed-price-market-makers-fpmms.md) · [Oracles & price feeds](../core-concepts/oracles-and-price-feeds.md) · [Trading limits & circuit breakers](../core-concepts/trading-limits-and-circuit-breakers.md)
+- **Build:** [Integration overview](../../build-on-mento/integration-overview/README.md)
 
-* Mint or redeem stable assets
-* Participate in governance
-* Build applications on top of the protocol
-
-Governance is driven by MENTO token holders through transparent onchain voting. All reserve holdings are fully visible onchain. This ensures decisions are made by the community, not centralized actors, and provides a level of transparency that far exceeds traditional finance or even most crypto projects.
-
-### Where Can I Learn More?
-
-* **Governance and MENTO token**: [governance.mento.org](https://governance.mento.org/)
-* **Live reserve data and metrics**: [reserve.mento.org](https://reserve.mento.org/)
-* **Whitepaper**: [github.com/mento-protocol](https://github.com/mento-protocol/whitepaper)
-
+*Previous architecture (v2):* [Legacy (v2)](../legacy-v2.md).

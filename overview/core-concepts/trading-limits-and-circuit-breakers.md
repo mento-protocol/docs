@@ -1,109 +1,73 @@
-# Trading Limits & Circuit Breakers
+# Trading limits & circuit breakers
 
-Mento protects its stability mechanisms through automated safeguards that monitor trading activity and oracle behavior. These protective layers ensure the protocol can weather extreme market conditions while maintaining continuous operation during normal times.
+Mento v3 protects pools with **trading limits** (caps on how much can flow per token over time) and **circuit breakers** (rules that can halt trading when conditions are abnormal). This page defines these terms and describes how they work in v3. No prior knowledge is assumed.
 
-## Why Protection Matters
+---
 
-On-chain trading systems face unique risks. When oracle prices diverge from market rates, whether due to volatility, manipulation, or technical issues, traders could drain protocol reserves before prices correct. Mento addresses this through two complementary systems:
+## Why protection matters
 
-1. Trading limits that cap flow rates
-2. Circuit breakers that halt trading during abnormal conditions.
+In an **FPMM**, every swap executes at the **oracle rate** (minus fee). If the **oracle** is wrong, stale, or manipulated, the pool could quote a bad rate and LPs could lose value. Two complementary mechanisms limit that risk:
 
-## Trading Limits
+1. **Trading limits** — Cap how much can flow in or out of the pool **per token** over fixed time windows. So even if the oracle is wrong, an attacker cannot drain the pool without bound in one go.
+2. **Circuit breakers** — Can **halt trading** when the oracle or the market behaves abnormally (e.g. price move too large, oracle stale). When a breaker trips, the pool will not accept swaps (the OracleAdapter returns “invalid”) until conditions normalize.
 
-Trading limits restrict how much value can flow through the protocol over specific time windows. These limits prevent excessive drainage during market dislocations while allowing normal trading to proceed unimpeded.
+---
 
-### How Limits Work
+## Trading limits (v3: TradingLimitsV2)
 
-The protocol enforces limits at three levels:
+**Trading limits** restrict how much **net flow** (in minus out) of each token can occur over specific **time windows**. In Mento v3, the **TradingLimitsV2** contract (or equivalent) is used:
 
-**L0 - Short-term limits** (typically 5 minutes): Caps immediate trading volume, particularly important between oracle updates. This prevents draining reserves if prices temporarily diverge.
+- **Windows** — Typically two windows per token: a **short window** (e.g. 5 minutes) and a **long window** (e.g. 1 day). Each pool can configure limits for token0 and token1 separately.
+- **Net flow** — The limit applies to **net** flow (inflow minus outflow) of that token over the window. So if the limit is 1M units per 5 minutes, you cannot have more than 1M units **net** flow in (or out) in any rolling 5-minute period. Inflow is often counted after deducting fees so that fee revenue does not consume the limit.
+- **Enforcement** — After each swap, the pool (or a library it uses) updates the net flow for the relevant window(s) and **reverts** the swap if the new net flow would exceed the configured cap.
 
-**L1 - Daily limits**: Acts as a fail-safe by limiting total daily volume. Even if short-term limits are repeatedly hit, the daily cap provides absolute protection.
+So trading limits are **per-token, per-window** caps. They do not stop trading; they stop **unbounded** one-sided flow. Normal trading stays under the caps; only extreme or sustained one-sided flow hits them.
 
-**LG - Global limits**: Lifetime limits that can pause specific pairs if cumulative flow exceeds safety thresholds. These require governance action to reset.
+---
 
-### Dynamic Configuration
+## Circuit breakers (v3: BreakerBox and OracleAdapter)
 
-Each token pair can have different limits based on:
+**Circuit breakers** are rules that can **suspend trading** when something is wrong. In v3:
 
-* Collateral liquidity and volatility
-* Oracle update frequency
-* Historical trading patterns
-* Risk tolerance parameters
+- The **BreakerBox** (or equivalent) monitors price feeds and can **trip** when, for example:
+  - The price moves too much compared to a reference or an exponential moving average (**MedianDeltaBreaker** for volatile pairs, **ValueDeltaBreaker** for stable pairs).
+  - Other configured conditions (e.g. oracle stale, deviation threshold) are violated.
+- When a breaker trips, the **trading mode** for that feed can change to “trading suspended.” The **OracleAdapter** then **refuses** to return a valid rate when the pool asks for it. So every swap that uses that feed **reverts** until the breaker is reset (after a **cooldown** and when conditions normalize).
 
-For example, a CELO/USD pair might allow higher volumes than an emerging market pair due to deeper liquidity and more frequent oracle updates.
+So circuit breakers are **binary**: trading is either allowed or halted for that feed. They do not throttle; they **stop** swaps when the system is in an abnormal state.
 
-## Circuit Breakers
+---
 
-While trading limits bound flow rates, circuit breakers provide binary on/off protection when oracle feeds behave abnormally. The BreakerBox system monitors all price feeds and can instantly halt trading if safety conditions are violated.
+## How they work together
 
-### Types of Breakers
+- **Normal conditions** — Trading limits apply (you cannot exceed the per-token caps), and breakers are not tripped, so the OracleAdapter returns a valid rate and swaps succeed.
+- **High flow** — If net flow in a window approaches the cap, the next swap that would exceed it reverts. Trading continues for the other token or after the window rolls.
+- **Abnormal oracle/market** — If a breaker trips, the OracleAdapter returns invalid; all swaps that depend on that feed revert until the breaker resets (after cooldown and normalization).
 
-**MedianDeltaBreaker**: Designed for volatile pairs like CELO/USD. Compares new median prices against an exponential moving average, tripping if movement exceeds thresholds. This catches sudden price spikes while allowing gradual trends.
+So: **limits** bound how much can move in/out per token over time; **breakers** turn off trading entirely when the oracle or market is in a bad state.
 
-**ValueDeltaBreaker**: Built for stable pairs like USDC/USD. Compares prices against fixed reference values, tripping on small deviations. This ensures stablecoins remain near their pegs.
+---
 
-### Breaker Lifecycle
+## Governance
 
-The protection flow operates automatically:
+Parameters (limit sizes, window lengths, breaker thresholds, cooldowns) are set by **governance** (MENTO token holders) or by pool admin where allowed. The **actions** (reverting a swap when over limit, or when the adapter says invalid) are **automatic**; no manual step is required to enforce them.
 
-1. **Monitor**: Each oracle update is checked against breaker rules
-2. **Trip**: If thresholds are exceeded, the breaker trips immediately
-3. **Halt**: Trading for affected pairs pauses automatically
-4. **Cool Down**: A waiting period prevents premature reactivation
-5. **Reset**: Once prices normalize and cooldown expires, trading resumes
+---
 
-Different pairs have different cooldowns, CELO/USD might wait 30 minutes after extreme volatility, while USDC/USD could reset in seconds after brief deviations.
+## Summary
 
-## Real-World Protection
+| Term | Meaning |
+|------|--------|
+| **Trading limit** | A cap on **net flow** of a token over a **time window** (e.g. 5 min, 1 day). A swap that would exceed the cap reverts. |
+| **TradingLimitsV2** | The v3 mechanism that enforces per-token, per-window limits on pool swaps. |
+| **Circuit breaker** | A rule that, when triggered (e.g. price move too large), can put a feed into “trading suspended” so the OracleAdapter returns invalid and swaps revert. |
+| **BreakerBox** | Contract that monitors feeds and sets trading mode (e.g. suspended) when breakers trip. |
+| **Cooldown** | Time that must pass (and conditions normalize) before a tripped breaker can be reset and trading allowed again. |
 
-These mechanisms have proven effective in practice:
+---
 
-**Market Crash Protection**: During significant CELO price drops, MedianDeltaBreakers have automatically paused trading, preventing reserve drainage while markets found new equilibrium.
+## Next steps
 
-**Stablecoin Depeg Events**: When stablecoins like USDC briefly lost their dollar peg, ValueDeltaBreakers protected the protocol by halting affected pairs until prices stabilized.
-
-**Oracle Anomalies**: If oracle feeds report suspicious values or stop updating, breakers activate to prevent exploitation of stale or incorrect prices.
-
-## Coordinated Defense
-
-Trading limits and circuit breakers work together as complementary defenses:
-
-* **Normal conditions**: Only trading limits apply, allowing continuous operation
-* **Moderate stress**: Limits throttle flow while monitoring continues
-* **Extreme events**: Breakers halt trading entirely until safety returns
-
-This layered approach balances accessibility with protection, keeping markets open whenever safely possible.
-
-## Governance Control
-
-All protection parameters are governed by MENTO token holders:
-
-* Setting breaker thresholds and cooldown periods
-* Configuring trading limits for each pair
-* Adding new breaker types as markets evolve
-* Emergency actions if manual intervention is needed
-
-However, the protective actions themselves are fully automated, no manual intervention is required during market stress.
-
-## Design Philosophy
-
-Mento's protection mechanisms follow key principles:
-
-**Automatic**: All safeguards trigger without human intervention based on pre-set rules
-
-**Transparent**: Parameters and current states are visible on-chain
-
-**Proportional**: Responses scale with threat levels, minor issues throttle flow, major ones halt trading
-
-**Self-Healing**: Systems automatically resume normal operation once conditions improve
-
-### Next Steps
-
-To understand how these protections fit into Mento's architecture:
-
-* [Oracles & Price Feeds](oracles-and-price-feeds.md) - The data that triggers protections
-* [The Broker & Virtual AMMs](the-broker-and-virtual-amms.md) - What gets protected
-* [Stability Mechanisms](stability-mechanisms.md) - Why protection enables stability
-* [Research & Economics](research-and-economics.md) - Academic foundations of risk management
+- [Oracles & price feeds](oracles-and-price-feeds.md) — How the pool gets the rate and when the OracleAdapter returns “invalid.”
+- [Fixed-Price Market Makers (FPMMs)](fixed-price-market-makers-fpmms.md) — Value protection and how swaps use the oracle rate.
+- [Swap & liquidity (FPMM operations)](../../use-mento/swap-and-liquidity.md) — What happens when your swap reverts (e.g. over limit or oracle invalid).

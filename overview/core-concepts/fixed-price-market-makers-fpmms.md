@@ -1,140 +1,129 @@
 # Fixed-Price Market Makers (FPMMs)
 
-Mento's exchange infrastructure enables users to swap between stable assets and collateral at predictable rates. Through Fixed-Price Market Makers (FPMMs) and modular liquidity strategies, the protocol provides deep liquidity while maintaining price stability.
+This page explains **Fixed-Price Market Makers (FPMMs)** as used in Mento v3. Terms are defined when first used so you can follow without prior DeFi knowledge.
 
-## FPMMs
+---
 
-FPMMs are Mento's approach to on-chain foreign exchange. Unlike traditional AMMs that shift prices along bonding curves, FPMMs quote constant exchange rates anchored to oracle prices. This design delivers several key benefits:
+## What is an AMM?
 
-**Low Slippage**: Trades execute at the oracle rate regardless of size. Whether swapping $100 or $1 million, users receive the same price.
+An **AMM (automated market maker)** is a smart contract that holds a **pool** of two (or more) tokens and lets users **swap** one for the other. Unlike an order book, there are no limit orders: the **price** you get is determined by a **rule** (a formula or an external feed). In many AMMs the rule depends only on the **reserves** (how much of each token the pool holds): the pool is like a curve, and the price moves as you trade (**slippage**). Those are often called **CFMMs** (constant-function market makers): a function of reserves is kept constant on each swap, and the execution price is derived from that function.
 
-**Capital Efficiency**: Liquidity concentrates at the target price rather than spreading across curves. This maximizes available depth at the rates that matter.
+---
 
-**Predictable Execution**: Traders know exact exchange rates before submitting transactions. No surprises from price impact or front-running.
+## What is an FPMM?
 
-**24/7 Availability**: Pools operate continuously, providing liquidity even when traditional FX markets close.
+A **Fixed-Price Market Maker (FPMM)** is an AMM where the **swap price is not derived from reserves**. Instead, the **effective trade price is fixed to an external oracle rate** (minus a fee). So:
 
-## How FPMMs Work
+- There is **no reserve-based curve**: the pool does not “move the price” as trade size changes.
+- **Execution is at the oracle** (minus fee): you get the same rate per unit regardless of size (subject to liquidity and protocol limits).
+- The pool **always quotes the oracle**; it is never “stale” in the sense of showing an old reserve-derived price.
 
-Each FPMM manages a pool of two tokens, typically a stablecoin and its collateral. The pool maintains reserves of both assets and facilitates swaps between them at oracle-determined rates.
+In Mento v3, every swap pool is an FPMM. Each pool has an **oracle** (a price feed) that supplies the exchange rate between the two tokens; the pool uses that rate for every swap (minus fees) and enforces that the pool’s **value at the oracle** is preserved (with fees).
 
-When users swap:
+---
 
-1. **Oracle Query**: The pool fetches the current exchange rate from decentralized oracles
-2. **Fee Calculation**: A small protocol fee is deducted from the input amount
-3. **Rate Application**: The output amount is calculated using the oracle rate
-4. **Transfer Execution**: Assets transfer at the calculated amounts
+## Why FPMMs? (LVR and slippage)
 
-The key innovation: **price remains fixed while inventory floats**.&#x20;
+In a **curve-based AMM** (e.g. constant product \(x \cdot y = k\)):
 
-This inverts the traditional AMM model where inventory stays constant while price moves.
+- The **spot price** is determined only by the reserves. Between trades, the market price can move, but the pool’s quoted price stays where the last trade left it.
+- **Arbitrageurs** can then trade against the pool at a better-than-fair price and capture value. This loss to liquidity providers is often called **LVR (loss-versus-rebalancing)**.
+- Traders also face **slippage**: the execution price moves along the curve as trade size increases.
 
-## Pool Mechanics
+In an **FPMM**, the pool **always** quotes the oracle. So:
 
-FPMMs implement several critical functions:
+- **LVR from a stale curve is zero** (the quote is never stale from reserves).
+- **No curve-based slippage**: execution is at the oracle (minus fee).
 
-**Swaps**: Users exchange tokens at the oracle rate minus fees. The pool validates that sufficient liquidity exists and that trading isn't suspended by circuit breakers.
+Risks shift to **oracle** quality (correctness, freshness) and **inventory** (the pool can get too one-sided). Mento v3 addresses those with **trading limits**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
 
-**Minting**: Liquidity providers add balanced amounts of both tokens to receive LP tokens. Initial liquidity follows a square root formula, while subsequent additions are proportional.
+---
 
-**Burning**: LPs can withdraw their share of the pool by burning LP tokens, receiving a proportional amount of both underlying assets.
+## The invariant: I = V / S
 
-**Value Preservation**: Every swap must maintain or increase the pool's total value (measured in oracle terms). This invariant prevents value extraction through manipulation.
+In Mento v3, every FPMM maintains a single **invariant** across all operations: **I = V / S**.
 
-## Inventory Rebalancing
+- **V** = pool **value at the oracle price** (the sum of reserve amounts weighted by the oracle). So V is “how much the reserves are worth at the oracle rate.”
+- **S** = total **LP share supply** (the number of liquidity-provider tokens in existence).
+- **I = V / S** = “value at the oracle per LP share.”
 
-One-sided trading creates inventory imbalances. When traders consistently buy one asset, pools would eventually exhaust their reserves. Mento solves this through automated rebalancing:
+This **I** is preserved on:
 
-**Drift Detection**: Pools continuously monitor the ratio between their reserves and the oracle price. When this "reserve price" drifts beyond configured thresholds, rebalancing becomes available.
+- **Swap** — V and S do not change; only the composition of reserves changes. So I is unchanged.
+- **Mint** (add liquidity) — You add both tokens in the **current reserve ratio**; you receive new shares in proportion to the value you add (at the pool’s implied price, which matches the oracle at equilibrium). The protocol is designed so I is preserved.
+- **Burn** (remove liquidity) — You burn shares and withdraw a proportional share of reserves; I stays the same for everyone.
+- **Rebalance** — The pool sends one token to a strategy and receives the other at the oracle rate (with a capped incentive). V and S do not change, so I is preserved.
 
-**Flash Swaps**: Authorized liquidity strategies can execute atomic rebalancing transactions. These simultaneously withdraw the surplus asset and inject the deficit asset, restoring balance.
+So “value per LP share at the oracle” is the **single number** that the protocol keeps constant across swaps, mints, burns, and rebalances. That gives LPs a clear accounting: your share of the pool is always worth a well-defined amount at the oracle price.
 
-**Keeper Incentives**: Permissionless bots can trigger rebalances and earn rewards. This ensures pools maintain healthy inventories.
+---
 
-**Safety Checks**: Rebalancing must improve the price deviation, avoid overshooting the target, and limit value loss to the allowed incentive amount.
+## Pool mechanics in short
 
-## Liquidity Strategies
+| Operation | What happens | Invariant I = V/S |
+|-----------|--------------|-------------------|
+| **Swap** | You send token A, receive token B at oracle rate (minus fee). Reserves change; value at oracle (V) and share supply (S) unchanged. | Preserved |
+| **Mint** | You add both tokens in current reserve ratio; receive LP tokens. V and S increase in proportion. | Preserved |
+| **Burn** | You burn LP tokens; receive proportional share of both reserves. V and S decrease. | Preserved |
+| **Rebalance** | Allowlisted strategy takes one token from pool, returns the other at oracle rate. V and S unchanged. | Preserved |
 
-Different stablecoin architectures require different liquidity sources. Mento implements three modular strategies:
+Every swap also satisfies **value protection**: after the swap, the pool’s reserve value at the oracle (in one chosen numéraire) must not be less than before (once fee value is credited). So no one can extract more than the fee margin.
 
-### Reserve Strategy
+---
 
-For fully-backed stablecoins:
+## Rebalancing (v3)
 
-* **Expansion**: Mints new stablecoins against deposited collateral
-* **Contraction**: Burns excess stablecoins and releases collateral
-* Maintains 1:1 backing through the Mento Reserve
+When users trade one-sided (e.g. everyone sells token A for token B), the pool’s **reserves** become imbalanced: too much of one token, too little of the other. The pool does not automatically “rebalance” itself. Instead:
 
-### CDP Strategy
+- The pool **monitors** how far its **reserve-implied price** is from the **oracle** price. When that deviation exceeds a **threshold** (separate for “above” and “below”), the pool becomes **eligible for rebalancing**.
+- Only **allowlisted liquidity strategies** can call the pool’s rebalance function. The pool sends one token to the strategy and calls back into the strategy; the strategy returns the other token at the oracle rate. The strategy may keep a **capped rebalance incentive** (the pool enforces a **minimum repayment** so value loss is bounded).
+- In v3, rebalancing moves the pool toward a **threshold boundary** (a band around the oracle), **not** to exact 50/50. That limits how much the pool moves in one rebalance and reduces attack surface.
+- **Who triggers:** Anyone can call the **strategy’s** public `rebalance(pool)` (permissionless). The strategy enforces a **cooldown** and then calls the pool. So “keepers” can trigger rebalances and earn incentives without special permission.
 
-For synthetic stablecoins created through collateralized positions:
+See [Rebalancing & strategies](rebalancing-and-strategies.md) for more detail.
 
-* **Stability Pool Integration**: Borrows from or repays to the Stability Pool
-* **Atomic Operations**: All rebalancing happens in single transactions
-* Supports over-collateralized synthetic assets
+---
 
-### Third-Party Strategy
+## Liquidity strategies
 
-For externally-created stablecoins:
+Different pools need different **sources** of liquidity for rebalancing. Mento v3 uses **liquidity strategies**: each is a contract allowlisted by one or more pools. When the pool calls the strategy during rebalance, the strategy must return the other token; it gets that token from somewhere (e.g. the protocol **Reserve**, or a **CDP** stability pool).
 
-* **Custom Implementation**: Issuers provide their own rebalancing logic
-* **Value Preservation**: Protocol ensures no value loss during operations
-* Enables integration of fiat-backed or other external stables
+- **Reserve strategy** — For fully backed Mento stablecoins (e.g. USDm, EURm). The **Reserve** holds collateral; the strategy can mint or burn stablecoins and move collateral to rebalance the pool.
+- **CDP strategy** — For synthetic stablecoins (e.g. GBPm) created by collateralized debt. The strategy interacts with the **stability pool** and borrowing/repayment to source or sink the stablecoin when rebalancing.
+- **Third-party strategy** — External issuers can provide their own strategy contract (allowlisted by governance) for custom liquidity sources.
 
-## Pool Configuration
+---
 
-Each FPMM operates with carefully tuned parameters:
+## Pool configuration
 
-* **Protocol Fee**: Trading fee retained by the protocol
-* **Rebalance Incentive**: Maximum value loss allowed during rebalancing
-* **Rebalance Thresholds**: Price deviation triggering rebalancing eligibility
-* **Oracle Configuration**: Which price feed to use and how to interpret it
-* **Circuit Breaker Integration**: Connection to the BreakerBox for safety checks
+Each FPMM is configured with parameters such as:
 
-These parameters are governed by MENTO token holders and can be adjusted per pool based on asset characteristics and risk profiles.
+- **LP fee** and **protocol fee** — Deducted from swaps; the remainder is the rate the user gets (oracle minus fee).
+- **Rebalance incentive** — Maximum share of the rebalance amount the strategy may keep; the pool enforces a minimum repayment.
+- **Rebalance thresholds** — How far the reserve price must deviate from the oracle (above/below) before rebalancing is allowed.
+- **Oracle** — Which price feed (e.g. OracleAdapter + rate feed ID) and whether to invert the rate.
+- **Trading limits** — Per-token caps over 5-minute and 1-day windows (TradingLimitsV2).
+- **Circuit breakers** — The pool uses the OracleAdapter/BreakerBox so that swaps can be halted when the oracle is invalid, stale, or when breakers trip.
 
-## Liquidity Provision
+These are set at deployment or by pool admin / governance. See [Trading limits & circuit breakers](trading-limits-and-circuit-breakers.md) and [Oracles & price feeds](oracles-and-price-feeds.md).
 
-Anyone can provide liquidity to FPMMs:
+---
 
-1. **Deposit**: Add both assets in proportion to current reserves
-2. **Receive LP Tokens**: Get pool shares representing your contribution
-3. **Earn Fees**: Collect a portion of all trading fees
-4. **Withdraw**: Burn LP tokens to reclaim your share of reserves
+## Liquidity provision: what LPs get
 
-Unlike traditional AMMs where LPs suffer from impermanent loss, FPMM liquidity providers benefit from:
+Anyone can add liquidity by depositing **both** tokens in the **current reserve ratio** and receiving LP tokens. Unlike in many curve-based AMMs:
 
-* Fixed exchange rates that eliminate adverse selection
-* Rebalancing mechanisms that maintain inventory health
-* Fee accumulation from consistent trading volume
+- There is **no LVR** from a stale curve (the pool quotes the oracle).
+- **Value per share** at the oracle (I = V/S) is preserved on every operation.
+- LPs earn **fees** from swap volume and may face **path-dependent** changes in composition when the oracle price moves between rebalances (so there can be “impermanent loss” in composition terms, but not from arbitrageurs picking off a stale quote).
 
-## Technical Architecture
+See [Swap & liquidity (FPMM operations)](../../use-mento/swap-and-liquidity.md) for how to mint and burn in practice.
 
-FPMMs are implemented as upgradeable smart contracts with several design principles:
+---
 
-**Modular Design**: Core pool logic separates from liquidity strategies, oracle integration, and safety mechanisms. This enables upgrading individual components without system-wide changes.
+## Next steps
 
-**Gas Optimization**: Efficient storage patterns and calculation methods minimize transaction costs. State updates batch together to reduce storage operations.
-
-**Decimal Handling**: Explicit management of token decimals ensures accurate conversions between assets with different precision levels.
-
-**Event Emission**: Comprehensive events enable off-chain monitoring, indexing, and analytics of pool activity.
-
-## Integration and Composability
-
-FPMMs integrate seamlessly with the broader DeFi ecosystem:
-
-* **Aggregators**: DEX aggregators can route through FPMMs for optimal pricing
-* **Flash Loans**: The swap callback mechanism enables flash loan patterns
-* **Automation**: Keeper networks can build on top of rebalancing incentives
-* **Cross-Chain**: The design supports deployment across multiple chains
-
-## Next Steps
-
-To explore how FPMMs enable Mento's ecosystem:
-
-* [Stability Mechanisms](stability-mechanisms.md) - How fixed prices maintain pegs
-* [The Reserve](the-reserve.md) - Collateral backing for exchanges
-* [Oracles & Price Feeds](oracles-and-price-feeds.md) - Price discovery for FPMMs
-* [Trading Limits & Circuit Breakers](trading-limits-and-circuit-breakers.md) - Safety mechanisms for pools
-
+- [Oracles & price feeds](oracles-and-price-feeds.md) — How the pool gets the rate and when trading is gated.
+- [Rebalancing & strategies](rebalancing-and-strategies.md) — Who rebalances, thresholds, boundaries, incentives.
+- [Trading limits & circuit breakers](trading-limits-and-circuit-breakers.md) — Caps and halts.
+- [The Reserve](the-reserve.md) — Backing for fully backed Mento stables (used by the Reserve liquidity strategy).
