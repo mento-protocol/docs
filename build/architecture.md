@@ -1,10 +1,10 @@
 # Architecture
 
-Mento v3 is built from a small set of components: pools (FPMM), factory, router, oracle adapter, breakers, trading limits, and liquidity strategies. This page gives a diagram-style overview and short text per component.
+Mento v3: pools (FPMM), factory, router, oracle adapter, breakers, trading limits, liquidity strategies. Diagram + one line per component.
 
 ---
 
-## High-level picture
+## High-level
 
 ```
 User / App
@@ -21,8 +21,8 @@ User / App
          │                   │
          │                   ▼
          │           ┌───────────────────┐
-         └──────────▶│ Trading limits    │
-                     │ (per-token caps)  │
+         └──────────▶│ Trading limits     │
+                     │ (per-token caps)   │
                      └───────────────────┘
          │
          │    Rebalance
@@ -32,25 +32,25 @@ User / App
 └─────────────────────┘
 ```
 
-- **Router:** Entry point for swap (and optionally mint/burn). Sorts tokens, routes to the correct pool.
-- **FPMM:** The pool. Holds reserves, LP shares; swap at oracle (minus fee), value protection, mint/burn at pool ratio, rebalance via strategies.
-- **OracleAdapter:** Provides the rate to the pool; combines recency, trading mode, FX hours. Calls BreakerBox.
-- **BreakerBox:** Gates the oracle (e.g. trading mode, FX hours). Invalid ⇒ swap reverts.
-- **Trading limits:** Per-token netflow caps (5-min, 1-day). Enforced after each swap.
-- **Liquidity strategies:** Allowlisted; call `rebalance` on the pool; pool sends one token, strategy returns the other. Reserve and CDP are the two types.
+- **Router:** Swap (and mint/burn) entry; sorts tokens, routes to pool.
+- **FPMM:** Pool. Reserves, LP shares; swap at oracle (minus fee), value protection, mint/burn at pool ratio, rebalance via strategies.
+- **OracleAdapter:** Rate to pool; recency, trading mode, FX hours; consults BreakerBox.
+- **BreakerBox:** Gates oracle; invalid → revert.
+- **Trading limits:** Per-token netflow caps (5-min, 1-day) after each swap.
+- **Liquidity strategies:** Allowlisted; call rebalance; pool sends one token, strategy returns other. Reserve and CDP.
 
 ---
 
-## Components (short)
+## Components
 
 | Component | Role |
 |-----------|------|
-| **FPMMFactory** | Deploys and configures FPMM pools (tokens, oracle, strategies, limits). |
-| **FPMM** | Single pool: swap, mint, burn, rebalance checks, value protection, trading limits. |
-| **Router** | User-facing swap (and mint/burn) entry; sorts tokens, routes to pool. |
-| **OracleAdapter** | Returns rate if valid (recency, breakers); pool uses it for quote and value check. |
-| **BreakerBox** | Aggregates breakers; adapter consults it for “can we trade?” |
-| **TradingLimitsV2** | Library/contract for netflow caps per token per window. |
-| **Liquidity strategies** | Reserve, CDP; allowlisted, implement callback for rebalance. |
+| FPMMFactory | Deploys pools (tokens, oracle, strategies, limits). |
+| FPMM | Pool: swap, mint, burn, rebalance checks, value protection, limits. |
+| Router | User swap (and mint/burn); routes to pool. |
+| OracleAdapter | Rate if valid; pool uses for quote and value check. |
+| BreakerBox | Aggregates breakers; adapter checks “can we trade?” |
+| TradingLimitsV2 | Netflow caps per token per window. |
+| Liquidity strategies | Reserve, CDP; allowlisted, rebalance callback. |
 
-For contract paths and line references, see [Contracts](contracts.md). For deployments and addresses, see [Deployments](deployments.md).
+Paths and refs: [Contracts](contracts.md). Addresses: [Deployments](deployments.md).

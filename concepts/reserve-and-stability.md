@@ -1,31 +1,29 @@
 # Reserve & stability
 
-The **Reserve** backs stablecoins like cUSD and EURm: it holds assets and supplies liquidity to FPMM pools via rebalancing. **Stability** is how the peg is maintained—redemption and (for GBPm) the CDP (collateralized debt position) and stability pool.
+**Reserve:** backs USDm, EURm; holds assets; supplies liquidity to FPMM pools via rebalancing. **Stability:** how the **peg** (target price, e.g. 1 USD per USDm) is kept—redemption and (for GBPm) CDP + stability pool.
 
 ---
 
 ## The Reserve
 
-The Reserve is the protocol’s asset reserve. It:
-
 - Holds collateral and stablecoin inventory.
-- Acts as a **liquidity strategy** for FPMM pools: when a pool rebalances, it sends one token to the Reserve and receives the other. So the Reserve “refills” the pool on the other side.
-- Supports **redemption**: users can redeem stablecoins for collateral (or the other asset) according to protocol rules, which helps keep the peg.
+- **Liquidity strategy** for FPMM pools: on rebalance, receives one token from pool, returns the other (“refills” the other side).
+- **Redemption:** users redeem stablecoins for collateral/other asset per protocol rules; supports the peg.
 
-Reserve-backed stablecoins (e.g. cUSD, EURm) use this flow. For how rebalancing works, see [Rebalancing & strategies](rebalancing-and-strategies.md).
+Reserve-backed: USDm, EURm. Rebalance flow: [Rebalancing & strategies](rebalancing-and-strategies.md).
 
 ---
 
 ## How the peg is maintained
 
-- **Redemption:** Users can redeem stablecoins for the underlying asset(s). Demand for redemption when the peg is below par, and supply when above, pushes the peg back.
-- **CDP (e.g. GBPm):** GBPm uses a Liquity-style CDP. Users **borrow** GBPm against collateral; they **repay** to close positions. A **stability pool** absorbs liquidations and rewards depositors. The CDP is also a liquidity strategy for the GBPm pool (rebalance flow). So the peg is maintained by collateralization, liquidation, redemption, and the stability pool, not only by the Reserve.
+- **Redemption:** Redeem stablecoins for underlying. Demand rises when peg below par, supply when above → peg moves back.
+- **CDP (e.g. GBPm):** Liquity-style. Users **borrow** GBPm against collateral; **repay** to close. **Stability pool** absorbs liquidations, rewards depositors. CDP is also liquidity strategy for GBPm pool. Peg maintained by collateralization, liquidation, redemption, stability pool.
 
-More Mento stablecoins may use the CDP model in the future. For user-facing operations (borrow, repay, stability pool), see [CDP operations](../use/cdp-operations.md).
+User ops (borrow, repay, stability pool): [CDP operations](../use/cdp-operations.md).
 
 ---
 
 ## Next
 
-- [Rebalancing & strategies](rebalancing-and-strategies.md) — How the Reserve and CDP interact with pools.
+- [Rebalancing & strategies](rebalancing-and-strategies.md) — Reserve, CDP, pools.
 - [FPMMs](fpmm.md) — Value per share, rebalance at oracle.

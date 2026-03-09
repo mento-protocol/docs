@@ -1,16 +1,16 @@
 # Contracts
 
-Reference for the main Mento v3 contracts. One-line summary per contract; details (parameters, return values) in the codebase. Paths and line refs come from the implementation note (`notes/fpmm-mento-v3-implementation.tex`); re-check after updates.
+Main Mento v3 contracts. One-line each; details in code. Paths under `vendor/mento-core/`. Line refs: `notes/fpmm-mento-v3-implementation.tex`.
 
 ---
 
-## Swap (pools and routing)
+## Swap
 
 | Contract | Path | Summary |
 |----------|------|---------|
-| **FPMM** | `vendor/mento-core/contracts/swap/FPMM.sol` | Single pool. Swap at oracle (minus fee), value protection, mint/burn at pool ratio, rebalance from allowlisted strategies. Quote: `getAmountOut`. |
-| **FPMMFactory** | `contracts/swap/FPMMFactory.sol` | Deploys FPMM pools (tokens, oracle, strategies, trading limits). Sorts tokens by address. |
-| **Router** | `contracts/swap/router/Router.sol` | User-facing swap (and mint/burn). Sorts tokens, routes to pool. |
+| **FPMM** | `contracts/swap/FPMM.sol` | Pool. Swap at oracle (minus fee), value protection, mint/burn at pool ratio, rebalance from allowlisted strategies. Quote: `getAmountOut`. |
+| **FPMMFactory** | `contracts/swap/FPMMFactory.sol` | Deploys pools (tokens, oracle, strategies, limits). Sorts tokens by address. |
+| **Router** | `contracts/swap/router/Router.sol` | User swap (and mint/burn). Routes to pool. |
 
 ---
 
@@ -18,8 +18,8 @@ Reference for the main Mento v3 contracts. One-line summary per contract; detail
 
 | Contract | Path | Summary |
 |----------|------|---------|
-| **OracleAdapter** | `vendor/mento-core/contracts/oracles/OracleAdapter.sol` | Supplies rate to pool. `getRateIfValid` / `getFXRateIfValid`; combines recency, trading mode, FX hours. Consults BreakerBox. |
-| **BreakerBox** | `contracts/oracles/BreakerBox.sol` | Aggregates breakers (trading mode, FX hours). Adapter gates rate with it; invalid ⇒ swap reverts. |
+| **OracleAdapter** | `contracts/oracles/OracleAdapter.sol` | Rate to pool. `getRateIfValid` / `getFXRateIfValid`; recency, trading mode, FX hours. Consults BreakerBox. |
+| **BreakerBox** | `contracts/oracles/BreakerBox.sol` | Aggregates breakers. Adapter gates rate; invalid → revert. |
 
 ---
 
@@ -27,7 +27,7 @@ Reference for the main Mento v3 contracts. One-line summary per contract; detail
 
 | Contract | Path | Summary |
 |----------|------|---------|
-| **TradingLimitsV2** | `vendor/mento-core/contracts/libraries/TradingLimitsV2.sol` | Per-token netflow caps (5-min, 1-day). Pool calls `applyTradingLimits` after swap. |
+| **TradingLimitsV2** | `contracts/libraries/TradingLimitsV2.sol` | Per-token netflow caps (5-min, 1-day). Pool calls after swap. |
 
 ---
 
@@ -35,17 +35,17 @@ Reference for the main Mento v3 contracts. One-line summary per contract; detail
 
 | Contract | Path | Summary |
 |----------|------|---------|
-| **LiquidityStrategy** | `contracts/liquidityStrategies/LiquidityStrategy.sol` | Interface: pool calls `onRebalance`, strategy returns the other token. |
-| **ReserveLiquidityStrategy** | `contracts/liquidityStrategies/ReserveLiquidityStrategy.sol` | Reserve-backed strategy for pools (e.g. cUSD, EURm). |
-| **CDPLiquidityStrategy** | `contracts/liquidityStrategies/CDPLiquidityStrategy.sol` | CDP-backed strategy (e.g. GBPm). |
+| **LiquidityStrategy** | `contracts/liquidityStrategies/LiquidityStrategy.sol` | Pool calls `onRebalance`; strategy returns other token. |
+| **ReserveLiquidityStrategy** | `contracts/liquidityStrategies/ReserveLiquidityStrategy.sol` | Reserve-backed (USDm, EURm). |
+| **CDPLiquidityStrategy** | `contracts/liquidityStrategies/CDPLiquidityStrategy.sol` | CDP-backed (e.g. GBPm). |
 
 ---
 
-## Key functions (FPMM)
+## FPMM key functions
 
-- **Quote:** `getAmountOut(amountIn, tokenIn)` — output amount at oracle rate minus fee.
-- **Swap:** Router or direct: transfer in, callback; pool computes amounts, checks value protection and limits, transfers out.
-- **Mint/burn:** Proportional at current reserve ratio; see implementation note for mint/burn flow.
-- **Rebalance:** Only allowlisted strategy; pool transfers out, calls strategy, strategy returns other token; `_rebalanceCheck` (deviation, direction, boundary, minimum repayment).
+- **Quote:** `getAmountOut(amountIn, tokenIn)` — output at oracle rate minus fee.
+- **Swap:** Transfer in, callback; pool checks value protection + limits, transfers out.
+- **Mint/burn:** Proportional at current reserve ratio.
+- **Rebalance:** Allowlisted strategy only; transfer out → strategy callback → other token; `_rebalanceCheck` (deviation, direction, boundary, min repayment).
 
-Line-level refs: see `notes/fpmm-mento-v3-implementation.tex` (and `vendor/mento-core`). For deployment addresses and parameters, see [Deployments](deployments.md).
+Addresses and parameters: [Deployments](deployments.md).

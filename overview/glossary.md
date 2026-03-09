@@ -1,15 +1,18 @@
 # Glossary
 
-Short definitions for terms used in the docs. For full context, follow the links to the concept pages.
+Short definitions. Full context: concept pages (links below).
 
 | Term | Definition |
 |------|------------|
-| **FPMM** | Fixed-Price Market Maker. Swap at the oracle rate (minus fee). No reserve-based curve. See [FPMMs](../concepts/fpmm.md). |
-| **Oracle** | Price feed (e.g. FX rate). Validity depends on recency, trading mode, and optional FX hours. See [Oracles](../concepts/oracles.md). |
-| **Rebalance** | Pool sends one token to an allowlisted strategy; the strategy returns the other token (at the oracle rate). Not a “flash swap.” See [Rebalancing & strategies](../concepts/rebalancing-and-strategies.md). |
-| **Liquidity strategy** | Allowlisted component that can call the pool’s rebalance; the pool calls back to receive the other token. Types: **Reserve** (protocol reserve), **CDP** (e.g. GBPm). |
-| **Value protection** | Rule: reserve value at oracle must not decrease after the fee is credited; otherwise the swap reverts. |
-| **Trading limits** | Per-token netflow caps over time windows (e.g. 5-minute, 1-day). See [Limits & breakers](../concepts/limits-and-breakers.md). |
-| **BreakerBox** | Gates the oracle (e.g. trading mode, FX market hours). Swaps revert when breakers trip. |
-| **LVR** | Loss versus rebalancing. In curve-based AMMs, LPs lose to arbitrageurs when the market moves; in an FPMM, swap is at the oracle so there is no LVR from a stale curve. |
-| **CFMM / reserve-only AMM** | Constant-function market maker; price comes from reserves only. Contrast with FPMM, where price comes from the oracle. |
+| **FPMM** | Fixed-price market maker. Swap at oracle rate (minus fee); no curve. [FPMMs](../concepts/fpmm.md). |
+| **Oracle** | Price feed (e.g. FX). Valid = recency + trading mode + optional FX hours. [Oracles](../concepts/oracles.md). |
+| **Rebalance** | Pool → one token to allowlisted strategy; strategy returns other at oracle rate. [Rebalancing & strategies](../concepts/rebalancing-and-strategies.md). |
+| **Liquidity strategy** | Allowlisted; pool calls back for other token. Types: **Reserve**, **CDP** (e.g. GBPm). |
+| **Value protection** | Reserve value at oracle must not decrease after fee; else revert. |
+| **Trading limits** | Per-token netflow caps (5-min, 1-day). [Limits & breakers](../concepts/limits-and-breakers.md). |
+| **BreakerBox** | Gates oracle (trading mode, FX hours). Trip → revert. |
+| **LVR** | Loss vs rebalancing. Curve AMMs: LPs lose to arbs when market moves. FPMM: swap at oracle → no LVR. |
+| **CFMM** | Constant-function market maker; price from reserves only. Contrast FPMM. |
+| **token0 / token1** | Pool tokens by address. Debt/collateral = strategy-side. |
+| **Peg** | Target price (e.g. 1 USD per USDm). Redemption, CDP keep market at peg. |
+| **Slippage** | Curve pools: execution price vs expected along curve. FPMM: no curve slippage. |
