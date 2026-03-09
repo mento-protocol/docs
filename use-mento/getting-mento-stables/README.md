@@ -1,2 +1,0 @@
-# Getting Mento Stables
-
