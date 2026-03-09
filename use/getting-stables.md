@@ -1,6 +1,6 @@
 # Getting stables
 
-How to get USDm, EURm, GBPm. **Primary option:** [Mento app](https://app.mento.org/) — swap (FPMM), borrow (CDP), add/remove liquidity, stability pool. Pools support external stables (USDC, USDT, EUROC, etc.) paired with Mento stables; the Celo token is not supported.
+How to get USDm, EURm, GBPm. **Primary option:** [Mento app](https://app.mento.org/) — swap (FPMM), borrow (CDP), add/remove liquidity, stability pool. Pools support external stables (USDC, USDT, EUROC, etc.) paired with Mento stables.
 
 ---
 

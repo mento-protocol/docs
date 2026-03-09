@@ -8,6 +8,15 @@
 * [Glossary](overview/glossary.md)
 * [What's new](overview/whats-new.md)
 
+## Use
+
+* [Getting stables](use/getting-stables.md)
+* [FPMM operations (swap, mint, rebalance)](use/fpmm-operations.md)
+* [CDP operations (borrow, repay, stability pool)](use/cdp-operations.md)
+* [Troubleshooting (users)](use/troubleshooting.md)
+* [Governance](use/governance.md)
+* [Security](use/security.md)
+
 ## Concepts
 
 * [Fixed-Price Market Makers (FPMMs)](concepts/fpmm.md)
@@ -24,12 +33,3 @@
 * [SDK](build/sdk.md)
 * [Deployments](build/deployments.md)
 * [Troubleshooting (integrators)](build/troubleshooting.md)
-
-## Use
-
-* [Getting stables](use/getting-stables.md)
-* [FPMM operations (swap, mint, rebalance)](use/fpmm-operations.md)
-* [CDP operations (borrow, repay, stability pool)](use/cdp-operations.md)
-* [Troubleshooting (users)](use/troubleshooting.md)
-* [Governance](use/governance.md)
-* [Security](use/security.md)
