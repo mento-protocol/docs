@@ -17,8 +17,8 @@ Mento stablecoins (USDm, EURm, GBPm) are **one use case**: they are paired in FP
 
 ## Where to go next
 
-- **Use the DEX:** [Swap & liquidity](../../use-mento/README.md) (FPMM operations), [Getting Mento stables](../../use-mento/getting-mento-stables/README.md)
-- **How it works:** [Fixed-Price Market Makers (FPMMs)](../../overview/core-concepts/fixed-price-market-makers-fpmms.md), [Oracles & price feeds](../../overview/core-concepts/oracles-and-price-feeds.md), [Trading limits & circuit breakers](../../overview/core-concepts/trading-limits-and-circuit-breakers.md)
-- **Build:** [Integration overview](../../build-on-mento/integration-overview.md), [Smart contracts](../../build-on-mento/smart-contracts/README.md)
+- **Use the DEX:** [Swap & liquidity](../../use-mento/swap-and-liquidity.md) (FPMM operations), [Getting Mento stables](../../use-mento/getting-mento-stables/README.md)
+- **How it works:** [Fixed-Price Market Makers (FPMMs)](../core-concepts/fixed-price-market-makers-fpmms.md), [Oracles & price feeds](../core-concepts/oracles-and-price-feeds.md), [Trading limits & circuit breakers](../core-concepts/trading-limits-and-circuit-breakers.md)
+- **Build:** [Integration overview](../../build-on-mento/integration-overview/README.md), [Smart contracts](../../build-on-mento/smart-contracts/README.md)
 
 *For the previous (v2) architecture, see legacy docs or the v2 section if available.*

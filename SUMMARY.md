@@ -7,6 +7,7 @@
   * [Mento Stablecoins](overview/getting-started/mento-stablecoins.md)
   * [Quick Start Guides](overview/getting-started/quick-start-guides.md)
   * [Analytics & Dashboards](overview/getting-started/analytics-and-dashboards.md)
+  * [What's new in v3](overview/getting-started/whats-new-v3.md)
 * [Core Concepts](overview/core-concepts/README.md)
   * [Fixed-Price Market Makers (FPMMs)](overview/core-concepts/fixed-price-market-makers-fpmms.md)
   * [Oracles & Price Feeds](overview/core-concepts/oracles-and-price-feeds.md)
@@ -16,6 +17,7 @@
   * [Stability Mechanisms](overview/core-concepts/stability-mechanisms.md)
   * [The Broker & Virtual AMMs](overview/core-concepts/the-broker-and-virtual-amms.md) *(v2 legacy)*
   * [Research & Economics](overview/core-concepts/research-and-economics.md)
+* [Glossary](overview/glossary.md)
 * [Legacy (v2)](overview/legacy-v2.md)
 * [Governance & the MENTO Token](overview/governance-and-the-mento-token/README.md)
   * [Understanding Mento Governance](overview/governance-and-the-mento-token/understanding-mento-governance.md)
@@ -25,6 +27,12 @@
     * [Voting Process](overview/governance-and-the-mento-token/participating-in-governance/voting-process.md)
   * [MENTO Tokenomics](overview/governance-and-the-mento-token/mento-tokenomics.md)
   * [Watchdogs & Safety](overview/governance-and-the-mento-token/watchdogs-and-safety.md)
+  * [Governance Scope](governance-and-token/governance-scope.md)
+  * [MENTO Token](governance-and-token/mento-token/README.md)
+    * [Listing information](governance-and-token/mento-token/listing-information.md)
+  * [Airdrop](governance-and-token/airdrop.md)
+  * [Governance Components](governance-and-token/governance-components.md)
+  * [Governance Watchdogs](governance-and-token/governance-watchdogs.md)
 * [Security & Risk](overview/security-and-risk/README.md)
   * [Overview](overview/security-and-risk/overview.md)
   * [Audit Reports](overview/security-and-risk/audit-reports.md)
@@ -37,12 +45,10 @@
   * [On Mobile](use-mento/getting-mento-stables/on-mobile.md)
   * [From Other Chains](use-mento/getting-mento-stables/from-other-chains.md)
   * [Via Centralized Exchanges](use-mento/getting-mento-stables/via-centralized-exchanges.md)
-* [CDP operations (borrow, repay, stability pool)](use-mento/cdp-operations.md)
-* [How to source Mento stables](how-to-source-mento-stables/on-celo.md)
-  * [CEXs, DEXs, Pools](how-to-source-mento-stables/centralized-exchanges.md)
-  * [From other Chains](how-to-source-mento-stables/from-other-chains.md)
   * [On-ramp Providers](how-to-source-mento-stables/on-ramp-providers.md)
   * [Automation via MATE](how-to-source-mento-stables/automation-via-mate.md)
+* [CDP operations (borrow, repay, stability pool)](use-mento/cdp-operations.md)
+* [Troubleshooting](use-mento/troubleshooting.md)
 
 ## Build On Mento
 
@@ -76,6 +82,8 @@
   * [Oracle Client](build-on-mento/oracles/oracle-client/README.md)
     * [Price Sources](build-on-mento/oracles/oracle-client/price-sources.md)
   * [Becoming an Oracle Provider](build-on-mento/oracles/becoming-an-oracle-provider.md)
+* [Architecture (mento-core)](developers/mento-core/architecture.md)
+* [Troubleshooting (integrators)](build-on-mento/troubleshooting.md)
 
 ## Economics
 
@@ -84,17 +92,7 @@
 * [Risks](economics/risks.md)
 * [Research](economics/research.md)
 
-## Governance & Token
-
-* [Overview](governance-and-token/overview.md)
-* [Governance Scope](governance-and-token/governance-scope.md)
-* [MENTO Token](governance-and-token/mento-token/README.md)
-  * [Listing information](governance-and-token/mento-token/listing-information.md)
-* [Airdrop](governance-and-token/airdrop.md)
-* [Governance Components](governance-and-token/governance-components.md)
-* [Governance Watchdogs](governance-and-token/governance-watchdogs.md)
-
-## Protocol Concepts
+## Protocol Concepts (reference)
 
 * [Stability](protocol-concepts/stability.md)
 * [Reserve](protocol-concepts/reserve.md)

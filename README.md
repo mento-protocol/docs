@@ -21,8 +21,9 @@ description: >-
 | **Borrow, repay, or use the stability pool** | [CDP operations](use-mento/cdp-operations.md) (when available) |
 | **Integrate** (quote, swap, contracts, SDK) | [Build on Mento](build-on-mento/integration-overview/README.md) |
 | **Deep dive: FPMMs, oracles, rebalancing** | [Core concepts](overview/core-concepts/README.md) |
+| **Something went wrong** (swap failed, etc.) | [Troubleshooting](use-mento/troubleshooting.md) |
 
-[Quick start guides](overview/getting-started/quick-start-guides.md) · [Analytics & dashboards](overview/getting-started/analytics-and-dashboards.md)
+[Quick start guides](overview/getting-started/quick-start-guides.md) · [What's new in v3](overview/getting-started/whats-new-v3.md) · [Glossary](overview/glossary.md) · [Analytics & dashboards](overview/getting-started/analytics-and-dashboards.md)
 
 ---
 

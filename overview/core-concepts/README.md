@@ -19,3 +19,5 @@ These pages explain how Mento v3 works. **Start with FPMMs** — they are the DE
 | [Research & economics](research-and-economics.md) | Deeper research and economics (optional). |
 
 *Legacy v2 concepts (Broker, Virtual AMMs, BiPoolManager) are not part of the v3 core; see [Legacy (v2)](../legacy-v2.md).*
+
+For additional protocol-level reference (reserve, stability, asset exchanges, circuit breaker, governance verification), see the [Protocol concepts (reference)](../../protocol-concepts/asset-exchanges/README.md) section in the table of contents.

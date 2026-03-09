@@ -8,12 +8,7 @@ Some Mento stable assets trade directly on centralized exchanges. To find curren
 
 1. Go to [CoinGecko](https://www.coingecko.com/)
 2. Search for the Mento stable you are interested in
-3.  Click the market tab to show which exchanges or pools the stable can be found in\
-
-
-    <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
-
-
+3. Click the market tab to show which exchanges or pools the stable can be found in.
 
 ## Common Route: CELO to Mento Stables
 

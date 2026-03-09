@@ -6,13 +6,13 @@ description: >-
 
 # Trading guide
 
-There are three ways how the one can buy or sell mento stable assets:
+There are three ways to buy or sell Mento stable assets:
 
-1. Through one of the [centralized](broken-reference) or [decentralized](broken-reference) exchanges.
-2. [Through one of the on-ramp partners.](broken-reference)
-3. [Through mento protocol directly.](broken-reference)
+1. Through one of the [centralized exchanges](../../use-mento/getting-mento-stables/via-centralized-exchanges.md) or [decentralized exchanges / on Celo](../../use-mento/getting-mento-stables/on-celo.md).
+2. [Through one of the on-ramp partners](../../how-to-source-mento-stables/on-ramp-providers.md).
+3. [Through the Mento protocol directly](../../use-mento/getting-mento-stables/README.md) (swap at [app.mento.org](https://app.mento.org/)).
 
-In [this article](broken-reference) you will find information on how to use limit orders and the maximum slippage parameter.
+In [this article](limit-order-and-max-slippage.md) you will find information on how to use limit orders and the maximum slippage parameter.
 
 ## Which way is best for you?
 
