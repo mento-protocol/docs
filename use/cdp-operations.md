@@ -1,28 +1,44 @@
-# CDP operations (borrow, repay, stability pool)
+# CDPs (Collateralized Debt Positions)
 
-On Mento V3, some stablecoins (e.g. **GBPm**) are **synthetic**: they are created when users **borrow** against collateral, similar to Liquity-style CDPs.
+On Mento V3, some stablecoins (e.g. **GBPm**) are **synthetic**: they are created when users **borrow** against collateral. Mento’s CDP system uses **USDm as the collateral asset**: you lock USDm and **borrow** other stables such as **GBPm** (and in other deployments, e.g. EURm). This is a **stable-on-stable** setup rather than crypto collateral.
 
 ---
 
 ## What you can do
 
-- **Borrow** — Deposit collateral and mint the stablecoin (e.g. GBPm).
-- **Repay** — Return the stablecoin to close (or reduce) your debt and free collateral.
-- **Stability pool** — Deposit the stablecoin into a stability pool that is used when liquidations occur; you may earn rewards.
+- **Borrow** — Deposit collateral (USDm) and borrow the stablecoin (e.g. GBPm). You open a **trove**, set your interest rate, and can run multiple troves per address.
+- **Repay** — Return the borrowed stable to reduce or close your debt and free collateral.
+- **Stability pool** — Deposit the debt token (e.g. GBPm) into a stability pool used in liquidations; you may earn rewards.
+
+Troves can be **adjusted** (add/withdraw collateral, borrow more, repay) and **closed**. The system uses a **Stability Pool** and **liquidations** when troves become undercollateralized.
 
 ---
 
 ## How to do it
 
-Use the **[Mento app](https://app.mento.org/)** for borrow, repay, and stability pool flows:
+**Via the Mento app:** Use the **[Mento app](https://app.mento.org/)** for borrow, repay, and stability pool flows. Connect your wallet (e.g. on Celo), select the CDP product (e.g. GBPm), deposit USDm as collateral, and borrow the stable.
 
-1. Connect your wallet on a supported chain (e.g. Celo).
-2. **Borrow:** Select the CDP product (e.g. GBPm), deposit collateral, and borrow the stable.
-3. **Repay:** Return the borrowed stable to reduce or close your debt and free collateral.
-4. **Stability pool:** Deposit the stable into the stability pool to earn rewards when liquidations occur.
-
-Contract and integration details will be documented in the Build section as CDP support is fully deployed.
+**Via the SDK:** For programmatic or integrator use, the **[Mento SDK](../build/mento-sdk/README.md)** provides `mento.borrow`: open/adjust/close troves, read trove data and system params, and predict upfront fees. See [Borrow (CDP)](../build/mento-sdk/guides/borrow.md). The SDK identifies each CDP system by the **debt token** (the stable you borrow, e.g. GBPm).
 
 ---
 
-**See also:** [Getting Mento stables](getting-mento-stables/README.md) · [Overview](../README.md) · [What Is Mento? (deep dive)](../dive-deeper/what-is-mento.md) · [Troubleshooting](troubleshooting.md)
+## Mento CDPs and Liquity v2
+
+**Mento CDPs are a fork of [Liquity v2](https://www.liquity.org/).** The core mechanics (troves, user-set interest rates, liquidations, Stability Pool, redemptions) follow the Liquity v2 design. Liquity v2 uses ETH/LSTs as collateral and BOLD as the debt token; Mento’s fork uses **USDm as collateral** and **a Mento stable (e.g. GBPm) as the debt token** per deployment.
+
+For full protocol and contract documentation (state variables, liquidation thresholds, fee flows, redemption mechanics), use the **Liquity v2** documentation:
+
+* **[Liquity v2 documentation](https://docs.liquity.org/)** — protocol overview, technical resources, and contract behavior.
+* **[Liquity v2 whitepaper](https://www.liquity.org/blog/liquity-v2-whitepaper)** — design and economics.
+
+Mento’s fork differs in collateral/debt configuration and in integration with Mento’s [Reserve](../build/smart-contracts/reserve.md) and [FPMM](../build/smart-contracts/fpmm.md). Deployment-specific parameters and addresses are in the [mento-core](https://github.com/mento-protocol/mento-core) repository.
+
+---
+
+## Relation to FPMM liquidity
+
+Mento uses **CDPLiquidityStrategy** to rebalance FPMM pools that hold the CDP-backed stable (e.g. GBPm). On **expansion**, the strategy draws debt from the Stability Pool; on **contraction**, it sources collateral (USDm) via redemptions. See [Rebalancing & strategies](../dive-deeper/fpmm/rebalancing-and-strategies.md) and [Liquidity strategies](../build/smart-contracts/liquidity-strategies.md) in Smart Contracts.
+
+---
+
+**See also:** [Getting Mento stables](getting-mento-stables/README.md) · [Overview](../README.md) · [CDP smart contracts](../build/smart-contracts/cdps.md) (Build) · [Troubleshooting (integrators)](../build/troubleshooting.md)
