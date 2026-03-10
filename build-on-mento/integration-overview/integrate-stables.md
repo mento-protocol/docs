@@ -77,74 +77,11 @@ Use your existing ERC-20 handling for:
 
 Mento stables maintain a peg with their respective fiat currencies under normal conditions (e.g., 1 USDm ≈ 1 USD, 1 EURm ≈ 1 EUR).
 
-For precise exchange rates, especially during high volatility, [query Sorted Oracles](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/stability/SortedOracles.sol).
+For precise exchange rates, use the pool’s oracle (see [Oracles & price feeds](../../overview/core-concepts/oracles-and-circuit-breakers.md)) or the [Mento SDK](https://github.com/mento-protocol/mento-sdk) for quotes.
 
-### Step 5: Enable Cross-Stable Swaps (Optional)
+### Step 5: Enable cross-stable swaps (optional)
 
-If your application needs to swap between Mento stables:
-
-```tsx
-import { Wallet, providers, utils } from "ethers";
-import { Mento } from "@mento-protocol/mento-sdk";
-
-// Using Mento SDK V1 & Ethers V5
-const STABLE_ADDRESSES = {
-  USDm: "0x765DE816845861e75A25fCA122bb6898B8B1282a",
-  EURm: "0xD8763CBa276a3738E6DE85b4b3bF5FDed6D6cA73",
-  // ... add other stables as needed*
-};
-
-// Initialize SDK
-const provider = new providers.JsonRpcProvider(
-  "https://forno.celo.org"
-);
-const signer = new Wallet(privateKey, provider);
-const mento = await Mento.create(signer);
-
-// Find the tradable pair path for the tokens to swap through the router
-const tradablePair = await mento.findPairForTokens(
-  STABLE_ADDRESSES.USDm,
-  STABLE_ADDRESSES.EURm
-);
-
-// Convert 0.01 tokens to Wei (18 decimal places: 0.01 * 10^18)
-const amountIn = utils.parseUnits("0.01", 18);
-
-// Get a quote for a swap with the given amount in
-const quoteAmountOut = await mento.getAmountOut(
-  STABLE_ADDRESSES.USDm,
-  STABLE_ADDRESSES.EURm,
-  amountIn,
-  tradablePair
-);
-
-// Increase USDm allowance of the broker by amount in
-const allowanceTxObj = await mento.increaseTradingAllowance(
-    USDmTokenAddr,
-    amountIn,
-    tradablePair
-  );
-const allowanceTx = await signer.sendTransaction(allowanceTxObj);
-const allowanceReceipt = await allowanceTx.wait();
-
-// Allow 1% slippage from quote
-const expectedAmountOut = quoteAmountOut.mul(99).div(100);
-
-// Build swap tx
-const swapTxObj = await mento.swapIn(
-  USDmTokenAddr,
-  EURmTokenAddr,
-  amountIn,
-  expectedAmountOut,
-  tradablePair
-);
-
-// Send swap tx
-const swapTx = await signer.sendTransaction(swapTxObj);
-const swapTxReceipt = await swapTx.wait();
-```
-
-See [Integrate the Broker](integrate-the-broker.md) for detailed swap integration.
+If your application needs to swap between Mento stables, use the [Mento SDK](../mento-sdk/) to get quotes and build swap transactions against Mento v3 FPMM pools. Swaps execute at the oracle rate (minus fee). See the SDK [Guides](../mento-sdk/guides/README.md) for getting exchange pairs and initiating a swap, and [Swap & liquidity](../../use-mento/swap-and-liquidity.md) for the user-facing flow.
 
 ## Working Examples
 
@@ -188,9 +125,9 @@ Mento stables are native to Celo. For cross-chain use cases, work with official 
 * **Discord**: #general for any questions
 * **Token Icons**: Available in the [frontend monorepo](https://github.com/mento-protocol/frontend-monorepo)
 
-## Next Steps
+## Next steps
 
-* For swap functionality, see [Integrate the Broker](integrate-the-broker.md)
+* For swap functionality, see [Mento SDK](../mento-sdk/) and [Swap & liquidity](../../use-mento/swap-and-liquidity.md)
 * For accurate price feeds, see [Integrate Oracles](integrate-oracles.md)
-* For technical reference, see [Smart Contracts](../smart-contracts/)
+* For contract addresses, see [Deployments & addresses](integrate-mento-stables.md) and [Smart Contracts](../smart-contracts/)
 

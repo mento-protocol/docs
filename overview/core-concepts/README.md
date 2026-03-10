@@ -16,5 +16,3 @@ These pages explain how Mento v3 works. **Start with FPMMs** — they are the DE
 | [Trading limits](trading-limits.md) | Per-token caps (TradingLimitsV2) over time windows; how they protect the pool. |
 | [The Reserve](the-reserve.md) | Backing for fully backed Mento stables; used by the Reserve liquidity strategy. |
 | [Research & economics](research-and-economics.md) | Deeper research and economics (optional). |
-
-For additional protocol-level reference (reserve, stability, asset exchanges, circuit breaker, governance verification), see the [Protocol concepts (reference)](../../protocol-concepts/asset-exchanges/README.md) section in the table of contents.
