@@ -53,7 +53,7 @@ Use it to check Reserve health, verify backing, and see how supply and collatera
 
 ## Governance and risk
 
-Reserve composition, which assets are accepted as collateral, and the parameters for the Reserve liquidity strategy are set by **governance** (MENTO token holders). Over-collateralization and risk management apply to the Reserve's backing of USDm and EURm; the goal is to keep those stables robustly backed while allowing efficient rebalancing.
+Reserve composition, which assets are accepted as collateral, and the parameters for the Reserve liquidity strategy are set by **governance** (MENTO token holders). Over-collateralization and risk management apply to the Reserve's backing of USDm and EURm; the goal is to keep those stables robustly backed while allowing efficient rebalancing and earning protocol revenue via yield income.
 
 ---
 

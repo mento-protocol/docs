@@ -51,10 +51,6 @@
   * [Parameters](build/deployments/parameters.md)
   * [MENTO Token Deployment](build/deployments/mento-token-deployment.md)
 * [Repository Overview](build/repository-overview.md)
-* [Oracles](build/oracles/README.md)
-  * [Oracle Client](build/oracles/oracle-client/README.md)
-    * [Price Sources](build/oracles/oracle-client/price-sources.md)
-  * [Becoming an Oracle Provider](build/oracles/becoming-an-oracle-provider.md)
 * [Troubleshooting (integrators)](build/troubleshooting.md)
 
 ## Other
