@@ -24,7 +24,9 @@ In Mento v3, every swap pool is an FPMM. Each pool has an **oracle** (a price fe
 
 ## Why FPMMs? (LVR and slippage)
 
-In a **curve-based AMM** (e.g. constant product $$xy = k$$):
+In a **curve-based AMM** (e.g. constant product):
+
+$$xy = k$$
 
 - The **spot price** is determined only by the reserves. Between trades, the market price can move, but the pool’s quoted price stays where the last trade left it.
 - **Arbitrageurs** can then trade against the pool at a better-than-fair price and capture value. This loss to liquidity providers is often called **LVR (loss-versus-rebalancing)**.
@@ -45,7 +47,11 @@ In Mento v3, every FPMM maintains a single **invariant** across all operations:
 
 $$I = \frac{V}{S}$$
 
-where $$V = p^\top R$$ is the pool **value at the oracle price** (reserves $$R$$ weighted by oracle $$p$$), and $$S$$ is the total **LP share supply**. So $$I$$ is value at the oracle per LP share.
+where the pool **value at the oracle price** is
+
+$$V = p^\top R$$
+
+(reserves $$R$$ weighted by oracle $$p$$; $$S$$ = total **LP share supply**). So $$I$$ is value at the oracle per LP share.
 
 - **V** = pool **value at the oracle price** (the sum of reserve amounts weighted by the oracle). So V is “how much the reserves are worth at the oracle rate.”
 - **S** = total **LP share supply** (the number of liquidity-provider tokens in existence).
