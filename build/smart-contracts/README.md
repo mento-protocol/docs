@@ -6,17 +6,22 @@
 
 ## Mento V3: FPMM-based exchange
 
-In V3, the main exchange is built from **FPMM** (Fixed-Price Market Maker) pools:
+In V3, the main exchange is built from **FPMM** (Fixed-Price Market Maker) pools. The following pages give precise contract-level documentation:
 
-- **FPMM** — Each pool holds two tokens and executes swaps at the **oracle** rate (minus fee). No reserve-based curve; value per LP share at the oracle is preserved.
-- **FPMMFactory** / **FPMMProxy** — Deploy and manage FPMM pool instances.
-- **OracleAdapter** — Supplies the pool with a valid oracle rate; combines price feed, recency, and **BreakerBox** (trading mode, circuit breakers).
-- **BreakerBox** — Monitors feeds and can halt trading (oracle returns invalid) when breakers trip.
-- **LiquidityStrategy**, **ReserveLiquidityStrategy**, **CDPLiquidityStrategy** — Allowlisted contracts that can call a pool’s rebalance function; they source the other token (from Reserve, CDP stability pool, or elsewhere).
-- **TradingLimitsV2** — Enforces per-token net-flow caps over 5-minute and 1-day windows.
-- **Router** — Convenience for quoting (`getAmountsOut`) and executing swaps across pools.
+| Contract / topic | Doc | Role |
+|------------------|-----|------|
+| **FPMM** | [FPMM](fpmm.md) | Pool: two-token reserves, swap at oracle rate (minus fee), value protection, mint/burn, rebalance by allowlisted strategies, TradingLimitsV2. |
+| **FPMMFactory** | [FPMMFactory](fpmmfactory.md) | Deploys FPMM proxies, token order, default params and caps, pool registry. |
+| **OracleAdapter** | [OracleAdapter](oracleadapter.md) | Supplies the pool with a valid rate: `getFXRateIfValid(rateFeedID)`; combines SortedOracles, BreakerBox (trading mode), and FX market hours. |
+| **Router** | [Router](router.md) | Quoting (`getAmountsOut`) and executing swaps; multihop via pool `getAmountOut`; uses FactoryRegistry and default factory. |
+| **Liquidity strategies** | [Liquidity strategies](liquidity-strategies.md) | Base + ReserveLiquidityStrategy + CDPLiquidityStrategy; who may call rebalance, callback flow, incentive split. |
+| **TradingLimitsV2** | [TradingLimitsV2](tradinglimits.md) | Per-token 5-min and 1-day net-flow caps; applied after each swap. |
+| **BreakerBox** | [BreakerBox](breakerbox.md) | Circuit breakers; OracleAdapter reads trading mode; FPMM reverts when rate invalid. |
+| **Reserve** | [Reserve](reserve.md) | Holds collateral for Reserve-backed stables; used by ReserveLiquidityStrategy. |
+| **StableToken** | [StableToken](stabletoken.md) | ERC-20 Mento stables (USDm, EURm, GBPm, …). |
+| **Audits** | [Audits](audits.md) | ChainSecurity V3 and Liquity v2 fork; historical audits. |
 
-Other contracts used by V3 include **StableToken** (minting and burning Reserve-backed stables such as USDm and EURm) and **Reserve** (collateral backing and used by ReserveLiquidityStrategy for rebalancing). **Broker**, **BiPoolManager**, **SortedOracles**, and v2 **pricing modules** are legacy (V2) and not used by the FPMM exchange layer.
+**Legacy (V2):** **Broker**, **BiPoolManager**, **SortedOracles**, and v2 **pricing modules** are not used by the FPMM exchange layer.
 
 ## Repository and reference
 
