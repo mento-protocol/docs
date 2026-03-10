@@ -5,7 +5,7 @@ hidden: true
 # Oracles
 
 {% hint style="info" %}
-These pages describe the technical details of Oracles on Mento. For an introduction to Oracles and how they work on Mento, please see [oracles.md](../../protocol-concepts/oracles.md "mention") in the [Broken link](broken-reference "mention") section.
+These pages describe the technical details of Oracles on Mento. For an introduction to Oracles and how they work on Mento, please see [Oracles, price feeds & circuit breakers](../../understand/fpmm/oracles-and-circuit-breakers.md) in Understand.
 {% endhint %}
 
 Mento Oracles consist of two technical parts: An [on-chain smart contract](../smart-contracts/sortedoracles.md) and [off-chain clients](oracle-client/). In the following pages, you will learn about these two components as well as about the research behind choosing price sources for the oracles to report.&#x20;

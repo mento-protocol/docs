@@ -59,6 +59,6 @@ Reserve composition, which assets are accepted as collateral, and the parameters
 
 ## Next steps
 
-- [Fixed-Price Market Makers (FPMMs)](fixed-price-market-makers-fpmms.md) — How pools use the oracle rate and rebalance.
+- [FPMMs](README.md) — How pools use the oracle rate and rebalance.
 - [Rebalancing & strategies](rebalancing-and-strategies.md) — Reserve liquidity strategy and other allowlisted strategies.
 - [Research & Economics](research-and-economics.md) — Economic design and reserve management.

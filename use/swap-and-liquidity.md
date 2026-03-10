@@ -1,6 +1,6 @@
 # Swap & liquidity (FPMM operations)
 
-This page describes how to **swap** and how to **add or remove liquidity** on Mento v3. It assumes you have read [What is Mento?](../overview/getting-started/what-is-mento.md) and know what an **FPMM** (Fixed-Price Market Maker), **oracle**, and **reserves** are.
+This page describes how to **swap** and how to **add or remove liquidity** on Mento v3. It assumes you have read [What Is Mento?](../understand/getting-started/what-is-mento.md) and know what an **FPMM** (Fixed-Price Market Maker), **oracle**, and **reserves** are.
 
 ---
 

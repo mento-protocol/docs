@@ -38,9 +38,8 @@ _Coming soon: Additional analytics platforms and community-built dashboards_
 
 For deeper insights into what these metrics mean:
 
-* [Stability Mechanisms](../core-concepts/stability-mechanisms.md) - Learn how reserve ratios maintain stablecoin pegs
-* [The Reserve](../core-concepts/the-reserve.md) - Understand reserve composition and management
-* [Research & Economics](../core-concepts/research-and-economics.md) - Dive into the economic theory behind the metrics
+* [The Reserve](../fpmm/the-reserve.md) - Understand reserve composition and management
+* [Research & Economics](../fpmm/research-and-economics.md) - Dive into the economic theory behind the metrics
 
 ***
 

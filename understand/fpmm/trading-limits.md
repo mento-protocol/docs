@@ -28,4 +28,4 @@ Trading limits are **per-token, per-window** caps. They do not stop trading; the
 ## Next steps
 
 - [Oracles, price feeds & circuit breakers](oracles-and-circuit-breakers.md) — How the pool gets the rate and when trading is halted by breakers.
-- [Fixed-Price Market Makers (FPMMs)](fixed-price-market-makers-fpmms.md) — Value protection and how swaps use the oracle rate.
+- [FPMMs](README.md) — Value protection and how swaps use the oracle rate.

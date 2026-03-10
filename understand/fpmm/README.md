@@ -115,7 +115,7 @@ Each FPMM is configured with parameters such as:
 - **Trading limits** — Per-token caps over 5-minute and 1-day windows (TradingLimitsV2).
 - **Circuit breakers** — The pool uses the OracleAdapter/BreakerBox so that swaps can be halted when the oracle is invalid, stale, or when breakers trip.
 
-These are set at deployment or by pool admin / governance. See [Trading limits & circuit breakers](trading-limits-and-circuit-breakers.md) and [Oracles & price feeds](oracles-and-price-feeds.md).
+These are set at deployment or by pool admin / governance. See [Trading limits](trading-limits.md) and [Oracles, price feeds & circuit breakers](oracles-and-circuit-breakers.md).
 
 ---
 
@@ -127,13 +127,13 @@ Anyone can add liquidity by depositing **both** tokens in the **current reserve 
 - **Value per share** at the oracle (I = V/S) is preserved on every operation.
 - LPs earn **fees** from swap volume and may face **path-dependent** changes in composition when the oracle price moves between rebalances (so there can be “impermanent loss” in composition terms, but not from arbitrageurs picking off a stale quote).
 
-See [Swap & liquidity (FPMM operations)](../../use-mento/swap-and-liquidity.md) for how to mint and burn in practice.
+See [Swap & liquidity](../../use/swap-and-liquidity.md) for how to mint and burn in practice.
 
 ---
 
 ## Next steps
 
-- [Oracles & price feeds](oracles-and-price-feeds.md) — How the pool gets the rate and when trading is gated.
+- [Oracles, price feeds & circuit breakers](oracles-and-circuit-breakers.md) — How the pool gets the rate and when trading is gated.
 - [Rebalancing & strategies](rebalancing-and-strategies.md) — Who rebalances, thresholds, boundaries, incentives.
-- [Trading limits & circuit breakers](trading-limits-and-circuit-breakers.md) — Caps and halts.
+- [Trading limits](trading-limits.md) — Caps; [Oracles & circuit breakers](oracles-and-circuit-breakers.md) — halts.
 - [The Reserve](the-reserve.md) — Backing for fully backed Mento stables (used by the Reserve liquidity strategy).

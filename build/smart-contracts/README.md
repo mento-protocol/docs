@@ -14,7 +14,7 @@ In v3, the main exchange is built from **FPMM** (Fixed-Price Market Maker) pools
 - **TradingLimitsV2** — Enforces per-token net-flow caps over 5-minute and 1-day windows.
 - **Router** — Convenience for quoting (`getAmountsOut`) and executing swaps across pools.
 
-Other contracts (e.g. **StableToken**, **Reserve**, **SortedOracles**) still exist where used by v3 (e.g. Reserve for ReserveLiquidityStrategy). **Broker**, **BiPoolManager**, and v2 **pricing modules** are legacy (v2); see [Legacy (v2)](../../overview/legacy-v2.md).
+Other contracts (e.g. **StableToken**, **Reserve**, **SortedOracles**) still exist where used by v3 (e.g. Reserve for ReserveLiquidityStrategy). **Broker**, **BiPoolManager**, and v2 **pricing modules** are legacy (v2); see legacy docs and the [whitepaper](https://github.com/mento-protocol/whitepaper).
 
 ## Repository and reference
 

@@ -114,7 +114,7 @@ $$V = p^\top R$$
 
 **When the oracle rate is precise**, this invariant implies **no LVR**: the pool’s value at the true market price is preserved (after fees), and LPs are not systematically drained. The only leakage is the fee and any **oracle imprecision**; fees, limits, circuit breaker, and rebalance caps are there to limit that.
 
-For definitions of CFMM, DEX, oracle, FPMM, LVR, reserves, and other terms, see the [Glossary](../glossary.md).
+For definitions of CFMM, DEX, oracle, FPMM, LVR, reserves, and other terms, see the [Glossary](glossary.md).
 
 ---
 
@@ -141,8 +141,8 @@ Governance (parameters, allowlists, oracle config) is driven by MENTO token hold
 
 ## Where to go next
 
-- **Use the DEX:** [Swap & liquidity](../../use-mento/swap-and-liquidity.md) · [Getting Mento stables](../../use-mento/getting-mento-stables/README.md)
-- **Concepts:** [Fixed-Price Market Makers (FPMMs)](../core-concepts/fixed-price-market-makers-fpmms.md) · [Oracles, price feeds & circuit breakers](../core-concepts/oracles-and-circuit-breakers.md) · [Trading limits](../core-concepts/trading-limits.md)
-- **Build:** [Integration overview](../../build-on-mento/integration-overview/README.md)
+- **Use the DEX:** [Swap & liquidity](../../use/swap-and-liquidity.md) · [Getting Mento stables](../../use/getting-mento-stables/README.md)
+- **Concepts:** [FPMMs](../fpmm/README.md) · [Oracles, price feeds & circuit breakers](../fpmm/oracles-and-circuit-breakers.md) · [Trading limits](../fpmm/trading-limits.md)
+- **Build:** [Integration](../../build/integration/README.md)
 
 *Previous architecture (v2):* See the [whitepaper](https://github.com/mento-protocol/whitepaper) or legacy docs.

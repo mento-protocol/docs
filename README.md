@@ -15,15 +15,15 @@ description: >-
 
 | I want to… | Go to |
 |------------|--------|
-| **Understand what Mento is** | [What is Mento?](overview/getting-started/what-is-mento.md) |
-| **Swap or add/remove liquidity** | [Swap & liquidity (FPMM operations)](use-mento/swap-and-liquidity.md) |
-| **Get Mento stablecoins** (USDm, EURm, GBPm) | [Getting Mento stables](use-mento/getting-mento-stables/README.md) |
-| **Borrow, repay, or use the stability pool** | [CDP operations](use-mento/cdp-operations.md) |
-| **Integrate** (quote, swap, contracts, SDK) | [Build on Mento](build-on-mento/integration-overview/README.md) |
-| **Deep dive: FPMMs, oracles, rebalancing** | [Core concepts](overview/core-concepts/README.md) |
-| **Fix a failed swap or other issue** | [Troubleshooting](use-mento/troubleshooting.md) |
+| **Understand what Mento is** | [What is Mento?](understand/getting-started/what-is-mento.md) |
+| **Swap or add/remove liquidity** | [Swap & liquidity](use/swap-and-liquidity.md) |
+| **Get Mento stablecoins** (USDm, EURm, GBPm) | [Getting Mento stables](use/getting-mento-stables/README.md) |
+| **Borrow, repay, or use the stability pool** | [CDP operations](use/cdp-operations.md) |
+| **Integrate** (quote, swap, contracts, SDK) | [Build: Integration](build/integration/README.md) |
+| **Deep dive: FPMMs, oracles, rebalancing** | [Concepts overview](understand/getting-started/concepts-overview.md) |
+| **Fix a failed swap or other issue** | [Troubleshooting](use/troubleshooting.md) |
 
-[Quick start guides](overview/getting-started/quick-start-guides.md) · [Glossary](overview/glossary.md) · [Analytics & dashboards](overview/getting-started/analytics-and-dashboards.md)
+[Quick start guides](understand/getting-started/quick-start-guides.md) · [Glossary](understand/getting-started/glossary.md) · [Analytics & dashboards](understand/getting-started/analytics-and-dashboards.md)
 
 ---
 

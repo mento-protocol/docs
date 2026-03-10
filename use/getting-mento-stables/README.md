@@ -1,6 +1,6 @@
 # Getting Mento stables
 
-**One way to use Mento v3 is to obtain Mento stablecoins:** USDm (Mento Dollar), EURm (Mento Euro), GBPm (Mento Pound), and others. This page lists the main paths. It assumes you know what Mento v3 is from [What is Mento?](../../overview/getting-started/what-is-mento.md).
+**One way to use Mento v3 is to obtain Mento stablecoins:** USDm (Mento Dollar), EURm (Mento Euro), GBPm (Mento Pound), and others. This page lists the main paths. It assumes you know what Mento v3 is from [What is Mento?](../../understand/getting-started/what-is-mento.md).
 
 ---
 
@@ -41,6 +41,6 @@ For **swap and liquidity** in general (not only “getting stables”), see [Swa
 ## Next steps
 
 - [Swap & liquidity (FPMM operations)](../swap-and-liquidity.md) — How to swap and add/remove liquidity.
-- [What is Mento?](../../overview/getting-started/what-is-mento.md) — DEX for FX, FPMMs, and where Mento stables fit in.
-- [Fixed-Price Market Makers (FPMMs)](../../overview/core-concepts/fixed-price-market-makers-fpmms.md) — How pools and the oracle rate work.
+- [What is Mento?](../../understand/getting-started/what-is-mento.md) — DEX for FX, FPMMs, and where Mento stables fit in.
+- [FPMMs](../../understand/fpmm/README.md) — How pools and the oracle rate work.
 - [Troubleshooting](../troubleshooting.md) — Common issues when swapping or getting stables.

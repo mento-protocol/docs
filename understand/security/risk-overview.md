@@ -71,6 +71,6 @@ Public dashboards display real-time metrics, allowing anyone to monitor for anom
 To explore specific aspects of Mento's security architecture:
 
 * [Audit Reports](audit-reports.md) - Comprehensive security assessments from leading firms
-* [Trading Limits & Circuit Breakers](../core-concepts/trading-limits-and-circuit-breakers.md) - Deep dive into protective mechanisms
-* [Watchdogs & Safety](../governance-and-the-mento-token/watchdogs-and-safety.md) - Governance safeguards and veto powers
+* [Trading limits](../fpmm/trading-limits.md) · [Oracles & circuit breakers](../fpmm/oracles-and-circuit-breakers.md) - Protective mechanisms
+* [Watchdogs & Safety](../governance-and-mento/watchdogs-and-safety.md) - Governance safeguards and veto powers
 * [Analytics & Dashboards](../getting-started/analytics-and-dashboards.md) - Monitor metrics in real-time

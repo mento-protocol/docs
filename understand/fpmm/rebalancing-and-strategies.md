@@ -1,6 +1,6 @@
 # Rebalancing & strategies
 
-This page explains how **rebalancing** works in Mento v3 and what **liquidity strategies** are. It builds on [Fixed-Price Market Makers (FPMMs)](fixed-price-market-makers-fpmms.md) and [What is Mento?](../getting-started/what-is-mento.md).
+This page explains how **rebalancing** works in Mento v3 and what **liquidity strategies** are. It builds on [FPMMs](README.md) and [What Is Mento?](../getting-started/what-is-mento.md).
 
 ---
 
@@ -86,6 +86,6 @@ Different pools use different **sources** of liquidity when rebalancing:
 
 ## Next steps
 
-- [Fixed-Price Market Makers (FPMMs)](fixed-price-market-makers-fpmms.md) — Invariant, value protection, pool mechanics.
+- [FPMMs](README.md) — Invariant, value protection, pool mechanics.
 - [The Reserve](the-reserve.md) — How the Reserve backs stables and supports the Reserve strategy.
-- [Swap & liquidity (FPMM operations)](../../use-mento/swap-and-liquidity.md) — How to swap and add/remove liquidity; triggering rebalances as a keeper.
+- [Swap & liquidity](../../use/swap-and-liquidity.md) — How to swap and add/remove liquidity; triggering rebalances as a keeper.
