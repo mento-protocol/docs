@@ -45,15 +45,15 @@ Tying everything to this invariant is what gives **LVR of zero** when the oracle
 
 → Full mechanics: [FPMMs](dive-deeper/fpmm/README.md).
 
-### How the protocol is structured (when the oracle is imprecise)
+### How the protocol is structured
 
-When the oracle is wrong, stale, or manipulated, the invariant alone doesn’t stop value extraction. The following elements protect against that:
+Beyond the invariant, the protocol uses several building blocks—each with a different role. **Trading limits and the circuit breaker** protect the pool when the oracle is wrong, stale, or manipulated. **Liquidity strategies** address the fact that with no curve, reserves can become one-sided as users trade; they rebalance so the pool stays usable. **Fees and incentives** fund the protocol and reward different actors (LPs, keepers, governance); the swap spread in particular also adds a band where arbitrage is unprofitable if the oracle is slightly off.
 
 | Piece | Role |
 |-------|------|
-| **Trading limits & circuit breakers** | Limits cap flow per token over time so the pool can’t be drained in one go; the breaker can halt trading when the oracle is invalid or safety thresholds are breached. |
+| **Trading limits & circuit breakers** | Protect when the oracle is wrong, stale, or manipulated: limits cap flow per token over time; the breaker can halt trading when the oracle is invalid or safety thresholds are breached. |
 | **Liquidity strategies (rebalancing)** | No curve → reserves can become one-sided. Allowlisted strategies rebalance: take surplus token from the pool, return the other at the oracle rate (capped incentive). Keeps the pool usable. |
-| **Fees & incentives** | The protocol uses various **fees and incentives** to fund itself and reward different actors: e.g. swap fees (LP and protocol), rebalance incentives for keepers and strategies, and governance-driven revenue flows (MENTO). The swap spread in particular also provides additional arb protection: the gap between buy and sell prices around the oracle creates a band where arbitrage is unprofitable even if the oracle is slightly off. |
+| **Fees & incentives** | Fund the protocol and reward different actors: e.g. swap fees (LP and protocol), rebalance incentives for keepers and strategies, governance-driven revenue flows (MENTO). The swap spread in particular also provides additional arb protection when the oracle is slightly off. |
 
 ---
 
