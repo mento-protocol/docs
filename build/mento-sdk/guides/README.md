@@ -8,7 +8,7 @@ These guides show how to use the **Mento SDK v3** for Mento V3: FPMM pools, orac
 
 | Guide | What you’ll do |
 |-------|----------------|
-| [Getting exchange pairs and routes](getting-exchange-pairs.md) | Discover tokens, **pools** (with pricing, fees, rebalancing, limits), **routes** (cached or fresh), and **trading status** (circuit breaker, limits). |
+| [Discovering tokens, pools and routes](getting-exchange-pairs.md) | Discover tokens, **pools** (with pricing, fees, rebalancing, limits), **routes** (cached or fresh), and **trading status** (circuit breaker, limits). |
 | [Getting a quote](getting-a-quote.md) | Get expected swap output with `mento.quotes.getAmountOut` (or amount in for exact out). |
 | [Initiating a swap](initiating-a-swap.md) | Build swap and approval transactions with `mento.swap.buildSwapTransaction` and send with a viem wallet. |
 

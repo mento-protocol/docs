@@ -21,6 +21,7 @@ In V3, the main exchange is built from **FPMM** (Fixed-Price Market Maker) pools
 | **BreakerBox** | [BreakerBox](breakerbox.md) | Circuit breakers; OracleAdapter reads trading mode; FPMM reverts when rate invalid. |
 | **Reserve** | [Reserve](reserve.md) | Holds collateral for Reserve-backed stables; used by ReserveLiquidityStrategy. |
 | **StableToken** | [StableToken](stabletoken.md) | ERC-20 Mento stables (USDm, EURm, GBPm, …). |
+| **CDPs** | [CDPs](cdps.md) | Collateralized debt positions (troves): borrow stables against collateral. Mento CDPs are a **fork of Liquity v2** — see [Liquity v2 docs](https://docs.liquity.org/) for full contract and protocol documentation. |
 | **Audits** | [Audits](audits.md) | ChainSecurity V3 and Liquity v2 fork; historical audits. |
 
 **Contracts:** [mento-protocol/mento-core](https://github.com/mento-protocol/mento-core)

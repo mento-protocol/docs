@@ -35,7 +35,7 @@ const mento = await Mento.create(ChainId.CELO, yourPublicClient)
 
 | Area | Guides |
 |------|--------|
-| **Discovery** | [Exchange pairs & routes](guides/getting-exchange-pairs.md) — tokens, pools, routes, trading status |
+| **Discovery** | [Discovering tokens, pools and routes](guides/getting-exchange-pairs.md) — tokens, pools, routes, trading status |
 | **Trading** | [Getting a quote](guides/getting-a-quote.md), [Initiating a swap](guides/initiating-a-swap.md) |
 | **Liquidity** | [Liquidity management](guides/liquidity.md) — add/remove liquidity, zap in/out for FPMM pools |
 | **Borrow** | [Borrow (CDP)](guides/borrow.md) — open/adjust/close troves, fees, system params |

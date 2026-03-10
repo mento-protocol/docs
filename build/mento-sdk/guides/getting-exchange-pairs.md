@@ -1,6 +1,6 @@
-# Getting exchange pairs and routes
+# Discovering tokens, pools and routes
 
-This guide shows how to use the Mento SDK v3 to discover tradable tokens, FPMM pools, and routes between token pairs. The SDK uses a **route cache** by default for fast lookups; you can also fetch fresh data from the chain.
+This guide shows how to use the Mento SDK v3 to discover tradable tokens, FPMM pools, and routes between tokens. The SDK uses a **route cache** by default for fast lookups; you can also fetch fresh data from the chain.
 
 ---
 
