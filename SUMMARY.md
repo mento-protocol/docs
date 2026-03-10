@@ -21,23 +21,23 @@
 
 ## Governance
 
-* [Governance & the MENTO Token](overview/governance-and-the-mento-token/README.md)
-  * [Understanding Mento Governance](overview/governance-and-the-mento-token/understanding-mento-governance.md)
-  * [Participating in Governance](overview/governance-and-the-mento-token/participating-in-governance/README.md)
-    * [veMENTO & Voting Power](overview/governance-and-the-mento-token/participating-in-governance/vemento-and-voting-power.md)
-    * [Creating Proposals](overview/governance-and-the-mento-token/participating-in-governance/creating-proposals.md)
-    * [Voting Process](overview/governance-and-the-mento-token/participating-in-governance/voting-process.md)
-  * [MENTO Tokenomics](overview/governance-and-the-mento-token/mento-tokenomics.md)
-  * [Watchdogs & Safety](overview/governance-and-the-mento-token/watchdogs-and-safety.md)
-  * [MENTO Token](overview/governance-and-the-mento-token/mento-token/README.md)
-    * [Listing information](overview/governance-and-the-mento-token/mento-token/listing-information.md)
-  * [Airdrop](overview/governance-and-the-mento-token/airdrop.md)
+* [Governance overview](overview/governance-and-the-mento-token/README.md)
+* [Understanding Mento Governance](overview/governance-and-the-mento-token/understanding-mento-governance.md)
+* [Participating in Governance](overview/governance-and-the-mento-token/participating-in-governance/README.md)
+* [veMENTO & Voting Power](overview/governance-and-the-mento-token/participating-in-governance/vemento-and-voting-power.md)
+* [Creating Proposals](overview/governance-and-the-mento-token/participating-in-governance/creating-proposals.md)
+* [Voting Process](overview/governance-and-the-mento-token/participating-in-governance/voting-process.md)
+* [MENTO Tokenomics](overview/governance-and-the-mento-token/mento-tokenomics.md)
+* [Watchdogs & Safety](overview/governance-and-the-mento-token/watchdogs-and-safety.md)
+* [MENTO Token](overview/governance-and-the-mento-token/mento-token/README.md)
+* [Listing information](overview/governance-and-the-mento-token/mento-token/listing-information.md)
+* [Airdrop](overview/governance-and-the-mento-token/airdrop.md)
 
 ## Security
 
-* [Security & Risk](overview/security-and-risk/README.md)
-  * [Overview](overview/security-and-risk/overview.md)
-  * [Audit Reports](overview/security-and-risk/audit-reports.md)
+* [Security overview](overview/security-and-risk/README.md)
+* [Risk overview](overview/security-and-risk/overview.md)
+* [Audit Reports](overview/security-and-risk/audit-reports.md)
 
 ## Use Mento
 

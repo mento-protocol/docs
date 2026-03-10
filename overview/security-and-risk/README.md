@@ -4,5 +4,5 @@ description: >-
   security architecture and provides access to third-party audit reports.
 ---
 
-# Security & Risk
+# Security overview
 

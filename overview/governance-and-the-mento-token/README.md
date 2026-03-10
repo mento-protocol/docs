@@ -5,5 +5,5 @@ description: >-
   decisions, and understand safety mechanisms in place.
 ---
 
-# Governance & the MENTO Token
+# Governance overview
 
