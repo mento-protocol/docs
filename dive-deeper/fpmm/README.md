@@ -19,11 +19,11 @@ In CFMMs, the **curvature** of the trading function governs both: a flatter curv
 
 In Mento V3, every FPMM maintains a single **invariant** across all operations:
 
-<p align="center">$$I = \frac{V}{S}$$</p>
+$$I = \frac{V}{S}$$
 
 where the pool **value at the oracle price** is
 
-<p align="center">$$V = p^\top R$$</p>
+$$V = p^\top R$$
 
 (reserves $$R$$ weighted by oracle $$p$$; $$S$$ = total **LP share supply**). So $$I$$ is value at the oracle per LP share. **This holds under all operations only when we ignore fees and incentives**—i.e. we treat swap as at the oracle rate and rebalance as returning exactly the other token at the oracle; in practice, swap fees (LP and protocol) and the capped rebalance incentive mean the accounting is slightly more involved.
 

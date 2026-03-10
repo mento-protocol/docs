@@ -30,14 +30,14 @@ Each pool is tied to an **oracle** (external price feed) and **always quotes tha
 | Piece | Role |
 |-------|------|
 | **Trading limits & circuit breakers** | Protect when the oracle is wrong, stale, or manipulated. Limits cap flow per token over time; the breaker can halt trading when the oracle is invalid or thresholds are breached. |
-| **Fees & incentives** | **Swap spread** (gap between buy/sell around the oracle) creates a band where arbitrage is unprofitable even if the oracle is slightly off. Fees fund the protocol and reward LPs. Incentives align roles: LPs earn swap fees, keepers/strategies earn rebalance incentives, governance (MENTO) sets parameters and revenue flows. |
+| **Fees & incentives** | **Swap spread** (gap between buy/sell around the oracle) creates a band where arbitrage is unprofitable even if the oracle is slightly off. The protocol uses various **fees and incentives** to fund itself and reward different actors: e.g. swap fees (LP and protocol), rebalance incentives for keepers and strategies, and governance-driven revenue flows (MENTO). |
 | **Liquidity strategies (rebalancing)** | No curve → reserves can become one-sided. Allowlisted strategies rebalance: take surplus token from the pool, return the other at the oracle rate (capped incentive). Keeps the pool usable. |
 
 ### One invariant for all operations
 
 Every pool keeps one number constant: **value at the oracle per LP share**,
 
-<p align="center">$$I = \frac{V}{S}$$</p>
+$$I = \frac{V}{S}$$
 
 - **V** = pool value at the oracle price (reserves valued at the oracle rate).
 - **S** = total LP share supply.
