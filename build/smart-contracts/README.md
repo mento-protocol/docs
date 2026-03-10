@@ -23,15 +23,4 @@ In V3, the main exchange is built from **FPMM** (Fixed-Price Market Maker) pools
 | **StableToken** | [StableToken](stabletoken.md) | ERC-20 Mento stables (USDm, EURm, GBPm, …). |
 | **Audits** | [Audits](audits.md) | ChainSecurity V3 and Liquity v2 fork; historical audits. |
 
-**Legacy (V2):** **Broker**, **BiPoolManager**, **SortedOracles**, and v2 **pricing modules** are not used by the FPMM exchange layer.
-
-## Repository and reference
-
-Mento Core is the set of smart contracts that enable creating, exchanging, and contributing to Mento stable currencies. In V3, FPMM pools and the above components are the primary exchange layer.
-
-The contracts can be found in the [mento-protocol/mento-core](https://github.com/mento-protocol/mento-core) GitHub repository:
-
-Here you will find everything from an overview to a detailed technical reference.&#x20;
-
-<figure><img src="../../.gitbook/assets/Screenshot 2023-12-12 at 14.37.20.png" alt=""><figcaption><p>Mento Smart Contracts</p></figcaption></figure>
-
+**Contracts:** [mento-protocol/mento-core](https://github.com/mento-protocol/mento-core)

@@ -1,181 +1,125 @@
 # Integrate Oracles
 
-This guide walks through integrating Mento's on-chain price feeds into your application. The [`SortedOracles`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/stability/SortedOracles.sol) contract aggregates FX rates from multiple oracle providers (Chainlink, Redstone) to provide reliable exchange rates for stable asset pairs. Mento relayers continuously push these rates on-chain to ensure fresh pricing data.
+This guide describes how to use Mento V3’s **oracle** layer for FX rates in your application. In V3, FPMM pools get their swap rate from the **OracleAdapter**, which returns a rate only when it is **valid** (recent, trading not suspended, and for FX pairs, market hours open). Integrating with the **OracleAdapter** gives you the same rate and validity rules the pools use.
 
-## Common Use Cases
+**Contract reference:** [Smart Contracts > OracleAdapter](../smart-contracts/oracleadapter.md)
 
-### DeFi Protocols
+---
 
-Use real-time FX rates for cross-currency calculations, collateral valuation, and liquidation thresholds.
+## Why the OracleAdapter (V3)
 
-### Price Feed Aggregators
+The **OracleAdapter** is the single interface FPMM pools use for the swap rate. It:
 
-Aggregate Mento's FX rates with other sources to provide comprehensive currency data.
+- Reads the **median rate** from the underlying oracle feed (e.g. SortedOracles, which aggregates Chainlink, Redstone, etc.).
+- Checks **recency** (report not older than the configured expiry).
+- Checks **trading mode** from **BreakerBox** (e.g. trading suspended when a circuit breaker has tripped).
+- For FX pairs, checks **FX market hours** (optional; can restrict trading to reference market hours).
 
-### Cross-Border Applications
+If any check fails, the adapter **reverts**. So when you use the adapter, you get a rate that is valid for trading at that moment—the same guarantee the pool uses. Directly reading SortedOracles or other feeds does not include these validity checks.
 
-Build remittance calculators, multi-currency wallets, or international payment systems using accurate FX rates.
+---
 
-### Stable Asset Pricing
+## Common use cases
 
-Understand how Mento pools price swaps between stable assets using these oracle rates.
+- **DeFi protocols** — Real-time FX rates for collateral valuation, liquidation thresholds, or cross-currency logic.
+- **Price feed aggregators** — Combine Mento’s validity-gated rates with other sources.
+- **Cross-border applications** — Remittance calculators, multi-currency wallets, or international payment systems.
+- **Stable asset pricing** — Understand and replicate how Mento FPMM pools price swaps (oracle rate minus fee).
 
-## Integration Steps
+---
 
-### Step 1: Connect to SortedOracles Contract
+## Integration steps
 
-Mento oracle data is available through the `SortedOracles` contract:
+### Step 1: Use the OracleAdapter contract
+
+You need the **OracleAdapter** address for your chain (see [Deployments](../deployments/addresses.md)). The pool’s `oracleAdapter()` and `referenceRateFeedID()` tell you which adapter and feed ID that pool uses; for a custom integration you may have a fixed adapter and feed ID per pair.
 
 ```solidity
-// Mainnet SortedOracles address
-address constant SORTED_ORACLES = 0xefB84935239dAcdecF7c5bA76d8dE40b077B7b33;
+// Example: get the rate the pool uses (validity-gated)
+IOracleAdapter adapter = IOracleAdapter(adapterAddress);
+address rateFeedID = 0x...; // e.g. pool.referenceRateFeedID() for that pair
 
-// Interface
-interface ISortedOracles {
-  function medianRate(address rateFeedId) external view returns (uint256, uint256);
-  function numRates(address rateFeedId) external view returns (uint256);
+(uint256 numerator, uint256 denominator) = adapter.getFXRateIfValid(rateFeedID);
+// Rate = numerator / denominator (1e18 scale). Reverts if invalid.
+```
+
+### Step 2: Get a valid rate (for swaps or quoting)
+
+Use **getFXRateIfValid(rateFeedID)** when you need the same rate the FPMM would use. It reverts if:
+
+- FX market is closed (when FX market hours are enforced).
+- Trading is suspended (BreakerBox).
+- There is no recent rate (stale).
+
+```solidity
+try adapter.getFXRateIfValid(rateFeedID) returns (uint256 num, uint256 denom) {
+    // Use num/denom for pricing or display
+} catch (bytes memory reason) {
+    // FXMarketClosed, TradingSuspended, or NoRecentRate
 }
 ```
 
-See [Smart Contracts > Deployments](https://docs.mento.org/mento/developers/deployments/addresses) for testnet addresses.
+For flows that don’t need FX market hours (e.g. non-FX or 24/7 markets), use **getRateIfValid(rateFeedID)** — same as above but without the FX market hours check.
 
-### Step 2: Query Exchange Rates
+### Step 3: Check validity without using the rate
 
-Get FX rates from the sorted oracles contract. Note that rate feed IDs can be either:
-
-* Stable token addresses (legacy format, e.g., USDm address for CELO/USD)
-* Derived addresses for specific currency pairs (e.g., `keccak256("NGNUSD")` for NGN/USD)
-
-> **Note:** For the full list of rate feed IDs check out the [Oracles & Price Feeds page](../../overview/core-concepts/oracles-and-price-feeds.md#active-rate-feeds)
+To show “trading available” vs “market closed / suspended” without using the rate:
 
 ```solidity
-// Example: Get CELO/USD rate using USDm address as rate feed ID
-ISortedOracles oracles = ISortedOracles(SORTED_ORACLES);
-address rateFeedId = USDm_ADDRESS; // Rate feed ID for CELO/USD
-
-(uint256 numerator, uint256 denominator) = oracles.medianRate(rateFeedId);
-
-// Rate represents how much CELO equals 1 USD (with 24 decimal precision)
-uint256 celoPerUsd = numerator / denominator;
-```
-
-For cross-currency rates:
-
-```solidity
-// Example: Get NGN/USD rate for USDm/NGNm pool pricing
-address ngnUsdFeedId = 0xC13D42556f1baeab4a8600C735afcd5344048d3C; // keccak256("relayed:NGNUSD")
-
-// This gives USD per 1 NGN
-(uint256 ngnUsdRate, uint256 denominator) = oracles.medianRate(ngnUsdFeedId);
-```
-
-### Step 3: Implement Rate Conversion
-
-Use the FX rates for currency conversions. Note that rates in SortedOracles represent various currency pairs:
-
-```solidity
-// Example: Using NGN/USD rate for conversions
-function ngnToUsd(uint256 ngnAmount) public view returns (uint256) {
- address ngnUsdFeedId = 0xC13D42556f1baeab4a8600C735afcd5344048d3C;
-  (uint256 rate, uint256 denominator) = oracles.medianRate(ngnUsdFeedId);
-  
-  // rate represents USD per 1 NGN (e.g., 0.000654)
-  return ngnAmount.mul(rate).div(denominator);
-}
-
-function usdToNgn(uint256 usdAmount) public view returns (uint256) {
-  address ngnUsdFeedId = 0xC13D42556f1baeab4a8600C735afcd5344048d3C;
-  (uint256 rate, uint256 denominator) = oracles.medianRate(ngnUsdFeedId);
-  
-  // To convert USD to NGN, we need to invert the rate
-  return usdAmount.mul(denominator).div(rate);
+try adapter.ensureRateValid(rateFeedID) {
+    // Rate is valid; safe to show quote or execute
+} catch {
+    // Invalid: trading suspended, no recent rate, or FX market closed
 }
 ```
 
-These rates are crucial for Mento's pools - they determine the exchange ratios between stable assets (e.g., USDm/NGNm uses the NGN/USD rate).
+### Step 4: Inspect rate and status (no revert)
 
-### Step 4: Check Oracle Health
-
-Verify that oracle data is fresh and reliable:
+For dashboards or conditional logic where you don’t want a revert:
 
 ```solidity
-// Check report freshness (rates are relayed, so typically only 1 report)
-(bool isExpired, ) = oracles.isOldestReportExpired(rateFeedId);
-require(!isExpired, "Oracle rate is expired");
+IOracleAdapter.RateInfo memory info = adapter.getRate(rateFeedID);
 
-// Optional: Check the median timestamp for additional validation
-uint256 medianTime = oracles.medianTimestamp(rateFeedId);
-require(block.timestamp - medianTime < MAX_AGE, "Rate too old");
+// info.numerator, info.denominator  — rate (1e18 scale)
+// info.tradingMode  — 0 = bidirectional (trading allowed)
+// info.isRecent     — true if within report expiry
+// info.isFXMarketOpen
 ```
 
-## Working with Oracle Data
+You can then decide locally whether to treat the rate as valid (e.g. only when `tradingMode == 0` and `isRecent` and, for FX, `isFXMarketOpen`).
 
-### Rate Format
+### Step 5: Rate feed IDs
 
-* Rates use 24 decimal fixed-point precision (1e24)
-* `numerator / denominator` gives the exchange rate
-* For FX pairs, the rate represents **Quote per 1 Base**:
-  * **NGN/USD**: How much USD per 1 NGN (e.g., 0.000654 USD = 1 NGN)
-  * **GBP/USD**: How much USD per 1 GBP
-  * **EUR/XOF**: How much XOF per 1 EUR
-* For CELO pairs (legacy format), the rate represents **Base per 1 Quote**:
-  * **CELO/USD**: How much CELO per 1 USD
+Each feed is identified by a **rateFeedID** (address). The FPMM pool stores a `referenceRateFeedID` for its pair. Common patterns:
 
-### Report Expiry
+- Legacy CELO/cStable: rate feed ID can be the stable token address.
+- Other pairs: often derived, e.g. `address(uint160(uint256(keccak256(abi.encodePacked("USDCUSD")))))`.
+- Relayed Chainlink feeds: often prefixed (e.g. `"relayed:NGNUSD"`).
 
-Oracle reports expire after a configured time period. Expired reports are automatically excluded from median calculations.
+Use the pool’s `referenceRateFeedID()` for the same feed the pool uses, or your deployment docs for the correct ID per pair.
 
-## Best Practices
+### Step 6: Rate format
 
-### Rate Validation
+- From **OracleAdapter**: rates are returned with **1e18** denominator (adapter normalizes from the underlying 1e24).
+- `rate = numerator / denominator` (e.g. token1 per token0, or quote per base depending on the feed).
+- For **getRate()**, the same scale applies; use `numerator` and `denominator` from the `RateInfo` struct.
 
-Always validate oracle data before use:
+---
 
-* Verify rate is within expected bounds
-* Consider implementing circuit breakers for extreme values
+## Best practices
 
-### Gas Optimization
+- **Use the adapter for swap-related logic** — So your validity rules match the pool (recency, breakers, FX hours).
+- **Handle reverts** — `getFXRateIfValid` and `ensureRateValid` revert on invalid; use try/catch or call `getRate()` when you need non-reverting behavior.
+- **Cache within a transaction** — If you use the same rate multiple times in one tx, read once and reuse.
+- **Circuit breakers** — BreakerBox already gates trading; for extra safety you can enforce bounds on the rate in your application.
 
-Cache oracle results when multiple operations use the same rate within a transaction.
+---
 
-### Error Handling
+## JavaScript / TypeScript
 
-Handle cases where:
+Use the OracleAdapter ABI and the same flow: **getFXRateIfValid** for a valid rate (catch errors), or **getRate** for inspection without revert.
 
-* No oracle reports exist for a token
-* All reports have expired
-* Rate calculation results in zero denominator
-
-## Advanced Usage
-
-### Historical Data
-
-While the contract stores current reports, historical data analysis requires:
-
-* Monitoring MedianUpdated events
-* Maintaining off-chain data stores
-* Using indexing services like The Graph
-
-## JavaScript Integration
-
-### Using ethers
-
-```tsx
-import { ethers } from 'ethers';
-
-const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
-const sortedOraclesABI = [...]; // Contract ABI
-const sortedOracles = new ethers.Contract(SORTED_ORACLES_ADDRESS, sortedOraclesABI, provider);
-
-// Get exchange rate
-const rateFeedId = '0xC13D42556f1baeab4a8600C735afcd5344048d3C'; // NGN/USD
-const result = await sortedOracles.medianRate(rateFeedId);
-const rate = result.numerator.div(result.denominator);
-```
-
-### Using viem
-
-```tsx
+```ts
 import { createPublicClient, http } from 'viem';
 import { celo } from 'viem/chains';
 
@@ -184,27 +128,32 @@ const client = createPublicClient({
   transport: http(RPC_URL),
 });
 
-const sortedOraclesABI = [...]; // Contract ABI
-
-// Get exchange rate
-const rateFeedId = '0xC13D42556f1baeab4a8600C735afcd5344048d3C'; // NGN/USD
-const result = await client.readContract({
-  address: SORTED_ORACLES_ADDRESS,
-  abi: sortedOraclesABI,
-  functionName: 'medianRate',
-  args: [rateFeedId],
+// Get rate (validity-gated; will throw if invalid)
+const [numerator, denominator] = await client.readContract({
+  address: oracleAdapterAddress,
+  abi: oracleAdapterABI,
+  functionName: 'getFXRateIfValid',
+  args: [rateFeedID],
 });
+const rate = Number(numerator) / Number(denominator);
 
-const rate = Number(result.numerator) / Number(result.denominator);
+// Or inspect without revert
+const rateInfo = await client.readContract({
+  address: oracleAdapterAddress,
+  abi: oracleAdapterABI,
+  functionName: 'getRate',
+  args: [rateFeedID],
+});
+// rateInfo.numerator, rateInfo.denominator, rateInfo.tradingMode, rateInfo.isRecent, rateInfo.isFXMarketOpen
 ```
 
-## Support
+For swap quoting and execution, the [Mento SDK](../mento-sdk/README.md) uses the pool’s `getAmountOut`, which already goes through the adapter; you typically don’t need to call the adapter from JS unless you’re building custom oracle UIs or risk tools.
 
-* **Discord**: #general for integration questions
-* **Contract Reference**: [SortedOracles.sol](https://github.com/mento-protocol/mento-core/blob/main/contracts/stability/SortedOracles.sol)
+---
 
-## Next Steps
+## Next steps
 
-* For swap functionality using oracle rates, see [Integrate the Broker](integrate-the-broker.md)
-* For contract addresses and ABIs, see [Smart Contracts](../smart-contracts/)
-
+- [Smart Contracts > OracleAdapter](../smart-contracts/oracleadapter.md) — Full contract reference and Solidity snippets.
+- [Smart Contracts > FPMM](../smart-contracts/fpmm.md) — How the pool uses the adapter for quotes and swaps.
+- [Dive Deeper: Oracles & circuit breakers](../../dive-deeper/fpmm/oracles-and-circuit-breakers.md) — Design and safety.
+- [Deployments](../deployments/addresses.md) — OracleAdapter and pool addresses per chain.
