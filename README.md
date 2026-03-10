@@ -29,15 +29,7 @@ Every Mento V3 swap pool is an FPMM. Each pool is tied to an **oracle** (externa
 
 Every pool keeps one number constant: **value at the oracle per LP share**,
 
-<center>
-
-<div style="background: #f5f5f5; padding: 1rem 1.5rem; border-radius: 8px; display: inline-block;">
-
-$$\Large I = \frac{V}{S}$$
-
-</div>
-
-</center>
+$$I = \frac{V}{S}$$
 
 - **V** = pool value at the oracle price (reserves valued at the oracle rate).
 - **S** = total LP share supply.
@@ -76,7 +68,8 @@ The documentation is split into five sections. Use the one that matches your goa
 
 **For:** Readers who want to understand how the protocol works under the hood.
 
-- **[FPMMs](dive-deeper/fpmm/README.md)** — Why Mento uses oracle pricing (and why curve-based AMMs don’t work well for FX), how Fixed-Price Market Makers work: the invariant, operations, rebalancing, and liquidity strategies. Subpages cover oracles & circuit breakers, trading limits, the Reserve, and research & economics.
+- **[FPMMs](dive-deeper/fpmm/README.md)** — Why Mento uses oracle pricing (and why curve-based AMMs don’t work well for FX), how Fixed-Price Market Makers work: the invariant, operations, rebalancing, and liquidity strategies. Subpages cover oracles & circuit breakers, trading limits, and the Reserve.
+- **[Economics](dive-deeper/economics.md)** — Value flows, fees, incentives, and revenue (FPMM, CDP, MENTO).
 - **[CDPs](use/cdp-operations.md)** — How collateralized debt positions back synthetic Mento stables (e.g. GBPm).
 - **[Governance & MENTO](dive-deeper/governance-and-mento/README.md)** — How the protocol is governed, the MENTO token, tokenomics, and participation (voting, proposals, watchdogs).
 - **[Security](dive-deeper/security/README.md)** — Risk overview and audit reports.
@@ -111,18 +104,4 @@ The documentation is split into five sections. Use the one that matches your goa
 
 ---
 
-## Quick links by goal
-
-| I want to… | Go to |
-|------------|--------|
-| **Understand what Mento is** | This page (Overview) |
-| **Swap or add/remove liquidity** | [Swap & liquidity](use/swap-and-liquidity.md) |
-| **Get Mento stablecoins** (USDm, EURm, GBPm) | [Getting Mento stables](use/getting-mento-stables/README.md) |
-| **Borrow, repay, or use the Stability pool** | [CDP operations](use/cdp-operations.md) |
-| **Integrate** (quote, swap, contracts, SDK) | [Integration](build/integration/README.md) |
-| **Deep dive: FPMMs, oracles, rebalancing** | [FPMMs](dive-deeper/fpmm/README.md) |
-| **Fix a failed swap or other issue** | [Troubleshooting](use/troubleshooting.md) |
-
----
-
-*Previous protocol architecture (v2) is documented in legacy docs and the [whitepaper](https://github.com/mento-protocol/whitepaper).*
+*Previous protocol architecture (v2) is documented in Mento V2 docs.*

@@ -12,7 +12,7 @@
   * [Trading limits](dive-deeper/fpmm/trading-limits.md)
   * [Rebalancing & strategies](dive-deeper/fpmm/rebalancing-and-strategies.md)
   * [The Reserve](dive-deeper/fpmm/the-reserve.md)
-  * [Research & Economics](dive-deeper/fpmm/research-and-economics.md)
+* [Economics](dive-deeper/economics.md)
 * [CDPs](use/cdp-operations.md)
 * [Governance & MENTO](dive-deeper/governance-and-mento/README.md)
   * [Understanding Mento Governance](dive-deeper/governance-and-mento/understanding-mento-governance.md)

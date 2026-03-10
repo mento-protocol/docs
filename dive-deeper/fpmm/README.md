@@ -123,3 +123,4 @@ See [Swap & liquidity](../../use/swap-and-liquidity.md) for how to mint and burn
 - [Rebalancing & strategies](rebalancing-and-strategies.md) — Who rebalances, thresholds, boundaries, incentives.
 - [Trading limits](trading-limits.md) — Caps; [Oracles & circuit breakers](oracles-and-circuit-breakers.md) — halts.
 - [The Reserve](the-reserve.md) — Backing for fully backed Mento stables (used by the Reserve liquidity strategy).
+- [Economics](../economics.md) — Value flows, fees, incentives, and revenue.

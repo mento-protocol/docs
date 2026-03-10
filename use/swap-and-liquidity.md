@@ -1,6 +1,6 @@
 # Swap & liquidity (FPMM operations)
 
-This page describes how to **swap** and how to **add or remove liquidity** on Mento V3. It assumes you have read [Overview](../README.md) or [What Is Mento? (deep dive)](../dive-deeper/what-is-mento.md) and know what an **FPMM** (Fixed-Price Market Maker), **oracle**, and **reserves** are.
+This page describes how to **swap** and how to **add or remove liquidity** on Mento V3. It assumes you have read the [Overview](../README.md) (or [FPMMs](../dive-deeper/fpmm/README.md)) and know what an **FPMM** (Fixed-Price Market Maker), **oracle**, and **reserves** are.
 
 ---
 
@@ -53,7 +53,7 @@ When the pool’s **reserve ratio** drifts too far from the **oracle** (e.g. too
 - **Who can trigger:** Anyone can call the **strategy’s** `rebalance(pool)` (permissionless). The strategy enforces a **cooldown** and then calls the pool; the pool only accepts the call if the sender is an allowlisted strategy.
 - **Who gets the incentive:** The strategy distributes the rebalance incentive (e.g. to protocol, liquidity source); the pool only enforces a **minimum repayment** so that value loss is capped.
 
-If you run a **keeper**, you can integrate with the strategy’s public `rebalance` entrypoint to earn incentives when pools are eligible. See [Rebalancing & strategies](../overview/core-concepts/rebalancing-and-strategies.md) and the build docs for contract details.
+If you run a **keeper**, you can integrate with the strategy’s public `rebalance` entrypoint to earn incentives when pools are eligible. See [Rebalancing & strategies](../dive-deeper/fpmm/rebalancing-and-strategies.md) and the build docs for contract details.
 
 ---
 
@@ -72,5 +72,5 @@ If you run a **keeper**, you can integrate with the strategy’s public `rebalan
 
 - [Getting Mento stables](getting-mento-stables/README.md) — Get USDm, EURm, GBPm via swap or borrow.
 - [Fixed-Price Market Makers (FPMMs)](../dive-deeper/fpmm/README.md) — How FPMMs work (invariant, rebalance rules).
-- [Oracles & price feeds](../overview/core-concepts/oracles-and-price-feeds.md) — How the pool gets the rate and when trading is gated.
-- [Trading limits & circuit breakers](../overview/core-concepts/trading-limits-and-circuit-breakers.md) — Caps and halts.
+- [Oracles, price feeds & circuit breakers](../dive-deeper/fpmm/oracles-and-circuit-breakers.md) — How the pool gets the rate and when trading is gated.
+- [Trading limits](../dive-deeper/fpmm/trading-limits.md) — Caps on flow; circuit breakers (halts) are covered in Oracles above.
