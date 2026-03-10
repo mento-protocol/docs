@@ -6,8 +6,6 @@ description: >-
 
 # Overview
 
-What Mento V3 is, how it’s structured, and where to find things in these docs.
-
 ---
 
 ## What is Mento V3?
@@ -32,21 +30,20 @@ Each pool is tied to an **oracle** (external price feed) and **always quotes tha
 | Piece | Role |
 |-------|------|
 | **Trading limits & circuit breakers** | Protect when the oracle is wrong, stale, or manipulated. Limits cap flow per token over time; the breaker can halt trading when the oracle is invalid or thresholds are breached. |
-| **Fees & swap spread** | Swap spread = gap between buy/sell around the oracle. Creates a band where arbitrage is unprofitable even if the oracle is slightly off. Fees fund the protocol and reward LPs. |
+| **Fees & incentives** | **Swap spread** (gap between buy/sell around the oracle) creates a band where arbitrage is unprofitable even if the oracle is slightly off. Fees fund the protocol and reward LPs. Incentives align roles: LPs earn swap fees, keepers/strategies earn rebalance incentives, governance (MENTO) sets parameters and revenue flows. |
 | **Liquidity strategies (rebalancing)** | No curve → reserves can become one-sided. Allowlisted strategies rebalance: take surplus token from the pool, return the other at the oracle rate (capped incentive). Keeps the pool usable. |
-| **Fees & incentives** | Align roles: LPs earn swap fees, keepers/strategies earn rebalance incentives, governance (MENTO) sets parameters and revenue flows. |
 
 ### One invariant for all operations
 
 Every pool keeps one number constant: **value at the oracle per LP share**,
 
-$$I = \frac{V}{S}$$
+<p align="center">$$I = \frac{V}{S}$$</p>
 
 - **V** = pool value at the oracle price (reserves valued at the oracle rate).
 - **S** = total LP share supply.
 - **I** = value per share at the oracle.
 
-**I** is preserved on **swap** (V, S unchanged), **mint/burn** (value in proportion), and **rebalance** (strategy returns the other token at oracle rate). Your share always represents a well-defined amount at the oracle.
+**I** is preserved on **swap** (V, S unchanged), **mint/burn** (value in proportion), and **rebalance** (strategy returns the other token at oracle rate)—**when we ignore fees and incentives**. In practice, swap fees and the capped rebalance incentive affect the exact accounting. Your share still represents a well-defined amount at the oracle for the purpose of the protocol’s bookkeeping.
 
 → Full mechanics: [FPMMs](dive-deeper/fpmm/README.md).
 

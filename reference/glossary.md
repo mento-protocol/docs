@@ -1,6 +1,6 @@
 # Glossary
 
-Short definitions for terms used in the Mento V3 docs. For full context, see [Overview](../README.md) · [What Is Mento? (deep dive)](../dive-deeper/what-is-mento.md) and [FPMMs](../dive-deeper/fpmm/README.md).
+Short definitions for terms used in the Mento V3 docs. For full context, see [Overview](../README.md) and [FPMMs](../dive-deeper/fpmm/README.md).
 
 ---
 
@@ -13,7 +13,7 @@ Short definitions for terms used in the Mento V3 docs. For full context, see [Ov
 | **DEX** (decentralized exchange) | A place to swap tokens without a central custodian; trades are executed by smart contracts. |
 | **FPMM** (Fixed-Price Market Maker) | An AMM where the swap price is fixed to an external **oracle** rate (minus fee). No reserve-based curve; no curve slippage; no LVR from a stale pool price. |
 | **FX** (foreign exchange) | Exchange of one currency or currency-like asset for another at a rate (e.g. USDC/USDm, EUR/USD). |
-| **Invariant** | A quantity the protocol keeps unchanged by every allowed operation. In V3 FPMMs: **I = V / S** (value at oracle per LP share). |
+| **Invariant** | A quantity the protocol keeps unchanged by every allowed operation. In V3 FPMMs: **I = V / S** (value at oracle per LP share). This holds under all operations **when we ignore fees and incentives**; in practice, swap fees and the rebalance incentive affect the exact accounting. |
 | **Liquidity strategy** | A smart contract allowlisted by a pool that can call the pool's rebalance function (e.g. Reserve, CDP). |
 | **LVR** (loss-versus-rebalancing) | In curve-based AMMs, loss to LPs when arbitrageurs trade against a stale pool price. In an FPMM the pool always quotes the oracle, so LVR from a stale curve is zero. |
 | **Mento stables** | Mento stablecoins: USDm, EURm, GBPm, and others. Track fiat; obtainable via swap (FPMM) or borrow (CDP). |
@@ -25,4 +25,4 @@ Short definitions for terms used in the Mento V3 docs. For full context, see [Ov
 
 ---
 
-**See also:** [Overview](../README.md) · [What Is Mento? (deep dive)](../dive-deeper/what-is-mento.md) · [FPMMs](../dive-deeper/fpmm/README.md) · [Oracles & circuit breakers](../dive-deeper/fpmm/oracles-and-circuit-breakers.md).
+**See also:** [Overview](../README.md) · [FPMMs](../dive-deeper/fpmm/README.md) · [Oracles & circuit breakers](../dive-deeper/fpmm/oracles-and-circuit-breakers.md).

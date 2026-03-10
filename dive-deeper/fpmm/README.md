@@ -19,28 +19,28 @@ In CFMMs, the **curvature** of the trading function governs both: a flatter curv
 
 In Mento V3, every FPMM maintains a single **invariant** across all operations:
 
-$$I = \frac{V}{S}$$
+<p align="center">$$I = \frac{V}{S}$$</p>
 
 where the pool **value at the oracle price** is
 
-$$V = p^\top R$$
+<p align="center">$$V = p^\top R$$</p>
 
-(reserves $$R$$ weighted by oracle $$p$$; $$S$$ = total **LP share supply**). So $$I$$ is value at the oracle per LP share.
+(reserves $$R$$ weighted by oracle $$p$$; $$S$$ = total **LP share supply**). So $$I$$ is value at the oracle per LP share. **This holds under all operations only when we ignore fees and incentives**—i.e. we treat swap as at the oracle rate and rebalance as returning exactly the other token at the oracle; in practice, swap fees (LP and protocol) and the capped rebalance incentive mean the accounting is slightly more involved.
 
 - **V** = pool **value at the oracle price** (the sum of reserve amounts weighted by the oracle). So V is “how much the reserves are worth at the oracle rate.”
 - **S** = total **LP share supply** (the number of liquidity-provider tokens in existence).
 - **I = V / S** = “value at the oracle per LP share.”
 
-This **I** is preserved on:
+This **I** is preserved on (when fees and incentives are ignored):
 
-- **Swap** — V and S do not change; only the composition of reserves changes. So I is unchanged.
+- **Swap** — V and S do not change; only the composition of reserves changes. So I is unchanged. (In practice the pool keeps swap fees.)
 - **Mint** (add liquidity) — You add both tokens in the **current reserve ratio**; you receive new shares in proportion to the value you add (at the pool’s implied price, which matches the oracle at equilibrium). The protocol is designed so I is preserved.
 - **Burn** (remove liquidity) — You burn shares and withdraw a proportional share of reserves; I stays the same for everyone.
-- **Rebalance** — The pool sends one token to a strategy and receives the other at the oracle rate (with a capped incentive). V and S do not change, so I is preserved.
+- **Rebalance** — The pool sends one token to a strategy and receives the other at the oracle rate (with a capped incentive). V and S do not change in the idealized case; in practice the strategy may keep a capped incentive, so the invariant holds only when we ignore that incentive.
 
-So “value per LP share at the oracle” is the **single number** that the protocol keeps constant across swaps, mints, burns, and rebalances. That gives LPs a clear accounting: your share of the pool is always worth a well-defined amount at the oracle price.
+So “value per LP share at the oracle” is the **single number** that the protocol keeps constant across swaps, mints, burns, and rebalances **when we abstract away fees and incentives**. That gives LPs a clear accounting: your share of the pool is always worth a well-defined amount at the oracle price.
 
-**How the building blocks fit together:** **FPMMs** give you the swap rate at the oracle; the **invariant** (I = V/S) keeps accounting consistent. **Trading limits** and the **circuit breaker** protect when the oracle is wrong, stale, or manipulated. **Liquidity strategies** rebalance inventory when reserves drift too far from the oracle, so the pool can keep serving trades. Fees and incentives align LPs, keepers, and governance.
+**How the building blocks fit together:** **FPMMs** give you the swap rate at the oracle; the **invariant** (I = V/S) keeps accounting consistent when we ignore fees and incentives. **Trading limits** and the **circuit breaker** protect when the oracle is wrong, stale, or manipulated. **Liquidity strategies** rebalance inventory when reserves drift too far from the oracle, so the pool can keep serving trades. Fees and incentives align LPs, keepers, and governance.
 
 ---
 
@@ -52,6 +52,8 @@ So “value per LP share at the oracle” is the **single number** that the prot
 | **Mint** | You add both tokens in current reserve ratio; receive LP tokens. V and S increase in proportion. | Preserved |
 | **Burn** | You burn LP tokens; receive proportional share of both reserves. V and S decrease. | Preserved |
 | **Rebalance** | Allowlisted strategy takes one token from pool, returns the other at oracle rate. V and S unchanged. | Preserved |
+
+*The “Preserved” column holds when we ignore fees and incentives; in practice, swap fees and the rebalance incentive affect the exact accounting.*
 
 Every swap also satisfies **value protection**: after the swap, the pool’s reserve value at the oracle (in one chosen numéraire) must not be less than before (once fee value is credited). If the oracle is wrong and trading is not halted, value can still be extracted compared to a fair price.
 
