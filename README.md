@@ -25,19 +25,15 @@ Each pool is tied to an **oracle** (external price feed) and **always quotes tha
 - No reserve-based curve → no curve-based slippage, no LVR from a stale pool price.
 - When the oracle is accurate, traders get the FX rate and LPs aren’t drained by arbitrage.
 
-### How the protocol is structured
-
-| Piece | Role |
-|-------|------|
-| **Trading limits & circuit breakers** | Protect when the oracle is wrong, stale, or manipulated. Limits cap flow per token over time; the breaker can halt trading when the oracle is invalid or thresholds are breached. |
-| **Fees & incentives** | **Swap spread** (gap between buy/sell around the oracle) creates a band where arbitrage is unprofitable even if the oracle is slightly off. The protocol uses various **fees and incentives** to fund itself and reward different actors: e.g. swap fees (LP and protocol), rebalance incentives for keepers and strategies, and governance-driven revenue flows (MENTO). |
-| **Liquidity strategies (rebalancing)** | No curve → reserves can become one-sided. Allowlisted strategies rebalance: take surplus token from the pool, return the other at the oracle rate (capped incentive). Keeps the pool usable. |
-
 ### One invariant for all operations
 
 Every pool keeps one number constant: **value at the oracle per LP share**,
 
+<div align="center">
+
 $$I = \frac{V}{S}$$
+
+</div>
 
 - **V** = pool value at the oracle price (reserves valued at the oracle rate).
 - **S** = total LP share supply.
@@ -45,7 +41,19 @@ $$I = \frac{V}{S}$$
 
 **I** is preserved on **swap** (V, S unchanged), **mint/burn** (value in proportion), and **rebalance** (strategy returns the other token at oracle rate)—**when we ignore fees and incentives**. In practice, swap fees and the capped rebalance incentive affect the exact accounting. Your share still represents a well-defined amount at the oracle for the purpose of the protocol’s bookkeeping.
 
+Tying everything to this invariant is what gives **LVR of zero** when the oracle rate is precise: the pool always quotes the oracle, so there is no stale pool price for arbitrageurs to exploit. That makes the design natural: the core is “one number, preserved.” The rest of the protocol is there to handle the case when the oracle is **not** precise.
+
 → Full mechanics: [FPMMs](dive-deeper/fpmm/README.md).
+
+### How the protocol is structured (when the oracle is imprecise)
+
+When the oracle is wrong, stale, or manipulated, the invariant alone doesn’t stop value extraction. The following elements protect against that:
+
+| Piece | Role |
+|-------|------|
+| **Trading limits & circuit breakers** | Limits cap flow per token over time so the pool can’t be drained in one go; the breaker can halt trading when the oracle is invalid or safety thresholds are breached. |
+| **Fees & incentives** | **Swap spread** (gap between buy/sell around the oracle) creates a band where arbitrage is unprofitable even if the oracle is slightly off. The protocol uses various **fees and incentives** to fund itself and reward different actors: e.g. swap fees (LP and protocol), rebalance incentives for keepers and strategies, and governance-driven revenue flows (MENTO). |
+| **Liquidity strategies (rebalancing)** | No curve → reserves can become one-sided. Allowlisted strategies rebalance: take surplus token from the pool, return the other at the oracle rate (capped incentive). Keeps the pool usable. |
 
 ### What you can do
 
