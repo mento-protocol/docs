@@ -43,8 +43,6 @@ Contracts used only by the Mento v2 bi-pool system (Broker, BiPoolManager). Shar
 {% endtab %}
 {% endtabs %}
 
-You can use our [verification flow](verification.md) to check the addresses listed above.
-
 ---
 
 ## Mento v3
@@ -67,7 +65,59 @@ Addresses below are from the current deployment manifests. **Proxy vs implementa
 <tr><td>VirtualPoolFactory</td><td><a href="https://celoscan.io/address/0x22abd4ADF6aab38aC1022352d496A07Acee5aCB3">0x22abd4ADF6aab38aC1022352d496A07Acee5aCB3</a></td><td>—</td></tr>
 <tr><td>StableTokenV3 v3.0.0</td><td><a href="https://celoscan.io/address/0x4B9B0E94197B7b2b11D311239e1420106cE7a2a2">0x4B9B0E94197B7b2b11D311239e1420106cE7a2a2</a></td><td>—</td></tr>
 <tr><td>StableTokenV3 v3.0.1</td><td><a href="https://celoscan.io/address/0x815795C30D0758A297B08cD4e0643620c974c318">0x815795C30D0758A297B08cD4e0643620c974c318</a></td><td>—</td></tr>
-<tr><td><strong>CDP (Bold / Liquity v2 fork)</strong></td><td></td><td></td></tr>
+</tbody></table>
+{% endtab %}
+
+{% tab title="Celo Sepolia (11142220)" %}
+<table><thead><tr><th>Contract</th><th>Address</th><th>Implementation</th></tr></thead><tbody>
+<tr><td>FPMMFactory</td><td><a href="https://sepolia.celoscan.io/address/0x353ED52bF8482027C0e0b9e3c0e5d96A9F680980">0x353ED52bF8482027C0e0b9e3c0e5d96A9F680980</a></td><td><a href="https://sepolia.celoscan.io/address/0x5e2a42d760aa6969c3da49b249ec181115887391">0x5e2a42d760aa6969c3da49b249ec181115887391</a></td></tr>
+<tr><td>FactoryRegistry</td><td><a href="https://sepolia.celoscan.io/address/0x47Cb00322E9cd6196915629EDD4De1EA92F98561">0x47Cb00322E9cd6196915629EDD4De1EA92F98561</a></td><td><a href="https://sepolia.celoscan.io/address/0xca73ea6193341d676ae9f5771d797eee8d83bad6">0xca73ea6193341d676ae9f5771d797eee8d83bad6</a></td></tr>
+<tr><td>OracleAdapter</td><td><a href="https://sepolia.celoscan.io/address/0x26eFF54e2f0E8825996b83119b7Df5ef2C882dD7">0x26eFF54e2f0E8825996b83119b7Df5ef2C882dD7</a></td><td><a href="https://sepolia.celoscan.io/address/0x9ca4fa8253f14cff40e42970df38799a78d3c482">0x9ca4fa8253f14cff40e42970df38799a78d3c482</a></td></tr>
+<tr><td>Router</td><td><a href="https://sepolia.celoscan.io/address/0xcf6cD45210b3ffE3cA28379C4683F1e60D0C2CCd">0xcf6cD45210b3ffE3cA28379C4683F1e60D0C2CCd</a></td><td>—</td></tr>
+<tr><td>ReserveV2</td><td><a href="https://sepolia.celoscan.io/address/0xbCdc1D0b92DfceEaa0FcD0a0D53355F4bF1DB8a7">0xbCdc1D0b92DfceEaa0FcD0a0D53355F4bF1DB8a7</a></td><td><a href="https://sepolia.celoscan.io/address/0x9af42d11e808d0d6d16cfa676769aafa0da9644d">0x9af42d11e808d0d6d16cfa676769aafa0da9644d</a></td></tr>
+<tr><td>ReserveLiquidityStrategy</td><td><a href="https://sepolia.celoscan.io/address/0x734bb3251Ec3f1A83f8f2A8609bcEF649D54EbF8">0x734bb3251Ec3f1A83f8f2A8609bcEF649D54EbF8</a></td><td><a href="https://sepolia.celoscan.io/address/0x625bd9cc583b5f9a88a38b0657ce816a3f02d367">0x625bd9cc583b5f9a88a38b0657ce816a3f02d367</a></td></tr>
+<tr><td>CDPLiquidityStrategy</td><td><a href="https://sepolia.celoscan.io/address/0x065AE7D4e207C8f4dca112D0B79E668cc7e93e03">0x065AE7D4e207C8f4dca112D0B79E668cc7e93e03</a></td><td><a href="https://sepolia.celoscan.io/address/0x7d66d42cff1374af6790dab5801f21e1edc91248">0x7d66d42cff1374af6790dab5801f21e1edc91248</a></td></tr>
+<tr><td>FPMM (pool)</td><td><a href="https://sepolia.celoscan.io/address/0x43cB9D6AcF1462356303079EA4FDd8bc30042a6A">0x43cB9D6AcF1462356303079EA4FDd8bc30042a6A</a></td><td>—</td></tr>
+<tr><td>BreakerBox</td><td><a href="https://sepolia.celoscan.io/address/0x578bD46003B9D3fd4c3C3f47c98B329562a6a1dE">0x578bD46003B9D3fd4c3C3f47c98B329562a6a1dE</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>MarketHoursBreaker</td><td><a href="https://sepolia.celoscan.io/address/0x99C968Bf5972C11442654b989B7eAD0237cA654B">0x99C968Bf5972C11442654b989B7eAD0237cA654B</a></td><td>—</td></tr>
+<tr><td>VirtualPoolFactory</td><td><a href="https://sepolia.celoscan.io/address/0x887955f28723B0e9Bddc358448CB5B1FDe692da4">0x887955f28723B0e9Bddc358448CB5B1FDe692da4</a></td><td>—</td></tr>
+<tr><td>Broker (v2)</td><td><a href="https://sepolia.celoscan.io/address/0xB9Ae2065142EB79b6c5EB1E8778F883fad6B07Ba">0xB9Ae2065142EB79b6c5EB1E8778F883fad6B07Ba</a></td><td>—</td></tr>
+<tr><td>BiPoolManager (v2)</td><td><a href="https://sepolia.celoscan.io/address/0xeCB3C656C131fCd9bB8D1d80898716bD684feb78">0xeCB3C656C131fCd9bB8D1d80898716bD684feb78</a></td><td>—</td></tr>
+<tr><td>Reserve (v2)</td><td><a href="https://sepolia.celoscan.io/address/0x2bC2D48735842924C508468C5A02580aD4F6d99A">0x2bC2D48735842924C508468C5A02580aD4F6d99A</a></td><td>—</td></tr>
+<tr><td>SortedOracles</td><td><a href="https://sepolia.celoscan.io/address/0xfaa7Ca2B056E60F6733aE75AA0709140a6eAfD20">0xfaa7Ca2B056E60F6733aE75AA0709140a6eAfD20</a></td><td><a href="https://sepolia.celoscan.io/address/0x0514884378460d86528658543bc8093d8178d7b1">0x0514884378460d86528658543bc8093d8178d7b1</a></td></tr>
+<tr><td>ChainlinkRelayerFactory</td><td><a href="https://sepolia.celoscan.io/address/0xd96f786f5a294fb7cbb0847307293b7A871B9d5a">0xd96f786f5a294fb7cbb0847307293b7A871B9d5a</a></td><td><a href="https://sepolia.celoscan.io/address/0x436a0ec7f23533e4ad109ecab4acf325d2173c28">0x436a0ec7f23533e4ad109ecab4acf325d2173c28</a></td></tr>
+<tr><td>ConstantSumPricingModule</td><td><a href="https://sepolia.celoscan.io/address/0x3b199d9EbEbe509bb711BfFb455c2d79102A9602">0x3b199d9EbEbe509bb711BfFb455c2d79102A9602</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>ConstantProductPricingModule</td><td><a href="https://sepolia.celoscan.io/address/0x2584a5835e3aE7E901e6462E1de06920c2C68028">0x2584a5835e3aE7E901e6462E1de06920c2C68028</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>MedianDeltaBreaker</td><td><a href="https://sepolia.celoscan.io/address/0xd29B4e743F7B84D63fBF9149B6D983DF2eF5C952">0xd29B4e743F7B84D63fBF9149B6D983DF2eF5C952</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>ValueDeltaBreaker</td><td><a href="https://sepolia.celoscan.io/address/0x03CDf2966185Eb0b980f2481Ad386B8aFdAB4534">0x03CDf2966185Eb0b980f2481Ad386B8aFdAB4534</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>StableTokenV3 v3.0.0</td><td><a href="https://sepolia.celoscan.io/address/0xdbd4ea7ce0b15c9d57dc3fa47713477e4ef4fdcb">0xdbd4ea7ce0b15c9d57dc3fa47713477e4ef4fdcb</a></td><td>—</td></tr>
+<tr><td>StableTokenV3 v3.0.1</td><td><a href="https://sepolia.celoscan.io/address/0xeA3A7FCb6706dB3DdeBF8859307059d2601452E6">0xeA3A7FCb6706dB3DdeBF8859307059d2601452E6</a></td><td>—</td></tr>
+<tr><td>StableTokenV2</td><td><a href="https://sepolia.celoscan.io/address/0xEd9A3541f06E45E3d92E937AA74eD878127318E0">0xEd9A3541f06E45E3d92E937AA74eD878127318E0</a></td><td>—</td></tr>
+<tr><td>USDm</td><td><a href="https://sepolia.celoscan.io/address/0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b">0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b</a></td><td><a href="https://sepolia.celoscan.io/address/0xea3a7fcb6706db3ddebf8859307059d2601452e6">0xea3a7fcb6706db3ddebf8859307059d2601452e6</a></td></tr>
+<tr><td>GBPm</td><td><a href="https://sepolia.celoscan.io/address/0x85F5181Abdbf0e1814Fc4358582Ae07b8eBA3aF3">0x85F5181Abdbf0e1814Fc4358582Ae07b8eBA3aF3</a></td><td><a href="https://sepolia.celoscan.io/address/0xea3a7fcb6706db3ddebf8859307059d2601452e6">0xea3a7fcb6706db3ddebf8859307059d2601452e6</a></td></tr>
+<tr><td>EURm</td><td><a href="https://sepolia.celoscan.io/address/0xA99dC247d6b7B2E3ab48a1fEE101b83cD6aCd82a">0xA99dC247d6b7B2E3ab48a1fEE101b83cD6aCd82a</a></td><td><a href="https://sepolia.celoscan.io/address/0xea3a7fcb6706db3ddebf8859307059d2601452e6">0xea3a7fcb6706db3ddebf8859307059d2601452e6</a></td></tr>
+<tr><td>MentoToken</td><td><a href="https://sepolia.celoscan.io/address/0x07867fd40EB56b4380bE39c88D0a7EA59Aa99A20">0x07867fd40EB56b4380bE39c88D0a7EA59Aa99A20</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>MentoGovernor</td><td><a href="https://sepolia.celoscan.io/address/0x23173Ac37b8E4e5a60d787aC543B3F51e8f398b4">0x23173Ac37b8E4e5a60d787aC543B3F51e8f398b4</a></td><td><a href="https://sepolia.celoscan.io/address/0x910a940a53c12982ae2277392c5cfa03aa8c602b">0x910a940a53c12982ae2277392c5cfa03aa8c602b</a></td></tr>
+<tr><td>TimelockController</td><td><a href="https://sepolia.celoscan.io/address/0x74c44Be99937815173A3C56274331e0A05611e0D">0x74c44Be99937815173A3C56274331e0A05611e0D</a></td><td><a href="https://sepolia.celoscan.io/address/0x32346936c5baf3c7b53ea3fe40b405efd3a3e656">0x32346936c5baf3c7b53ea3fe40b405efd3a3e656</a></td></tr>
+</tbody></table>
+{% endtab %}
+
+{% tab title="Monad Mainnet (143)" %}
+<table><thead><tr><th>Contract</th><th>Address</th><th>Notes</th></tr></thead><tbody>
+<tr><td>GBPm</td><td><a href="https://monadscan.com/address/0xddF082068Caa5B941ED8c603ADf0cecBdBb59f8E">0xddF082068Caa5B941ED8c603ADf0cecBdBb59f8E</a></td><td>Token</td></tr>
+<tr><td>USDm</td><td><a href="https://monadscan.com/address/0x866a7e4611C127DCe1a14C6841D2eA962A68dc88">0x866a7e4611C127DCe1a14C6841D2eA962A68dc88</a></td><td>Token</td></tr>
+<tr><td>StableTokenSpoke</td><td><a href="https://monadscan.com/address/0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91">0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91</a></td><td>Token</td></tr>
+</tbody></table>
+{% endtab %}
+{% endtabs %}
+
+## CDP (Bold / Liquity v2 fork)
+
+Contracts for the CDP (Collateralized Debt Position) system, a fork of Liquity v2 (Bold). Used by Mento v3 for GBPm and other collateralized stablecoin operations.
+
+{% tabs %}
+{% tab title="Celo Mainnet (42220)" %}
+<table><thead><tr><th>Contract</th><th>Address</th><th>Implementation</th></tr></thead><tbody>
 <tr><td>AddressesRegistry</td><td><a href="https://celoscan.io/address/0xB3136DBadB14Ab587FFa91545538126938Fe0C6E">0xB3136DBadB14Ab587FFa91545538126938Fe0C6E</a></td><td>—</td></tr>
 <tr><td>BorrowerOperations</td><td><a href="https://celoscan.io/address/0x8ec9A81871F816F1EF007a82293703057A943B8A">0x8ec9A81871F816F1EF007a82293703057A943B8A</a></td><td>—</td></tr>
 <tr><td>TroveManager</td><td><a href="https://celoscan.io/address/0xb38aEf2bF4e34B997330D626EBCd7629De3885C9">0xb38aEf2bF4e34B997330D626EBCd7629De3885C9</a></td><td>—</td></tr>
@@ -89,43 +139,13 @@ Addresses below are from the current deployment manifests. **Proxy vs implementa
 
 {% tab title="Celo Sepolia (11142220)" %}
 <table><thead><tr><th>Contract</th><th>Address</th><th>Implementation</th></tr></thead><tbody>
-<tr><td>FPMMFactory</td><td><a href="https://sepolia.celoscan.io/address/0x353ED52bF8482027C0e0b9e3c0e5d96A9F680980">0x353ED52bF8482027C0e0b9e3c0e5d96A9F680980</a></td><td>—</td></tr>
-<tr><td>FactoryRegistry</td><td><a href="https://sepolia.celoscan.io/address/0x47Cb00322E9cd6196915629EDD4De1EA92F98561">0x47Cb00322E9cd6196915629EDD4De1EA92F98561</a></td><td>—</td></tr>
-<tr><td>OracleAdapter</td><td><a href="https://sepolia.celoscan.io/address/0x26eFF54e2f0E8825996b83119b7Df5ef2C882dD7">0x26eFF54e2f0E8825996b83119b7Df5ef2C882dD7</a></td><td>—</td></tr>
-<tr><td>Router</td><td><a href="https://sepolia.celoscan.io/address/0xcf6cD45210b3ffE3cA28379C4683F1e60D0C2CCd">0xcf6cD45210b3ffE3cA28379C4683F1e60D0C2CCd</a></td><td>—</td></tr>
-<tr><td>ReserveV2</td><td><a href="https://sepolia.celoscan.io/address/0xbCdc1D0b92DfceEaa0FcD0a0D53355F4bF1DB8a7">0xbCdc1D0b92DfceEaa0FcD0a0D53355F4bF1DB8a7</a></td><td>—</td></tr>
-<tr><td>ReserveLiquidityStrategy</td><td><a href="https://sepolia.celoscan.io/address/0x734bb3251Ec3f1A83f8f2A8609bcEF649D54EbF8">0x734bb3251Ec3f1A83f8f2A8609bcEF649D54EbF8</a></td><td>—</td></tr>
-<tr><td>CDPLiquidityStrategy</td><td><a href="https://sepolia.celoscan.io/address/0x065AE7D4e207C8f4dca112D0B79E668cc7e93e03">0x065AE7D4e207C8f4dca112D0B79E668cc7e93e03</a></td><td>—</td></tr>
-<tr><td>FPMM (pool)</td><td><a href="https://sepolia.celoscan.io/address/0x43cB9D6AcF1462356303079EA4FDd8bc30042a6A">0x43cB9D6AcF1462356303079EA4FDd8bc30042a6A</a></td><td>—</td></tr>
-<tr><td>BreakerBox</td><td><a href="https://sepolia.celoscan.io/address/0x578bD46003B9D3fd4c3C3f47c98B329562a6a1dE">0x578bD46003B9D3fd4c3C3f47c98B329562a6a1dE</a></td><td>❌ Non-upgradable</td></tr>
-<tr><td>MarketHoursBreaker</td><td><a href="https://sepolia.celoscan.io/address/0x99C968Bf5972C11442654b989B7eAD0237cA654B">0x99C968Bf5972C11442654b989B7eAD0237cA654B</a></td><td>—</td></tr>
-<tr><td>VirtualPoolFactory</td><td><a href="https://sepolia.celoscan.io/address/0x887955f28723B0e9Bddc358448CB5B1FDe692da4">0x887955f28723B0e9Bddc358448CB5B1FDe692da4</a></td><td>—</td></tr>
-<tr><td>Broker (v2)</td><td><a href="https://sepolia.celoscan.io/address/0xB9Ae2065142EB79b6c5EB1E8778F883fad6B07Ba">0xB9Ae2065142EB79b6c5EB1E8778F883fad6B07Ba</a></td><td>—</td></tr>
-<tr><td>BiPoolManager (v2)</td><td><a href="https://sepolia.celoscan.io/address/0xeCB3C656C131fCd9bB8D1d80898716bD684feb78">0xeCB3C656C131fCd9bB8D1d80898716bD684feb78</a></td><td>—</td></tr>
-<tr><td>Reserve (v2)</td><td><a href="https://sepolia.celoscan.io/address/0x2bC2D48735842924C508468C5A02580aD4F6d99A">0x2bC2D48735842924C508468C5A02580aD4F6d99A</a></td><td>—</td></tr>
-<tr><td>SortedOracles</td><td><a href="https://sepolia.celoscan.io/address/0xfaa7Ca2B056E60F6733aE75AA0709140a6eAfD20">0xfaa7Ca2B056E60F6733aE75AA0709140a6eAfD20</a></td><td>—</td></tr>
-<tr><td>ChainlinkRelayerFactory</td><td><a href="https://sepolia.celoscan.io/address/0xd96f786f5a294fb7cbb0847307293b7A871B9d5a">0xd96f786f5a294fb7cbb0847307293b7A871B9d5a</a></td><td>—</td></tr>
-<tr><td>ConstantSumPricingModule</td><td><a href="https://sepolia.celoscan.io/address/0x3b199d9EbEbe509bb711BfFb455c2d79102A9602">0x3b199d9EbEbe509bb711BfFb455c2d79102A9602</a></td><td>❌ Non-upgradable</td></tr>
-<tr><td>ConstantProductPricingModule</td><td><a href="https://sepolia.celoscan.io/address/0x2584a5835e3aE7E901e6462E1de06920c2C68028">0x2584a5835e3aE7E901e6462E1de06920c2C68028</a></td><td>❌ Non-upgradable</td></tr>
-<tr><td>MedianDeltaBreaker</td><td><a href="https://sepolia.celoscan.io/address/0xd29B4e743F7B84D63fBF9149B6D983DF2eF5C952">0xd29B4e743F7B84D63fBF9149B6D983DF2eF5C952</a></td><td>❌ Non-upgradable</td></tr>
-<tr><td>ValueDeltaBreaker</td><td><a href="https://sepolia.celoscan.io/address/0x03CDf2966185Eb0b980f2481Ad386B8aFdAB4534">0x03CDf2966185Eb0b980f2481Ad386B8aFdAB4534</a></td><td>❌ Non-upgradable</td></tr>
-<tr><td>StableTokenV3 v3.0.0</td><td><a href="https://sepolia.celoscan.io/address/0xdbd4ea7ce0b15c9d57dc3fa47713477e4ef4fdcb">0xdbd4ea7ce0b15c9d57dc3fa47713477e4ef4fdcb</a></td><td>—</td></tr>
-<tr><td>StableTokenV3 v3.0.1</td><td><a href="https://sepolia.celoscan.io/address/0xeA3A7FCb6706dB3DdeBF8859307059d2601452E6">0xeA3A7FCb6706dB3DdeBF8859307059d2601452E6</a></td><td>—</td></tr>
-<tr><td>StableTokenV2</td><td><a href="https://sepolia.celoscan.io/address/0xEd9A3541f06E45E3d92E937AA74eD878127318E0">0xEd9A3541f06E45E3d92E937AA74eD878127318E0</a></td><td>—</td></tr>
-<tr><td>USDm</td><td><a href="https://sepolia.celoscan.io/address/0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b">0xdE9e4C3ce781b4bA68120d6261cbad65ce0aB00b</a></td><td>—</td></tr>
-<tr><td>GBPm</td><td><a href="https://sepolia.celoscan.io/address/0x85F5181Abdbf0e1814Fc4358582Ae07b8eBA3aF3">0x85F5181Abdbf0e1814Fc4358582Ae07b8eBA3aF3</a></td><td>—</td></tr>
-<tr><td>EURm</td><td><a href="https://sepolia.celoscan.io/address/0xA99dC247d6b7B2E3ab48a1fEE101b83cD6aCd82a">0xA99dC247d6b7B2E3ab48a1fEE101b83cD6aCd82a</a></td><td>—</td></tr>
-<tr><td>MentoToken</td><td><a href="https://sepolia.celoscan.io/address/0x07867fd40EB56b4380bE39c88D0a7EA59Aa99A20">0x07867fd40EB56b4380bE39c88D0a7EA59Aa99A20</a></td><td>❌ Non-upgradable</td></tr>
-<tr><td>MentoGovernor</td><td><a href="https://sepolia.celoscan.io/address/0x23173Ac37b8E4e5a60d787aC543B3F51e8f398b4">0x23173Ac37b8E4e5a60d787aC543B3F51e8f398b4</a></td><td>—</td></tr>
-<tr><td>TimelockController</td><td><a href="https://sepolia.celoscan.io/address/0x74c44Be99937815173A3C56274331e0A05611e0D">0x74c44Be99937815173A3C56274331e0A05611e0D</a></td><td>—</td></tr>
-<tr><td><strong>CDP (Bold / Liquity v2 fork)</strong></td><td></td><td></td></tr>
 <tr><td>AddressesRegistry</td><td><a href="https://sepolia.celoscan.io/address/0x8b33D626E8d79388889d404fBC515Ed131c9508e">0x8b33D626E8d79388889d404fBC515Ed131c9508e</a></td><td>—</td></tr>
 <tr><td>BorrowerOperations</td><td><a href="https://sepolia.celoscan.io/address/0x7fCd2F75Ed661E76f969E6D0347a93028a099d6D">0x7fCd2F75Ed661E76f969E6D0347a93028a099d6D</a></td><td>—</td></tr>
 <tr><td>TroveManager</td><td><a href="https://sepolia.celoscan.io/address/0x3ADFF16949513480E051F451748Ee8B801731c46">0x3ADFF16949513480E051F451748Ee8B801731c46</a></td><td>—</td></tr>
 <tr><td>StabilityPool</td><td><a href="https://sepolia.celoscan.io/address/0x1c424be1BE055a6C91ED9839a0E440E26814D1fC">0x1c424be1BE055a6C91ED9839a0E440E26814D1fC</a></td><td>—</td></tr>
-<tr><td>StabilityPoolGBPm</td><td><a href="https://sepolia.celoscan.io/address/0x31f4fE29B8104969209C0474A40FCa79170Ee53e">0x31f4fE29B8104969209C0474A40FCa79170Ee53e</a></td><td>—</td></tr>
+<tr><td>StabilityPoolGBPm</td><td><a href="https://sepolia.celoscan.io/address/0x31f4fE29B8104969209C0474A40FCa79170Ee53e">0x31f4fE29B8104969209C0474A40FCa79170Ee53e</a></td><td><a href="https://sepolia.celoscan.io/address/0x1c424be1be055a6c91ed9839a0e440e26814d1fc">0x1c424be1be055a6c91ed9839a0e440e26814d1fc</a></td></tr>
 <tr><td>SystemParams (logic)</td><td><a href="https://sepolia.celoscan.io/address/0xdf1E9330f328Ea8Fd3E974b1a2510A9791712318">0xdf1E9330f328Ea8Fd3E974b1a2510A9791712318</a></td><td>❌ Implementation</td></tr>
-<tr><td>SystemParamsProxyGBPm (proxy)</td><td><a href="https://sepolia.celoscan.io/address/0x70855d7826d3Ae92b2B3ae154eE6945754dD4Fe5">0x70855d7826d3Ae92b2B3ae154eE6945754dD4Fe5</a></td><td><a href="https://sepolia.celoscan.io/address/0xdf1E9330f328Ea8Fd3E974b1a2510A9791712318">0xdf1E9330f328Ea8Fd3E974b1a2510A9791712318</a></td></tr>
+<tr><td>SystemParamsProxyGBPm (proxy)</td><td><a href="https://sepolia.celoscan.io/address/0x70855d7826d3Ae92b2B3ae154eE6945754dD4Fe5">0x70855d7826d3Ae92b2B3ae154eE6945754dD4Fe5</a></td><td><a href="https://sepolia.celoscan.io/address/0xdf1e9330f328ea8fd3e974b1a2510a9791712318">0xdf1e9330f328ea8fd3e974b1a2510a9791712318</a></td></tr>
 <tr><td>ActivePool</td><td><a href="https://sepolia.celoscan.io/address/0x50651599c8A778732C34d1C181EEB05Ff2Ef9d73">0x50651599c8A778732C34d1C181EEB05Ff2Ef9d73</a></td><td>—</td></tr>
 <tr><td>CollSurplusPool</td><td><a href="https://sepolia.celoscan.io/address/0x4b8FD6eFe77B56a27c90eb46586c8903E8D0A63a">0x4b8FD6eFe77B56a27c90eb46586c8903E8D0A63a</a></td><td>—</td></tr>
 <tr><td>CollateralRegistry</td><td><a href="https://sepolia.celoscan.io/address/0xc674b6562eaf4E40056aad628E398F58cA0b2B91">0xc674b6562eaf4E40056aad628E398F58cA0b2B91</a></td><td>—</td></tr>
@@ -137,14 +157,6 @@ Addresses below are from the current deployment manifests. **Proxy vs implementa
 <tr><td>MultiTroveGetter</td><td><a href="https://sepolia.celoscan.io/address/0xED59EDfB9fCD06bb13d568ab548eC101fBb77a54">0xED59EDfB9fCD06bb13d568ab548eC101fBb77a54</a></td><td>❌ Non-upgradable</td></tr>
 <tr><td>ReserveTroveFactory</td><td><a href="https://sepolia.celoscan.io/address/0xf179d705706CD959884E40B1eA21C95EC84D9E14">0xf179d705706CD959884E40B1eA21C95EC84D9E14</a></td><td>—</td></tr>
 <tr><td>ProxyAdmin</td><td><a href="https://sepolia.celoscan.io/address/0x01bd47aa7B13a75c24E3dA760f8A503c435BB4Df">0x01bd47aa7B13a75c24E3dA760f8A503c435BB4Df</a></td><td>—</td></tr>
-</tbody></table>
-{% endtab %}
-
-{% tab title="Monad Mainnet (143)" %}
-<table><thead><tr><th>Contract</th><th>Address</th><th>Notes</th></tr></thead><tbody>
-<tr><td>GBPm</td><td><a href="https://monadscan.com/address/0xddF082068Caa5B941ED8c603ADf0cecBdBb59f8E">0xddF082068Caa5B941ED8c603ADf0cecBdBb59f8E</a></td><td>Token</td></tr>
-<tr><td>USDm</td><td><a href="https://monadscan.com/address/0x866a7e4611C127DCe1a14C6841D2eA962A68dc88">0x866a7e4611C127DCe1a14C6841D2eA962A68dc88</a></td><td>Token</td></tr>
-<tr><td>StableTokenSpoke</td><td><a href="https://monadscan.com/address/0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91">0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91</a></td><td>Token</td></tr>
 </tbody></table>
 {% endtab %}
 {% endtabs %}

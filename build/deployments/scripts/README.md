@@ -9,7 +9,7 @@
 ```bash
 # With RPC URL (recommended for Sepolia)
 export CELO_RPC_URL="https://forno.celo.org"
-export CELO_SEPOLIA_RPC_URL="https://sepolia-forno.celo.org"   # or your own RPC
+export CELO_SEPOLIA_RPC_URL="https://forno.celo-sepolia.celo-testnet.org"   # or your own RPC
 
 # Celo Mainnet (chainId 42220)
 node get-proxy-implementations.mjs 42220 < addresses-celo-mainnet.txt

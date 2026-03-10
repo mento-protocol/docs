@@ -11,7 +11,7 @@ const EIP1967_IMPL_SLOT = '0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a
 
 const RPC_URLS = {
   '42220': process.env.CELO_RPC_URL || 'https://forno.celo.org',
-  '11142220': process.env.CELO_SEPOLIA_RPC_URL || 'https://sepolia-forno.celo.org',
+  '11142220': process.env.CELO_SEPOLIA_RPC_URL || 'https://forno.celo-sepolia.celo-testnet.org',
 };
 
 function parseImplSlot(hex) {
@@ -23,20 +23,31 @@ function parseImplSlot(hex) {
   return '0x' + last40.toLowerCase();
 }
 
-async function getStorageAt(rpcUrl, address, slot) {
-  const res = await fetch(rpcUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      jsonrpc: '2.0',
-      id: 1,
-      method: 'eth_getStorageAt',
-      params: [address, slot, 'latest'],
-    }),
-  });
-  const data = await res.json();
-  if (data.error) throw new Error(data.error.message);
-  return data.result;
+async function getStorageAt(rpcUrl, address, slot, retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const res = await fetch(rpcUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          id: 1,
+          method: 'eth_getStorageAt',
+          params: [address, slot, 'latest'],
+        }),
+      });
+      const data = await res.json();
+      if (data.error) throw new Error(data.error.message);
+      return data.result;
+    } catch (e) {
+      if (i === retries - 1) throw e;
+      await new Promise((r) => setTimeout(r, 500 * (i + 1)));
+    }
+  }
+}
+
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
 }
 
 async function main() {
@@ -56,7 +67,8 @@ async function main() {
   }
 
   const out = {};
-  for (const addr of addresses) {
+  for (let i = 0; i < addresses.length; i++) {
+    const addr = addresses[i];
     const a = addr.startsWith('0x') ? addr : '0x' + addr;
     try {
       const storage = await getStorageAt(rpcUrl, a, EIP1967_IMPL_SLOT);
@@ -65,6 +77,7 @@ async function main() {
     } catch (e) {
       console.error(`# ${a}: ${e.message}`);
     }
+    if (i < addresses.length - 1) await sleep(100);
   }
   console.log(JSON.stringify(out, null, 2));
 }
