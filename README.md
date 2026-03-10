@@ -25,7 +25,7 @@ description: >-
 
 **Explore by section:** [Get Started](get-started/what-is-mento.md) · [Dive Deeper](dive-deeper/fpmm/README.md) · [Use](use/swap-and-liquidity.md) · [Build](build/integration/README.md)
 
-[Quick start guides](get-started/quick-start-guides.md) · [Glossary](get-started/glossary.md) · [Analytics & dashboards](get-started/analytics-and-dashboards.md)
+[Quick start guides](get-started/quick-start-guides.md) · **Reference:** [Glossary](reference/glossary.md) · [GBPm/USDm parameters](reference/gbpm-usdm-parameters-reference.md) · [Analytics & dashboards](reference/analytics-and-dashboards.md)
 
 ---
 

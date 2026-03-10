@@ -9,7 +9,7 @@ This document summarizes a pass over the Mento V3 docs and suggests concrete cha
 The following internal links were updated so they point under the current folder layout:
 
 - **use/swap-and-liquidity.md** — "Build on Mento" and "FPMM contracts" now point to `../build/integration/` and `../build/smart-contracts/`.
-- **understand/getting-started/glossary.md** — "Core concepts" and FPMM/Oracles "See also" links now point to `../fpmm/README.md` and `../fpmm/oracles-and-circuit-breakers.md`; "What is Mento?" fixed to same-folder `what-is-mento.md`.
+- **reference/glossary.md** — Links to get-started (What Is Mento?, Concepts overview) and dive-deeper/fpmm.
 - **understand/getting-started/quick-start-guides.md** — All `use-mento/` and `build-on-mento/` links updated to `use/` and `build/`; "Core Concepts" → "Concepts overview".
 - **dive-deeper/fpmm/research-and-economics.md** — "Security & Risk" link updated to `../security/risk-overview.md`.
 

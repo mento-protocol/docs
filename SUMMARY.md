@@ -6,9 +6,6 @@
 * [What Is Mento?](get-started/what-is-mento.md)
 * [Quick Start Guides](get-started/quick-start-guides.md)
 * [Concepts overview](get-started/concepts-overview.md)
-* [Glossary](get-started/glossary.md)
-* [GBPm/USDm parameters (reference)](get-started/gbpm-usdm-parameters-reference.md)
-* [Analytics & Dashboards](get-started/analytics-and-dashboards.md)
 
 ## Dive Deeper
 
@@ -76,3 +73,9 @@
     * [Price Sources](build/oracles/oracle-client/price-sources.md)
   * [Becoming an Oracle Provider](build/oracles/becoming-an-oracle-provider.md)
 * [Troubleshooting (integrators)](build/troubleshooting.md)
+
+## Reference
+
+* [Glossary](reference/glossary.md)
+* [GBPm/USDm parameters](reference/gbpm-usdm-parameters-reference.md)
+* [Analytics & Dashboards](reference/analytics-and-dashboards.md)

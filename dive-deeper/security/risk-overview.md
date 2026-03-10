@@ -73,4 +73,4 @@ To explore specific aspects of Mento's security architecture:
 * [Audit Reports](audit-reports.md) - Comprehensive security assessments from leading firms
 * [Trading limits](../fpmm/trading-limits.md) · [Oracles & circuit breakers](../fpmm/oracles-and-circuit-breakers.md) - Protective mechanisms
 * [Watchdogs & Safety](../governance-and-mento/watchdogs-and-safety.md) - Governance safeguards and veto powers
-* [Analytics & Dashboards](../getting-started/analytics-and-dashboards.md) - Monitor metrics in real-time
+* [Analytics & Dashboards](../../reference/analytics-and-dashboards.md) - Monitor metrics in real-time
