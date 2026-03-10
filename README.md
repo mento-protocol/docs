@@ -29,9 +29,9 @@ Every Mento V3 swap pool is an FPMM. Each pool is tied to an **oracle** (externa
 
 Every pool keeps one number constant: **value at the oracle per LP share**,
 
-<div align="center">
+<div align="center" style="background: #f5f5f5; padding: 1rem 1.5rem; border-radius: 8px; margin: 1rem 0; display: inline-block;">
 
-$$I = \frac{V}{S}$$
+$$\Large I = \frac{V}{S}$$
 
 </div>
 
@@ -39,9 +39,9 @@ $$I = \frac{V}{S}$$
 - **S** = total LP share supply.
 - **I** = value per share at the oracle.
 
-**I** is preserved on **swap** (V, S unchanged), **mint/burn** (value in proportion), and **rebalance** (strategy returns the other token at oracle rate)—when we ignore fees and incentives. Your share still represents a well-defined amount at the oracle for the purpose of the protocol’s bookkeeping.
+**I** is preserved on **swap** (V, S unchanged), **mint/burn** (value in proportion), and **rebalance** (strategy returns the other token at oracle rate)—when we ignore fees and incentives. All operations happen at fair value as long as the oracle rate is precise.
 
-Tying everything to this invariant is what gives **LVR of zero** when the oracle rate is precise: the pool always quotes the oracle, so there is no stale pool price for arbitrageurs to exploit. That makes the design natural: the core is “one number, preserved.” The rest of the protocol is there to handle the case when the oracle is **not** precise.
+That makes the design natural: the core is to enforce that all operations are conducted at fair value (assuming the oracle rate is precise) and to protect against cases where the oracle rate is imprecise through additional protocol layers.
 
 → Full mechanics: [FPMMs](dive-deeper/fpmm/README.md).
 
