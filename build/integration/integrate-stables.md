@@ -1,6 +1,6 @@
 # Integrate Stables
 
-This guide walks through adding support for Mento stable assets in your application. Mento stables are ERC-20 tokens that track the value of fiat currencies.
+This guide walks through adding support for Mento stable assets in your application. Mento stables are ERC-20 tokens that track the value of fiat currencies. In **Mento V3**, stables are either **reserve-backed** (e.g. USDm, EURm), backed by collateral in the Reserve, or **CDP-backed** (e.g. GBPm), minted via the Liquity v2–style CDP system. For integration purposes they are standard ERC-20s; the backing model does not change how you read balances, transfer, or display values.
 
 ## Available Stable Assets
 
@@ -8,8 +8,8 @@ Mento supports a growing ecosystem of stable assets that track various fiat curr
 
 For the complete list of available stables and their contract addresses, see:
 
-* [**Mento Reserve**](https://reserve.mento.org/) - Live view of all supported stables with supply information
-* [**Contract Deployments**](https://docs.mento.org/mento/developers/deployments/addresses) - Smart contract addresses for all supported stables
+* [**Mento Reserve**](https://reserve.mento.org/) — Live view of all supported stables with supply information
+* [**Deployments > Addresses**](../deployments/addresses.md) — Smart contract addresses per chain
 
 ## Common Use Cases
 
@@ -44,7 +44,7 @@ const STABLE_ADDRESSES = {
 };
 ```
 
-For the complete list of stable addresses across all networks, see [Smart Contracts > Deployments](https://docs.mento.org/mento/developers/deployments/addresses).
+For the complete list of stable addresses across all networks, see [Deployments > Addresses](../deployments/addresses.md).
 
 ### Step 2: Configure Token Metadata
 
@@ -77,7 +77,7 @@ Use your existing ERC-20 handling for:
 
 Mento stables maintain a peg with their respective fiat currencies under normal conditions (e.g., 1 USDm ≈ 1 USD, 1 EURm ≈ 1 EUR).
 
-For precise exchange rates, use the pool’s oracle (see [Oracles, price feeds & circuit breakers](../../dive-deeper/fpmm/oracles-and-circuit-breakers.md)) or the [Mento SDK](https://github.com/mento-protocol/mento-sdk) for quotes.
+For precise exchange rates, use the pool’s oracle (see [Oracles, price feeds & circuit breakers](../../dive-deeper/fpmm/oracles-and-circuit-breakers.md)) or the [Mento SDK](../mento-sdk/README.md) for quotes.
 
 ### Step 5: Enable cross-stable swaps (optional)
 
@@ -108,7 +108,7 @@ When supporting multiple operations, consider batching transactions or using mul
 
 ### Network Support
 
-Mento stables are native to Celo. For cross-chain use cases, work with official bridges:
+Mento stables are deployed on Celo and other supported chains. For cross-chain use cases, work with official bridges:
 
 * Wormhole (USDm)
 * Portal Bridge
@@ -128,6 +128,6 @@ Mento stables are native to Celo. For cross-chain use cases, work with official 
 ## Next steps
 
 * For swap functionality, see [Mento SDK](../mento-sdk/) and [Swap & liquidity](../../use/swap-and-liquidity.md)
-* For accurate price feeds, see [Integrate Oracles](integrate-oracles.md)
-* For contract addresses, see [Deployments & addresses](integrate-mento-stables.md) and [Smart Contracts](../smart-contracts/)
+* For oracle-backed price feeds (V3 OracleAdapter), see [Integrate Oracles](integrate-oracles.md)
+* For contract addresses and ABIs, see [Deployments](../deployments/README.md) and [Smart Contracts](../smart-contracts/)
 
