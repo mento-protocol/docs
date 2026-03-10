@@ -61,10 +61,9 @@
   * [CDP operations](use-mento/cdp-operations.md)
   * [Getting Mento Stables](use-mento/getting-mento-stables/README.md)
 * [Build](build-on-mento/deployments/README.md)
-  * [Deployments](build-on-mento/deployments/README.md)
-    * [Addresses](build-on-mento/deployments/addresses.md)
-    * [Verification](build-on-mento/deployments/verification.md)
-    * [Parameters](build-on-mento/deployments/parameters.md)
+  * [Addresses](build-on-mento/deployments/addresses.md)
+  * [Verification](build-on-mento/deployments/verification.md)
+  * [Parameters](build-on-mento/deployments/parameters.md)
   * [Smart contracts](build-on-mento/smart-contracts/README.md)
 
 ## Governance & MENTO
