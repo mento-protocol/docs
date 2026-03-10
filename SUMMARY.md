@@ -11,6 +11,7 @@
   * [Oracles, price feeds & circuit breakers](dive-deeper/fpmm/oracles-and-circuit-breakers.md)
   * [Trading limits](dive-deeper/fpmm/trading-limits.md)
   * [Rebalancing & strategies](dive-deeper/fpmm/rebalancing-and-strategies.md)
+* [CDPs](use/cdp-operations.md)
 * [The Reserve](dive-deeper/the-reserve.md)
 * [Protocol Economics](dive-deeper/protocol-economics.md)
 * [Governance & MENTO](dive-deeper/governance-and-mento/README.md)

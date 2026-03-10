@@ -82,14 +82,13 @@ See [Rebalancing & strategies](rebalancing-and-strategies.md) for more detail.
 
 ## Liquidity strategies
 
-Different pools need different **sources** of liquidity for rebalancing. Mento V3 uses **liquidity strategies**: each is a contract allowlisted by one or more pools. When the pool calls the strategy during rebalance, the strategy must return the other token; it gets that token from somewhere (e.g. the protocol **Reserve**, or a **CDP** [stability pool](../cdps.md)).
+Different pools need different **sources** of liquidity for rebalancing. Mento V3 uses **liquidity strategies**: each is a contract allowlisted by one or more pools. When the pool calls the strategy during rebalance, the strategy must return the other token; it gets that token from somewhere (e.g. the protocol **Reserve**, or a **CDP** stability pool).
 
 - **Reserve strategy** — For fully backed Mento stablecoins (e.g. USDm, EURm). The **Reserve** holds collateral; the strategy can mint or burn stablecoins and move collateral to rebalance the pool.
-- **CDP strategy** — For synthetic stablecoins (e.g. GBPm) created by [CDPs (a fork of Liquity V2)](../cdps.md). The strategy interacts with the **stability pool** and borrowing/repayment to source or sink the stablecoin when rebalancing.
+- **CDP strategy** — For synthetic stablecoins (e.g. GBPm) created by collateralized debt. The strategy interacts with the **stability pool** and borrowing/repayment to source or sink the stablecoin when rebalancing.
 - **Third-party strategy** — External issuers can provide their own strategy contract (allowlisted by governance) for custom liquidity sources.
 
 ---
-
 
 ## Pool configuration
 
@@ -114,7 +113,7 @@ Anyone can add liquidity by depositing **both** tokens in the **current reserve 
 - **Value per share** at the oracle (I = V/S) is preserved on every operation.
 - LPs earn **fees** from swap volume and may face **path-dependent** changes in composition when the oracle price moves between rebalances (so there can be “impermanent loss” in composition terms, but not from arbitrageurs picking off a stale quote).
 
-Use the Mento app (e.g. [app.mento.org](https://app.mento.org/)) to mint and burn in practice.
+See [Swap & liquidity](../../use/swap-and-liquidity.md) for how to mint and burn in practice.
 
 ---
 

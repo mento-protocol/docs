@@ -25,11 +25,9 @@ Every Mento V3 swap pool is an FPMM. Each pool is tied to an **oracle** (externa
 - No reserve-based curve → no curve-based slippage, no LVR from a stale pool price.
 - When the oracle is accurate, traders get the FX rate and **liquidity providers (LPs)** aren’t drained by arbitrage.
 
-The design relies on the existence of **high-quality stablecoins** that accurately reflect the underlying fiat currencies—something that should become more the case as the stablecoin space matures.
-
 ### One invariant for all operations
 
-Every FPMM pool keeps one number constant: **value at the oracle per LP share**,
+Every pool keeps one number constant: **value at the oracle per LP share**,
 
 $$I = \frac{V}{S}$$
 
@@ -45,11 +43,11 @@ That makes the design natural: the core is to enforce that all operations are co
 
 ### How the protocol is structured
 
-Beyond the invariant, the protocol uses several building blocks—each with a different role. **Trading limits and the circuit breaker** protect the pool when the oracle is wrong, stale, or manipulated, or when stablecoins move too far off peg. **Liquidity strategies** address the fact that with no curve, reserves can become one-sided as users trade; they rebalance so the pool stays usable. **Fees and incentives** fund the protocol and reward different actors (LPs, keepers, governance); the swap spread in particular also adds a band where arbitrage is unprofitable if the oracle is slightly off.
+Beyond the invariant, the protocol uses several building blocks—each with a different role. **Trading limits and the circuit breaker** protect the pool when the oracle is wrong, stale, or manipulated. **Liquidity strategies** address the fact that with no curve, reserves can become one-sided as users trade; they rebalance so the pool stays usable. **Fees and incentives** fund the protocol and reward different actors (LPs, keepers, governance); the swap spread in particular also adds a band where arbitrage is unprofitable if the oracle is slightly off.
 
 | Piece | Role |
 |-------|------|
-| **Trading limits & circuit breakers** | Protect when the oracle is wrong, stale, or manipulated, or when stablecoins are too far off peg: limits cap flow per token over time; the breaker can halt trading when the oracle is invalid, safety thresholds are breached, or peg deviation is too large. |
+| **Trading limits & circuit breakers** | Protect when the oracle is wrong, stale, or manipulated: limits cap flow per token over time; the breaker can halt trading when the oracle is invalid or safety thresholds are breached. |
 | **Liquidity strategies (rebalancing)** | No curve → reserves can become one-sided. Allowlisted strategies rebalance: take surplus token from the pool, return the other at the oracle rate (capped incentive). Keeps the pool usable. |
 | **Fees & incentives** | Fund the protocol and reward different actors: e.g. swap fees (LP and protocol), rebalance incentives for keepers and strategies, governance-driven revenue flows (MENTO). The swap spread in particular also provides additional arb protection when the oracle is slightly off. |
 
@@ -71,7 +69,7 @@ The documentation is split into four sections. Use the one that matches your goa
 **For:** Readers who want to understand how the protocol works under the hood.
 
 - **[FPMMs](dive-deeper/fpmm/README.md)** — Why Mento uses oracle pricing (and why curve-based AMMs don’t work well for FX), how Fixed-Price Market Makers work: the invariant, operations, rebalancing, and liquidity strategies. Subpages cover oracles & circuit breakers and trading limits.
-- **[CDPs](dive-deeper/cdps.md)** — Collateralized debt positions (fork of [Liquity V2](https://docs.liquity.org/)); synthetic stables (e.g. GBPm), stability pool, and how they support FPMM rebalancing.
+- **[CDPs](use/cdp-operations.md)** — How collateralized debt positions back synthetic Mento stables (e.g. GBPm).
 - **[The Reserve](dive-deeper/the-reserve.md)** — How USDm and EURm are backed by the Reserve; two backing models (Reserve vs CDP).
 - **[Protocol Economics](dive-deeper/protocol-economics.md)** — Value flows, fees, incentives, and revenue (FPMM, CDP, MENTO).
 - **[Governance & MENTO](dive-deeper/governance-and-mento/README.md)** — How the protocol is governed, the MENTO token, tokenomics, and participation (voting, proposals, watchdogs).

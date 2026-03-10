@@ -1,6 +1,6 @@
 # The Reserve
 
-In Mento V3, **most Mento stablecoins are CDP-backed** (using [Liquity V2](https://docs.liquity.org/)–style CDPs; Mento’s CDP system is a fork of Liquity V2). **Only USDm and EURm** are backed by collateral held in the **MENTO Reserve**. This page explains why that split exists and how the Reserve works for those two stables.
+In Mento V3, **most Mento stablecoins are CDP-backed** (using Liquity v2–style CDPs). **Only USDm and EURm** are backed by collateral held in the **MENTO Reserve**. This page explains why that split exists and how the Reserve works for those two stables.
 
 ---
 
@@ -9,7 +9,7 @@ In Mento V3, **most Mento stablecoins are CDP-backed** (using [Liquity V2](https
 | Backing model | Stablecoins | How it works |
 |---------------|-------------|----------------|
 | **Reserve-backed** | **USDm**, **EURm** | The Reserve holds high-quality fiat-backed collateral (e.g. USDC, USDT, USDS for USDm; EUROC for EURm). These stables can be backed **1:1** by such assets because they have liquid, high-quality counterparts that can be integrated onchain. |
-| **CDP-backed** | **GBPm** and others | No equivalent high-quality fiat-backed GBP (or other currency) stablecoin is integrated at scale yet. So these stables are minted via **[Liquity V2](https://docs.liquity.org/)–style CDPs** (Mento CDPs are a fork of Liquity V2): users deposit **USDm** as collateral and borrow the synthetic stable (e.g. GBPm). When high-quality fiat-backed counterparts become available, governance can consider moving to Reserve-backed backing for them too. |
+| **CDP-backed** | **GBPm** and others | No equivalent high-quality fiat-backed GBP (or other currency) stablecoin is integrated at scale yet. So these stables are minted via **Liquity v2–style CDPs**: users deposit **USDm** as collateral and borrow the synthetic stable (e.g. GBPm). When high-quality fiat-backed counterparts become available, governance can consider moving to Reserve-backed backing for them too. |
 
 So: the Reserve backs **only USDm and EURm**. Other Mento stables are **synthetic** and backed by CDPs (with USDm as collateral in the current design), until the ecosystem has suitable fiat-backed collateral to integrate.
 
@@ -34,7 +34,7 @@ For **USDm** and **EURm**, the Reserve:
 - **Enables rebalancing** — The **Reserve liquidity strategy** is allowlisted on the FPMM pools that pair USDm or EURm with those external stables. When a pool becomes imbalanced, the strategy can mint or burn the Mento stable and move collateral so the pool rebalances at the oracle rate (within configured incentives and caps).
 - **Operates transparently** — Holdings and operations are onchain and verifiable.
 
-The Reserve does **not** hold collateral for CDP-backed stables like GBPm; those are backed by user-deposited USDm in the [Liquity V2](https://docs.liquity.org/)–style CDP system. See [CDPs](cdps.md) for how CDPs fit into Mento V3.
+The Reserve does **not** hold collateral for CDP-backed stables like GBPm; those are backed by user-deposited USDm in the Liquity v2 system.
 
 ---
 
@@ -60,6 +60,5 @@ Reserve composition, which assets are accepted as collateral, and the parameters
 ## Next steps
 
 - [FPMMs](fpmm/README.md) — How pools use the oracle rate and rebalance.
-- [CDPs](cdps.md) — Mento CDPs (fork of [Liquity V2](https://docs.liquity.org/)); synthetic stables and stability pool.
 - [Rebalancing & strategies](fpmm/rebalancing-and-strategies.md) — Reserve liquidity strategy and other allowlisted strategies.
 - [Protocol Economics](protocol-economics.md) — Value flows, fees, incentives, and reserve management.
