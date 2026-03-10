@@ -1,4 +1,4 @@
-# What is Mento?
+# What Is Mento?
 
 Mento v3 is a **DEX for onchain foreign exchange (FX)**. The **goal** is to let users swap stablecoins onchain at the **respective FX rates** — e.g. USDC ↔ GBPm at the USD/GBP rate, or USDC ↔ EURm at USD/EUR — so that onchain execution can compete with off-chain spot FX. This page explains why that requires a different design than standard AMMs, and how Mento v3’s building blocks (FPMMs, protection against oracle imprecision, liquidity strategies) fit together.
 
@@ -141,8 +141,8 @@ Governance (parameters, allowlists, oracle config) is driven by MENTO token hold
 
 ## Where to go next
 
-- **Use the DEX:** [Swap & liquidity (FPMM operations)](../../use-mento/swap-and-liquidity.md) · [Getting Mento stables](../../use-mento/getting-mento-stables/README.md)
-- **Concepts:** [Fixed-Price Market Makers (FPMMs)](../core-concepts/fixed-price-market-makers-fpmms.md) · [Oracles & price feeds](../core-concepts/oracles-and-price-feeds.md) · [Trading limits & circuit breakers](../core-concepts/trading-limits-and-circuit-breakers.md)
+- **Use the DEX:** [Swap & liquidity](../../use-mento/swap-and-liquidity.md) · [Getting Mento stables](../../use-mento/getting-mento-stables/README.md)
+- **Concepts:** [Fixed-Price Market Makers (FPMMs)](../core-concepts/fixed-price-market-makers-fpmms.md) · [Oracles, price feeds & circuit breakers](../core-concepts/oracles-and-circuit-breakers.md) · [Trading limits](../core-concepts/trading-limits.md)
 - **Build:** [Integration overview](../../build-on-mento/integration-overview/README.md)
 
-*Previous architecture (v2):* [Legacy (v2)](../legacy-v2.md).
+*Previous architecture (v2):* See the [whitepaper](https://github.com/mento-protocol/whitepaper) or legacy docs.
