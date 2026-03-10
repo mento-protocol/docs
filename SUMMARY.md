@@ -10,13 +10,13 @@
 
 ## Concepts
 
-* [Core Concepts](overview/core-concepts/README.md)
-  * [Fixed-Price Market Makers (FPMMs)](overview/core-concepts/fixed-price-market-makers-fpmms.md)
-  * [Oracles, price feeds & circuit breakers](overview/core-concepts/oracles-and-circuit-breakers.md)
-  * [Rebalancing & strategies](overview/core-concepts/rebalancing-and-strategies.md)
-  * [Trading limits](overview/core-concepts/trading-limits.md)
-  * [The Reserve](overview/core-concepts/the-reserve.md)
-  * [Research & Economics](overview/core-concepts/research-and-economics.md)
+* [Concepts overview](overview/core-concepts/README.md)
+* [Fixed-Price Market Makers (FPMMs)](overview/core-concepts/fixed-price-market-makers-fpmms.md)
+* [Oracles, price feeds & circuit breakers](overview/core-concepts/oracles-and-circuit-breakers.md)
+* [Rebalancing & strategies](overview/core-concepts/rebalancing-and-strategies.md)
+* [Trading limits](overview/core-concepts/trading-limits.md)
+* [The Reserve](overview/core-concepts/the-reserve.md)
+* [Research & Economics](overview/core-concepts/research-and-economics.md)
 * [Glossary](overview/glossary.md)
 
 ## Governance

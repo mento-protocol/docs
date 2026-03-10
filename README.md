@@ -18,10 +18,10 @@ description: >-
 | **Understand what Mento is** | [What is Mento?](overview/getting-started/what-is-mento.md) |
 | **Swap or add/remove liquidity** | [Swap & liquidity (FPMM operations)](use-mento/swap-and-liquidity.md) |
 | **Get Mento stablecoins** (USDm, EURm, GBPm) | [Getting Mento stables](use-mento/getting-mento-stables/README.md) |
-| **Borrow, repay, or use the stability pool** | [CDP operations](use-mento/cdp-operations.md) (when available) |
+| **Borrow, repay, or use the stability pool** | [CDP operations](use-mento/cdp-operations.md) |
 | **Integrate** (quote, swap, contracts, SDK) | [Build on Mento](build-on-mento/integration-overview/README.md) |
 | **Deep dive: FPMMs, oracles, rebalancing** | [Core concepts](overview/core-concepts/README.md) |
-| **Something went wrong** (swap failed, etc.) | [Troubleshooting](use-mento/troubleshooting.md) |
+| **Fix a failed swap or other issue** | [Troubleshooting](use-mento/troubleshooting.md) |
 
 [Quick start guides](overview/getting-started/quick-start-guides.md) · [Glossary](overview/glossary.md) · [Analytics & dashboards](overview/getting-started/analytics-and-dashboards.md)
 

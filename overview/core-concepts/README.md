@@ -4,7 +4,7 @@ description: >-
   and safety mechanisms. This section explains these core concepts.
 ---
 
-# Core Concepts
+# Concepts overview
 
 These pages explain how Mento v3 works. **Start with FPMMs** — they are the DEX. Then oracles (how the rate is set), rebalancing (how pools stay balanced), and safety (limits and breakers).
 
