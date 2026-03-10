@@ -1,6 +1,6 @@
 # CDPs (Collateralized Debt Positions)
 
-On Mento V3, some stablecoins (e.g. **GBPm**) are **synthetic**: they are created when users **borrow** against collateral. Mento’s CDP system uses **USDm as the collateral asset**: you lock USDm and **borrow** other stables such as **GBPm** (and in other deployments, e.g. EURm). This is a **stable-on-stable** setup rather than crypto collateral.
+On Mento V3, some stablecoins (e.g. **GBPm**) are **synthetic**: they are created when users **borrow** against collateral. Mento’s CDP system uses **USDm as the collateral asset**: you lock USDm and **borrow** other stables such as **GBPm**. This is a **stable-on-stable** setup rather than crypto collateral.
 
 ---
 
@@ -24,14 +24,14 @@ Troves can be **adjusted** (add/withdraw collateral, borrow more, repay) and **c
 
 ## Mento CDPs and Liquity v2
 
-**Mento CDPs are a fork of [Liquity v2](https://www.liquity.org/).** The core mechanics (troves, user-set interest rates, liquidations, Stability Pool, redemptions) follow the Liquity v2 design. Liquity v2 uses ETH/LSTs as collateral and BOLD as the debt token; Mento’s fork uses **USDm as collateral** and **a Mento stable (e.g. GBPm) as the debt token** per deployment.
+**Mento CDPs are a fork of [Liquity v2](https://www.liquity.org/).** The CDP contracts live in a **separate repository**: [mento-protocol/bold](https://github.com/mento-protocol/bold). The core mechanics (troves, user-set interest rates, liquidations, Stability Pool, redemptions) follow the Liquity v2 design. Liquity v2 uses ETH/LSTs as collateral and BOLD as the debt token; Mento’s fork uses **USDm as collateral** and **FX-pegged stables (e.g. GBPm) as the debt token**, with **one independent instance per FX currency** (each with its own TroveManager, StabilityPool, and FX price feed).
 
 For full protocol and contract documentation (state variables, liquidation thresholds, fee flows, redemption mechanics), use the **Liquity v2** documentation:
 
 * **[Liquity v2 documentation](https://docs.liquity.org/)** — protocol overview, technical resources, and contract behavior.
 * **[Liquity v2 whitepaper](https://www.liquity.org/blog/liquity-v2-whitepaper)** — design and economics.
 
-Mento’s fork differs in collateral/debt configuration and in integration with Mento’s [Reserve](../build/smart-contracts/reserve.md) and [FPMM](../build/smart-contracts/fpmm.md). Deployment-specific parameters and addresses are in the [mento-core](https://github.com/mento-protocol/mento-core) repository.
+For **Mento-specific** implementation (USDm collateral, FX oracles, multi-instance architecture, risks, and FXPriceFeed), see the **[mento-protocol/bold README](https://github.com/mento-protocol/bold)**. Deployment addresses and integration with Mento’s [Reserve](../build/smart-contracts/reserve.md) and [FPMM](../build/smart-contracts/fpmm.md) are documented in [mento-core](https://github.com/mento-protocol/mento-core) and the Build [Deployments](../build/deployments/README.md) section.
 
 ---
 
