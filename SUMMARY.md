@@ -9,7 +9,7 @@
 
 * [FPMMs](dive-deeper/fpmm/README.md)
   * [Oracles, price feeds & circuit breakers](dive-deeper/fpmm/oracles-and-circuit-breakers.md)
-  * [Trading limits](dive-deeper/fpmm/trading-limits.md)
+  * [TradingLimitsV2](dive-deeper/fpmm/trading-limits.md)
   * [Rebalancing & strategies](dive-deeper/fpmm/rebalancing-and-strategies.md)
 * [CDPs](use/cdp-operations.md)
 * [The Reserve](dive-deeper/the-reserve.md)
@@ -39,7 +39,7 @@
     * [Getting a Quote](build/mento-sdk/guides/getting-a-quote.md)
     * [Initiating a Swap](build/mento-sdk/guides/initiating-a-swap.md)
 * [Smart Contracts](build/smart-contracts/README.md)
-  * [TradingLimits (V3)](build/smart-contracts/tradinglimits.md)
+  * [TradingLimitsV2](build/smart-contracts/tradinglimits.md)
   * [BreakerBox](build/smart-contracts/breakerbox.md)
   * [Reserve](build/smart-contracts/reserve.md)
   * [StableToken](build/smart-contracts/stabletoken.md)

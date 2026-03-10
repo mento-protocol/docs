@@ -11,7 +11,7 @@ Most DEXs use **curve-based AMMs** (constant-function market makers, or CFMMs): 
 1. **LVR (loss-versus-rebalancing)** — Arbitrageurs trade against the stale quote at better-than-fair prices. LPs effectively “sell low and buy high”; the loss to LPs equals arbitrageur profit. It’s a structural cost of the design.
 2. **Slippage** — Traders don’t get the market rate; they execute **along the curve**. Execution price depends on trade size (price impact), so even small trades can get a worse rate than the true FX rate.
 
-In CFMMs, the **curvature** of the trading function governs both: a flatter curve gives lower slippage but higher LVR. You cannot tune a CFMM so that everyone gets the fair rate with no cost. For **FX and stablecoins**, the fair rate already exists off-chain (spot, CEX). So we don’t need the pool to *discover* the price — we need it to **use** it. That is what **oracle pricing** does: the pool quotes an external **oracle** rate (minus a fee). No reserve-based curve, no curve-based slippage, no LVR from a stale pool price. Risks shift to **oracle** quality and **inventory**; the protocol addresses those with **trading limits**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
+In CFMMs, the **curvature** of the trading function governs both: a flatter curve gives lower slippage but higher LVR. You cannot tune a CFMM so that everyone gets the fair rate with no cost. For **FX and stablecoins**, the fair rate already exists off-chain (spot, CEX). So we don’t need the pool to *discover* the price — we need it to **use** it. That is what **oracle pricing** does: the pool quotes an external **oracle** rate (minus a fee). No reserve-based curve, no curve-based slippage, no LVR from a stale pool price. Risks shift to **oracle** quality and **inventory**; the protocol addresses those with **TradingLimitsV2**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
 
 ---
 
@@ -48,7 +48,7 @@ This **I** is preserved on (when fees and incentives are ignored):
 
 So “value per LP share at the oracle” is the **single number** that the protocol keeps constant across swaps, mints, burns, and rebalances **when we abstract away fees and incentives**. That gives LPs a clear accounting: your share of the pool is always worth a well-defined amount at the oracle price.
 
-**How the building blocks fit together:** **FPMMs** give you the swap rate at the oracle; the **invariant** (I = V/S) keeps accounting consistent when we ignore fees and incentives. **Trading limits** and the **circuit breaker** protect when the oracle is wrong, stale, or manipulated. **Liquidity strategies** rebalance inventory when reserves drift too far from the oracle, so the pool can keep serving trades. Fees and incentives align LPs, keepers, and governance.
+**How the building blocks fit together:** **FPMMs** give you the swap rate at the oracle; the **invariant** (I = V/S) keeps accounting consistent when we ignore fees and incentives. **TradingLimitsV2** and the **circuit breaker** protect when the oracle is wrong, stale, or manipulated. **Liquidity strategies** rebalance inventory when reserves drift too far from the oracle, so the pool can keep serving trades. Fees and incentives align LPs, keepers, and governance.
 
 ---
 

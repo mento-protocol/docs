@@ -61,7 +61,7 @@ If you run a **keeper**, you can integrate with the strategy’s public `rebalan
 
 | Action | Where | Notes |
 |--------|--------|--------|
-| **Swap** | Mento app or pool/router contract | At oracle rate (minus fee); trading limits and pool checks apply. |
+| **Swap** | Mento app or pool/router contract | At oracle rate (minus fee); TradingLimitsV2 and pool checks apply. |
 | **Add liquidity** | Mento app or pool mint | Both tokens in current reserve ratio; receive LP tokens. |
 | **Remove liquidity** | Mento app or pool burn | Burn LP tokens; receive proportional share of both tokens. |
 | **Trigger rebalance** | Strategy contract | Permissionless; strategy must be allowlisted on the pool; cooldown applies. |

@@ -70,7 +70,7 @@ The documentation is split into four sections. Use the one that matches your goa
 
 **For:** Readers who want to understand how the protocol works under the hood.
 
-- **[FPMMs](dive-deeper/fpmm/README.md)** — Why Mento uses oracle pricing (and why curve-based AMMs don’t work well for FX), how Fixed-Price Market Makers work: the invariant, operations, rebalancing, and liquidity strategies. Subpages cover oracles & circuit breakers and trading limits.
+- **[FPMMs](dive-deeper/fpmm/README.md)** — Why Mento uses oracle pricing (and why curve-based AMMs don’t work well for FX), how Fixed-Price Market Makers work: the invariant, operations, rebalancing, and liquidity strategies. Subpages cover oracles & circuit breakers and TradingLimitsV2.
 - **[CDPs](use/cdp-operations.md)** — How collateralized debt positions back synthetic Mento stables (e.g. GBPm).
 - **[The Reserve](dive-deeper/the-reserve.md)** — How USDm and EURm are backed by the Reserve; two backing models (Reserve vs CDP).
 - **[Protocol Economics](dive-deeper/protocol-economics.md)** — Value flows, fees, incentives, and revenue (FPMM, CDP, MENTO).

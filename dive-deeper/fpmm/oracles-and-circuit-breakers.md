@@ -9,7 +9,7 @@ This page explains how **oracles** and **price feeds** work in Mento V3, and how
 In an **FPMM** (Fixed-Price Market Maker), the **execution price is the oracle rate** (minus fee). The pool does not derive the price from its reserves. So:
 
 - **Correctness** — If the oracle is wrong, the pool can quote a bad rate and LPs or the pool can lose value.
-- **Freshness** — If the oracle is stale (not updated), the quoted rate may lag the market; trading limits and circuit breakers help bound the damage.
+- **Freshness** — If the oracle is stale (not updated), the quoted rate may lag the market; TradingLimitsV2 and circuit breakers help bound the damage.
 - **Gating** — In V3, the pool will **revert** swaps when the oracle is invalid, stale, or when **circuit breakers** (e.g. trading mode, FX market hours) say not to trade.
 
 So oracles are both the **source of the swap rate** and one of the **safety gates** for trading.

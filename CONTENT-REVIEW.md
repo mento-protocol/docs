@@ -55,7 +55,7 @@ Either way: **one** place for "why FPMM / no LVR / no curve slippage," and **one
 - **Understand:** Keep concepts only in Understand (no code). It’s fine to keep math in What Is Mento? and FPMM for readers who want rigor; add a single sentence at the top of What Is Mento? like "For a math-free overview, see [Concepts overview](concepts-overview.md) and [FPMMs](fpmm/README.md)."
 - **Use:** Keep short, action-oriented, app-first.
 - **Build:** Start each top-level page (Integration, SDK, Smart Contracts, etc.) with one paragraph on "who this is for" and "what you’ll do," then link to siblings (e.g. "For contract addresses, see [Deployments](../deployments/).") so the Build tree feels like one path, not scattered topics.
-- **Governance:** Replace generic "community ownership / progressive decentralization" with V3-specific bullets: what parameters are governed (fees, trading limits, circuit breaker, oracle config, pool allowlists, Reserve), and point to Research & Economics and MENTO Tokenomics for incentives. That aligns with research-and-economics.md and avoids a second, vaguer "governance 101."
+- **Governance:** Replace generic "community ownership / progressive decentralization" with V3-specific bullets: what parameters are governed (fees, TradingLimitsV2, circuit breaker, oracle config, pool allowlists, Reserve), and point to Research & Economics and MENTO Tokenomics for incentives. That aligns with research-and-economics.md and avoids a second, vaguer "governance 101."
 
 ---
 

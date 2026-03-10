@@ -8,7 +8,7 @@
 
 | Symptom | Cause | Fix |
 |---------|--------|-----|
-| Swap reverted | Value protection, trading limits, or circuit breaker | Pool enforces: (1) reserve value at oracle must not decrease after fee, (2) per-token 5-min and 1-day limits not exceeded, (3) oracle valid and breakers not tripped. Check [Trading limits](smart-contracts/tradinglimits.md), [BreakerBox](smart-contracts/breakerbox.md); try smaller amount or later. |
+| Swap reverted | Value protection, TradingLimitsV2, or circuit breaker | Pool enforces: (1) reserve value at oracle must not decrease after fee, (2) per-token 5-min and 1-day limits not exceeded, (3) oracle valid and breakers not tripped. Check [TradingLimitsV2](smart-contracts/tradinglimits.md), [BreakerBox](smart-contracts/breakerbox.md); try smaller amount or later. |
 | Quote doesn't match execution | Stale quote or fee | Re-fetch quote immediately before sending tx; ensure you account for pool fee. |
 | `getAmountOut` / quote fails | Invalid pair, oracle, or pool state | Verify pool address and that the oracle is valid for that pool; check [Integration](integration/README.md) and [Smart contracts](smart-contracts/README.md). |
 

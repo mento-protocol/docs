@@ -1,6 +1,6 @@
-# Trading limits (V3)
+# TradingLimitsV2
 
-In **Mento V3**, FPMM pools enforce **per-token net-flow limits** to bound adverse flow over time. The **TradingLimitsV2** library is used by the pool to apply these limits after each swap.
+In **Mento V3**, FPMM pools enforce **per-token net-flow limits** to bound adverse flow over time. The **TradingLimitsV2** library is used by the pool to apply these limits after each swap. (TradingLimits v1 applied to Mento V2; V3 uses TradingLimitsV2.)
 
 ## Behavior
 
@@ -13,4 +13,4 @@ This protects the pool and the protocol from large one-sided flow in a short per
 
 **Contract:** [mento-protocol/mento-core](https://github.com/mento-protocol/mento-core) — `contracts/libraries/TradingLimitsV2.sol`
 
-For how limits are configured and used on a pool, see [Trading limits](../../dive-deeper/fpmm/trading-limits.md) in Dive Deeper.
+For how TradingLimitsV2 is configured and used on a pool, see [TradingLimitsV2](../../dive-deeper/fpmm/trading-limits.md) in Dive Deeper.

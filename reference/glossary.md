@@ -20,7 +20,7 @@ Short definitions for terms used in the Mento V3 docs. For full context, see [Ov
 | **Oracle** | An external price feed the protocol trusts. In V3, each pool uses an oracle to set the swap rate. |
 | **Rebalance** | When the pool's reserve ratio drifts from the oracle, an allowlisted **liquidity strategy** can take one token from the pool and return the other at the oracle rate (capped incentive). |
 | **Reserves** | The two tokens held by a pool. Swaps change composition; **value at oracle** is preserved (minus fees). |
-| **Trading limits** | Caps on per-token net flow over a time window (e.g. 5 minutes, 1 day). Limit how much the pool can be drained. |
+| **TradingLimitsV2** | Mento V3 mechanism: caps on per-token net flow over 5-minute and 1-day windows. Limits how much the pool can be drained in one go. (TradingLimits v1 applied to Mento V2.) |
 | **Value protection** | Rule that every swap must not decrease the pool's **reserve value at the oracle** (after fees). If the oracle is wrong and trading is not halted, value can still be extracted. |
 
 ---
