@@ -8,11 +8,11 @@ This page summarizes the **recommended launch parameters** for the Mento V3 GBPm
 
 | Parameter | Celo | Monad | Units |
 |-----------|------|-------|-------|
-| LP fee (ϕLP) | 20 | 10 | bps |
-| Protocol fee (ϕprotocol) | 10 | 5 | bps |
-| Rebalance incentive (ρ) | 6 | 6 | bps |
-| Rebalance threshold above (θabove) | 5,000 | 5,000 | bps |
-| Rebalance threshold below (θbelow) | 3,333 | 3,333 | bps |
+| LP fee ($\phi_{\mathrm{LP}}$) | 20 | 10 | bps |
+| Protocol fee ($\phi_{\mathrm{protocol}}$) | 10 | 5 | bps |
+| Rebalance incentive ($\rho$) | 6 | 6 | bps |
+| Rebalance threshold above ($\theta_{\mathrm{above}}$) | 5,000 | 5,000 | bps |
+| Rebalance threshold below ($\theta_{\mathrm{below}}$) | 3,333 | 3,333 | bps |
 
 ---
 
