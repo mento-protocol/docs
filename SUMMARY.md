@@ -4,22 +4,17 @@
 
 * [Getting Started](README.md)
   * [What Is Mento?](overview/getting-started/what-is-mento.md)
-  * [Mento Stablecoins](overview/getting-started/mento-stablecoins.md)
   * [Quick Start Guides](overview/getting-started/quick-start-guides.md)
   * [GBPm/USDm parameters (reference)](overview/getting-started/gbpm-usdm-parameters-reference.md)
   * [Analytics & Dashboards](overview/getting-started/analytics-and-dashboards.md)
-  * [What's new in v3](overview/getting-started/whats-new-v3.md)
 * [Core Concepts](overview/core-concepts/README.md)
   * [Fixed-Price Market Makers (FPMMs)](overview/core-concepts/fixed-price-market-makers-fpmms.md)
   * [Oracles & Price Feeds](overview/core-concepts/oracles-and-price-feeds.md)
   * [Rebalancing & strategies](overview/core-concepts/rebalancing-and-strategies.md)
   * [Trading Limits & Circuit Breakers](overview/core-concepts/trading-limits-and-circuit-breakers.md)
   * [The Reserve](overview/core-concepts/the-reserve.md)
-  * [Stability Mechanisms](overview/core-concepts/stability-mechanisms.md)
-  * [The Broker & Virtual AMMs](overview/core-concepts/the-broker-and-virtual-amms.md) *(v2 legacy)*
   * [Research & Economics](overview/core-concepts/research-and-economics.md)
 * [Glossary](overview/glossary.md)
-* [Legacy (v2)](overview/legacy-v2.md)
 * [Governance & the MENTO Token](overview/governance-and-the-mento-token/README.md)
   * [Understanding Mento Governance](overview/governance-and-the-mento-token/understanding-mento-governance.md)
   * [Participating in Governance](overview/governance-and-the-mento-token/participating-in-governance/README.md)
@@ -55,7 +50,6 @@
 
 * [Integration Overview](build-on-mento/integration-overview/README.md)
   * [Integrate Stables](build-on-mento/integration-overview/integrate-stables.md)
-  * [Integrate the Broker](build-on-mento/integration-overview/integrate-the-broker.md) *(v2 legacy)*
   * [Integrate Oracles](build-on-mento/integration-overview/integrate-oracles.md)
 * [Mento SDK](build-on-mento/mento-sdk/README.md)
   * [Installation](build-on-mento/mento-sdk/installation.md)
@@ -64,10 +58,7 @@
     * [Getting a Quote](build-on-mento/mento-sdk/guides/getting-a-quote.md)
     * [Initiating a Swap](build-on-mento/mento-sdk/guides/initiating-a-swap.md)
 * [Smart Contracts](build-on-mento/smart-contracts/README.md)
-  * [Broker](build-on-mento/smart-contracts/broker.md) *(v2 legacy)*
   * [TradingLimits](build-on-mento/smart-contracts/tradinglimits.md)
-  * [BiPoolManager](build-on-mento/smart-contracts/bipoolmanager.md) *(v2 legacy)*
-  * [Pricing Modules](build-on-mento/smart-contracts/pricing-modules.md) *(v2 legacy)*
   * [SortedOracles](build-on-mento/smart-contracts/sortedoracles.md)
   * [BreakerBox](build-on-mento/smart-contracts/breakerbox.md)
   * [Reserve](build-on-mento/smart-contracts/reserve.md)
@@ -98,10 +89,8 @@
 * [Stability](protocol-concepts/stability.md)
 * [Reserve](protocol-concepts/reserve.md)
 * [Asset exchanges](protocol-concepts/asset-exchanges/README.md)
-  * [Broker](protocol-concepts/asset-exchanges/broker.md) *(v2 legacy)*
   * [Trading Limits](protocol-concepts/asset-exchanges/trading-limits.md)
   * [Exchange Providers](protocol-concepts/asset-exchanges/exchange-providers.md)
-  * [BiPoolManager](protocol-concepts/asset-exchanges/bipoolmanager.md) *(v2 legacy)*
 * [Oracles](protocol-concepts/oracles.md)
 * [On-Chain Circuit Breaker](protocol-concepts/on-chain-circuit-breaker.md)
 * [Governance](protocol-concepts/governance/README.md)
