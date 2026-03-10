@@ -29,11 +29,15 @@ Every Mento V3 swap pool is an FPMM. Each pool is tied to an **oracle** (externa
 
 Every pool keeps one number constant: **value at the oracle per LP share**,
 
-<div align="center" style="background: #f5f5f5; padding: 1rem 1.5rem; border-radius: 8px; margin: 1rem 0; display: inline-block;">
+<center>
+
+<div style="background: #f5f5f5; padding: 1rem 1.5rem; border-radius: 8px; display: inline-block;">
 
 $$\Large I = \frac{V}{S}$$
 
 </div>
+
+</center>
 
 - **V** = pool value at the oracle price (reserves valued at the oracle rate).
 - **S** = total LP share supply.
