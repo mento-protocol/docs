@@ -16,14 +16,14 @@ To attract **spot FX volume** onchain, execution must be **at or very close to t
 
 Most onchain AMMs are **CFMMs** (constant-function market makers). In a CFMM:
 
-- **State** is reserves $R$ (the tokens in the pool).
-- **Price is determined only by reserves**: the pool has a **trading function** $\varphi(R)$ of reserves only. A swap (tender $\Delta$, receive $\Lambda$) is **accepted** if the function is constant after the trade (with fee parameter $\gamma$). The **execution price** comes from this rule (e.g. from the gradient of $\varphi$).
+- **State** is reserves $$R$$ (the tokens in the pool).
+- **Price is determined only by reserves**: the pool has a **trading function** $$\varphi(R)$$ of reserves only. A swap (tender $$\Delta$$, receive $$\Lambda$$) is **accepted** if the function is constant after the trade (with fee parameter $$\gamma$$). The **execution price** comes from this rule (e.g. from the gradient of $$\varphi$$).
 - There is **no oracle** in the rule. External prices enter only when **arbitrageurs** trade and move reserves so that the pool price aligns with the market.
 
 **Main CFMM formulas:**
 
-- **Trading function** (reserves only): $\varphi(R)$. Example: constant-product (two assets) $\varphi(x,y) = xy$.
-- **Acceptance** (trade $(\Delta, \Lambda)$ with fee $\gamma \in (0,1]$):
+- **Trading function** (reserves only): $$\varphi(R)$$. Example: constant-product (two assets) $$\varphi(x,y) = xy$$.
+- **Acceptance** (trade $$(\Delta, \Lambda)$$ with fee $$\gamma \in (0,1]$$):
   $$\varphi(R + \gamma\Delta - \Lambda) = \varphi(R)$$
 - **Constant-product (CPMM)** invariant and spot price:
   $$xy = k, \qquad \text{spot price } p = \frac{y}{x}$$
@@ -51,11 +51,11 @@ Such a pool is a **Fixed-Price Market Maker (FPMM)**:
 
 **Main FPMM formulas:**
 
-- **State**: reserves $R$, LP share supply $S$, oracle price vector $p$ (supplied externally, not a function of $R$).
-- **Pool value at oracle**: $V = p^\top R$ (sum of reserve amounts weighted by oracle prices).
-- **Acceptance** (trade $(\Delta, \Lambda)$ with fee $\gamma$): pool value at oracle is preserved,
+- **State**: reserves $$R$$, LP share supply $$S$$, oracle price vector $$p$$ (supplied externally, not a function of $$R$$).
+- **Pool value at oracle**: $$V = p^\top R$$ (sum of reserve amounts weighted by oracle prices).
+- **Acceptance** (trade $$(\Delta, \Lambda)$$ with fee $$\gamma$$): pool value at oracle is preserved,
   $$V(R + \gamma\Delta - \Lambda, p) = V(R, p) \quad \Leftrightarrow \quad p^\top(R + \gamma\Delta - \Lambda) = p^\top R$$
-- **Execution**: at the **oracle** rate $p$ (minus fee), not from reserves.
+- **Execution**: at the **oracle** rate $$p$$ (minus fee), not from reserves.
 - **Invariant** (value per LP share, preserved on swap, mint, burn, rebalance):
   $$I = \frac{V}{S} = \frac{p^\top R}{S}$$
 
@@ -82,7 +82,7 @@ Every Mento v3 pool keeps a single **invariant** across **all** operations:
 
 $$I = \frac{V}{S}$$
 
-where $V = p^\top R$ is the pool **value at the oracle price** (reserves valued at the oracle rate $p$), and $S$ is the total **LP share supply**. So $I$ is value at the oracle **per LP share**.
+where $$V = p^\top R$$ is the pool **value at the oracle price** (reserves valued at the oracle rate $$p$$), and $$S$$ is the total **LP share supply**. So $$I$$ is value at the oracle **per LP share**.
 
 | Operation | What happens | I = V / S |
 |-----------|--------------|-----------|
