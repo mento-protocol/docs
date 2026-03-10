@@ -37,6 +37,8 @@
     * [Getting Exchange Pairs](build/mento-sdk/guides/getting-exchange-pairs.md)
     * [Getting a Quote](build/mento-sdk/guides/getting-a-quote.md)
     * [Initiating a Swap](build/mento-sdk/guides/initiating-a-swap.md)
+    * [Liquidity Management](build/mento-sdk/guides/liquidity.md)
+    * [Borrow (CDP)](build/mento-sdk/guides/borrow.md)
 * [Smart Contracts](build/smart-contracts/README.md)
   * [FPMM](build/smart-contracts/fpmm.md)
   * [FPMMFactory](build/smart-contracts/fpmmfactory.md)
