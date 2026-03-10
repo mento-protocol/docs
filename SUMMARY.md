@@ -7,7 +7,6 @@
 
 ## Dive Deeper
 
-* [What Is Mento? (deep dive)](dive-deeper/what-is-mento.md)
 * [FPMMs](dive-deeper/fpmm/README.md)
   * [Oracles, price feeds & circuit breakers](dive-deeper/fpmm/oracles-and-circuit-breakers.md)
   * [Trading limits](dive-deeper/fpmm/trading-limits.md)

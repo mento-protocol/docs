@@ -25,9 +25,15 @@ This page explains **what Mento V3 is**, outlines the **core ideas** behind it, 
 - **Liquidity strategies (rebalancing)** — Because there is no curve, the pool always quotes the oracle and **reserves can become one-sided** (e.g. too much of one token, too little of the other) as users trade. **Liquidity strategies** are allowlisted contracts that can **rebalance** the pool: they take the surplus token from the pool and return the other at the oracle rate, with a **capped incentive**. That brings inventory back toward a more balanced state so the pool can keep serving trades.
 - **Fees and incentives across the protocol** — The protocol uses **fees and incentives** to incentivize different roles: LPs earn from swap fees, keepers and strategies earn rebalance incentives, governance (MENTO token holders) sets parameters and can direct revenue. So the design both protects the pools and aligns actors.
 
+**One invariant for all operations.** Every Mento V3 pool keeps a single number constant across swaps, liquidity provision, and rebalancing: **value at the oracle per LP share**. In symbols:
+
+$$I = \frac{V}{S}$$
+
+Here **V** is the pool’s **value at the oracle price** (reserves valued using the oracle rate), **S** is the total **LP share supply**, and **I** is that value per share. So your share of the pool always represents a well-defined amount at the oracle rate. This **I** is preserved on **swap** (reserves change, V and S do not), **mint** and **burn** (you add or remove value in proportion, so I stays the same), and **rebalance** (the strategy returns the other token at the oracle rate, so V and S are unchanged). For the full picture of operations and rebalancing, see [FPMMs](dive-deeper/fpmm/README.md).
+
 **What you can do.** You can **swap** at the oracle rate, **add or remove liquidity** to FPMM pools, or **obtain Mento stablecoins** (USDm, EURm, GBPm) via those pools or by **borrowing** (e.g. GBPm via a CDP). Stables like USDm and EURm are backed by a **Reserve**; others like GBPm are **CDP-backed** (collateralized debt). Governance is driven by the **MENTO** token.
 
-For the detailed design story — why curve AMMs fail for FX, formulas, and building blocks — see [What Is Mento? (deep dive)](dive-deeper/what-is-mento.md) in **Dive Deeper**.
+For more on why Mento uses oracle pricing instead of curve-based AMMs, and on pool mechanics and rebalancing, see [FPMMs](dive-deeper/fpmm/README.md) in **Dive Deeper**.
 
 ---
 
@@ -42,12 +48,11 @@ The documentation is split into five sections. Use the one that matches your goa
 - **This page (Overview)** — What Mento V3 is and how the docs are organized (see above).
 - **[Quick Start Guides](get-started/quick-start-guides.md)** — Step-by-step: your first swap, adding liquidity, borrowing a stable, earning in the Stability pool, or integrating.
 
-### [Dive Deeper](dive-deeper/what-is-mento.md)
+### [Dive Deeper](dive-deeper/fpmm/README.md)
 
 **For:** Readers who want to understand how the protocol works under the hood.
 
-- **[What Is Mento? (deep dive)](dive-deeper/what-is-mento.md)** — Why curve-based AMMs don’t work for FX, how FPMMs use the oracle, and the building blocks (formulas, invariant, limits, rebalancing). Optional math.
-- **[FPMMs](dive-deeper/fpmm/README.md)** — How Fixed-Price Market Makers work in Mento V3: the invariant, operations, rebalancing, and liquidity strategies. Subpages cover oracles & circuit breakers, trading limits, the Reserve, and research & economics.
+- **[FPMMs](dive-deeper/fpmm/README.md)** — Why Mento uses oracle pricing (and why curve-based AMMs don’t work well for FX), how Fixed-Price Market Makers work: the invariant, operations, rebalancing, and liquidity strategies. Subpages cover oracles & circuit breakers, trading limits, the Reserve, and research & economics.
 - **[CDPs](use/cdp-operations.md)** — How collateralized debt positions back synthetic Mento stables (e.g. GBPm).
 - **[Governance & MENTO](dive-deeper/governance-and-mento/README.md)** — How the protocol is governed, the MENTO token, tokenomics, and participation (voting, proposals, watchdogs).
 - **[Security](dive-deeper/security/README.md)** — Risk overview and audit reports.
@@ -86,7 +91,7 @@ The documentation is split into five sections. Use the one that matches your goa
 
 | I want to… | Go to |
 |------------|--------|
-| **Understand what Mento is** | This page (Overview) or [What Is Mento? (deep dive)](dive-deeper/what-is-mento.md) |
+| **Understand what Mento is** | This page (Overview) |
 | **Swap or add/remove liquidity** | [Swap & liquidity](use/swap-and-liquidity.md) |
 | **Get Mento stablecoins** (USDm, EURm, GBPm) | [Getting Mento stables](use/getting-mento-stables/README.md) |
 | **Borrow, repay, or use the Stability pool** | [CDP operations](use/cdp-operations.md) |

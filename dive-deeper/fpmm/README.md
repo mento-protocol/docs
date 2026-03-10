@@ -1,8 +1,17 @@
 # Fixed-Price Market Makers (FPMMs)
 
-This page is the **reference** for how FPMMs work in Mento V3: the invariant, operations, rebalancing, and configuration. For **why** Mento uses oracle pricing and why curve-based AMMs (CFMMs) don't work well for FX—including LVR and slippage—see [What Is Mento? (deep dive)](../what-is-mento.md).
+This page is the **reference** for how FPMMs work in Mento V3: why Mento uses oracle pricing, the invariant, operations, rebalancing, and configuration.
 
-In Mento V3, every swap pool is an **FPMM**: the swap price is fixed to an external **oracle** rate (minus a fee), not derived from reserves. There is no reserve-based curve, no curve-based slippage, and no LVR from a stale pool price. Risks shift to **oracle** quality and **inventory**; the protocol addresses those with **trading limits**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
+---
+
+## Why oracle pricing? (and why not curve-based AMMs)
+
+Most DEXs use **curve-based AMMs** (constant-function market makers, or CFMMs): the pool has a trading function of **reserves only**, and the **execution price** is derived from that — for example in a constant-product pool the spot price is the ratio of reserves and changes only when someone trades. So the pool *is* the price: the quoted rate comes from reserves and **moves only when someone trades**. Between trades, when the external market moves, the pool’s quote is **stale**. That creates two problems:
+
+1. **LVR (loss-versus-rebalancing)** — Arbitrageurs trade against the stale quote at better-than-fair prices. LPs effectively “sell low and buy high”; the loss to LPs equals arbitrageur profit. It’s a structural cost of the design.
+2. **Slippage** — Traders don’t get the market rate; they execute **along the curve**. Execution price depends on trade size (price impact), so even small trades can get a worse rate than the true FX rate.
+
+In CFMMs, the **curvature** of the trading function governs both: a flatter curve gives lower slippage but higher LVR. You cannot tune a CFMM so that everyone gets the fair rate with no cost. For **FX and stablecoins**, the fair rate already exists off-chain (spot, CEX). So we don’t need the pool to *discover* the price — we need it to **use** it. That is what **oracle pricing** does: the pool quotes an external **oracle** rate (minus a fee). No reserve-based curve, no curve-based slippage, no LVR from a stale pool price. Risks shift to **oracle** quality and **inventory**; the protocol addresses those with **trading limits**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
 
 ---
 
@@ -30,6 +39,8 @@ This **I** is preserved on:
 - **Rebalance** — The pool sends one token to a strategy and receives the other at the oracle rate (with a capped incentive). V and S do not change, so I is preserved.
 
 So “value per LP share at the oracle” is the **single number** that the protocol keeps constant across swaps, mints, burns, and rebalances. That gives LPs a clear accounting: your share of the pool is always worth a well-defined amount at the oracle price.
+
+**How the building blocks fit together:** **FPMMs** give you the swap rate at the oracle; the **invariant** (I = V/S) keeps accounting consistent. **Trading limits** and the **circuit breaker** protect when the oracle is wrong, stale, or manipulated. **Liquidity strategies** rebalance inventory when reserves drift too far from the oracle, so the pool can keep serving trades. Fees and incentives align LPs, keepers, and governance.
 
 ---
 
@@ -98,7 +109,6 @@ See [Swap & liquidity](../../use/swap-and-liquidity.md) for how to mint and burn
 
 ## Next steps
 
-- [What Is Mento? (deep dive)](../what-is-mento.md) — Why oracle pricing and why not CFMM (LVR, slippage).
 - [Oracles, price feeds & circuit breakers](oracles-and-circuit-breakers.md) — How the pool gets the rate and when trading is gated.
 - [Rebalancing & strategies](rebalancing-and-strategies.md) — Who rebalances, thresholds, boundaries, incentives.
 - [Trading limits](trading-limits.md) — Caps; [Oracles & circuit breakers](oracles-and-circuit-breakers.md) — halts.
