@@ -26,7 +26,7 @@ Most onchain AMMs are **CFMMs** (constant-function market makers). In a CFMM:
 
   $$\varphi(R)$$
 
-  Example: constant-product (two assets):
+  A prominent **instance** of a CFMM is the **constant-product market maker (CPMM)**; a well-known example is **Uniswap v2**. For two assets the trading function is:
 
   $$\varphi(x,y) = xy$$
 
@@ -34,7 +34,7 @@ Most onchain AMMs are **CFMMs** (constant-function market makers). In a CFMM:
 
   $$\varphi(R + \gamma\Delta - \Lambda) = \varphi(R)$$
 
-- **Constant-product (CPMM)** invariant and spot price:
+- **CPMM** invariant and spot price (e.g. Uniswap v2):
 
   $$xy = k, \qquad \text{spot price } p = \frac{y}{x}$$
 

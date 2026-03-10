@@ -24,7 +24,7 @@ In Mento v3, every swap pool is an FPMM. Each pool has an **oracle** (a price fe
 
 ## Why FPMMs? (LVR and slippage)
 
-In a **curve-based AMM** (e.g. constant product):
+In a **curve-based AMM** — specifically a **constant-product CFMM** such as **Uniswap v2** — the invariant is:
 
 $$xy = k$$
 
