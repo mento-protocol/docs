@@ -1,73 +1,81 @@
-# Initiating a Swap
+# Initiating a swap
 
-After you have gotten a [price quote](getting-a-quote.md) from the Broker, you can use the sdk to create a swap transaction object which you can then submit to the network.
+This guide shows how to **build and send a swap** with the Mento SDK v3. The SDK returns transaction parameters (including an approval transaction if needed); you submit them with any **viem** wallet client.
 
-So far in the previous examples we have used only a `JsonRpcProvider` for interacting with the contracts. This is fine for read-only contract calls, but in order to generate a signed transaction object you will need to instantiate the SDK with an Ethers signer.&#x20;
+---
 
-For state changing operations (e.g. swaps) the SDK returns [TransactionRequest](https://docs.ethers.org/v5/api/providers/types/#providers-TransactionRequest) Ethers objects populated with information from the signer. Submitting the transaction to the network is left to the consumer to give flexibility for apps integrating the SDK for handling the final transaction lifecycle.
+## Create the client and get a quote
 
-In this example we will use a `Wallet` Ethers signer object which can be instantiated with a private key:
+Read-only operations (quotes, routes) only need a **public client**. For building swap transactions you still use `Mento.create`; the SDK returns **transaction parameters** that you send with your own wallet:
 
 ```typescript
-import { Wallet, providers, utils } from "ethers";
+import { Mento, ChainId, deadlineFromMinutes } from '@mento-protocol/mento-sdk'
+import { parseUnits } from 'viem'
 
-import { Mento } from "@mento-protocol/mento-sdk";
+const mento = await Mento.create(ChainId.CELO)
 
-const privateKey = "YOUR_PRIVATE_KEY_HERE";
-const provider = new providers.JsonRpcProvider(
-  "https://alfajores-forno.celo-testnet.org"
-);
-const signer = new Wallet(privateKey, provider);
-const mento = await Mento.create(signer);
+const USDm = '0x765DE816845861e75A25fCA122bb6898B8B1282a'
+const CELO = '0x471EcE3750Da237f93B8E339c536989b8978a438'
+const amountIn = parseUnits('100', 18)
+
+const expectedOut = await mento.quotes.getAmountOut(USDm, CELO, amountIn)
 ```
 
-We will follow along the previous of example of swapping `1 CELO` token into `USDm`, so we can get a price quote in the same way we previously did:
+---
+
+## Build swap transaction (approval + swap)
+
+`buildSwapTransaction` returns both an **approval** (if the token needs an allowance) and the **swap** transaction. All public APIs use **object-based parameters**:
 
 ```typescript
-const celoTokenAddr = "0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9";
-const USDmTokenAddr = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
-const tokenUnits = 18; // both CELO and USDm have 18 decimal places
+const recipientAddress = '0x...'  // address that receives the output tokens
+const ownerAddress = '0x...'     // address that holds tokenIn and signs the tx
 
-const amountIn = utils.parseUnits("1", tokenUnits);
-const quoteAmountOut = await mento.getAmountOut(
-  celoTokenAddr,
-  USDmTokenAddr,
-  amountIn
-);
-```
-
-Before we can submit the swap, we will need to approve the `Broker` contract to spend `CELO` tokens on our behalf. The Mento class provides a convenient function for increasing the allowance for a given token by a certain amount:
-
-```typescript
-const allowanceTxObj = await mento.increaseTradingAllowance(
-  celoTokenAddr,
-  amountIn
-);
-const allowanceTx = await signer.sendTransaction(allowanceTxObj);
-const allowanceReceipt = await allowanceTx.wait();
-console.log("tx receipt: ", allowanceReceipt);
-```
-
-{% hint style="info" %}
-You can also opt for increasing the broker allowance to a larger amount to not have to execute the above step on every single swap.
-{% endhint %}
-
-After the transaction is included in a block and the allowance is increased we can use a similar process for submitting the swap transaction to the network:
-
-```typescript
-const expectedAmountOut = quoteAmountOut.mul(99).div(100); // allow 1% slippage from quote
-const swapTxObj = await mento.swapIn(
-  celoTokenAddr,
-  USDmTokenAddr,
+const { approval, swap } = await mento.swap.buildSwapTransaction(
+  USDm,
+  CELO,
   amountIn,
-  expectedAmountOut
-);
-const swapTx = await signer.sendTransaction(swapTxObj);
-const swapTxReceipt = await swapTx.wait();
+  recipientAddress,
+  ownerAddress,
+  {
+    slippageTolerance: 0.5,           // 0.5%
+    deadline: deadlineFromMinutes(5),
+  }
+)
 ```
 
-Similar to the `getAmountIn` price quote method where we get the amount of tokens needed to buy a specific amount of another desired token, the Mento class also exposes a `swapOut` method which takes both the desired `amountOut` as well as a `maxAmountIn` parameter. Try it on your own!
+* **slippageTolerance** — percentage (e.g. `0.5` = 0.5%). The SDK caps this (e.g. at 50%) to reduce sandwich risk.
+* **deadline** — use `deadlineFromMinutes(minutes)` or pass a Unix timestamp.
 
-You can find the full runnable code for this section within the [mento-sdk-examples](https://github.com/mento-protocol/mento-sdk-examples) repo:
+---
 
-{% embed url="https://github.com/mento-protocol/mento-sdk-examples/blob/main/src/swap.ts" %}
+## Send with a viem wallet client
+
+Execute the approval first (if present), then the swap:
+
+```typescript
+import { createWalletClient, custom } from 'viem'
+import { celo } from 'viem/chains'
+
+const walletClient = createWalletClient({
+  chain: celo,
+  transport: custom(window.ethereum),
+})
+
+if (approval) {
+  await walletClient.sendTransaction(approval)
+}
+await walletClient.sendTransaction(swap.params)
+```
+
+The SDK returns **transaction request** objects; you are responsible for sending them and handling receipts (e.g. waiting for confirmation).
+
+---
+
+## Summary
+
+1. **Quote** — `mento.quotes.getAmountOut(tokenIn, tokenOut, amountIn)` (or `getAmountIn` for exact amount out).
+2. **Build** — `mento.swap.buildSwapTransaction(tokenIn, tokenOut, amountIn, recipient, owner, { slippageTolerance, deadline })`.
+3. **Send** — If `approval` is set, send it first; then send `swap.params` with your viem wallet client.
+
+Runnable examples: [mento-sdk-examples](https://github.com/mento-protocol/mento-sdk-examples).

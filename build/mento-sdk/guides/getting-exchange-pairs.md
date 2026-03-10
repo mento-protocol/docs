@@ -1,58 +1,90 @@
-# Getting Exchange Pairs
+# Getting exchange pairs and routes
 
-This guide will walk you through an example code snippet for instantiating the SDK and getting all tradeable pairs from exchanges configured in the broker contract within the Alfajores Celo testnet.&#x20;
+This guide shows how to use the Mento SDK v3 to discover tradable tokens, FPMM pools, and routes between token pairs. The SDK uses a **route cache** by default for fast lookups; you can also fetch fresh data from the chain.
 
-After installing the SDK, we can import it alongside Ethers:
+---
 
-```typescript
-import { Mento } from "@mento-protocol/mento-sdk";
-import { providers } from "ethers";
-```
-
-To instantiate the Mento class we will need to pass an Ethers provider or signer object. This example will use a `JsonRpcProvider` connected to [forno](https://docs.celo.org/network/node/forno), a public hosted node service operated by cLabs.&#x20;
+## Create the client
 
 ```typescript
-const provider = new providers.JsonRpcProvider(
-  "https://alfajores-forno.celo-testnet.org"
-);
-const mento = await Mento.create(provider);
+import { Mento, ChainId } from '@mento-protocol/mento-sdk'
+
+// Celo Mainnet (use ChainId.CELO_SEPOLIA for testnet)
+const mento = await Mento.create(ChainId.CELO)
 ```
 
-Now that the Mento class is instantiated, we can fetch all the pairs by calling the `getTradeablePairs` method:
+---
+
+## Tokens
+
+Get Mento stable tokens and collateral assets:
 
 ```typescript
-const pairs = await mento.getTradeablePairs();
-console.log(pairs);
+const stableTokens = await mento.tokens.getStableTokens()
+const collateral = await mento.tokens.getCollateralAssets()
 ```
 
-Which will output the list of pairs alongside their token addresses and symbols in an array format:
+---
+
+## Pools
+
+List all pools (FPMM and legacy Virtual/BiPoolManager):
 
 ```typescript
-[
-  [
-    {
-      address: '0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1',
-      symbol: 'USDm'
-    },
-    {
-      address: '0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9',
-      symbol: 'CELO'
-    }
-  ],
-  [
-    {
-      address: '0x10c892A6EC43a53E45D0B916B4b7D383B1b78C0F',
-      symbol: 'EURm'
-    },
-    {
-      address: '0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9',
-      symbol: 'CELO'
-    }
-  ],
-  ...
-]
+const pools = await mento.pools.getPools()
 ```
 
-You can find the full runnable code for this section within the [mento-sdk-examples](https://github.com/mento-protocol/mento-sdk-examples) repo:
+Each pool includes addresses, token info, pricing, fees, rebalancing state, and trading limits. Use these when you need full pool details rather than just a path between two tokens.
 
-{% embed url="https://github.com/mento-protocol/mento-sdk-examples/blob/main/src/discovery.ts" %}
+---
+
+## Routes
+
+Find a **route** between two tokens (for quoting and swapping):
+
+```typescript
+const USDm = '0x765DE816845861e75A25fCA122bb6898B8B1282a'
+const CELO = '0x471EcE3750Da237f93B8E339c536989b8978a438'
+
+const route = await mento.routes.findRoute(USDm, CELO)
+console.log(`Hops: ${route.path.length}`)
+```
+
+Get **all tradable routes** (from the pre-generated cache by default):
+
+```typescript
+const routes = await mento.routes.getRoutes()
+```
+
+Force a **fresh** route set from the blockchain:
+
+```typescript
+const freshRoutes = await mento.routes.getRoutes({ cached: false })
+```
+
+---
+
+## Trading status
+
+Check whether a pair is tradable (circuit breaker and trading limits):
+
+```typescript
+const isTradable = await mento.trading.isPairTradable(USDm, CELO)
+```
+
+For a specific pool, get full tradability status:
+
+```typescript
+const pools = await mento.pools.getPools()
+const status = await mento.trading.getPoolTradabilityStatus(pools[0])
+
+if (!status.circuitBreakerOk) {
+  console.log('Trading suspended by circuit breaker')
+} else if (!status.limitsOk) {
+  console.log('Trading limit reached')
+}
+```
+
+---
+
+Runnable examples: [mento-sdk-examples](https://github.com/mento-protocol/mento-sdk-examples).

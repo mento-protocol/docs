@@ -1,62 +1,64 @@
-# Getting a Quote
+# Getting a quote
 
-> **Note:** The example below uses the **Broker** contract (v2 legacy). In **Mento V3**, quotes and swaps use **FPMM pools** and the router (e.g. pool or router `getAmountOut` / `getAmountsOut`). See [Smart contracts](../../smart-contracts/README.md) and [Integration overview](../../integration-overview/README.md) for V3.
+This guide shows how to get a **swap quote** with the Mento SDK v3. Quotes use **FPMM pools** and the router (oracle-priced, fee-adjusted). You can quote “amount out” for a given “amount in,” or “amount in” for a desired “amount out.”
 
-After you have already [fetched all tradeable pairs](getting-exchange-pairs.md), you are ready to get price quotes directly from the `Broker` contract. In the example below we will do so for the `CELO/USDm` exchange.
+---
 
-We start by importing the SDK and instantiating it on the Alfajores Celo testnet:
-
-```typescript
-import { providers, utils } from "ethers";
-import { Mento } from "@mento-protocol/mento-sdk";
-
-const provider = new providers.JsonRpcProvider(
-  "https://alfajores-forno.celo-testnet.org"
-);
-const mento = await Mento.create(provider);
-```
-
-In order to get a quote you will need the address of the token you will provide (`tokenIn`) as well as the address of the token you intend to get out (`tokenOut`). In this example we will get a quote for `CELO -> USDm` using the addresses from the previous step.
+## Create the client
 
 ```typescript
-const celoTokenAddr = "0xF194afDf50B03e69Bd7D057c1Aa9e10c9954E4C9";
-const USDmTokenAddr = "0x874069Fa1Eb16D44d622F2e0Ca25eeA172369bC1";
-const tokenUnits = 18; // both CELO and USDm have 18 decimal places
+import { Mento, ChainId } from '@mento-protocol/mento-sdk'
+import { parseUnits, formatUnits } from 'viem'
+
+const mento = await Mento.create(ChainId.CELO)
 ```
 
-We can now get a quote for how much `USDm` we can expect to receive in exchange for `1 CELO`:
+---
+
+## Quote: amount out (given amount in)
+
+You have an **amount in** and want to know how much of the other token you will receive:
 
 ```typescript
-const amountIn = utils.parseUnits("1", tokenUnits);
-const quoteAmountOut = await mento.getAmountOut(
-  celoTokenAddr,
-  USDmTokenAddr,
-  amountIn
-);
+const USDm = '0x765DE816845861e75A25fCA122bb6898B8B1282a'
+const CELO = '0x471EcE3750Da237f93B8E339c536989b8978a438'
 
-console.log(
-  `~${utils.formatUnits(
-    quoteAmountOut,
-    tokenUnits
-  )} USDm in exchange for 1 CELO`
-);
+const amountIn = parseUnits('100', 18)
+const expectedOut = await mento.quotes.getAmountOut(USDm, CELO, amountIn)
+
+console.log(`Expected out: ~${formatUnits(expectedOut, 18)} CELO for 100 USDm`)
 ```
 
-Alternatively, you can also get a quote for the amount of tokens that you would need to provide in order to buy an exact amount of another desired token. For example, the amount of `USDm` needed to buy `1 CELO`:
+Parameter order is **tokenIn, tokenOut, amountIn**. The SDK resolves the route (including multi-hop if needed) and returns the expected amount out.
+
+---
+
+## Quote: amount in (for exact amount out)
+
+You want a specific **amount out** and need to know how much to send in:
 
 ```typescript
-const amountOut = utils.parseUnits("1", tokenUnits);
-const quoteAmountIn = await mento.getAmountIn(
-  USDmTokenAddr,
-  celoTokenAddr,
-  amountOut
-);
+const amountOut = parseUnits('1', 18)
+const amountInNeeded = await mento.quotes.getAmountIn(USDm, CELO, amountOut)
 
-console.log(
-  `~${utils.formatUnits(quoteAmountIn, tokenUnits)} USDm needed to buy 1 CELO`
-);
+console.log(`Amount in needed: ~${formatUnits(amountInNeeded, 18)} USDm to get 1 CELO`)
 ```
 
-You can find the full runnable code for this section within the [mento-sdk-examples](https://github.com/mento-protocol/mento-sdk-examples) repo:
+Use this when the user specifies “I want exactly X of token B”; then use the returned amount (or a slightly higher value for slippage) as the input for building the swap.
 
-{% embed url="https://github.com/mento-protocol/mento-sdk-examples/blob/main/src/quotes.ts" %}
+---
+
+## Trading status (optional)
+
+Before quoting or swapping, you can check if the pair is tradable (circuit breaker and trading limits):
+
+```typescript
+const isTradable = await mento.trading.isPairTradable(USDm, CELO)
+if (!isTradable) {
+  console.log('Pair is not tradable (circuit breaker or limits)')
+}
+```
+
+---
+
+Runnable examples: [mento-sdk-examples](https://github.com/mento-protocol/mento-sdk-examples). Next: [Initiating a swap](initiating-a-swap.md).
