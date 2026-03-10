@@ -4,6 +4,8 @@
 
 **Contract:** [mento-protocol/mento-core](https://github.com/mento-protocol/mento-core) — `contracts/oracles/BreakerBox.sol`
 
+Integrators typically **do not** call BreakerBox directly; the [OracleAdapter](oracleadapter.md) uses it. If you need to check trading mode (e.g. for a status UI), use the adapter’s `getRate(rateFeedID)` and inspect `tradingMode`, or call `getTradingMode(rateFeedID)` on the adapter if exposed.
+
 ### MedianDeltaBreaker
 
 **MedianDeltaBreaker** is a circuit breaker that trips when the current median oracle rate compared to an exponential moving average over previous median rates exceeds a configured relative threshold.

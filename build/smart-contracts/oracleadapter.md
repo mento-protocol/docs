@@ -6,6 +6,48 @@ The **OracleAdapter** is the single interface the FPMM pool uses to obtain the s
 
 ---
 
+## Using the OracleAdapter (code examples)
+
+Most integrations **do not** call the OracleAdapter directly: the [FPMM](fpmm.md) pool calls it for every `getAmountOut` and `swap`. Use the adapter directly when you need to **check rate validity** (e.g. before showing a quote in a UI) or **read the current rate** for off-chain logic.
+
+### Getting a valid rate (for swaps / quoting)
+
+If you are implementing custom swap logic and need the same rate the pool would use, call the same method the pool uses. Reverts if FX market is closed, trading is suspended, or the rate is stale:
+
+```solidity
+IOracleAdapter adapter = IOracleAdapter(adapterAddress);
+address rateFeedID = referenceRateFeedID; // e.g. pool’s referenceRateFeedID
+
+(uint256 numerator, uint256 denominator) = adapter.getFXRateIfValid(rateFeedID);
+// Rate = numerator / denominator (e.g. token1 per token0, 1e18 scale)
+```
+
+### Checking validity without using the rate
+
+Useful to decide whether to show “trading available” or “market closed / suspended”:
+
+```solidity
+try adapter.ensureRateValid(rateFeedID) {
+    // Rate is valid; safe to quote/swap
+} catch {
+    // TradingSuspended, NoRecentRate, or (for getFXRateIfValid) FXMarketClosed
+}
+```
+
+### Inspecting rate and status (no revert)
+
+Get the raw rate and flags without reverting. Use for dashboards or conditional logic:
+
+```solidity
+IOracleAdapter.RateInfo memory info = adapter.getRate(rateFeedID);
+// info.numerator, info.denominator
+// info.tradingMode  == 0 means bidirectional (trading allowed)
+// info.isRecent     == true if within report expiry
+// info.isFXMarketOpen
+```
+
+---
+
 ## State
 
 | Field | Meaning |

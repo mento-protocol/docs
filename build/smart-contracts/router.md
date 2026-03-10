@@ -6,6 +6,84 @@ The **Router** provides a convenience layer for **quoting** and **executing** sw
 
 ---
 
+## Interacting with the Router (code examples)
+
+Use the Router when you want a single contract to handle token transfers and pool calls. **Approve the router** to spend the input token(s) before calling swap. For discovery and quoting from off-chain or JS, the [Mento SDK](../mento-sdk/README.md) is often simpler.
+
+### Getting the pool for a pair
+
+```solidity
+IRouter router = IRouter(routerAddress);
+address pool = router.poolFor(tokenA, tokenB, address(0));
+// address(0) for factory means use router.defaultFactory()
+```
+
+### Quoting a single-hop swap
+
+```solidity
+IRouter.Route[] memory routes = new IRouter.Route[](1);
+routes[0] = IRouter.Route({
+    from: usdc,      // token in
+    to: usdm,        // token out
+    factory: address(0)
+});
+
+uint256[] memory amounts = router.getAmountsOut(amountIn, routes);
+// amounts[0] == amountIn, amounts[1] == expected amount out (at oracle rate minus fee)
+```
+
+### Quoting a multihop swap
+
+Chain two or more pools. Each step’s output is the next step’s input:
+
+```solidity
+IRouter.Route[] memory routes = new IRouter.Route[](2);
+routes[0] = IRouter.Route({ from: tokenA, to: tokenB, factory: address(0) });
+routes[1] = IRouter.Route({ from: tokenB, to: tokenC, factory: address(0) });
+
+uint256[] memory amounts = router.getAmountsOut(amountIn, routes);
+// amounts[0] = amountIn, amounts[1] = amount after first hop, amounts[2] = final amount out
+```
+
+### Executing a swap (exact input)
+
+User sends `amountIn` of the first token and receives at least `amountOutMin` of the last token (slippage protection). Reverts if the pool oracle is invalid or trading limits are hit.
+
+```solidity
+IERC20(usdc).approve(routerAddress, amountIn);
+
+uint256[] memory amounts = router.swapExactTokensForTokens(
+    amountIn,
+    amountOutMin,   // e.g. (expectedOut * 99) / 100
+    routes,
+    msg.sender,     // recipient of output tokens
+    block.timestamp + 300  // deadline
+);
+```
+
+### Adding liquidity
+
+Quote first with `quoteAddLiquidity`, then add. You must approve the router for both tokens:
+
+```solidity
+(uint256 amountA, uint256 amountB, uint256 liquidity) = router.quoteAddLiquidity(
+    tokenA, tokenB, address(0), amountADesired, amountBDesired
+);
+
+IERC20(tokenA).approve(routerAddress, amountA);
+IERC20(tokenB).approve(routerAddress, amountB);
+
+(,, liquidity) = router.addLiquidity(
+    tokenA, tokenB,
+    amountADesired, amountBDesired,
+    amountAMin, amountBMin,
+    msg.sender,
+    block.timestamp + 300
+);
+```
+
+---
+
 ## Immutable configuration
 
 - **factoryRegistry** — Contract that maps (tokenA, tokenB) or factory to an approved pool factory. Used to ensure the pool comes from an approved factory.

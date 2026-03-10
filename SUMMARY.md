@@ -31,7 +31,6 @@
 * [Integration](build/integration/README.md)
   * [Integrate Stables](build/integration/integrate-stables.md)
   * [Integrate Oracles](build/integration/integrate-oracles.md)
-  * [Deployments & addresses](build/integration/integrate-mento-stables.md)
 * [Mento SDK](build/mento-sdk/README.md)
   * [Installation](build/mento-sdk/installation.md)
   * [Guides](build/mento-sdk/guides/README.md)

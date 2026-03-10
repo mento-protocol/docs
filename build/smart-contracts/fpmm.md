@@ -6,6 +6,90 @@ The **FPMM** contract is the core pool of Mento V3. Each instance holds two ERC-
 
 ---
 
+## Interacting with the pool (code examples)
+
+The snippets below show how to use the FPMM from Solidity. You need the **pool address** (from the factory or deployments) and the **token addresses** (pool uses sorted order: `token0` < `token1`). For most app flows, the [Router](router.md) or the [Mento SDK](../mento-sdk/README.md) simplify quoting and execution.
+
+### Finding the pool
+
+Get the pool for a token pair from the factory (tokens are sorted by address):
+
+```solidity
+IFPMMFactory factory = IFPMMFactory(factoryAddress);
+(address token0, address token1) = factory.sortTokens(usdc, usdm);
+address pool = factory.getPool(token0, token1);
+// pool == address(0) if not deployed yet
+```
+
+### Quoting a swap
+
+Get the expected amount of output token for a given amount in. The quote uses the **oracle rate** minus fees. Reverts if the oracle is invalid (e.g. market closed, breaker tripped, stale).
+
+```solidity
+IFPMM pool = IFPMM(poolAddress);
+uint256 amountIn = 1_000_000; // 1 USDC (6 decimals)
+uint256 amountOut = pool.getAmountOut(amountIn, usdc);
+// amountOut is in output token decimals (e.g. USDm)
+```
+
+### Executing a swap (via Router)
+
+The Router handles token transfers and calls the pool’s `swap` with the correct output amount. **Approve the router** to spend `amountIn` of the input token, then:
+
+```solidity
+IRouter router = IRouter(routerAddress);
+IRouter.Route[] memory routes = new IRouter.Route[](1);
+routes[0] = IRouter.Route({ from: usdc, to: usdm, factory: address(0) });
+
+uint256[] memory amounts = router.swapExactTokensForTokens(
+    amountIn,
+    amountOutMin,   // slippage: minimum amount out (e.g. amountOut * 99 / 100)
+    routes,
+    msg.sender,
+    block.timestamp + 300
+);
+// amounts[0] == amountIn, amounts[1] == actual amount out
+```
+
+### Executing a swap (direct pool call)
+
+The pool’s `swap(amount0Out, amount1Out, to, data)` is **output-specified**. The caller must ensure the pool receives the **input** tokens (e.g. by implementing `IFPMMCallee` and passing `data` so the pool calls back into your contract, which then transfers the input tokens). For simple EOA flows, use the Router instead.
+
+### Checking rebalance state
+
+Useful for keepers or UIs to see if the pool is eligible for rebalance and the current deviation:
+
+```solidity
+IFPMM pool = IFPMM(poolAddress);
+(
+    uint256 oraclePriceNumerator,
+    uint256 oraclePriceDenominator,
+    uint256 reservePriceNumerator,
+    uint256 reservePriceDenominator,
+    bool reservePriceAboveOraclePrice,
+    uint16 rebalanceThreshold,
+    uint256 priceDifference
+) = pool.getRebalancingState();
+// Rebalance is allowed only when priceDifference >= rebalanceThreshold
+```
+
+### Adding and removing liquidity
+
+Mint: transfer **both** tokens to the pool in the **current reserve ratio**, then call `mint(to)`. Burn: transfer LP tokens to the pool, then call `burn(to)`.
+
+```solidity
+// Mint: ensure pool has received token0 and token1 in correct ratio
+IERC20(pool.token0()).transfer(pool, amount0);
+IERC20(pool.token1()).transfer(pool, amount1);
+uint256 liquidity = pool.mint(msg.sender);
+
+// Burn: transfer LP tokens to pool first
+IERC20(pool).transfer(pool, liquidity);
+(uint256 amount0, uint256 amount1) = pool.burn(msg.sender);
+```
+
+---
+
 ## Invariants (design)
 
 The contract enforces:

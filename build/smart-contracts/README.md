@@ -2,6 +2,8 @@
 
 **Who this is for:** Integrators and auditors who need the contract layout and behavior of Mento V3 (FPMM pools, oracles, limits, strategies). The Mento protocol consists of a set of smart contracts deployed on supported chains (e.g. [Celo](https://celo.org/)).
 
+> **For app and frontend developers:** This section describes the Solidity internals and is intended for smart contract developers. To quote swaps, discover pools, and execute trades from JavaScript/TypeScript, the **[Mento SDK](../mento-sdk/README.md)** is usually the easiest path. Each contract page below includes **code snippets** showing how to call the contracts directly from Solidity when you are building on-chain integrations or tooling.
+
 **See also:** [Integration](../integration/README.md) — integration paths; [Mento SDK](../mento-sdk/README.md) — JS/TS library; [Deployments](../deployments/README.md) — addresses and verification.
 
 ## Mento V3: FPMM-based exchange

@@ -6,6 +6,49 @@ In Mento V3, **rebalancing** is performed only by **allowlisted** contracts call
 
 ---
 
+## Interacting with liquidity strategies (code examples)
+
+Strategies are typically triggered by **keepers** or off-chain bots when a pool is rebalanceable. Discovery (which pools a strategy serves) is usually done off-chain or via the [Mento SDK](../mento-sdk/README.md). The snippets below show how to call the strategy from Solidity.
+
+### Checking if a pool is registered
+
+```solidity
+ILiquidityStrategy strategy = ILiquidityStrategy(strategyAddress);
+bool registered = strategy.isPoolRegistered(poolAddress);
+```
+
+### Listing pools served by a strategy
+
+```solidity
+address[] memory pools = strategy.getPools();
+```
+
+### Previewing the rebalance action (view)
+
+Use this to see whether a rebalance would run and what direction/amounts the strategy would use. Does not execute.
+
+```solidity
+(
+    LiquidityStrategyTypes.Context memory ctx,
+    LiquidityStrategyTypes.Action memory action
+) = strategy.determineAction(poolAddress);
+
+// action.direction  => Expand or Contract
+// action.amount0Out, action.amount1Out => what the strategy would request from the pool
+// ctx.priceDifference, ctx.rebalanceThreshold => eligibility
+```
+
+### Triggering a rebalance
+
+Anyone can call this. The call will revert if the pool is not registered, cooldown has not elapsed, or the pool’s price difference is below threshold. The strategy then calls `pool.rebalance(...)` and implements `onRebalance` to source/sink the other token.
+
+```solidity
+strategy.rebalance(poolAddress);
+// Reverts with LS_COOLDOWN_ACTIVE or LS_POOL_NOT_REBALANCEABLE if not eligible
+```
+
+---
+
 ## Base: LiquidityStrategy
 
 The base contract maintains **per-pool configuration** and implements the **rebalance(pool)** entrypoint and the **onRebalance** callback interface expected by the FPMM.

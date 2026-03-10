@@ -6,6 +6,44 @@
 
 ---
 
+## Interacting with the factory (code examples)
+
+### Finding a pool for a token pair
+
+Tokens are ordered by address. Use `sortTokens` so you pass the pair in the order the factory expects:
+
+```solidity
+IFPMMFactory factory = IFPMMFactory(factoryAddress);
+
+(address token0, address token1) = factory.sortTokens(tokenA, tokenB);
+address pool = factory.getPool(token0, token1);
+
+if (pool != address(0)) {
+    // Pool exists; use it for getAmountOut, swap, etc.
+}
+```
+
+### Precomputing the pool address (before deployment)
+
+If the pool is not deployed yet, you can compute the proxy address that will be used when the owner deploys it. Useful for integrators that need to show a “future” pool address or for CREATE2-style flows:
+
+```solidity
+address poolOrFuture = factory.getOrPrecomputeProxyAddress(token0, token1);
+// If pool exists, returns deployed address; else returns precomputed proxy address
+```
+
+### Listing all deployed pools
+
+```solidity
+address[] memory pools = factory.deployedFPMMAddresses();
+for (uint256 i = 0; i < pools.length; i++) {
+    address pool = pools[i];
+    // Use pool with IFPMM(pool).tokens(), getAmountOut, etc.
+}
+```
+
+---
+
 ## State
 
 | Field | Meaning |
