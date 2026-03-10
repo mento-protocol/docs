@@ -34,7 +34,7 @@ Use **Pools** or **Liquidity** in the app for adding/removing liquidity.
 
 ## 🏦 Borrow a stable (e.g. GBPm)
 
-A **Trove** (CDP) lets you lock **USDm** as collateral and borrow another stable (e.g. GBPm) against it. Mento CDPs are a fork of [Liquity V2](https://docs.liquity.org/); see [CDPs](../dive-deeper/fpmm/cdps.md) for how they fit into Mento V3. You set your own interest rate; there’s no fixed repayment schedule. Keep your collateral ratio above the minimum or the position can be liquidated.
+A **Trove** (CDP) lets you lock **USDm** as collateral and borrow another stable (e.g. GBPm) against it. Mento CDPs are a fork of [Liquity V2](https://docs.liquity.org/); see [CDPs](../dive-deeper/cdps.md) for how they fit into Mento V3. You set your own interest rate; there’s no fixed repayment schedule. Keep your collateral ratio above the minimum or the position can be liquidated.
 
 1. Go to **[app.mento.org](https://app.mento.org/)** and **connect your wallet** (e.g. Celo).
 2. Open **Borrow**. Select the asset to borrow (e.g. **GBPm**) in the **dropdown at the top right**, then click **+ Open Your First Trove**.
@@ -52,7 +52,7 @@ To earn from the Stability pool with your borrowed GBPm (or any CDP-based stable
 
 ## 📈 Earn — Stability pool
 
-The **Stability pool** is only available for **CDP-based stablecoins** (e.g. **GBPm**; see [CDPs](../dive-deeper/fpmm/cdps.md), a fork of [Liquity V2](https://docs.liquity.org/)), not for Reserve-backed stables like USDm or EURm. Deposit into the pool to earn a share of **trove interest** (interest paid by borrowers), **liquidation gains** (when liquidations occur, your deposit repays debt and you receive collateral at a discount), and **protocol rewards**. No lock-up — withdraw anytime.
+The **Stability pool** is only available for **CDP-based stablecoins** (e.g. **GBPm**; see [CDPs](../dive-deeper/cdps.md), a fork of [Liquity V2](https://docs.liquity.org/)), not for Reserve-backed stables like USDm or EURm. Deposit into the pool to earn a share of **trove interest** (interest paid by borrowers), **liquidation gains** (when liquidations occur, your deposit repays debt and you receive collateral at a discount), and **protocol rewards**. No lock-up — withdraw anytime.
 
 1. Go to **[app.mento.org](https://app.mento.org/)** and **connect your wallet**.
 2. Switch to the **Earn** tab (top nav: Swap, Pool, Borrow, **Earn**).

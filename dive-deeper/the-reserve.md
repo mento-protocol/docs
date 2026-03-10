@@ -34,7 +34,7 @@ For **USDm** and **EURm**, the Reserve:
 - **Enables rebalancing** — The **Reserve liquidity strategy** is allowlisted on the FPMM pools that pair USDm or EURm with those external stables. When a pool becomes imbalanced, the strategy can mint or burn the Mento stable and move collateral so the pool rebalances at the oracle rate (within configured incentives and caps).
 - **Operates transparently** — Holdings and operations are onchain and verifiable.
 
-The Reserve does **not** hold collateral for CDP-backed stables like GBPm; those are backed by user-deposited USDm in the [Liquity V2](https://docs.liquity.org/)–style CDP system. See [FPMMs: CDPs](fpmm/cdps.md) for how CDPs fit into Mento V3.
+The Reserve does **not** hold collateral for CDP-backed stables like GBPm; those are backed by user-deposited USDm in the [Liquity V2](https://docs.liquity.org/)–style CDP system. See [CDPs](cdps.md) for how CDPs fit into Mento V3.
 
 ---
 
@@ -60,6 +60,6 @@ Reserve composition, which assets are accepted as collateral, and the parameters
 ## Next steps
 
 - [FPMMs](fpmm/README.md) — How pools use the oracle rate and rebalance.
-- [CDPs](fpmm/cdps.md) — Mento CDPs (fork of [Liquity V2](https://docs.liquity.org/)); synthetic stables and stability pool.
+- [CDPs](cdps.md) — Mento CDPs (fork of [Liquity V2](https://docs.liquity.org/)); synthetic stables and stability pool.
 - [Rebalancing & strategies](fpmm/rebalancing-and-strategies.md) — Reserve liquidity strategy and other allowlisted strategies.
 - [Protocol Economics](protocol-economics.md) — Value flows, fees, incentives, and reserve management.
