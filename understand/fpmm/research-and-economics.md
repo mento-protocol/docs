@@ -2,7 +2,7 @@
 
 ## Economics of Mento v3
 
-Mento v3 is a **DEX for on-chain FX**: pools quote and execute at the **oracle rate** (minus fees), not from reserves. That design—**Fixed-Price Market Makers (FPMMs)**—delivers efficient rates for stablecoin swaps and avoids the structural costs of reserve-based AMMs: no curve-based slippage and **no LVR** (loss-versus-rebalancing), because the quoted price tracks the oracle rather than moving only when someone trades.
+Mento v3 uses **FPMMs** to offer efficient on-chain FX rates. For the design rationale (why oracle pricing, no LVR), see [What Is Mento?](../getting-started/what-is-mento.md). Here we focus on value flows, fees, rebalancing, and incentives.
 
 **Where value goes.** Every swap pays a **fee** (split between **LP fee** and **protocol fee**). LPs earn from swap volume; the protocol earns a share of fees. When the pool’s inventory drifts (e.g. too much of one token), only **allowlisted liquidity strategies** can **rebalance**: the pool sends one token to the strategy and receives the other at the oracle rate. The strategy may keep a **capped rebalance incentive** (the pool enforces a **minimum repayment**), so value loss to the pool is bounded and keepers/strategies can earn for providing rebalancing. **Value protection** ensures no swap decreases the pool’s reserve value at the oracle after fees, so extraction is limited to the fee margin.
 
@@ -40,7 +40,7 @@ Reserve-backed pools (USDm, EURm) do not have CDP interest or SP; rebalancing is
 
 ### Risks and further reading
 
-For protocol risks—oracle manipulation, reserve and inventory risk, smart contract and blockchain risk—see [Security & Risk](../security-and-risk/overview.md).
+For protocol risks—oracle manipulation, reserve and inventory risk, smart contract and blockchain risk—see [Risk overview](../security/risk-overview.md).
 
 **Stability analysis:** The [Mento whitepaper](https://github.com/mento-protocol/whitepaper) includes stability analysis and simulations under various market conditions. A more digestible summary is in the [Mento Stability Analysis article](https://blog.celo.org/a-look-at-the-celo-stability-analysis-white-paper-part-1-23edd5ef8b5).
 

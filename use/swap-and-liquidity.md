@@ -17,7 +17,7 @@ If any of these fail, the swap reverts.
 ### How to swap in practice
 
 1. **Use the Mento app** — [app.mento.org](https://app.mento.org/): connect your wallet, choose the pair (e.g. USDC ↔ USDm), enter amount, and submit. The app will quote the oracle rate (minus fee) and execute the swap.
-2. **Integrate** — Use the pool’s `getAmountOut` for a quote and the router or pool’s swap function to execute. See [Build on Mento](../build-on-mento/integration-overview/README.md) and the [FPMM contracts](../build-on-mento/smart-contracts/README.md).
+2. **Integrate** — Use the pool’s `getAmountOut` for a quote and the router or pool’s swap function to execute. See [Integration](../build/integration/README.md) and the [Smart Contracts](../build/smart-contracts/README.md).
 
 ---
 

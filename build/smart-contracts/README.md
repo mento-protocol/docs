@@ -1,6 +1,8 @@
 # Smart Contracts
 
-**These docs describe Mento v3.** The Mento protocol consists of a set of smart contracts deployed on supported chains (e.g. [Celo](https://celo.org/)).
+**Who this is for:** Integrators and auditors who need the contract layout and behavior of Mento v3 (FPMM pools, oracles, limits, strategies). The Mento protocol consists of a set of smart contracts deployed on supported chains (e.g. [Celo](https://celo.org/)).
+
+**See also:** [Integration](../integration/README.md) — integration paths; [Mento SDK](../mento-sdk/README.md) — JS/TS library; [Deployments](../deployments/README.md) — addresses and verification.
 
 ## Mento v3: FPMM-based exchange
 

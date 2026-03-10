@@ -1,43 +1,8 @@
 # Fixed-Price Market Makers (FPMMs)
 
-This page explains **Fixed-Price Market Makers (FPMMs)** as used in Mento v3. Terms are defined when first used so you can follow without prior DeFi knowledge.
+This page is the **reference** for how FPMMs work in Mento v3: the invariant, operations, rebalancing, and configuration. For **why** Mento uses oracle pricing and why curve-based AMMs (CFMMs) don't work well for FX—including LVR and slippage—see [What Is Mento?](../getting-started/what-is-mento.md).
 
----
-
-## What is an AMM?
-
-An **AMM (automated market maker)** is a smart contract that holds a **pool** of two (or more) tokens and lets users **swap** one for the other. Unlike an order book, there are no limit orders: the **price** you get is determined by a **rule** (a formula or an external feed). In many AMMs the rule depends only on the **reserves** (how much of each token the pool holds): the pool is like a curve, and the price moves as you trade (**slippage**). Those are often called **CFMMs** (constant-function market makers): a function of reserves is kept constant on each swap, and the execution price is derived from that function.
-
----
-
-## What is an FPMM?
-
-A **Fixed-Price Market Maker (FPMM)** is an AMM where the **swap price is not derived from reserves**. Instead, the **effective trade price is fixed to an external oracle rate** (minus a fee). So:
-
-- There is **no reserve-based curve**: the pool does not “move the price” as trade size changes.
-- **Execution is at the oracle** (minus fee): you get the same rate per unit regardless of size (subject to liquidity and protocol limits).
-- The pool **always quotes the oracle**; it is never “stale” in the sense of showing an old reserve-derived price.
-
-In Mento v3, every swap pool is an FPMM. Each pool has an **oracle** (a price feed) that supplies the exchange rate between the two tokens; the pool uses that rate for every swap (minus fees) and enforces that the pool’s **value at the oracle** is preserved (with fees).
-
----
-
-## Why FPMMs? (LVR and slippage)
-
-In a **curve-based AMM** — specifically a **constant-product CFMM** such as **Uniswap v2** — the invariant is:
-
-$$xy = k$$
-
-- The **spot price** is determined only by the reserves. Between trades, the market price can move, but the pool’s quoted price stays where the last trade left it.
-- **Arbitrageurs** can then trade against the pool at a better-than-fair price and capture value. This loss to liquidity providers is often called **LVR (loss-versus-rebalancing)**.
-- Traders also face **slippage**: the execution price moves along the curve as trade size increases.
-
-In an **FPMM**, the pool **always** quotes the oracle. So:
-
-- **LVR from a stale curve is zero** (the quote is never stale from reserves).
-- **No curve-based slippage**: execution is at the oracle (minus fee).
-
-Risks shift to **oracle** quality (correctness, freshness) and **inventory** (the pool can get too one-sided). Mento v3 addresses those with **trading limits**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
+In Mento v3, every swap pool is an **FPMM**: the swap price is fixed to an external **oracle** rate (minus a fee), not derived from reserves. There is no reserve-based curve, no curve-based slippage, and no LVR from a stale pool price. Risks shift to **oracle** quality and **inventory**; the protocol addresses those with **trading limits**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
 
 ---
 
@@ -133,6 +98,7 @@ See [Swap & liquidity](../../use/swap-and-liquidity.md) for how to mint and burn
 
 ## Next steps
 
+- [What Is Mento?](../getting-started/what-is-mento.md) — Why oracle pricing and why not CFMM (LVR, slippage).
 - [Oracles, price feeds & circuit breakers](oracles-and-circuit-breakers.md) — How the pool gets the rate and when trading is gated.
 - [Rebalancing & strategies](rebalancing-and-strategies.md) — Who rebalances, thresholds, boundaries, incentives.
 - [Trading limits](trading-limits.md) — Caps; [Oracles & circuit breakers](oracles-and-circuit-breakers.md) — halts.

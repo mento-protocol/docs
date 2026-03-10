@@ -1,14 +1,10 @@
----
-hidden: true
----
-
 # Oracles
 
-{% hint style="info" %}
-These pages describe the technical details of Oracles on Mento. For an introduction to Oracles and how they work on Mento, please see [Oracles, price feeds & circuit breakers](../../understand/fpmm/oracles-and-circuit-breakers.md) in Understand.
-{% endhint %}
+**Who this is for:** Integrators and oracle operators who need the technical details of Mento's price feeds (on-chain SortedOracles, off-chain clients, rate feed IDs). For a conceptual intro to oracles and circuit breakers in FPMMs, see [Oracles, price feeds & circuit breakers](../../understand/fpmm/oracles-and-circuit-breakers.md).
 
-Mento Oracles consist of two technical parts: An [on-chain smart contract](../smart-contracts/sortedoracles.md) and [off-chain clients](oracle-client/). In the following pages, you will learn about these two components as well as about the research behind choosing price sources for the oracles to report.&#x20;
+**See also:** [Smart Contracts](../smart-contracts/README.md) (SortedOracles, BreakerBox) · [Deployments](../deployments/README.md).
+
+Mento Oracles consist of two technical parts: an [on-chain smart contract](../smart-contracts/sortedoracles.md) and [off-chain clients](oracle-client/). In the following pages, you will learn about these components and how price sources are chosen for the oracles to report.
 
 <figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 

@@ -23,6 +23,8 @@ description: >-
 | **Deep dive: FPMMs, oracles, rebalancing** | [Concepts overview](understand/getting-started/concepts-overview.md) |
 | **Fix a failed swap or other issue** | [Troubleshooting](use/troubleshooting.md) |
 
+**Explore by section:** [Understand](understand/getting-started/what-is-mento.md) · [Use](use/swap-and-liquidity.md) · [Build](build/integration/README.md)
+
 [Quick start guides](understand/getting-started/quick-start-guides.md) · [Glossary](understand/getting-started/glossary.md) · [Analytics & dashboards](understand/getting-started/analytics-and-dashboards.md)
 
 ---

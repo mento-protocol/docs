@@ -4,7 +4,7 @@ description: Do one thing now — swap at FX rates, add liquidity, or borrow a s
 
 # Quick Start Guides
 
-Choose what you want to do first — swap, add liquidity, borrow, earn (Stability pool), or integrate. For the big picture, see [What is Mento?](what-is-mento.md) and [Core Concepts](../core-concepts/).
+Choose what you want to do first — swap, add liquidity, borrow, earn (Stability pool), or integrate. For the big picture, see [What is Mento?](what-is-mento.md) and [Concepts overview](concepts-overview.md).
 
 ---
 
@@ -17,7 +17,7 @@ Choose what you want to do first — swap, add liquidity, borrow, earn (Stabilit
 
 You get the same rate you’d see off-chain for GBP/USD. No curve, no slippage. 🎯
 
-[Getting Mento stables →](../../use-mento/getting-mento-stables/README.md)
+[Getting Mento stables →](../../use/getting-mento-stables/README.md)
 
 ---
 
@@ -28,7 +28,7 @@ You get the same rate you’d see off-chain for GBP/USD. No curve, no slippage. 
 3. Open **Pools** or **Liquidity**. Select a pool (e.g. **GBPm/USDm**).
 4. Enter amounts for both tokens; the app shows the required ratio. Confirm. You’re now an LP and earn fees from swaps. 🎯
 
-[Swap & liquidity →](../../use-mento/swap-and-liquidity.md#adding-liquidity-mint)
+[Swap & liquidity →](../../use/swap-and-liquidity.md#adding-liquidity-mint)
 
 ---
 
@@ -46,7 +46,7 @@ A **Trove** (CDP) lets you lock **USDm** as collateral and borrow another stable
    - Review the **loan summary** on the right, then confirm (**Enter collateral amount** / **Open Trove**).
 To earn from the Stability pool with your borrowed GBPm (or any CDP-based stable), switch to **Earn** (see below). 🎯
 
-[CDP operations →](../../use-mento/cdp-operations.md) · [Parameters (min debt, ratios, rates)](gbpm-usdm-parameters-reference.md)
+[CDP operations →](../../use/cdp-operations.md) · [Parameters (min debt, ratios, rates)](gbpm-usdm-parameters-reference.md)
 
 ---
 
@@ -59,19 +59,19 @@ The **Stability pool** is only available for **CDP-based stablecoins** (e.g. **G
 3. Select the asset (e.g. **GBPm**) in the currency selector. You'll see the **Stability pool** for that asset: total deposits, pool APY, avg. borrow rate.
 4. Under **Deposit**, enter an amount (or use **25%**, **50%**, **75%**, **MAX**). Optionally check **Claim rewards with deposit** to claim pending rewards when you deposit. Click **Enter amount to deposit** (or the active deposit button) to confirm. No lock-up — you can withdraw anytime. 🎯
 
-[CDP operations →](../../use-mento/cdp-operations.md)
+[CDP operations →](../../use/cdp-operations.md)
 
 ---
 
 ## Integrate (developers)
 
-1. **Install** the [Mento SDK](../../build-on-mento/mento-sdk/installation.md) or use the contracts directly.
-2. **Get pool address and pair info** from [Deployments](../../build-on-mento/deployments/addresses.md).
+1. **Install** the [Mento SDK](../../build/mento-sdk/installation.md) or use the contracts directly.
+2. **Get pool address and pair info** from [Deployments](../../build/deployments/addresses.md).
 3. **Quote** via pool or router (`getAmountOut` / `getAmountsOut`).
 4. **Swap** via the router or pool swap function.
 
-[Integration overview →](../../build-on-mento/integration-overview/README.md)
+[Integration →](../../build/integration/README.md)
 
 ---
 
-**More:** [What is Mento?](what-is-mento.md) · [Core Concepts](../core-concepts/)
+**More:** [What is Mento?](what-is-mento.md) · [Concepts overview](concepts-overview.md)

@@ -1,5 +1,7 @@
 # What Is Mento?
 
+For a math-free overview, see [Concepts overview](concepts-overview.md) and [FPMMs](../fpmm/README.md).
+
 Mento v3 is a **DEX for onchain foreign exchange (FX)**. The **goal** is to let users swap stablecoins onchain at the **respective FX rates** — e.g. USDC ↔ GBPm at the USD/GBP rate, or USDC ↔ EURm at USD/EUR — so that onchain execution can compete with off-chain spot FX. This page explains why that requires a different design than standard AMMs, and how Mento v3’s building blocks (FPMMs, protection against oracle imprecision, liquidity strategies) fit together.
 
 ---

@@ -1,6 +1,6 @@
 # Glossary
 
-Short definitions for terms used in the Mento v3 docs. For full context, see [What is Mento?](getting-started/what-is-mento.md) and [Core concepts](core-concepts/README.md).
+Short definitions for terms used in the Mento v3 docs. For full context, see [What is Mento?](what-is-mento.md) and [FPMMs](../fpmm/README.md). Also see [Concepts overview](concepts-overview.md) for a short map of FPMM, CDPs, and governance.
 
 ---
 
@@ -25,4 +25,4 @@ Short definitions for terms used in the Mento v3 docs. For full context, see [Wh
 
 ---
 
-**See also:** [What is Mento?](getting-started/what-is-mento.md) · [FPMMs](core-concepts/fixed-price-market-makers-fpmms.md) · [Oracles](core-concepts/oracles-and-price-feeds.md).
+**See also:** [What is Mento?](what-is-mento.md) · [FPMMs](../fpmm/README.md) · [Oracles & circuit breakers](../fpmm/oracles-and-circuit-breakers.md).

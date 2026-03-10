@@ -1,6 +1,6 @@
 # Troubleshooting (integrators)
 
-Common issues when integrating with Mento v3 (quoting, swapping, SDK, contracts). For **user** issues (getting stables, swap failed in app), see [Use: Troubleshooting](../use/troubleshooting.md).
+**Who this is for:** Integrators debugging quote/swap failures, SDK or RPC issues, or deployment/verification problems with Mento v3. For **user** issues (getting stables, swap failed in app), see [Use: Troubleshooting](../use/troubleshooting.md).
 
 ---
 

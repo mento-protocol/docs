@@ -1,5 +1,7 @@
 # Mento SDK
 
-A direct way to interact with the Mento Protocol core contracts in Typescript/Javascript environments is through the [Mento SDK](https://github.com/mento-protocol/mento-sdk). The SDK provides easy-to-use abstractions all the way from discovering exchanges and pairs to executing swaps.
+**Who this is for:** Developers building in TypeScript/JavaScript who want to quote and execute swaps against Mento v3 FPMM pools. A direct way to interact with the Mento Protocol core contracts is through the [Mento SDK](https://github.com/mento-protocol/mento-sdk). The SDK provides easy-to-use abstractions from discovering pairs to executing swaps.
 
-In the following pages, you will learn how to install the SDK as well as guides for basic Broker and Exchange operations.&#x20;
+**See also:** [Integration](../integration/README.md) — integration paths; [Smart Contracts](../smart-contracts/README.md) — contract reference; [Deployments](../deployments/README.md) — addresses.
+
+In the following pages, you will learn how to install the SDK and use it for FPMM pool operations (pairs, quotes, swaps).
