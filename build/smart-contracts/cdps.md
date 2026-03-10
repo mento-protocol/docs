@@ -19,6 +19,8 @@ The CDP system is implemented by the Liquity v2 contract suite. Mento’s fork l
 
 Liquidations, redemptions, gas compensation, and fee flows follow Liquity v2; Mento’s fork differs in **collateral (USDm)**, **debt (FX-pegged tokens)**, **oracles (FXPriceFeed)**, and **multi-instance deployment**.
 
+**Critical risk considerations** (USDm depeg risk, FX exposure for borrowers and SP depositors, Stability Pool FX loss on liquidations, and double liquidation risk from both FX moves and USDm depeg) are summarized in **[CDPs (Dive Deeper)](../../use/cdp-operations.md#critical-risk-considerations)** and discussed in depth in the [mento-protocol/bold README](https://github.com/mento-protocol/bold).
+
 ---
 
 ## Where to find full contract documentation

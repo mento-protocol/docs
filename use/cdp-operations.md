@@ -31,7 +31,22 @@ For full protocol and contract documentation (state variables, liquidation thres
 * **[Liquity v2 documentation](https://docs.liquity.org/)** — protocol overview, technical resources, and contract behavior.
 * **[Liquity v2 whitepaper](https://www.liquity.org/blog/liquity-v2-whitepaper)** — design and economics.
 
-For **Mento-specific** implementation (USDm collateral, FX oracles, multi-instance architecture, risks, and FXPriceFeed), see the **[mento-protocol/bold README](https://github.com/mento-protocol/bold)**. Deployment addresses and integration with Mento’s [Reserve](../build/smart-contracts/reserve.md) and [FPMM](../build/smart-contracts/fpmm.md) are documented in [mento-core](https://github.com/mento-protocol/mento-core) and the Build [Deployments](../build/deployments/README.md) section.
+For **Mento-specific** implementation (USDm collateral, FX oracles, multi-instance architecture, and FXPriceFeed), see the **[mento-protocol/bold README](https://github.com/mento-protocol/bold)**. Deployment addresses and integration with Mento’s [Reserve](../build/smart-contracts/reserve.md) and [FPMM](../build/smart-contracts/fpmm.md) are documented in [mento-core](https://github.com/mento-protocol/mento-core) and the Build [Deployments](../build/deployments/README.md) section.
+
+---
+
+## Critical risk considerations
+
+Because Mento CDPs use **USDm as collateral** and **FX-pegged debt** (e.g. GBPm), the risk profile differs from crypto-collateralized systems like Liquity v2:
+
+| Risk | Description |
+|------|-------------|
+| **USDm depeg risk** | All FX instances use USDm as collateral. A USDm depeg would cause **correlated failure across all CDP instances** — every trove’s collateral would lose value at once. |
+| **FX exposure** | Unlike USD-pegged stablecoins, **borrowers and Stability Pool depositors** are exposed to **foreign exchange rate risk**: the debt token (e.g. GBPm) is pegged to GBP, which floats against USD. |
+| **Stability Pool FX loss** | When liquidations occur, SP depositors receive collateral (USDm) in exchange for burned debt (e.g. GBPm). Because of FX rate dynamics, **SP depositors may incur losses on liquidations** — the USD value of collateral received can be less than the USD value of the debt absorbed. See the [mento-protocol/bold README (Economics)](https://github.com/mento-protocol/bold) for details. |
+| **Double liquidation risk** | Troves can become undercollateralized from **two directions**: (1) **FX rate movements** (e.g. GBP appreciates vs USD, so debt value in USD rises), and (2) **USDm depeg** (collateral value in USD falls). Both can trigger liquidations. |
+
+Borrowers and SP depositors should understand these risks before opening troves or depositing to the Stability Pool. For full Mento-specific risk and economics analysis, see the **[mento-protocol/bold README](https://github.com/mento-protocol/bold)**.
 
 ---
 
