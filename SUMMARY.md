@@ -71,6 +71,5 @@
   * [Oracle Client](build-on-mento/oracles/oracle-client/README.md)
     * [Price Sources](build-on-mento/oracles/oracle-client/price-sources.md)
   * [Becoming an Oracle Provider](build-on-mento/oracles/becoming-an-oracle-provider.md)
-* [Architecture (mento-core)](developers/mento-core/architecture.md)
 * [Troubleshooting (integrators)](build-on-mento/troubleshooting.md)
 

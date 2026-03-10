@@ -23,8 +23,8 @@ description: >-
 | **Deep dive: FPMMs, oracles, rebalancing** | [Core concepts](overview/core-concepts/README.md) |
 | **Something went wrong** (swap failed, etc.) | [Troubleshooting](use-mento/troubleshooting.md) |
 
-[Quick start guides](overview/getting-started/quick-start-guides.md) · [What's new in v3](overview/getting-started/whats-new-v3.md) · [Glossary](overview/glossary.md) · [Analytics & dashboards](overview/getting-started/analytics-and-dashboards.md)
+[Quick start guides](overview/getting-started/quick-start-guides.md) · [Glossary](overview/glossary.md) · [Analytics & dashboards](overview/getting-started/analytics-and-dashboards.md)
 
 ---
 
-*Previous protocol architecture (v2) is documented only for reference: [Legacy (v2)](overview/legacy-v2.md).*
+*Previous protocol architecture (v2) is documented in legacy docs and the [whitepaper](https://github.com/mento-protocol/whitepaper).*
