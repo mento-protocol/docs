@@ -40,11 +40,11 @@ A **Trove** (CDP) lets you lock **USDm** as collateral and borrow another stable
 2. Open **Borrow**. Select the asset to borrow (e.g. **GBPm**) in the **dropdown at the top right**, then click **+ Open Your First Trove**.
 3. On the **Open a Trove** screen:
    - **COLLATERAL** — Enter how much USDm to deposit (or **MAX**). Your balance is shown next to the field.
-   - **BORROW** — Enter how much GBPm to borrow. Minimum is **£1,000 GBPm** (for the recommended Celo deployment).
+   - **BORROW** — Enter how much GBPm to borrow. Minimum is **£1,000 GBPm**.
    - **LOAN-TO-VALUE** — The bar shows risk (SAFE → MODERATE → RISKY → LIQ). Liquidation happens when your collateral ratio drops below the minimum (**110%**); the app shows “Liquidation at …%”.
-   - **ANNUAL INTEREST RATE** — Set or pick a rate (minimum **0.2%**).
+   - **ANNUAL INTEREST RATE** — This is the interest you pay on your borrowed amount. Set or pick a rate (minimum **0.2%**). In Liquity v2, anyone can **redeem**: they burn GBPm and receive USDm collateral from open troves. Troves are ordered by interest rate, and **the lowest-interest troves are redeemed first**. So a lower rate means cheaper borrowing but you’re first in line to be redeemed against; a higher rate costs more but reduces that risk.
    - Review the **loan summary** on the right, then confirm (**Enter collateral amount** / **Open Trove**).
-4. (Optional) Open **Stability pool** and deposit your GBPm to earn rewards when liquidations occur. 🎯
+4. (Optional) Open **Stability pool** and deposit your GBPm to earn a share of the interest paid by borrowers while your funds sit in the pool, plus rewards when liquidations occur. 🎯
 
 [CDP operations →](../../use-mento/cdp-operations.md) · [Parameters (min debt, ratios, rates)](gbpm-usdm-parameters-reference.md)
 
