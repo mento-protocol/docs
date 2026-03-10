@@ -1,89 +1,64 @@
 # The Reserve
 
-The Mento Reserve holds and manages the collateral assets that back Mento stablecoins. It serves as the protocol's treasury, ensuring that stable assets remain fully collateralized while enabling efficient liquidity management across the ecosystem.
+In Mento v3, **most Mento stablecoins are CDP-backed** (using Liquity v2–style CDPs). **Only USDm and EURm** are backed by collateral held in the **MENTO Reserve**. This page explains why that split exists and how the Reserve works for those two stables.
 
-## Purpose and Function
+---
 
-The Reserve acts as the central collateral pool for the Mento protocol. When users mint stablecoins, they deposit collateral into the Reserve. When they redeem stablecoins, they withdraw collateral from the Reserve. This mechanism ensures that every stablecoin in circulation has corresponding backing.
+## Two backing models in v3
 
-Unlike traditional stablecoin reserves that may be opaque or centrally controlled, the Mento Reserve operates transparently on-chain. All holdings, transactions, and collateralization ratios are publicly verifiable through smart contracts and blockchain data.
+| Backing model | Stablecoins | How it works |
+|---------------|-------------|----------------|
+| **Reserve-backed** | **USDm**, **EURm** | The Reserve holds high-quality fiat-backed collateral (e.g. USDC, USDT, USDS for USDm; EUROC for EURm). These stables can be backed **1:1** by such assets because they have liquid, high-quality counterparts that can be integrated onchain. |
+| **CDP-backed** | **GBPm** and others | No equivalent high-quality fiat-backed GBP (or other currency) stablecoin is integrated at scale yet. So these stables are minted via **Liquity v2–style CDPs**: users deposit **USDm** as collateral and borrow the synthetic stable (e.g. GBPm). When high-quality fiat-backed counterparts become available, governance can consider moving to Reserve-backed backing for them too. |
 
-## Collateral Composition
+So: the Reserve backs **only USDm and EURm**. Other Mento stables are **synthetic** and backed by CDPs (with USDm as collateral in the current design), until the ecosystem has suitable fiat-backed collateral to integrate.
 
-The Reserve holds a diversified portfolio of crypto assets to minimize risk and ensure stability. Current collateral types include:
+---
 
-* **Stablecoins**: USDC, USDT, and USDS provide stable value and high liquidity
-* **Crypto assets**: BTC, ETH and other cryptocurrencies offer growth potential and ecosystem alignment
-* **Yield-bearing assets**: Assets that generate returns while serving as collateral
+## Why only USDm and EURm are Reserve-backed
 
-This multi-asset approach reduces dependency on any single collateral type. If one asset experiences issues, others can maintain the protocol's solvency.
+USDm and EURm have **high-quality, fiat-backed counterparts** that are already integrated and liquid on the chains where Mento deploys:
 
-## Over-Collateralization
+- **USD**: USDC, USDT, USDS, and (on some chains) others trade at or near USD parity and are widely used. The Reserve can hold these and back USDm **1:1**.
+- **EUR**: EUROC (and e.g. axlEUROC on Celo) provides a regulated euro-backed stablecoin. The Reserve can hold it and back EURm **1:1**.
 
-The Reserve maintains collateralization ratios above 100% to protect against market volatility. This buffer ensures that even during significant market downturns, the protocol can honor all redemptions at the target exchange rate.
+For **GBP** (and some other currencies), there is currently **no integrated, high-quality fiat-backed stablecoin** at the same level of adoption and trust. So 1:1 Reserve backing with a single GBP collateral type is not feasible yet. CDPs allow those stables to exist anyway: users lock **USDm** (which is itself Reserve-backed) and mint e.g. GBPm. Once high-quality fiat-backed GBP (or other currency) counterparts are available and can be integrated, the protocol can consider Reserve-backed backing for those stables too.
 
-The collateralization ratio represents the total USD value of reserve assets divided by the total USD value of all outstanding Mento stablecoins. This aggregate approach provides a comprehensive view of the protocol's solvency across all stable assets rather than tracking individual ratios per stablecoin.
+---
 
-A higher ratio indicates stronger backing and more protection against market volatility, while efficient capital usage requires balancing security with practical constraints. The protocol maintains this balance to ensure both stability and sustainability.
+## What the Reserve does (USDm and EURm)
 
-## Reserve Management
+For **USDm** and **EURm**, the Reserve:
 
-The Reserve operates autonomously through smart contracts, with key functions including:
+- **Holds collateral** — Holds the fiat-backed assets (USDC, USDT, USDS for USDm; EUROC etc. for EURm) that back the circulating supply.
+- **Enables rebalancing** — The **Reserve liquidity strategy** is allowlisted on the FPMM pools that pair USDm or EURm with those external stables. When a pool becomes imbalanced, the strategy can mint or burn the Mento stable and move collateral so the pool rebalances at the oracle rate (within configured incentives and caps).
+- **Operates transparently** — Holdings and operations are onchain and verifiable.
 
-**Asset Allocation**: Governance can adjust the target composition of reserve assets to optimize for stability, yield, and risk. Rebalancing happens gradually to minimize market impact.
+The Reserve does **not** hold collateral for CDP-backed stables like GBPm; those are backed by user-deposited USDm in the Liquity v2 system.
 
-**Revenue Generation**: Reserve assets can be deployed to generate yield through low-risk strategies. Returns flow back to the protocol, benefiting MENTO stakers and strengthening the reserve.
+---
 
-**Risk Management**: Automated systems monitor collateralization ratios and asset health. If ratios fall below thresholds, protective mechanisms activate to restore proper backing.
+## Reserve dashboard: [reserve.mento.org](https://reserve.mento.org/)
 
-## Transparency and Verification
+The **Reserve dashboard** at [reserve.mento.org](https://reserve.mento.org/) is the public view of the Mento Reserve. It shows:
 
-All Reserve operations are transparent and verifiable:
+- **Total stablecoin supply** — Combined supply of all Mento stables (USDm, EURm, GBPm, and others).
+- **Reserve holdings** — The total value of collateral held in the Reserve (the diversified portfolio backing USDm and EURm).
+- **Collateralization ratio** — Reserve holdings divided by the supply of Reserve-backed stables; a ratio above 1 indicates over-collateralization.
+- **Supply by stablecoin** — Circulating supply per Mento stable (USDm, EURm, GBPm, etc.).
 
-* Real-time reserve composition available at [reserve.mento.org](https://reserve.mento.org/?tab=reserve-holdings)
-* On-chain proof of reserves through smart contract queries
-* Open-source contracts enabling independent verification
+Use it to check Reserve health, verify backing, and see how supply and collateral evolve over time.
 
-This transparency builds trust and allows market participants to make informed decisions about using Mento stablecoins.
+---
 
-## The Reserve Safety Fund
+## Governance and risk
 
-A portion of the Reserve is allocated to [the Safety Fund](https://forum.celo.org/t/mento-spin-off-and-launch-of-the-mento-token/7747), an additional buffer against extreme events. This fund, denominated in MENTO tokens, provides last-resort backing if primary collateral suffers losses through:
+Reserve composition, which assets are accepted as collateral, and the parameters for the Reserve liquidity strategy are set by **governance** (MENTO token holders). Over-collateralization and risk management apply to the Reserve’s backing of USDm and EURm; the goal is to keep those stables robustly backed while allowing efficient rebalancing.
 
-* Smart contract exploits
-* Collateral token failures
-* Extreme market events
-* Other black swan scenarios
+---
 
-The Safety Fund represents the protocol's commitment to maintaining stablecoin backing even in worst-case scenarios.
+## Next steps
 
-## Governance and Control
-
-The Reserve operates under decentralized governance through the MENTO token. No single entity can unilaterally access or redirect reserve assets. Key decisions require community approval:
-
-* Adding or removing collateral types
-* Adjusting target allocations
-* Implementing new yield strategies
-* Modifying risk parameters
-
-This governance structure ensures the Reserve serves the long-term interests of the protocol and its users rather than any individual party.
-
-## Integration with Protocol Components
-
-The Reserve connects with other protocol components to enable stability:
-
-* Provides collateral for stablecoin minting and redemption
-* Sources assets for liquidity pool rebalancing
-* Generates revenue that funds protocol operations
-* Maintains buffers that enable trading during volatility
-
-These integrations create a cohesive system where the Reserve's health directly supports overall protocol stability.
-
-### Next Steps
-
-To understand how the Reserve enables Mento's operations:
-
-* [Stability Mechanisms](stability-mechanisms.md) - How reserves enable elastic supply
-* [Research & Economics](research-and-economics.md) - Economic theory behind reserve management
-* [Analytics & Dashboards](../getting-started/analytics-and-dashboards.md) - Monitor reserve metrics in real-time
-
+- [Fixed-Price Market Makers (FPMMs)](fixed-price-market-makers-fpmms.md) — How pools use the oracle rate and rebalance.
+- [Rebalancing & strategies](rebalancing-and-strategies.md) — Reserve liquidity strategy and other allowlisted strategies.
+- [Research & Economics](research-and-economics.md) — Economic design and reserve management.
