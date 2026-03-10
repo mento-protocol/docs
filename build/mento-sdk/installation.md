@@ -1,6 +1,6 @@
 # Installation
 
-The Mento SDK v3 requires **Node.js 18+** and **viem** as a peer dependency (ethers.js is no longer used).
+The Mento SDK v3 requires **Node.js 18+** and **viem** as a peer dependency (ethers.js is no longer used). The package is published in **dual CJS/ESM** format with an exports map for Node and bundlers.
 
 ```bash
 npm install @mento-protocol/mento-sdk viem
@@ -31,10 +31,13 @@ const mento = await Mento.create(ChainId.CELO, yourPublicClient)
 
 ---
 
-## Next steps
+## What you can do next
 
-* [Getting exchange pairs and routes](guides/getting-exchange-pairs.md) — Discover pools and routes
-* [Getting a quote](guides/getting-a-quote.md) — Quote swap output with `mento.quotes`
-* [Initiating a swap](guides/initiating-a-swap.md) — Build and send swap transactions with `mento.swap`
+| Area | Guides |
+|------|--------|
+| **Discovery** | [Exchange pairs & routes](guides/getting-exchange-pairs.md) — tokens, pools, routes, trading status |
+| **Trading** | [Getting a quote](guides/getting-a-quote.md), [Initiating a swap](guides/initiating-a-swap.md) |
+| **Liquidity** | [Liquidity management](guides/liquidity.md) — add/remove liquidity, zap in/out for FPMM pools |
+| **Borrow** | [Borrow (CDP)](guides/borrow.md) — open/adjust/close troves, fees, system params |
 
-Runnable examples are in the [mento-sdk-examples](https://github.com/mento-protocol/mento-sdk-examples) repository.
+Runnable examples: [mento-sdk-examples](https://github.com/mento-protocol/mento-sdk-examples).

@@ -34,11 +34,13 @@ List all pools (FPMM and legacy Virtual/BiPoolManager):
 const pools = await mento.pools.getPools()
 ```
 
-Each pool includes addresses, token info, pricing, fees, rebalancing state, and trading limits. Use these when you need full pool details rather than just a path between two tokens.
+The SDK returns **enriched pool data**: addresses, token info, **pricing**, **fees**, **rebalancing state**, and **trading limits**. Use this when you need full pool details for UIs or risk checks, not just a path between two tokens.
 
 ---
 
 ## Routes
+
+The SDK uses a **pre-computed route cache** by default for fast quote and swap lookups. You can also fetch routes fresh from the chain.
 
 Find a **route** between two tokens (for quoting and swapping):
 
