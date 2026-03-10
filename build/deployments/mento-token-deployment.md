@@ -1,8 +1,8 @@
 ---
-description: Information for partners to list MENTO token in their application
+description: MENTO token deployment — addresses, chain, and listing information for partners
 ---
 
-# Listing information
+# MENTO Token Deployment
 
 |                       |                                                                                                                      |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------- |
