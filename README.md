@@ -25,9 +25,11 @@ Every Mento V3 swap pool is an FPMM. Each pool is tied to an **oracle** (externa
 - No reserve-based curve → no curve-based slippage, no LVR from a stale pool price.
 - When the oracle is accurate, traders get the FX rate and **liquidity providers (LPs)** aren’t drained by arbitrage.
 
+This design relies on **high-quality stablecoins** that accurately reflect the underlying fiat currencies—something that should increasingly be the case as the stablecoin space matures. Mento’s **circuit breakers** trip when those stablecoins move too far off peg, so trading can be halted until conditions are safe again.
+
 ### One invariant for all operations
 
-Every pool keeps one number constant: **value at the oracle per LP share**,
+Every FPMM pool keeps one number constant: **value at the oracle per LP share**,
 
 $$I = \frac{V}{S}$$
 
@@ -47,7 +49,7 @@ Beyond the invariant, the protocol uses several building blocks—each with a di
 
 | Piece | Role |
 |-------|------|
-| **Trading limits & circuit breakers** | Protect when the oracle is wrong, stale, or manipulated: limits cap flow per token over time; the breaker can halt trading when the oracle is invalid or safety thresholds are breached. |
+| **Trading limits & circuit breakers** | Protect when the oracle is wrong, stale, or manipulated: limits cap flow per token over time; the circuit breakers trip (and halt trading) when stablecoins move too far off peg or when other safety thresholds are breached. |
 | **Liquidity strategies (rebalancing)** | No curve → reserves can become one-sided. Allowlisted strategies rebalance: take surplus token from the pool, return the other at the oracle rate (capped incentive). Keeps the pool usable. |
 | **Fees & incentives** | Fund the protocol and reward different actors: e.g. swap fees (LP and protocol), rebalance incentives for keepers and strategies, governance-driven revenue flows (MENTO). The swap spread in particular also provides additional arb protection when the oracle is slightly off. |
 
