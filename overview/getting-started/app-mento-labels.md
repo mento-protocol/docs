@@ -22,10 +22,47 @@
 
 ---
 
-## Pools / Liquidity / CDP / Stability pool
+## Borrow (CDP / Trove)
 
-*Not yet present in app.mento.org app router (as of last check). When added, add their labels here and reference in Quick Start.*
+| Element | Label in app | Notes |
+|--------|----------------|-------|
+| Nav / section | **Borrow** | Main label to open this section. |
+| Page title | Borrow | Under "COLLATERALIZED DEBT". |
+| Subtitle | Borrow stablecoins against your collateral. Manage your open troves below. | — |
+| Asset to borrow | Dropdown (top right) | e.g. **GBPm**. Select which stablecoin to borrow. |
+| Primary CTA (no open positions) | **+ Open Your First Trove** | Opens the flow to deposit collateral and borrow. |
+| Collateral | **USDm** | For all CDPs, USDm is the collateral asset. |
+
+**Open a Trove screen** (after clicking + Open Your First Trove):
+
+| Element | Label in app | Notes |
+|--------|----------------|-------|
+| Back | **&lt; Back to Dashboard** | Top left. |
+| Title | Open a Trove | Under "NEW POSITION". |
+| Subtitle | Deposit USDm as collateral and borrow GBPm against it. | — |
+| Risk bar | **LOAN-TO-VALUE** | Segments: SAFE, MODERATE, RISKY, LIQ. "Liquidation at …%" shown (min collateral ratio 110% → ~91% LTV). |
+| Collateral section | **COLLATERAL** | Input + Balance + **MAX** + $ USDm. |
+| Borrow section | **BORROW** | Input + Min (e.g. £1,000 GBPm per launch params) + £ GBPm. |
+| Interest | **ANNUAL INTEREST RATE** | Slider + presets (e.g. 1.0%, 3.5%, 6.3%, 10.0%). Min 0.2% (launch). |
+| Summary | Loan summary | Collateral, Debt, Liq. Price, Collateral Ratio, Interest Rate, One-time Fee, Annual Cost. |
+| Confirm (initial) | **Enter collateral amount** | Shown until collateral entered; then e.g. **Open Trove** / **Confirm**. |
+
+**Flow:** Open **Borrow** → select asset to borrow (e.g. GBPm) in the top-right dropdown → click **+ Open Your First Trove** → enter COLLATERAL (USDm) and BORROW (GBPm) → set ANNUAL INTEREST RATE → confirm to open trove.
 
 ---
 
-*Last synced from frontend-monorepo main; update when UI strings change.*
+## Pools / Liquidity
+
+*When added to the app, add labels here and reference in Quick Start.*
+
+---
+
+## Stability pool
+
+*When added to the app, add labels here and reference in Quick Start.*
+
+---
+
+**Parameter values (min debt, min collateral ratio, interest):** See [gbpm-usdm-parameters-reference.md](gbpm-usdm-parameters-reference.md) (from `parameters/suggested_fpmm_gbpm_usdm_parameters.pdf`).
+
+*Last synced from frontend-monorepo main and app UI; update when UI strings change.*

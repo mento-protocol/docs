@@ -6,6 +6,7 @@
   * [What Is Mento?](overview/getting-started/what-is-mento.md)
   * [Mento Stablecoins](overview/getting-started/mento-stablecoins.md)
   * [Quick Start Guides](overview/getting-started/quick-start-guides.md)
+  * [GBPm/USDm parameters (reference)](overview/getting-started/gbpm-usdm-parameters-reference.md)
   * [Analytics & Dashboards](overview/getting-started/analytics-and-dashboards.md)
   * [What's new in v3](overview/getting-started/whats-new-v3.md)
 * [Core Concepts](overview/core-concepts/README.md)
