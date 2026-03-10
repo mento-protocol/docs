@@ -2,7 +2,7 @@
 
 ## Getting started
 
-* [Start here](README.md)
+* [Overview](README.md)
 * [What Is Mento?](overview/getting-started/what-is-mento.md)
 * [Quick Start Guides](overview/getting-started/quick-start-guides.md)
 * [GBPm/USDm parameters (reference)](overview/getting-started/gbpm-usdm-parameters-reference.md)
