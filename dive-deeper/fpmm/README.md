@@ -42,7 +42,7 @@ So “value per LP share at the oracle” is the **single number** that the prot
 | **Burn** | You burn LP tokens; receive proportional share of both reserves. V and S decrease. | Preserved |
 | **Rebalance** | Allowlisted strategy takes one token from pool, returns the other at oracle rate. V and S unchanged. | Preserved |
 
-Every swap also satisfies **value protection**: after the swap, the pool’s reserve value at the oracle (in one chosen numéraire) must not be less than before (once fee value is credited). So no one can extract more than the fee margin.
+Every swap also satisfies **value protection**: after the swap, the pool’s reserve value at the oracle (in one chosen numéraire) must not be less than before (once fee value is credited). If the oracle is wrong and trading is not halted, value can still be extracted compared to a fair price.
 
 ---
 

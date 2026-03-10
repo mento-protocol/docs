@@ -67,4 +67,4 @@ Behind the adapter, the protocol may use one or more **price sources**:
 ## Next steps
 
 - [Trading limits](trading-limits.md) — Caps on net flow per token over time windows.
-- [Fixed-Price Market Makers (FPMMs)](README.md) — How the pool uses the oracle rate for swaps and value protection.
+- [Fixed-Price Market Makers (FPMMs)](README.md) — How the pool uses the oracle rate for swaps.

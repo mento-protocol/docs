@@ -86,6 +86,6 @@ Different pools use different **sources** of liquidity when rebalancing:
 
 ## Next steps
 
-- [FPMMs](README.md) — Invariant, value protection, pool mechanics.
+- [FPMMs](README.md) — Invariant, pool mechanics.
 - [The Reserve](the-reserve.md) — How the Reserve backs stables and supports the Reserve strategy.
 - [Swap & liquidity](../../use/swap-and-liquidity.md) — How to swap and add/remove liquidity; triggering rebalances as a keeper.

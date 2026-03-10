@@ -21,7 +21,7 @@ Short definitions for terms used in the Mento V3 docs. For full context, see [Ov
 | **Rebalance** | When the pool's reserve ratio drifts from the oracle, an allowlisted **liquidity strategy** can take one token from the pool and return the other at the oracle rate (capped incentive). |
 | **Reserves** | The two tokens held by a pool. Swaps change composition; **value at oracle** is preserved (minus fees). |
 | **Trading limits** | Caps on per-token net flow over a time window (e.g. 5 minutes, 1 day). Limit how much the pool can be drained. |
-| **Value protection** | Rule that every swap must not decrease the pool's **reserve value at the oracle** (after fees). |
+| **Value protection** | Rule that every swap must not decrease the pool's **reserve value at the oracle** (after fees). If the oracle is wrong and trading is not halted, value can still be extracted. |
 
 ---
 

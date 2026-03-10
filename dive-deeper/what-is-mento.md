@@ -78,7 +78,7 @@ Such a pool is a **Fixed-Price Market Maker (FPMM)**:
 
   $$I = \frac{V}{S} = \frac{p^\top R}{S}$$
 
-So the **first building block** of Mento V3 is **FPMMs**: they are what allow onchain swaps at the FX rate. The remaining building blocks (limits, circuit breaker, liquidity strategies, fees, value protection) are there to **bound the damage when the oracle is wrong, stale, or manipulated**.
+So the **first building block** of Mento V3 is **FPMMs**: they are what allow onchain swaps at the FX rate. The remaining building blocks (limits, circuit breaker, liquidity strategies, fees) are there to **bound the damage when the oracle is wrong, stale, or manipulated**.
 
 ---
 
@@ -87,11 +87,11 @@ So the **first building block** of Mento V3 is **FPMMs**: they are what allow on
 | Building block | What it does | Why it is needed |
 |----------------|--------------|-------------------|
 | **FPMMs** | Pools that quote and execute at the **oracle rate** (minus fee). No reserve-based curve. | To deliver **efficient rates** at the FX level: swap at the known price instead of discovering it from reserves (which causes LVR and slippage in CFMMs). |
-| **One invariant for all operations: I = V / S** | Value at oracle per LP share is preserved on swap, mint, burn, and rebalance. | **Clear accounting** for LPs and **consistency**: when the oracle is precise, no value is extracted beyond the fee; when it isn’t, the rule still bounds what can happen (see value protection). |
-| **Protection against oracle imprecision** | **Trading limits** (per-token net flow caps over 5-min and 1-day windows); **on-chain circuit breaker** (halt trading when oracle is invalid, stale, or when breakers trip); **value protection** (no swap may decrease pool value at the oracle after fees); **fees**. | The oracle can be **wrong**, **stale**, or **manipulated**. Without limits, a bad oracle could let the pool be drained. Without a circuit breaker, trading would continue at an unsafe rate. Value protection and fees cap how much anyone can extract when the rate is slightly off. |
+| **One invariant for all operations: I = V / S** | Value at oracle per LP share is preserved on swap, mint, burn, and rebalance. | **Clear accounting** for LPs and **consistency** when the oracle is precise; the invariant does not prevent extraction when the oracle is wrong. |
+| **Protection against oracle imprecision** | **Trading limits** (per-token net flow caps over 5-min and 1-day windows); **on-chain circuit breaker** (halt trading when oracle is invalid, stale, or when breakers trip); **fees**. The pool also enforces that no swap decreases pool value at the oracle (after fees), but if the oracle is wrong and trading is not halted, value can still be extracted. | The oracle can be **wrong**, **stale**, or **manipulated**. Without limits, a bad oracle could let the pool be drained. Without a circuit breaker, trading would continue at an unsafe rate. |
 | **Liquidity strategies (rebalancing)** | When the pool’s inventory drifts too far from the oracle (e.g. too much of one token, too little of the other), **allowlisted** strategies can **rebalance**: take one token from the pool and return the other at the oracle rate (with a **capped incentive**). | Because the pool **quotes the oracle** (no curve), inventory **drifts** with one-sided flow. Without rebalancing, the pool could become too imbalanced to serve trades. Rebalancing is a **service** that keeps the pool usable; only allowlisted strategies can do it, and the incentive is capped so value loss is bounded even if the oracle is wrong during rebalance. |
 
-In short: **FPMMs** give you the rate; **limits and circuit breaker** protect when the oracle is bad; **liquidity strategies** keep inventory in line; **invariant, value protection, and fees** keep accounting clean and extraction bounded.
+In short: **FPMMs** give you the rate; **limits and circuit breaker** protect when the oracle is bad; **liquidity strategies** keep inventory in line; **invariant and fees** keep accounting clean.
 
 ---
 
@@ -132,7 +132,6 @@ For definitions of CFMM, DEX, oracle, FPMM, LVR, reserves, and other terms, see 
 ## Safety in short: when the oracle is wrong
 
 - **Fees** — Reduce the edge for anyone trading on a slightly wrong oracle; the pool keeps the fee.
-- **Value protection** — No swap may decrease the pool’s reserve value at the oracle (after fees). No one can extract more than the fee margin.
 - **Trading limits** — Per-token net flow over 5-minute and 1-day windows is capped. The pool cannot be drained indefinitely even if the oracle is wrong or stuck.
 - **Circuit breaker** — Trading can be **halted** when the oracle is invalid, stale, or when breakers trip (e.g. trading mode, FX hours).
 - **Rebalance rules** — Only allowlisted strategies; **minimum repayment** so the rebalance incentive is capped and value loss during rebalance is bounded.
