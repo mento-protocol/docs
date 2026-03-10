@@ -113,7 +113,7 @@ Anyone can add liquidity by depositing **both** tokens in the **current reserve 
 - **Value per share** at the oracle (I = V/S) is preserved on every operation.
 - LPs earn **fees** from swap volume and may face **path-dependent** changes in composition when the oracle price moves between rebalances (so there can be “impermanent loss” in composition terms, but not from arbitrageurs picking off a stale quote).
 
-See [Swap & liquidity](../../use/swap-and-liquidity.md) for how to mint and burn in practice.
+Use the Mento app (e.g. [app.mento.org](https://app.mento.org/)) to mint and burn in practice.
 
 ---
 
@@ -122,5 +122,5 @@ See [Swap & liquidity](../../use/swap-and-liquidity.md) for how to mint and burn
 - [Oracles, price feeds & circuit breakers](oracles-and-circuit-breakers.md) — How the pool gets the rate and when trading is gated.
 - [Rebalancing & strategies](rebalancing-and-strategies.md) — Who rebalances, thresholds, boundaries, incentives.
 - [Trading limits](trading-limits.md) — Caps; [Oracles & circuit breakers](oracles-and-circuit-breakers.md) — halts.
-- [The Reserve](the-reserve.md) — Backing for fully backed Mento stables (used by the Reserve liquidity strategy).
-- [Economics](../economics.md) — Value flows, fees, incentives, and revenue.
+- [The Reserve](../the-reserve.md) — Backing for fully backed Mento stables (used by the Reserve liquidity strategy).
+- [Protocol Economics](../protocol-economics.md) — Value flows, fees, incentives, and revenue.

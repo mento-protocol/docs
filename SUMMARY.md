@@ -11,9 +11,8 @@
   * [Oracles, price feeds & circuit breakers](dive-deeper/fpmm/oracles-and-circuit-breakers.md)
   * [Trading limits](dive-deeper/fpmm/trading-limits.md)
   * [Rebalancing & strategies](dive-deeper/fpmm/rebalancing-and-strategies.md)
-  * [The Reserve](dive-deeper/fpmm/the-reserve.md)
-* [Economics](dive-deeper/economics.md)
-* [CDPs](use/cdp-operations.md)
+* [The Reserve](dive-deeper/the-reserve.md)
+* [Protocol Economics](dive-deeper/protocol-economics.md)
 * [Governance & MENTO](dive-deeper/governance-and-mento/README.md)
   * [Understanding Mento Governance](dive-deeper/governance-and-mento/understanding-mento-governance.md)
   * [Participating in Governance](dive-deeper/governance-and-mento/participating-in-governance/README.md)
@@ -28,19 +27,6 @@
 * [Security](dive-deeper/security/README.md)
   * [Risk overview](dive-deeper/security/risk-overview.md)
   * [Audit Reports](dive-deeper/security/audit-reports.md)
-
-## Use
-
-* [Swap & liquidity](use/swap-and-liquidity.md)
-* [Getting Mento Stables](use/getting-mento-stables/README.md)
-  * [On Celo](use/getting-mento-stables/on-celo.md)
-  * [On Mobile](use/getting-mento-stables/on-mobile.md)
-  * [From Other Chains](use/getting-mento-stables/from-other-chains.md)
-  * [Via Centralized Exchanges](use/getting-mento-stables/via-centralized-exchanges.md)
-  * [On-ramp Providers](use/getting-mento-stables/on-ramp-providers.md)
-  * [Automation via MATE](use/getting-mento-stables/automation-via-mate.md)
-* [CDP operations](use/cdp-operations.md)
-* [Troubleshooting](use/troubleshooting.md)
 
 ## Build
 
@@ -72,8 +58,15 @@
   * [Becoming an Oracle Provider](build/oracles/becoming-an-oracle-provider.md)
 * [Troubleshooting (integrators)](build/troubleshooting.md)
 
-## Reference
+## Other
 
+* [Getting Mento Stables](use/getting-mento-stables/README.md)
+  * [On Celo](use/getting-mento-stables/on-celo.md)
+  * [On Mobile](use/getting-mento-stables/on-mobile.md)
+  * [From Other Chains](use/getting-mento-stables/from-other-chains.md)
+  * [Via Centralized Exchanges](use/getting-mento-stables/via-centralized-exchanges.md)
+  * [On-ramp Providers](use/getting-mento-stables/on-ramp-providers.md)
+  * [Automation via MATE](use/getting-mento-stables/automation-via-mate.md)
 * [Glossary](reference/glossary.md)
 * [GBPm/USDm parameters](reference/gbpm-usdm-parameters-reference.md)
 * [Analytics & Dashboards](reference/analytics-and-dashboards.md)
