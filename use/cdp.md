@@ -31,7 +31,7 @@ For full protocol and contract documentation (state variables, liquidation thres
 * **[Liquity v2 documentation](https://docs.liquity.org/)** — protocol overview, technical resources, and contract behavior.
 * **[Liquity v2 whitepaper](https://www.liquity.org/blog/liquity-v2-whitepaper)** — design and economics.
 
-For **Mento-specific** implementation (USDm collateral, FX oracles, multi-instance architecture, and FXPriceFeed), see the **[mento-protocol/bold README](https://github.com/mento-protocol/bold)**. Deployment addresses and integration with Mento’s [Reserve](../build/smart-contracts/reserve.md) and [FPMM](../build/smart-contracts/fpmm.md) are documented in [mento-core](https://github.com/mento-protocol/mento-core) and the Build [Deployments](../build/deployments/README.md) section.
+For **Mento-specific** implementation (USDm collateral, FX oracles, multi-instance architecture, and FXPriceFeed), see the **[mento-protocol/bold README](https://github.com/mento-protocol/bold)**.
 
 ---
 
