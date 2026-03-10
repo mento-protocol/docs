@@ -57,9 +57,17 @@
 
 ---
 
-## Stability pool
+## Earn (Stability pool)
 
-*When added to the app, add labels here and reference in Quick Start.*
+| Element | Label in app | Notes |
+|--------|----------------|-------|
+| Nav tab | **Earn** | Top nav: Swap, Pool, Borrow, **Earn**. Switch here to access the Stability pool. |
+| Page title | STABILITY POOL / **Earn** | Subtitle: deposit to earn liquidation gains and protocol rewards; no lock-up. |
+| Currency selector | e.g. **GBPm** | Top right; selects which Stability pool to view/deposit into. |
+| Metrics | Total deposits, Pool APY, Avg. borrow rate | Shown for the selected pool. |
+| Deposit tab | **Deposit** | Amount input, Balance, **25%** / **50%** / **75%** / **MAX**, **Claim rewards with deposit** (checkbox), **Enter amount to deposit** (button). |
+| Withdraw tab | **Withdraw** | — |
+| Your position | Deposited, Rewards (Claimable), **Claim rewards** | — |
 
 ---
 

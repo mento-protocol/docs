@@ -4,7 +4,7 @@ description: Do one thing now — swap at FX rates, add liquidity, or borrow a s
 
 # Quick Start Guides
 
-Choose what you want to do first — swap, add liquidity, borrow, or integrate. For the big picture, see [What is Mento?](what-is-mento.md) and [Core Concepts](../core-concepts/).
+Choose what you want to do first — swap, add liquidity, borrow, earn (Stability pool), or integrate. For the big picture, see [What is Mento?](what-is-mento.md) and [Core Concepts](../core-concepts/).
 
 ---
 
@@ -32,7 +32,7 @@ You get the same rate you’d see off-chain for GBP/USD. No curve, no slippage. 
 
 ---
 
-## 🏦 Borrow a stable (e.g. GBPm) and optionally earn from the stability pool
+## 🏦 Borrow a stable (e.g. GBPm)
 
 A **Trove** (CDP) lets you lock **USDm** as collateral and borrow another stable (e.g. GBPm) against it. You set your own interest rate; there’s no fixed repayment schedule. Keep your collateral ratio above the minimum or the position can be liquidated.
 
@@ -44,9 +44,22 @@ A **Trove** (CDP) lets you lock **USDm** as collateral and borrow another stable
    - **LOAN-TO-VALUE** — The bar shows risk (SAFE → MODERATE → RISKY → LIQ). Liquidation happens when your collateral ratio drops below the minimum (**110%**); the app shows “Liquidation at …%”.
    - **ANNUAL INTEREST RATE** — This is the interest you pay on your borrowed amount. Set or pick a rate (minimum **0.2%**). In Liquity v2, anyone can **redeem**: they burn GBPm and receive USDm collateral from open troves. Troves are ordered by interest rate, and **the lowest-interest troves are redeemed first**. So a lower rate means cheaper borrowing but you’re first in line to be redeemed against; a higher rate costs more but reduces that risk.
    - Review the **loan summary** on the right, then confirm (**Enter collateral amount** / **Open Trove**).
-4. (Optional) Open **Stability pool** and deposit your GBPm to earn a share of the interest paid by borrowers while your funds sit in the pool, plus rewards when liquidations occur. 🎯
+To earn from the Stability pool with your borrowed GBPm (or any GBPm), switch to **Earn** (see below). 🎯
 
 [CDP operations →](../../use-mento/cdp-operations.md) · [Parameters (min debt, ratios, rates)](gbpm-usdm-parameters-reference.md)
+
+---
+
+## 📈 Earn — Stability pool
+
+Deposit stablecoins (e.g. **GBPm**) into the **Stability pool** to earn a share of **trove interest** (interest paid by borrowers), **liquidation gains** (when liquidations occur, your deposit repays debt and you receive collateral at a discount), and **protocol rewards**. No lock-up — withdraw anytime.
+
+1. Go to **[app.mento.org](https://app.mento.org/)** and **connect your wallet**.
+2. Switch to the **Earn** tab (top nav: Swap, Pool, Borrow, **Earn**).
+3. Select the asset (e.g. **GBPm**) in the currency selector. You'll see the **Stability pool** for that asset: total deposits, pool APY, avg. borrow rate.
+4. Under **Deposit**, enter an amount (or use **25%**, **50%**, **75%**, **MAX**). Optionally check **Claim rewards with deposit** to claim pending rewards when you deposit. Click **Enter amount to deposit** (or the active deposit button) to confirm. No lock-up — you can withdraw anytime. 🎯
+
+[CDP operations →](../../use-mento/cdp-operations.md)
 
 ---
 
