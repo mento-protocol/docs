@@ -1,6 +1,6 @@
 # CDP operations (borrow, repay, stability pool)
 
-On Mento v3, some stablecoins (e.g. **GBPm**) are **synthetic**: they are created when users **borrow** against collateral, similar to Liquity-style CDPs.
+On Mento V3, some stablecoins (e.g. **GBPm**) are **synthetic**: they are created when users **borrow** against collateral, similar to Liquity-style CDPs.
 
 ---
 

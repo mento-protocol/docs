@@ -1,12 +1,12 @@
 # Smart Contracts
 
-**Who this is for:** Integrators and auditors who need the contract layout and behavior of Mento v3 (FPMM pools, oracles, limits, strategies). The Mento protocol consists of a set of smart contracts deployed on supported chains (e.g. [Celo](https://celo.org/)).
+**Who this is for:** Integrators and auditors who need the contract layout and behavior of Mento V3 (FPMM pools, oracles, limits, strategies). The Mento protocol consists of a set of smart contracts deployed on supported chains (e.g. [Celo](https://celo.org/)).
 
 **See also:** [Integration](../integration/README.md) — integration paths; [Mento SDK](../mento-sdk/README.md) — JS/TS library; [Deployments](../deployments/README.md) — addresses and verification.
 
-## Mento v3: FPMM-based exchange
+## Mento V3: FPMM-based exchange
 
-In v3, the main exchange is built from **FPMM** (Fixed-Price Market Maker) pools:
+In V3, the main exchange is built from **FPMM** (Fixed-Price Market Maker) pools:
 
 - **FPMM** — Each pool holds two tokens and executes swaps at the **oracle** rate (minus fee). No reserve-based curve; value per LP share at the oracle is preserved.
 - **FPMMFactory** / **FPMMProxy** — Deploy and manage FPMM pool instances.
@@ -16,11 +16,11 @@ In v3, the main exchange is built from **FPMM** (Fixed-Price Market Maker) pools
 - **TradingLimitsV2** — Enforces per-token net-flow caps over 5-minute and 1-day windows.
 - **Router** — Convenience for quoting (`getAmountsOut`) and executing swaps across pools.
 
-Other contracts (e.g. **StableToken**, **Reserve**, **SortedOracles**) still exist where used by v3 (e.g. Reserve for ReserveLiquidityStrategy). **Broker**, **BiPoolManager**, and v2 **pricing modules** are legacy (v2); see legacy docs and the [whitepaper](https://github.com/mento-protocol/whitepaper).
+Other contracts (e.g. **StableToken**, **Reserve**, **SortedOracles**) still exist where used by V3 (e.g. Reserve for ReserveLiquidityStrategy). **Broker**, **BiPoolManager**, and v2 **pricing modules** are legacy (v2); see legacy docs and the [whitepaper](https://github.com/mento-protocol/whitepaper).
 
 ## Repository and reference
 
-Mento Core is the set of smart contracts that enable creating, exchanging, and contributing to Mento stable currencies. In v3, FPMM pools and the above components are the primary exchange layer.
+Mento Core is the set of smart contracts that enable creating, exchanging, and contributing to Mento stable currencies. In V3, FPMM pools and the above components are the primary exchange layer.
 
 The contracts can be found in the [mento-protocol/mento-core](https://github.com/mento-protocol/mento-core) GitHub repository:
 

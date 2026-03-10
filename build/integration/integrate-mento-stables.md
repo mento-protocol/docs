@@ -1,6 +1,6 @@
 # Deployments & addresses
 
-To integrate Mento stables in your app or exchange you need contract addresses and deployment details for the chains where Mento v3 is live.
+To integrate Mento stables in your app or exchange you need contract addresses and deployment details for the chains where Mento V3 is live.
 
 * **Addresses:** [Deployments → Addresses](../deployments/addresses.md) — Stable token and FPMM contract addresses per network.
 * **Deployments:** [Deployments](../deployments/README.md) — Parameters, verification, and deployment overview.

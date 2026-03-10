@@ -1,8 +1,8 @@
 # What Is Mento?
 
-For a math-free overview, see [Concepts overview](concepts-overview.md) and [FPMMs](../fpmm/README.md).
+For a math-free overview, see [Concepts overview](concepts-overview.md) and [FPMMs](../dive-deeper/fpmm/README.md).
 
-Mento v3 is a **DEX for onchain foreign exchange (FX)**. The **goal** is to let users swap stablecoins onchain at the **respective FX rates** — e.g. USDC ↔ GBPm at the USD/GBP rate, or USDC ↔ EURm at USD/EUR — so that onchain execution can compete with off-chain spot FX. This page explains why that requires a different design than standard AMMs, and how Mento v3’s building blocks (FPMMs, protection against oracle imprecision, liquidity strategies) fit together.
+Mento V3 is a **DEX for onchain foreign exchange (FX)**. The **goal** is to let users swap stablecoins onchain at the **respective FX rates** — e.g. USDC ↔ GBPm at the USD/GBP rate, or USDC ↔ EURm at USD/EUR — so that onchain execution can compete with off-chain spot FX. This page explains why that requires a different design than standard AMMs, and how Mento V3’s building blocks (FPMMs, protection against oracle imprecision, liquidity strategies) fit together.
 
 ---
 
@@ -53,9 +53,9 @@ So in a CFMM the **pool is the price**: the quoted rate comes from reserves and 
 
 ---
 
-## Mento v3: use the known price (FPMMs)
+## Mento V3: use the known price (FPMMs)
 
-In Mento v3, each pool uses an **oracle** (an external price feed) that supplies the exchange rate between the two tokens. The pool **always quotes that rate** (minus a fee). There is **no reserve-based curve**: execution is at the oracle, not derived from reserves.
+In Mento V3, each pool uses an **oracle** (an external price feed) that supplies the exchange rate between the two tokens. The pool **always quotes that rate** (minus a fee). There is **no reserve-based curve**: execution is at the oracle, not derived from reserves.
 
 Such a pool is a **Fixed-Price Market Maker (FPMM)**:
 
@@ -78,11 +78,11 @@ Such a pool is a **Fixed-Price Market Maker (FPMM)**:
 
   $$I = \frac{V}{S} = \frac{p^\top R}{S}$$
 
-So the **first building block** of Mento v3 is **FPMMs**: they are what allow onchain swaps at the FX rate. The remaining building blocks (limits, circuit breaker, liquidity strategies, fees, value protection) are there to **bound the damage when the oracle is wrong, stale, or manipulated**.
+So the **first building block** of Mento V3 is **FPMMs**: they are what allow onchain swaps at the FX rate. The remaining building blocks (limits, circuit breaker, liquidity strategies, fees, value protection) are there to **bound the damage when the oracle is wrong, stale, or manipulated**.
 
 ---
 
-## Building blocks of Mento v3 (and why each is needed)
+## Building blocks of Mento V3 (and why each is needed)
 
 | Building block | What it does | Why it is needed |
 |----------------|--------------|-------------------|
@@ -97,7 +97,7 @@ In short: **FPMMs** give you the rate; **limits and circuit breaker** protect wh
 
 ## One invariant for all operations
 
-Every Mento v3 pool keeps a single **invariant** across **all** operations:
+Every Mento V3 pool keeps a single **invariant** across **all** operations:
 
 $$I = \frac{V}{S}$$
 
@@ -120,7 +120,7 @@ For definitions of CFMM, DEX, oracle, FPMM, LVR, reserves, and other terms, see 
 
 ---
 
-## What you can do on Mento v3
+## What you can do on Mento V3
 
 1. **Swap** — Exchange one token for another at the **oracle rate** (minus fee). E.g. USDC ↔ GBPm at the USD/GBP rate.
 2. **Add or remove liquidity** — Deposit both tokens in the pool’s current ratio and receive **LP tokens** (shares); or burn shares and withdraw your share of the reserves. Value per share at the oracle is preserved.
@@ -144,7 +144,7 @@ Governance (parameters, allowlists, oracle config) is driven by MENTO token hold
 ## Where to go next
 
 - **Use the DEX:** [Swap & liquidity](../../use/swap-and-liquidity.md) · [Getting Mento stables](../../use/getting-mento-stables/README.md)
-- **Concepts:** [FPMMs](../fpmm/README.md) · [Oracles, price feeds & circuit breakers](../fpmm/oracles-and-circuit-breakers.md) · [Trading limits](../fpmm/trading-limits.md)
+- **Concepts:** [FPMMs](../dive-deeper/fpmm/README.md) · [Oracles, price feeds & circuit breakers](../dive-deeper/fpmm/oracles-and-circuit-breakers.md) · [Trading limits](../dive-deeper/fpmm/trading-limits.md)
 - **Build:** [Integration](../../build/integration/README.md)
 
 *Previous architecture (v2):* See the [whitepaper](https://github.com/mento-protocol/whitepaper) or legacy docs.

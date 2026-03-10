@@ -1,6 +1,6 @@
 # Rebalancing & strategies
 
-This page explains how **rebalancing** works in Mento v3 and what **liquidity strategies** are. It builds on [FPMMs](README.md) and [What Is Mento?](../getting-started/what-is-mento.md).
+This page explains how **rebalancing** works in Mento V3 and what **liquidity strategies** are. It builds on [FPMMs](README.md) and [What Is Mento?](../../get-started/what-is-mento.md).
 
 ---
 
@@ -8,7 +8,7 @@ This page explains how **rebalancing** works in Mento v3 and what **liquidity st
 
 In an FPMM, every **swap** executes at the **oracle rate** (minus fee). The pool’s **reserves** (the two tokens it holds) change with each trade, but the pool **value at the oracle** (V) stays the same (minus fees). So if many users sell token A for token B, the pool ends up with **more A and less B**. The pool’s **reserve-implied price** (the ratio of reserves, in some numéraire) then **drifts** from the **oracle** price. If that drift gets too large, the pool is **out of balance**: it has too much of one asset and too little of the other, which can make it hard to serve further one-sided demand and can increase risk if the oracle is wrong or stale.
 
-**Rebalancing** is the process of moving reserves back toward a target (in v3, toward a **threshold boundary**) by having a trusted contract take the surplus token from the pool and return the other token at the oracle rate.
+**Rebalancing** is the process of moving reserves back toward a target (in V3, toward a **threshold boundary**) by having a trusted contract take the surplus token from the pool and return the other token at the oracle rate.
 
 ---
 
@@ -48,7 +48,7 @@ So rebalancing is **strategy-mediated** and **keeper-triggered**: the pool trust
 
 ## Target: threshold boundary, not 50/50
 
-In v3, when a rebalance runs, the strategy moves the pool toward a **boundary** defined by the threshold (e.g. the reserve-implied price at the edge of the “allowed” band), **not** to exact 50/50 by value. So:
+In V3, when a rebalance runs, the strategy moves the pool toward a **boundary** defined by the threshold (e.g. the reserve-implied price at the edge of the “allowed” band), **not** to exact 50/50 by value. So:
 
 - The **rebalance size** is limited: the pool does not jump from very imbalanced to perfectly balanced in one step. That caps how much value moves in one rebalance and reduces attack surface (e.g. someone triggering a huge rebalance with a small trade).
 - The pool’s **acceptance checks** (in the contract) ensure: deviation improves, direction is preserved (e.g. “above oracle” stays above), the pool does not overshoot past the band, and the minimum repayment (incentive cap) is satisfied.
@@ -61,7 +61,7 @@ The pool does **not** require that rebalancing is perfectly “value-invariant�
 
 ---
 
-## Types of liquidity strategies (v3)
+## Types of liquidity strategies (V3)
 
 Different pools use different **sources** of liquidity when rebalancing:
 

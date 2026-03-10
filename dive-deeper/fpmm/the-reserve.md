@@ -1,10 +1,10 @@
 # The Reserve
 
-In Mento v3, **most Mento stablecoins are CDP-backed** (using Liquity v2–style CDPs). **Only USDm and EURm** are backed by collateral held in the **MENTO Reserve**. This page explains why that split exists and how the Reserve works for those two stables.
+In Mento V3, **most Mento stablecoins are CDP-backed** (using Liquity v2–style CDPs). **Only USDm and EURm** are backed by collateral held in the **MENTO Reserve**. This page explains why that split exists and how the Reserve works for those two stables.
 
 ---
 
-## Two backing models in v3
+## Two backing models in V3
 
 | Backing model | Stablecoins | How it works |
 |---------------|-------------|----------------|

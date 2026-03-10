@@ -1,6 +1,6 @@
 # Watchdogs & Safety
 
-This applies to **Mento v3** governance. Mento implements multiple protection mechanisms to safeguard the protocol during its maturation. The watchdog system provides an additional security layer during the critical early stages of decentralized governance. For protocol-wide risk (oracle, reserve, smart contract), see [Risk overview](../security/risk-overview.md).
+This applies to **Mento V3** governance. Mento implements multiple protection mechanisms to safeguard the protocol during its maturation. The watchdog system provides an additional security layer during the critical early stages of decentralized governance. For protocol-wide risk (oracle, reserve, smart contract), see [Risk overview](../security/risk-overview.md).
 
 ## What Are Watchdogs?
 

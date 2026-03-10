@@ -1,6 +1,6 @@
 # Oracles
 
-**Who this is for:** Integrators and oracle operators who need the technical details of Mento's price feeds (on-chain SortedOracles, off-chain clients, rate feed IDs). For a conceptual intro to oracles and circuit breakers in FPMMs, see [Oracles, price feeds & circuit breakers](../../understand/fpmm/oracles-and-circuit-breakers.md).
+**Who this is for:** Integrators and oracle operators who need the technical details of Mento's price feeds (on-chain SortedOracles, off-chain clients, rate feed IDs). For a conceptual intro to oracles and circuit breakers in FPMMs, see [Oracles, price feeds & circuit breakers](../../dive-deeper/fpmm/oracles-and-circuit-breakers.md).
 
 **See also:** [Smart Contracts](../smart-contracts/README.md) (SortedOracles, BreakerBox) · [Deployments](../deployments/README.md).
 

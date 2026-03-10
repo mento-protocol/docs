@@ -1,8 +1,8 @@
 # Research & Economics
 
-## Economics of Mento v3
+## Economics of Mento V3
 
-Mento v3 uses **FPMMs** to offer efficient on-chain FX rates. For the design rationale (why oracle pricing, no LVR), see [What Is Mento?](../getting-started/what-is-mento.md). Here we focus on value flows, fees, rebalancing, and incentives.
+Mento V3 uses **FPMMs** to offer efficient on-chain FX rates. For the design rationale (why oracle pricing, no LVR), see [What Is Mento?](../../get-started/what-is-mento.md). Here we focus on value flows, fees, rebalancing, and incentives.
 
 **Where value goes.** Every swap pays a **fee** (split between **LP fee** and **protocol fee**). LPs earn from swap volume; the protocol earns a share of fees. When the pool’s inventory drifts (e.g. too much of one token), only **allowlisted liquidity strategies** can **rebalance**: the pool sends one token to the strategy and receives the other at the oracle rate. The strategy may keep a **capped rebalance incentive** (the pool enforces a **minimum repayment**), so value loss to the pool is bounded and keepers/strategies can earn for providing rebalancing. **Value protection** ensures no swap decreases the pool’s reserve value at the oracle after fees, so extraction is limited to the fee margin.
 
@@ -12,7 +12,7 @@ Mento v3 uses **FPMMs** to offer efficient on-chain FX rates. For the design rat
 
 **MENTO token.** MENTO is the protocol’s **governance and value-accrual token**. Holders vote on parameter changes, oracle config, and treasury use. Locking MENTO as **veMENTO** (vote-escrowed) increases voting power (longer lock = more weight) and can entitle holders to a share of **protocol revenue** (trading fees, reserve yield, CDP interest, rebalancing-related fees). Supply is capped at 1 billion; distribution includes community treasury, team/contributors, airdrops, and reserve safety fund. Revenue distribution (e.g. veMENTO stakers, stability pools, buyback-and-burn) is governable. See [MENTO Tokenomics](../governance-and-mento/mento-tokenomics.md) and [veMENTO & Voting Power](../governance-and-mento/participating-in-governance/vemento-and-voting-power.md).
 
-### Incentive structure (v3)
+### Incentive structure (V3)
 
 Incentives align five groups: **CDP borrowers**, **Stability Pool (SP) depositors**, **FPMM LPs**, **keepers/facilitators**, and **MENTO token holders**.
 

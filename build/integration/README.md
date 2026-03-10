@@ -1,6 +1,6 @@
 # Integration Overview
 
-**Who this is for:** Developers and protocols that want to add Mento stables, use Mento oracles, or look up deployment addresses. Mento v3 is a DEX for on-chain FX: FPMM pools swap at the oracle rate. This guide covers the main integration paths and points to the [SDK](../mento-sdk/README.md), [Smart Contracts](../smart-contracts/README.md), and [Deployments](../deployments/README.md) for implementation details.
+**Who this is for:** Developers and protocols that want to add Mento stables, use Mento oracles, or look up deployment addresses. Mento V3 is a DEX for on-chain FX: FPMM pools swap at the oracle rate. This guide covers the main integration paths and points to the [SDK](../mento-sdk/README.md), [Smart Contracts](../smart-contracts/README.md), and [Deployments](../deployments/README.md) for implementation details.
 
 ## Integration Guides
 

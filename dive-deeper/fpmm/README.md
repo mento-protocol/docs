@@ -1,14 +1,14 @@
 # Fixed-Price Market Makers (FPMMs)
 
-This page is the **reference** for how FPMMs work in Mento v3: the invariant, operations, rebalancing, and configuration. For **why** Mento uses oracle pricing and why curve-based AMMs (CFMMs) don't work well for FX—including LVR and slippage—see [What Is Mento?](../getting-started/what-is-mento.md).
+This page is the **reference** for how FPMMs work in Mento V3: the invariant, operations, rebalancing, and configuration. For **why** Mento uses oracle pricing and why curve-based AMMs (CFMMs) don't work well for FX—including LVR and slippage—see [What Is Mento?](../../get-started/what-is-mento.md).
 
-In Mento v3, every swap pool is an **FPMM**: the swap price is fixed to an external **oracle** rate (minus a fee), not derived from reserves. There is no reserve-based curve, no curve-based slippage, and no LVR from a stale pool price. Risks shift to **oracle** quality and **inventory**; the protocol addresses those with **trading limits**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
+In Mento V3, every swap pool is an **FPMM**: the swap price is fixed to an external **oracle** rate (minus a fee), not derived from reserves. There is no reserve-based curve, no curve-based slippage, and no LVR from a stale pool price. Risks shift to **oracle** quality and **inventory**; the protocol addresses those with **trading limits**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
 
 ---
 
 ## The invariant: I = V / S
 
-In Mento v3, every FPMM maintains a single **invariant** across all operations:
+In Mento V3, every FPMM maintains a single **invariant** across all operations:
 
 $$I = \frac{V}{S}$$
 
@@ -46,13 +46,13 @@ Every swap also satisfies **value protection**: after the swap, the pool’s res
 
 ---
 
-## Rebalancing (v3)
+## Rebalancing (V3)
 
 When users trade one-sided (e.g. everyone sells token A for token B), the pool’s **reserves** become imbalanced: too much of one token, too little of the other. The pool does not automatically “rebalance” itself. Instead:
 
 - The pool **monitors** how far its **reserve-implied price** is from the **oracle** price. When that deviation exceeds a **threshold** (separate for “above” and “below”), the pool becomes **eligible for rebalancing**.
 - Only **allowlisted liquidity strategies** can call the pool’s rebalance function. The pool sends one token to the strategy and calls back into the strategy; the strategy returns the other token at the oracle rate. The strategy may keep a **capped rebalance incentive** (the pool enforces a **minimum repayment** so value loss is bounded).
-- In v3, rebalancing moves the pool toward a **threshold boundary** (a band around the oracle), **not** to exact 50/50. That limits how much the pool moves in one rebalance and reduces attack surface.
+- In V3, rebalancing moves the pool toward a **threshold boundary** (a band around the oracle), **not** to exact 50/50. That limits how much the pool moves in one rebalance and reduces attack surface.
 - **Who triggers:** Anyone can call the **strategy’s** public `rebalance(pool)` (permissionless). The strategy enforces a **cooldown** and then calls the pool. So “keepers” can trigger rebalances and earn incentives without special permission.
 
 See [Rebalancing & strategies](rebalancing-and-strategies.md) for more detail.
@@ -61,7 +61,7 @@ See [Rebalancing & strategies](rebalancing-and-strategies.md) for more detail.
 
 ## Liquidity strategies
 
-Different pools need different **sources** of liquidity for rebalancing. Mento v3 uses **liquidity strategies**: each is a contract allowlisted by one or more pools. When the pool calls the strategy during rebalance, the strategy must return the other token; it gets that token from somewhere (e.g. the protocol **Reserve**, or a **CDP** stability pool).
+Different pools need different **sources** of liquidity for rebalancing. Mento V3 uses **liquidity strategies**: each is a contract allowlisted by one or more pools. When the pool calls the strategy during rebalance, the strategy must return the other token; it gets that token from somewhere (e.g. the protocol **Reserve**, or a **CDP** stability pool).
 
 - **Reserve strategy** — For fully backed Mento stablecoins (e.g. USDm, EURm). The **Reserve** holds collateral; the strategy can mint or burn stablecoins and move collateral to rebalance the pool.
 - **CDP strategy** — For synthetic stablecoins (e.g. GBPm) created by collateralized debt. The strategy interacts with the **stability pool** and borrowing/repayment to source or sink the stablecoin when rebalancing.
@@ -98,7 +98,7 @@ See [Swap & liquidity](../../use/swap-and-liquidity.md) for how to mint and burn
 
 ## Next steps
 
-- [What Is Mento?](../getting-started/what-is-mento.md) — Why oracle pricing and why not CFMM (LVR, slippage).
+- [What Is Mento?](../../get-started/what-is-mento.md) — Why oracle pricing and why not CFMM (LVR, slippage).
 - [Oracles, price feeds & circuit breakers](oracles-and-circuit-breakers.md) — How the pool gets the rate and when trading is gated.
 - [Rebalancing & strategies](rebalancing-and-strategies.md) — Who rebalances, thresholds, boundaries, incentives.
 - [Trading limits](trading-limits.md) — Caps; [Oracles & circuit breakers](oracles-and-circuit-breakers.md) — halts.

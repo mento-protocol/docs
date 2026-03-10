@@ -72,7 +72,7 @@
 | Section | Purpose |
 |--------|--------|
 | **Getting started** | First steps: README, What is Mento?, Quick start, Analytics; optional: Glossary or params here |
-| **Concepts** | How v3 works: FPMMs, Oracles, Rebalancing, Trading limits, Reserve, Research & Economics |
+| **Concepts** | How V3 works: FPMMs, Oracles, Rebalancing, Trading limits, Reserve, Research & Economics |
 | **Governance** | MENTO, voting, tokenomics, watchdogs, airdrop, listing |
 | **Security** | Risk overview, audit reports |
 | **Use Mento** | Swap, getting stables, CDP, troubleshooting (unchanged) |

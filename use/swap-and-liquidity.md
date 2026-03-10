@@ -1,6 +1,6 @@
 # Swap & liquidity (FPMM operations)
 
-This page describes how to **swap** and how to **add or remove liquidity** on Mento v3. It assumes you have read [What Is Mento?](../understand/getting-started/what-is-mento.md) and know what an **FPMM** (Fixed-Price Market Maker), **oracle**, and **reserves** are.
+This page describes how to **swap** and how to **add or remove liquidity** on Mento V3. It assumes you have read [What Is Mento?](../get-started/what-is-mento.md) and know what an **FPMM** (Fixed-Price Market Maker), **oracle**, and **reserves** are.
 
 ---
 
@@ -48,7 +48,7 @@ LPs can **burn** (destroy) their LP tokens and withdraw their **proportional sha
 
 ## Rebalancing (for keepers and strategies)
 
-When the pool’s **reserve ratio** drifts too far from the **oracle** (e.g. too much of one token, too little of the other), the pool becomes **eligible for rebalancing**. Only **allowlisted liquidity strategies** can call the pool’s rebalance function. The pool sends one token to the strategy and receives the other at the oracle rate (with a capped **rebalance incentive**). In v3, rebalancing moves the pool toward a **threshold boundary**, not to exact 50/50.
+When the pool’s **reserve ratio** drifts too far from the **oracle** (e.g. too much of one token, too little of the other), the pool becomes **eligible for rebalancing**. Only **allowlisted liquidity strategies** can call the pool’s rebalance function. The pool sends one token to the strategy and receives the other at the oracle rate (with a capped **rebalance incentive**). In V3, rebalancing moves the pool toward a **threshold boundary**, not to exact 50/50.
 
 - **Who can trigger:** Anyone can call the **strategy’s** `rebalance(pool)` (permissionless). The strategy enforces a **cooldown** and then calls the pool; the pool only accepts the call if the sender is an allowlisted strategy.
 - **Who gets the incentive:** The strategy distributes the rebalance incentive (e.g. to protocol, liquidity source); the pool only enforces a **minimum repayment** so that value loss is capped.
@@ -71,6 +71,6 @@ If you run a **keeper**, you can integrate with the strategy’s public `rebalan
 ## Next steps
 
 - [Getting Mento stables](getting-mento-stables/README.md) — Get USDm, EURm, GBPm via swap or borrow.
-- [Fixed-Price Market Makers (FPMMs)](../overview/core-concepts/fixed-price-market-makers-fpmms.md) — How FPMMs work (invariant, value protection, rebalance rules).
+- [Fixed-Price Market Makers (FPMMs)](../dive-deeper/fpmm/README.md) — How FPMMs work (invariant, value protection, rebalance rules).
 - [Oracles & price feeds](../overview/core-concepts/oracles-and-price-feeds.md) — How the pool gets the rate and when trading is gated.
 - [Trading limits & circuit breakers](../overview/core-concepts/trading-limits-and-circuit-breakers.md) — Caps and halts.

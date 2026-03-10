@@ -1,24 +1,24 @@
 # Oracles, price feeds & circuit breakers
 
-This page explains how **oracles** and **price feeds** work in Mento v3, and how **circuit breakers** gate trading. An **oracle** is an external source of price data that the protocol trusts. In v3, each FPMM pool uses an oracle to set the **swap rate**: every swap executes at that rate (minus fee), so oracle quality and validity are central to safety.
+This page explains how **oracles** and **price feeds** work in Mento V3, and how **circuit breakers** gate trading. An **oracle** is an external source of price data that the protocol trusts. In V3, each FPMM pool uses an oracle to set the **swap rate**: every swap executes at that rate (minus fee), so oracle quality and validity are central to safety.
 
 ---
 
-## Why oracles matter in Mento v3
+## Why oracles matter in Mento V3
 
 In an **FPMM** (Fixed-Price Market Maker), the **execution price is the oracle rate** (minus fee). The pool does not derive the price from its reserves. So:
 
 - **Correctness** — If the oracle is wrong, the pool can quote a bad rate and LPs or the pool can lose value.
 - **Freshness** — If the oracle is stale (not updated), the quoted rate may lag the market; trading limits and circuit breakers help bound the damage.
-- **Gating** — In v3, the pool will **revert** swaps when the oracle is invalid, stale, or when **circuit breakers** (e.g. trading mode, FX market hours) say not to trade.
+- **Gating** — In V3, the pool will **revert** swaps when the oracle is invalid, stale, or when **circuit breakers** (e.g. trading mode, FX market hours) say not to trade.
 
 So oracles are both the **source of the swap rate** and one of the **safety gates** for trading.
 
 ---
 
-## How the pool gets the rate (v3)
+## How the pool gets the rate (V3)
 
-In Mento v3, pools get the oracle rate through an **OracleAdapter**. The pool calls the adapter (e.g. `getFXRateIfValid`) with a **reference rate feed ID** (which pair to use, e.g. USDC/USD or EUR/USD). The adapter returns a rate only if it is **valid**. Validity typically includes:
+In Mento V3, pools get the oracle rate through an **OracleAdapter**. The pool calls the adapter (e.g. `getFXRateIfValid`) with a **reference rate feed ID** (which pair to use, e.g. USDC/USD or EUR/USD). The adapter returns a rate only if it is **valid**. Validity typically includes:
 
 - **Recency** — The feed has been updated within a configured time window (stale data is rejected).
 - **Trading mode** — A **BreakerBox** (or similar) can put feeds into a state where "trading" is suspended (e.g. after a large price move or during certain hours). The adapter checks this and may return "invalid" so the pool reverts the swap.
@@ -30,9 +30,9 @@ So the **OracleAdapter** is the single interface the pool uses: it combines the 
 
 ## BreakerBox and circuit breakers
 
-The **BreakerBox** (or equivalent in v3) is a contract that monitors price feeds and can **trip** breakers when conditions are abnormal. When a breaker trips, the **trading mode** for that feed can change so that the OracleAdapter returns "invalid" for swaps.
+The **BreakerBox** (or equivalent in V3) is a contract that monitors price feeds and can **trip** breakers when conditions are abnormal. When a breaker trips, the **trading mode** for that feed can change so that the OracleAdapter returns "invalid" for swaps.
 
-- **Circuit breaker** — A rule that, when triggered, can **halt trading** for affected pools. In v3, this is typically integrated into the OracleAdapter: the pool asks "give me the rate if valid," and the adapter only returns a rate if breakers allow trading. Circuit breakers are **binary**: trading is either allowed or halted for that feed; they do not throttle.
+- **Circuit breaker** — A rule that, when triggered, can **halt trading** for affected pools. In V3, this is typically integrated into the OracleAdapter: the pool asks "give me the rate if valid," and the adapter only returns a rate if breakers allow trading. Circuit breakers are **binary**: trading is either allowed or halted for that feed; they do not throttle.
 - **Trading mode** — A state (e.g. "trading allowed" vs "trading suspended") that the BreakerBox sets per feed. The OracleAdapter reads this before returning a rate.
 - **Trip conditions** — The BreakerBox can trip when, for example: the price moves too much vs a reference or exponential moving average (**MedianDeltaBreaker** for volatile pairs, **ValueDeltaBreaker** for stable pairs); the oracle is stale; or a deviation threshold is violated.
 - **Cooldown** — After a breaker trips, a **cooldown** period (and normalization of conditions) must pass before the breaker can be reset and trading allowed again.
@@ -67,4 +67,4 @@ Behind the adapter, the protocol may use one or more **price sources**:
 ## Next steps
 
 - [Trading limits](trading-limits.md) — Caps on net flow per token over time windows.
-- [Fixed-Price Market Makers (FPMMs)](fixed-price-market-makers-fpmms.md) — How the pool uses the oracle rate for swaps and value protection.
+- [Fixed-Price Market Makers (FPMMs)](README.md) — How the pool uses the oracle rate for swaps and value protection.

@@ -1,6 +1,6 @@
 # Getting a Quote
 
-> **Note:** The example below uses the **Broker** contract (v2 legacy). In **Mento v3**, quotes and swaps use **FPMM pools** and the router (e.g. pool or router `getAmountOut` / `getAmountsOut`). See [Smart contracts](../../smart-contracts/README.md) and [Integration overview](../../integration-overview/README.md) for v3.
+> **Note:** The example below uses the **Broker** contract (v2 legacy). In **Mento V3**, quotes and swaps use **FPMM pools** and the router (e.g. pool or router `getAmountOut` / `getAmountsOut`). See [Smart contracts](../../smart-contracts/README.md) and [Integration overview](../../integration-overview/README.md) for V3.
 
 After you have already [fetched all tradeable pairs](getting-exchange-pairs.md), you are ready to get price quotes directly from the `Broker` contract. In the example below we will do so for the `CELO/USDm` exchange.
 

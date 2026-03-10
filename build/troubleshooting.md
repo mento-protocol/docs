@@ -1,6 +1,6 @@
 # Troubleshooting (integrators)
 
-**Who this is for:** Integrators debugging quote/swap failures, SDK or RPC issues, or deployment/verification problems with Mento v3. For **user** issues (getting stables, swap failed in app), see [Use: Troubleshooting](../use/troubleshooting.md).
+**Who this is for:** Integrators debugging quote/swap failures, SDK or RPC issues, or deployment/verification problems with Mento V3. For **user** issues (getting stables, swap failed in app), see [Use: Troubleshooting](../use/troubleshooting.md).
 
 ---
 
@@ -18,7 +18,7 @@
 
 | Symptom | Cause | Fix |
 |---------|--------|-----|
-| SDK returns wrong network or pairs | v2 Broker vs v3 FPMM | v3 uses **FPMM pools** and pool/router for quotes and swaps, not the legacy Broker. Use SDK/contracts that target FPMM; see [Mento SDK](mento-sdk/README.md) and [Smart contracts](smart-contracts/README.md). |
+| SDK returns wrong network or pairs | v2 Broker vs V3 FPMM | V3 uses **FPMM pools** and pool/router for quotes and swaps, not the legacy Broker. Use SDK/contracts that target FPMM; see [Mento SDK](mento-sdk/README.md) and [Smart contracts](smart-contracts/README.md). |
 | RPC or provider errors | Wrong RPC URL or chain | Use a supported chain (e.g. Celo) and a valid RPC endpoint; see [Deployments](deployments/README.md) for addresses. |
 
 ---

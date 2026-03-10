@@ -77,11 +77,11 @@ Use your existing ERC-20 handling for:
 
 Mento stables maintain a peg with their respective fiat currencies under normal conditions (e.g., 1 USDm ≈ 1 USD, 1 EURm ≈ 1 EUR).
 
-For precise exchange rates, use the pool’s oracle (see [Oracles, price feeds & circuit breakers](../../understand/fpmm/oracles-and-circuit-breakers.md)) or the [Mento SDK](https://github.com/mento-protocol/mento-sdk) for quotes.
+For precise exchange rates, use the pool’s oracle (see [Oracles, price feeds & circuit breakers](../../dive-deeper/fpmm/oracles-and-circuit-breakers.md)) or the [Mento SDK](https://github.com/mento-protocol/mento-sdk) for quotes.
 
 ### Step 5: Enable cross-stable swaps (optional)
 
-If your application needs to swap between Mento stables, use the [Mento SDK](../mento-sdk/) to get quotes and build swap transactions against Mento v3 FPMM pools. Swaps execute at the oracle rate (minus fee). See the SDK [Guides](../mento-sdk/guides/README.md) for getting exchange pairs and initiating a swap, and [Swap & liquidity](../../use/swap-and-liquidity.md) for the user-facing flow.
+If your application needs to swap between Mento stables, use the [Mento SDK](../mento-sdk/) to get quotes and build swap transactions against Mento V3 FPMM pools. Swaps execute at the oracle rate (minus fee). See the SDK [Guides](../mento-sdk/guides/README.md) for getting exchange pairs and initiating a swap, and [Swap & liquidity](../../use/swap-and-liquidity.md) for the user-facing flow.
 
 ## Working Examples
 
