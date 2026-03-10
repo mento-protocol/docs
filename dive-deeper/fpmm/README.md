@@ -82,11 +82,17 @@ See [Rebalancing & strategies](rebalancing-and-strategies.md) for more detail.
 
 ## Liquidity strategies
 
-Different pools need different **sources** of liquidity for rebalancing. Mento V3 uses **liquidity strategies**: each is a contract allowlisted by one or more pools. When the pool calls the strategy during rebalance, the strategy must return the other token; it gets that token from somewhere (e.g. the protocol **Reserve**, or a **CDP** stability pool).
+Different pools need different **sources** of liquidity for rebalancing. Mento V3 uses **liquidity strategies**: each is a contract allowlisted by one or more pools. When the pool calls the strategy during rebalance, the strategy must return the other token; it gets that token from somewhere (e.g. the protocol **Reserve**, or a **CDP** [stability pool](cdps.md)).
 
 - **Reserve strategy** — For fully backed Mento stablecoins (e.g. USDm, EURm). The **Reserve** holds collateral; the strategy can mint or burn stablecoins and move collateral to rebalance the pool.
-- **CDP strategy** — For synthetic stablecoins (e.g. GBPm) created by collateralized debt. The strategy interacts with the **stability pool** and borrowing/repayment to source or sink the stablecoin when rebalancing.
+- **CDP strategy** — For synthetic stablecoins (e.g. GBPm) created by [CDPs (a fork of Liquity V2)](cdps.md). The strategy interacts with the **stability pool** and borrowing/repayment to source or sink the stablecoin when rebalancing.
 - **Third-party strategy** — External issuers can provide their own strategy contract (allowlisted by governance) for custom liquidity sources.
+
+---
+
+## CDPs (collateralized debt positions)
+
+Synthetic Mento stablecoins such as **GBPm** are backed by **collateralized debt positions (CDPs)**. Mento’s CDP system is a **fork of [Liquity V2](https://docs.liquity.org/)**. Users deposit **USDm** as collateral and borrow the synthetic stable (e.g. GBPm); a **stability pool** absorbs liquidations and provides liquidity for the **CDP strategy** when FPMM pools rebalance. For full mechanics (troves, stability pool, liquidations), see the [Liquity V2 documentation](https://docs.liquity.org/) and the Mento deep dive: [CDPs](cdps.md).
 
 ---
 
@@ -119,6 +125,7 @@ Use the Mento app (e.g. [app.mento.org](https://app.mento.org/)) to mint and bur
 
 ## Next steps
 
+- [CDPs](cdps.md) — Collateralized debt positions (fork of [Liquity V2](https://docs.liquity.org/)); synthetic stables and stability pool.
 - [Oracles, price feeds & circuit breakers](oracles-and-circuit-breakers.md) — How the pool gets the rate and when trading is gated.
 - [Rebalancing & strategies](rebalancing-and-strategies.md) — Who rebalances, thresholds, boundaries, incentives.
 - [Trading limits](trading-limits.md) — Caps; [Oracles & circuit breakers](oracles-and-circuit-breakers.md) — halts.

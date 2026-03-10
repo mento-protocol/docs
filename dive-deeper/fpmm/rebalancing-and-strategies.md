@@ -30,7 +30,7 @@ The pool’s **rebalance** function can only be called by **allowlisted liquidit
 1. Is registered (allowlisted) on the pool by governance or pool admin.
 2. Implements a **callback** that the pool invokes during rebalance: the pool sends one token to the strategy and calls back; the strategy must return the other token (at the oracle rate, minus an allowed incentive).
 
-So the pool does **not** rebalance by itself. A **strategy contract** must call `rebalance(...)` on the pool; the pool then transfers one token to the strategy and calls the strategy’s callback; the strategy sources the other token (from a **Reserve**, a **CDP** stability pool, or another source) and returns it to the pool.
+So the pool does **not** rebalance by itself. A **strategy contract** must call `rebalance(...)` on the pool; the pool then transfers one token to the strategy and calls the strategy’s callback; the strategy sources the other token (from a **Reserve**, a **CDP** [stability pool](cdps.md) (Mento CDPs are a fork of [Liquity V2](https://docs.liquity.org/)), or another source) and returns it to the pool.
 
 ---
 
@@ -66,7 +66,7 @@ The pool does **not** require that rebalancing is perfectly “value-invariant�
 Different pools use different **sources** of liquidity when rebalancing:
 
 - **Reserve strategy** — Used for **fully backed** Mento stablecoins (e.g. USDm, EURm). The protocol **Reserve** holds collateral; the strategy can **mint** new stablecoins or **burn** stablecoins and release collateral to supply or absorb the token that the pool needs. So when the pool has too much USDC and too little USDm, the strategy might burn USDm and use the Reserve to provide USDC (conceptually); the exact flows depend on which token is “debt” and which is “collateral” in the strategy’s configuration.
-- **CDP strategy** — Used for **synthetic** Mento stablecoins (e.g. GBPm) that are created by **collateralized debt positions (CDPs)**. The strategy interacts with the **stability pool** and borrowing/repayment: it can borrow or repay the stablecoin, or use the stability pool’s liquidity, to return the required token to the pool during rebalance.
+- **CDP strategy** — Used for **synthetic** Mento stablecoins (e.g. GBPm) that are created by **collateralized debt positions (CDPs)** (Mento CDPs are a fork of [Liquity V2](https://docs.liquity.org/)). The strategy interacts with the **stability pool** and borrowing/repayment: it can borrow or repay the stablecoin, or use the [stability pool](cdps.md)’s liquidity, to return the required token to the pool during rebalance.
 - **Third-party strategy** — For pools that pair with externally issued assets, the issuer (or another party) can deploy a custom strategy contract that is allowlisted on the pool. That strategy implements the same callback interface and sources the other token from its own liquidity or external venues.
 
 ---
