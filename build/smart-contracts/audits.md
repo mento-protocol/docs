@@ -1,6 +1,6 @@
 # Audits
 
-
+Mento V3 (FPMM-based exchange) is covered by the audits below. The 2024 Macro and Sherlock audits include the V3 FPMM, OracleAdapter, liquidity strategies, and TradingLimitsV2.
 
 <table><thead><tr><th width="143">Date</th><th>Link</th><th>Auditor</th><th width="100">Version</th></tr></thead><tbody>
 <tr><td>03/2024</td><td><a href="https://0xmacro.com/library/audits/mento-3">https://0xmacro.com/library/audits/mento-3</a></td><td>Macro</td><td>V2.3.0</td></tr>

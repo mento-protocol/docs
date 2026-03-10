@@ -1,7 +1,5 @@
 # StableToken
 
-**StableToken** implements ERC-20 tokens and Celo-specific features for stable assets. Each stable asset has its own contract, with StableToken.sol for the Mento Dollar, StableTokenEUR.sol for the Mento Euro, and so forth for new stable assets.
+**StableToken** contracts implement the ERC-20 Mento stable assets (USDm, EURm, GBPm, etc.). Each stable has its own implementation or proxy (e.g. **StableTokenV2** / **StableTokenV3** in mento-core). In **Mento V3**, Reserve-backed stables (USDm, EURm) are minted and burned by the **ReserveLiquidityStrategy** when FPMM pools rebalance; CDP-backed stables (e.g. GBPm) are minted via the Liquity v2–style CDP system.
 
-{% embed url="https://github.com/mento-protocol/mento-core/blob/main/contracts/legacy/StableToken.sol" %}
-StableToken.sol
-{% endembed %}
+**Contracts:** [mento-protocol/mento-core](https://github.com/mento-protocol/mento-core) — `contracts/tokens/` (e.g. StableTokenV2.sol, StableTokenV3.sol, and per-currency proxies).
