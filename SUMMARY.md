@@ -3,12 +3,11 @@
 ## Get Started
 
 * [Overview](README.md)
-* [What Is Mento?](get-started/what-is-mento.md)
 * [Quick Start Guides](get-started/quick-start-guides.md)
-* [Concepts overview](get-started/concepts-overview.md)
 
 ## Dive Deeper
 
+* [What Is Mento? (deep dive)](dive-deeper/what-is-mento.md)
 * [FPMMs](dive-deeper/fpmm/README.md)
   * [Oracles, price feeds & circuit breakers](dive-deeper/fpmm/oracles-and-circuit-breakers.md)
   * [Trading limits](dive-deeper/fpmm/trading-limits.md)

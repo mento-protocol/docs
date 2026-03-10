@@ -1,6 +1,6 @@
 # Rebalancing & strategies
 
-This page explains how **rebalancing** works in Mento V3 and what **liquidity strategies** are. It builds on [FPMMs](README.md) and [What Is Mento?](../../get-started/what-is-mento.md).
+This page explains how **rebalancing** works in Mento V3 and what **liquidity strategies** are. It builds on [FPMMs](README.md) and [What Is Mento? (deep dive)](../what-is-mento.md).
 
 ---
 

@@ -1,6 +1,6 @@
 # Fixed-Price Market Makers (FPMMs)
 
-This page is the **reference** for how FPMMs work in Mento V3: the invariant, operations, rebalancing, and configuration. For **why** Mento uses oracle pricing and why curve-based AMMs (CFMMs) don't work well for FX—including LVR and slippage—see [What Is Mento?](../../get-started/what-is-mento.md).
+This page is the **reference** for how FPMMs work in Mento V3: the invariant, operations, rebalancing, and configuration. For **why** Mento uses oracle pricing and why curve-based AMMs (CFMMs) don't work well for FX—including LVR and slippage—see [What Is Mento? (deep dive)](../what-is-mento.md).
 
 In Mento V3, every swap pool is an **FPMM**: the swap price is fixed to an external **oracle** rate (minus a fee), not derived from reserves. There is no reserve-based curve, no curve-based slippage, and no LVR from a stale pool price. Risks shift to **oracle** quality and **inventory**; the protocol addresses those with **trading limits**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
 
@@ -98,7 +98,7 @@ See [Swap & liquidity](../../use/swap-and-liquidity.md) for how to mint and burn
 
 ## Next steps
 
-- [What Is Mento?](../../get-started/what-is-mento.md) — Why oracle pricing and why not CFMM (LVR, slippage).
+- [What Is Mento? (deep dive)](../what-is-mento.md) — Why oracle pricing and why not CFMM (LVR, slippage).
 - [Oracles, price feeds & circuit breakers](oracles-and-circuit-breakers.md) — How the pool gets the rate and when trading is gated.
 - [Rebalancing & strategies](rebalancing-and-strategies.md) — Who rebalances, thresholds, boundaries, incentives.
 - [Trading limits](trading-limits.md) — Caps; [Oracles & circuit breakers](oracles-and-circuit-breakers.md) — halts.

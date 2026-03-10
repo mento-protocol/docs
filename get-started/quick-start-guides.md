@@ -4,7 +4,7 @@ description: Do one thing now — swap at FX rates, add liquidity, or borrow a s
 
 # Quick Start Guides
 
-Choose what you want to do first — swap, add liquidity, borrow, earn (Stability pool), or integrate. For the big picture, see [What is Mento?](what-is-mento.md) and [Concepts overview](concepts-overview.md).
+Choose what you want to do first — swap, add liquidity, borrow, earn (Stability pool), or integrate. For the big picture, see the [Overview](../README.md).
 
 ---
 
@@ -74,4 +74,4 @@ The **Stability pool** is only available for **CDP-based stablecoins** (e.g. **G
 
 ---
 
-**More:** [What is Mento?](what-is-mento.md) · [Concepts overview](concepts-overview.md)
+**More:** [Overview](../README.md) · [What Is Mento? (deep dive)](../dive-deeper/what-is-mento.md)

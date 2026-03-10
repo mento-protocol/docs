@@ -1,6 +1,6 @@
-# What Is Mento?
+# What Is Mento? (deep dive)
 
-For a math-free overview, see [Concepts overview](concepts-overview.md) and [FPMMs](../dive-deeper/fpmm/README.md).
+This page goes deeper than the [Overview](../README.md): it explains why curve-based AMMs don’t work for FX, how Mento V3’s FPMMs use the oracle, and how the building blocks fit together (with optional math). For a math-free reference on FPMM mechanics, see [FPMMs](fpmm/README.md).
 
 Mento V3 is a **DEX for onchain foreign exchange (FX)**. The **goal** is to let users swap stablecoins onchain at the **respective FX rates** — e.g. USDC ↔ GBPm at the USD/GBP rate, or USDC ↔ EURm at USD/EUR — so that onchain execution can compete with off-chain spot FX. This page explains why that requires a different design than standard AMMs, and how Mento V3’s building blocks (FPMMs, protection against oracle imprecision, liquidity strategies) fit together.
 
@@ -144,7 +144,7 @@ Governance (parameters, allowlists, oracle config) is driven by MENTO token hold
 ## Where to go next
 
 - **Use the DEX:** [Swap & liquidity](../../use/swap-and-liquidity.md) · [Getting Mento stables](../../use/getting-mento-stables/README.md)
-- **Concepts:** [FPMMs](../dive-deeper/fpmm/README.md) · [Oracles, price feeds & circuit breakers](../dive-deeper/fpmm/oracles-and-circuit-breakers.md) · [Trading limits](../dive-deeper/fpmm/trading-limits.md)
-- **Build:** [Integration](../../build/integration/README.md)
+- **Concepts:** [FPMMs](fpmm/README.md) · [Oracles, price feeds & circuit breakers](fpmm/oracles-and-circuit-breakers.md) · [Trading limits](fpmm/trading-limits.md)
+- **Build:** [Integration](../build/integration/README.md)
 
 *Previous architecture (v2):* See the [whitepaper](https://github.com/mento-protocol/whitepaper) or legacy docs.

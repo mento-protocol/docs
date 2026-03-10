@@ -25,4 +25,4 @@ Contract and integration details will be documented in the Build section as CDP 
 
 ---
 
-**See also:** [Getting Mento stables](getting-mento-stables/README.md) · [What is Mento?](../overview/getting-started/what-is-mento.md) · [Troubleshooting](troubleshooting.md)
+**See also:** [Getting Mento stables](getting-mento-stables/README.md) · [Overview](../README.md) · [What Is Mento? (deep dive)](../dive-deeper/what-is-mento.md) · [Troubleshooting](troubleshooting.md)
