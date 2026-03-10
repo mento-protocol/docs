@@ -8,11 +8,11 @@ description: Do one thing now — get your first stable, add liquidity, or integ
 
 ---
 
-## Get your first Mento stable (2 minutes)
+## ✨ Experience your first on-chain FX swap at off-chain FX rates (no slippage!)
 
 1. Go to **[app.mento.org](https://app.mento.org/)**.
 2. Connect your wallet (e.g. MetaMask, Valora) on a supported chain (e.g. Celo).
-3. Choose the pair (e.g. USDC → USDm), enter amount, and swap at the oracle rate.
+3. Choose the pair (e.g. USDC → GBPm), enter amount, and swap at the oracle rate — same rate you'd get off-chain, no curve, no slippage. 🎯
 
 **Details:** [Getting Mento stables](../../use-mento/getting-mento-stables/README.md)
 
