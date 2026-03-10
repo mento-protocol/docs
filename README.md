@@ -10,7 +10,7 @@ description: >-
 
 ## What is Mento V3?
 
-**A DEX for onchain foreign exchange (FX).** Users swap stablecoins at **FX rates** — e.g. USDC ↔ GBPm at USD/GBP, or USDC ↔ EURm at USD/EUR — so onchain execution can compete with off-chain spot FX.
+**A DEX for onchain foreign exchange (FX).** Users swap stablecoins at **FX rates** — e.g. USDC ↔ GBPm at USD/GBP, or USDC ↔ EURm at USD/EUR — so onchain execution can compete with off-chain spot FX. The **core innovation** of Mento V3 is **Fixed-Price Market Makers (FPMMs)**: pools that quote an oracle rate instead of deriving price from reserves.
 
 ### Why a different design?
 
@@ -18,9 +18,9 @@ Most DEXs use **curve-based AMMs**: the swap price comes from the pool’s reser
 
 For FX, the fair rate is already known off-chain. We don’t need the pool to *discover* the price — we need it to **use** it.
 
-### Fixed-Price Market Makers (FPMMs)
+### Fixed-Price Market Makers (FPMMs) — the core of V3
 
-Each pool is tied to an **oracle** (external price feed) and **always quotes that rate** (minus a fee).
+Every Mento V3 swap pool is an FPMM. Each pool is tied to an **oracle** (external price feed) and **always quotes that rate** (minus a fee).
 
 - No reserve-based curve → no curve-based slippage, no LVR from a stale pool price.
 - When the oracle is accurate, traders get the FX rate and LPs aren’t drained by arbitrage.
@@ -39,7 +39,7 @@ $$I = \frac{V}{S}$$
 - **S** = total LP share supply.
 - **I** = value per share at the oracle.
 
-**I** is preserved on **swap** (V, S unchanged), **mint/burn** (value in proportion), and **rebalance** (strategy returns the other token at oracle rate)—**when we ignore fees and incentives**. In practice, swap fees and the capped rebalance incentive affect the exact accounting. Your share still represents a well-defined amount at the oracle for the purpose of the protocol’s bookkeeping.
+**I** is preserved on **swap** (V, S unchanged), **mint/burn** (value in proportion), and **rebalance** (strategy returns the other token at oracle rate)—when we ignore fees and incentives. Your share still represents a well-defined amount at the oracle for the purpose of the protocol’s bookkeeping.
 
 Tying everything to this invariant is what gives **LVR of zero** when the oracle rate is precise: the pool always quotes the oracle, so there is no stale pool price for arbitrageurs to exploit. That makes the design natural: the core is “one number, preserved.” The rest of the protocol is there to handle the case when the oracle is **not** precise.
 
@@ -52,8 +52,8 @@ When the oracle is wrong, stale, or manipulated, the invariant alone doesn’t s
 | Piece | Role |
 |-------|------|
 | **Trading limits & circuit breakers** | Limits cap flow per token over time so the pool can’t be drained in one go; the breaker can halt trading when the oracle is invalid or safety thresholds are breached. |
-| **Fees & incentives** | **Swap spread** (gap between buy/sell around the oracle) creates a band where arbitrage is unprofitable even if the oracle is slightly off. The protocol uses various **fees and incentives** to fund itself and reward different actors: e.g. swap fees (LP and protocol), rebalance incentives for keepers and strategies, and governance-driven revenue flows (MENTO). |
 | **Liquidity strategies (rebalancing)** | No curve → reserves can become one-sided. Allowlisted strategies rebalance: take surplus token from the pool, return the other at the oracle rate (capped incentive). Keeps the pool usable. |
+| **Fees & incentives** | The protocol uses various **fees and incentives** to fund itself and reward different actors: e.g. swap fees (LP and protocol), rebalance incentives for keepers and strategies, and governance-driven revenue flows (MENTO). The swap spread in particular also provides additional arb protection: the gap between buy and sell prices around the oracle creates a band where arbitrage is unprofitable even if the oracle is slightly off. |
 
 ### What you can do
 
