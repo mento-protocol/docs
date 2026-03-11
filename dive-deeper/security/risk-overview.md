@@ -4,7 +4,7 @@
 
 Creating stable assets on a blockchain introduces unique challenges that traditional financial systems don't face. When you remove central authorities and replace them with smart contracts and algorithms, you gain transparency and accessibility but you also inherit new categories of risk that require sophisticated mitigation strategies.
 
-The Mento Protocol operates in an adversarial environment where economic incentives, technical vulnerabilities, and market dynamics constantly interact. This overview explains the primary risks facing the protocol and the specific mechanisms we've built to address them.
+The Mento Protocol operates in an adversarial environment where economic incentives, technical vulnerabilities, and market dynamics constantly interact. This overview explains the primary risks facing the protocol and the specific mechanisms we've built to address them. It applies to Mento as a whole, including **Mento V3** (FPMM pools, oracle adapter, liquidity strategies, and CDP integration).
 
 ## Economic Risks and Market Dynamics
 
@@ -32,7 +32,7 @@ The architecture provides defense through modularity. Core contracts handling va
 
 Price oracles represent a critical dependency. If an attacker manipulates the oracle price, they could extract value by trading at artificial rates. Mento addresses this through multiple defensive layers.
 
-The protocol sources prices from multiple independent providers—currently Chainlink and RedStone—and takes the median, ensuring no single provider can unilaterally influence prices. The BreakerBox system monitors these feeds in real-time, automatically halting trading if prices deviate beyond expected bounds or feeds go stale.
+The protocol sources prices from multiple independent providers (e.g. Chainlink and on-chain median feeds such as SortedOracles), and in V3 the **OracleAdapter** applies validity and breaker checks before a pool uses a rate—ensuring no single provider can unilaterally influence prices and that stale or unsafe data is rejected. The BreakerBox system monitors these feeds in real-time, automatically halting trading if prices deviate beyond expected bounds or feeds go stale.
 
 Different breaker types handle different scenarios. Median-Delta Breakers protect volatile pairs by comparing sequential updates. Value-Delta Breakers ensure stable pairs stay within tight bands. Even successful oracle manipulation would have limited impact—corrupted prices trigger circuit breakers before trades can execute.
 
@@ -70,7 +70,7 @@ Public dashboards display real-time metrics, allowing anyone to monitor for anom
 
 To explore specific aspects of Mento's security architecture:
 
-* [Audit Reports](audit-reports.md) - Comprehensive security assessments from leading firms
+* [Audit Reports](audit-reports.md) — Overview and links to audits; [Smart contracts → Audits](../../build/smart-contracts/audits.md) for the canonical V3 and historical list
 * [Trading limits](../fpmm/trading-limits.md) · [Oracles & circuit breakers](../fpmm/oracles-and-circuit-breakers.md) - Protective mechanisms
 * [Watchdogs & Safety](../governance-and-mento/watchdogs-and-safety.md) - Governance safeguards and veto powers
 * [Analytics & Dashboards](../../reference/analytics-and-dashboards.md) - Monitor metrics in real-time
