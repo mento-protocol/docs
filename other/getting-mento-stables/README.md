@@ -21,7 +21,6 @@
 | **From another chain** | You hold assets on another chain and want Mento stables. | Bridge to a chain where Mento V3 is deployed, then use the app or a DEX there. See [From other chains](from-other-chains.md). |
 | **Via centralized exchanges (CEX)** | You want to buy/sell Mento stables on a CEX. | See [Via centralized exchanges](via-centralized-exchanges.md). Check whether USDm, EURm, GBPm are listed and on which networks. |
 | **On-ramp providers** | You want to buy crypto with fiat (card/bank) into your wallet. | See [On-ramp providers](on-ramp-providers.md). |
-| **Automation (MATE)** | You want to automate on/off-ramp flows. | See [Automation via MATE](automation-via-mate.md). |
 
 ---
 

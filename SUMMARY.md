@@ -28,6 +28,7 @@
 
 ## Build
 
+* [Repository Overview](build/repository-overview.md)
 * [Integration](build/integration/README.md)
   * [Integrate Stables](build/integration/integrate-stables.md)
   * [Integrate Oracles](build/integration/integrate-oracles.md)
@@ -55,8 +56,7 @@
   * [Addresses](build/deployments/addresses.md)
   * [Verification](build/deployments/verification.md)
   * [Parameters](build/deployments/parameters.md)
-* [Repository Overview](build/repository-overview.md)
-* [Troubleshooting (integrators)](build/troubleshooting.md)
+* [Troubleshooting](build/troubleshooting.md)
 
 ## Other
 
@@ -66,7 +66,5 @@
   * [From Other Chains](other/getting-mento-stables/from-other-chains.md)
   * [Via Centralized Exchanges](other/getting-mento-stables/via-centralized-exchanges.md)
   * [On-ramp Providers](other/getting-mento-stables/on-ramp-providers.md)
-  * [Automation via MATE](other/getting-mento-stables/automation-via-mate.md)
-* [Glossary](other/glossary.md)
-* [GBPm/USDm parameters](other/gbpm-usdm-parameters-reference.md)
 * [Analytics & Dashboards](other/analytics-and-dashboards.md)
+* [Glossary](other/glossary.md)

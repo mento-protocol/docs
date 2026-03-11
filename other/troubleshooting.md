@@ -1,6 +1,6 @@
 # Troubleshooting (users)
 
-Symptom → cause (one line) → fix. For **integrators** (reverts, SDK, addresses), see [Build: Troubleshooting](../build/troubleshooting.md).
+Symptom → cause (one line) → fix. For **integrators** (reverts, SDK, addresses), see [Build: Troubleshooting](../build/troubleshooting.md). The Build troubleshooting page covers swap/quote reverts, SDK and RPC issues, and deployment/verification.
 
 ---
 
@@ -34,4 +34,4 @@ Symptom → cause (one line) → fix. For **integrators** (reverts, SDK, address
 
 ---
 
-**More help:** [Getting Mento stables](getting-mento-stables/README.md) · [Swap & liquidity](swap-and-liquidity.md) · [CDP operations](../dive-deeper/cdp.md) · [Build: Troubleshooting](../build/troubleshooting.md) (integrators).
+**More help:** [Getting Mento stables](getting-mento-stables/README.md) · [Swap & liquidity](swap-and-liquidity.md) · [CDP operations](../dive-deeper/cdp.md) · [Build: Troubleshooting](../build/troubleshooting.md).
