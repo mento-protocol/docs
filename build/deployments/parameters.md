@@ -149,10 +149,3 @@ The following parameters apply to the **CDP system** (Bold / Liquity v2 fork) us
 | MIN_BOLD_IN_SP | 1 | GBPm |
 | MIN_BOLD_AFTER_REBALANCE | 5,000 | GBPm |
 
----
-
-## Notes
-
-- **Token ordering:** Pools use canonical ordering where `token0` and `token1` are sorted by token address (`token0` is the smaller address).
-- **v2 reference:** Values marked “v2 reference” are aligned with the Mento v2 configuration on Celo.
-- For more detail on **GBPm/USDm** (rationale and monitoring), see [GBPm/USDm parameters reference](../reference/gbpm-usdm-parameters-reference.md).
