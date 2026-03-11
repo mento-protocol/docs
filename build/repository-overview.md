@@ -1,41 +1,35 @@
 ---
-hidden: true
+description: Overview of the main Mento GitHub repositories.
 ---
 
 # Repository Overview
 
-Here you can find an overview of relevant [Mento GitHub repositories](https://github.com/mento-protocol).&#x20;
+Overview of the main [Mento GitHub repositories](https://github.com/mento-protocol), in order of importance.
 
-### [Mento Core](https://github.com/mento-protocol/mento-core)
+---
 
-This repository contains the source code of the core smart contracts for the Mento protocol. The repository is built with foundry which is used for the compilation and testing of the smart contracts.
+## [mento-core](https://github.com/mento-protocol/mento-core)
 
-### [Mento SDK](https://github.com/mento-protocol/mento-sdk)
+Core smart contracts for Mento V3: FPMM (Fixed-Price Market Maker) pools, OracleAdapter, liquidity strategies (Reserve, CDP, OpenLiquidityStrategy), TradingLimitsV2, BreakerBox integration, and related tooling. Built with [Foundry](https://book.getfoundry.sh/) for compilation and testing. This is the primary repo for the on-chain exchange and rebalancing logic.
 
-The GitHub repository of the official Mento Protocol SDK for interacting with Multi-Collateral Mento smart contracts on the Celo network.
+---
 
-### [Mento SDK examples](broken-reference)
+## [bold](https://github.com/mento-protocol/bold) — CDP (Liquity v2 fork)
 
-A set of runnable example code snippets for using the [Mento Protocol SDK](https://www.npmjs.com/package/@mento-protocol/mento-sdk).
+Fork of [Liquity v2](https://www.liquity.org/) used for Mento’s **CDP-backed stablecoins** (e.g. GBPm). Contains the contracts, subgraph, and frontend for the CDP system. Key differences from upstream: **USDm** as collateral (instead of WETH/LSTs), **FX-pegged stables** (e.g. mGBP) as debt tokens, **FX rate feeds** via Mento’s OracleAdapter, and **one independent instance per FX currency**. See the repo README for Mento-specific risks and architecture.
 
-### [Mento App](https://github.com/mento-protocol/mento-web)
+---
 
-The GitHub repository for the Mento web app. This app lets users make exchanges between Mento collateral and stable assets using the Mento Broker.
+## [frontend-monorepo](https://github.com/mento-protocol/frontend-monorepo)
 
-### [Mento Deployments](https://github.com/mento-protocol/mento-deployment)
+Monorepo for all Mento frontends. Built with **Turborepo**, **PNPM**, **Next.js**, and **Tailwind**; shared UI and web3 packages live under `packages/`. Main apps:
 
-This repo contains scripts for deploying & proposing upgrades to the Mento protocol. Deployments for the core contracts are done using [Foundry solidity scripting](https://book.getfoundry.sh/tutorials/solidity-scripting).
+| App | Purpose |
+|-----|--------|
+| **app.mento.org** | Mento Exchange UI (swap, liquidity, CDP) |
+| **governance.mento.org** | Governance UI |
+| **reserve.mento.org** | Reserve dashboard |
+| **minipay.mento.org** | MiniPay DApp |
+| **ui.mento.org** | Component library showcase |
 
-
-
-
-
-
-
-
-
-
-
-###
-
-\
+See the repo README for setup, scripts, and development workflow.
