@@ -86,24 +86,6 @@ Oracle-priced **GBPm/USDm** pool deployed on both Celo and Monad. **Celo** has a
 | **Risk controls** | MedianDeltaBreaker threshold (relayed:GBPUSD, v2 reference) | 4 | % |
 | **Risk controls** | MedianDeltaBreaker cooldown (v2 reference) | 900 | s |
 | **Risk controls** | MedianDeltaBreaker smoothing factor (v2 reference) | 0.005 | — |
-| **Liquity v2** | MIN_DEBT | 1,000 | GBPm |
-| **Liquity v2** | LIQUIDATION_PENALTY_SP | 5 | % |
-| **Liquity v2** | LIQUIDATION_PENALTY_REDISTRIBUTION | 10 | % |
-| **Liquity v2** | COLL_GAS_COMPENSATION_DIVISOR | 200 | — |
-| **Liquity v2** | COLL_GAS_COMPENSATION_CAP | 10 | USDm |
-| **Liquity v2** | ETH_GAS_COMPENSATION | 1.0 | CELO |
-| **Liquity v2** | CCR | 135 | % |
-| **Liquity v2** | SCR | 110 | % |
-| **Liquity v2** | MCR | 110 | % |
-| **Liquity v2** | BCR | 10 | % |
-| **Liquity v2** | MIN_ANNUAL_INTEREST_RATE | 0.2 | % |
-| **Liquity v2** | REDEMPTION_FEE_FLOOR | 0.5 | % |
-| **Liquity v2** | INITIAL_BASE_RATE | 100 | % |
-| **Liquity v2** | REDEMPTION_MINUTE_DECAY_FACTOR (≈60 min half-life) | 0.9885140204 | — |
-| **Liquity v2** | REDEMPTION_BETA | 1 | — |
-| **Liquity v2** | SP_YIELD_SPLIT | 75 | % |
-| **Liquity v2** | MIN_BOLD_IN_SP | 1 | GBPm |
-| **Liquity v2** | MIN_BOLD_AFTER_REBALANCE | 5,000 | GBPm |
 | **CDP Strategy** | rebalanceCooldown | 300 | s |
 | **CDP Strategy** | stabilityPoolPercentage | 2,000 | bps |
 | **CDP Strategy** | maxIterations | 500 | count |
@@ -139,6 +121,33 @@ Oracle-priced **GBPm/USDm** pool deployed on both Celo and Monad. **Celo** has a
 † External Chainlink feed settings; not configurable by Mento governance.
 {% endtab %}
 {% endtabs %}
+
+---
+
+## CDP (Bold / Liquity v2 fork) — GBPm on Celo
+
+The following parameters apply to the **CDP system** (Bold / Liquity v2 fork) used for GBPm on Celo. This is a separate deployment from the GBPm/USDm FPMM pool; the pool uses [CDPLiquidityStrategy](smart-contracts/liquidity-strategies.md#cdpliquiditystrategy) to rebalance against the CDP. CDP contract addresses are in [Addresses](addresses.md#cdp-bold--liquity-v2-fork).
+
+| Parameter | Value | Units |
+|-----------|-------|-------|
+| MIN_DEBT | 1,000 | GBPm |
+| LIQUIDATION_PENALTY_SP | 5 | % |
+| LIQUIDATION_PENALTY_REDISTRIBUTION | 10 | % |
+| COLL_GAS_COMPENSATION_DIVISOR | 200 | — |
+| COLL_GAS_COMPENSATION_CAP | 10 | USDm |
+| ETH_GAS_COMPENSATION | 1.0 | CELO |
+| CCR | 135 | % |
+| SCR | 110 | % |
+| MCR | 110 | % |
+| BCR | 10 | % |
+| MIN_ANNUAL_INTEREST_RATE | 0.2 | % |
+| REDEMPTION_FEE_FLOOR | 0.5 | % |
+| INITIAL_BASE_RATE | 100 | % |
+| REDEMPTION_MINUTE_DECAY_FACTOR (≈60 min half-life) | 0.9885140204 | — |
+| REDEMPTION_BETA | 1 | — |
+| SP_YIELD_SPLIT | 75 | % |
+| MIN_BOLD_IN_SP | 1 | GBPm |
+| MIN_BOLD_AFTER_REBALANCE | 5,000 | GBPm |
 
 ---
 
