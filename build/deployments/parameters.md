@@ -1,22 +1,20 @@
 # Parameters
 
-Deployed parameters for Mento V3 pools. The tables below document the configuration in use for USDX/USDm, GBPm/USDm, and axlEUROC/EURm.
+Deployed parameters for Mento V3 pools. The tables below document the configuration in use for **USDC/USDm**, **axlUSDC/USDm**, **USDT/USDm** (Celo), **AUSD/USDm** and **USDC/USDm** (Monad), and **GBPm/USDm** (Celo and Monad).
 
 Unless stated otherwise, **basis points (bps)** use denominator 10,000. Governance can change parameters over time; for current on-chain configuration, see [Addresses](addresses.md) and chain explorers.
 
 ---
 
-## USDX/USDm (oracle-priced FPMM, Reserve strategy)
+## USDC/USDm, axlUSDC/USDm, USDT/USDm (Celo); AUSD/USDm, USDC/USDm (Monad)
 
-Pools where **USDX** is an external USD stablecoin (e.g. USDC, USDT, axlUSDC, AUSD) and **USDm** is reserve-backed. Rebalancing uses **ReserveLiquidityStrategy**, not CDP-based liquidity.
-
-**Target pools:** Celo — USDC/USDm, axlUSDC/USDm, USDT/USDm. Monad — AUSD/USDm, USDC/USDm, USDT/USDm.
+These pools pair reserve-backed **USDm** with an external USD stablecoin. On **Celo** the deployed pools are USDC/USDm, axlUSDC/USDm, and USDT/USDm; on **Monad**, AUSD/USDm and USDC/USDm. Rebalancing uses **ReserveLiquidityStrategy**, not CDP-based liquidity.
 
 {% tabs %}
 {% tab title="Celo Mainnet" %}
 | Parameter set | Parameter | Value |
 |---------------|-----------|-------|
-| **Pools** | Target pools | USDC/USDm, axlUSDC/USDm, USDT/USDm |
+| **Pools** | Deployed pools | USDC/USDm, axlUSDC/USDm, USDT/USDm |
 | **FPMM** | LP fee (φ_LP) | 3 bps |
 | **FPMM** | Protocol fee (φ_protocol) | 2 bps |
 | **FPMM** | Total fee (φ_total) | 5 bps |
@@ -40,7 +38,7 @@ Pools where **USDX** is an external USD stablecoin (e.g. USDC, USDT, axlUSDC, AU
 {% tab title="Monad" %}
 | Parameter set | Parameter | Value |
 |---------------|-----------|-------|
-| **Pools** | Target pools | AUSD/USDm, USDC/USDm, USDT/USDm |
+| **Pools** | Deployed pools | AUSD/USDm, USDC/USDm |
 | **FPMM** | LP fee (φ_LP) | 3 bps |
 | **FPMM** | Protocol fee (φ_protocol) | 2 bps |
 | **FPMM** | Total fee (φ_total) | 5 bps |
@@ -51,10 +49,10 @@ Pools where **USDX** is an external USD stablecoin (e.g. USDC, USDT, axlUSDC, AU
 | **Reserve Strategy** | rebalanceCooldown | 300 s |
 | **Reserve Strategy** | protocolIncentiveExpansion / Contraction | 0 % |
 | **Reserve Strategy** | liquiditySourceIncentiveExpansion / Contraction | 0 % |
-| **Oracle feed** | Chainlink deviation threshold (USDC/USD, USDT/USD, AUSD/USD)† | 0.05 % |
-| **Oracle feed** | Chainlink heartbeat (USDC/USD, USDT/USD, AUSD/USD)† | 3600 s |
+| **Oracle feed** | Chainlink deviation threshold (USDC/USD, AUSD/USD)† | 0.05 % |
+| **Oracle feed** | Chainlink heartbeat (USDC/USD, AUSD/USD)† | 3600 s |
 | **Oracle feed** | SortedOracles report expiry (heartbeat + 2 min) | 3720 s |
-| **Risk controls** | ValueDeltaBreaker threshold (USDC/USD, USDT/USD, AUSD/USD) | 0.15 % |
+| **Risk controls** | ValueDeltaBreaker threshold (USDC/USD, AUSD/USD) | 0.15 % |
 | **Risk controls** | TradingLimitsV2 (each pool token) — 5 minutes | 2,500,000 |
 | **Risk controls** | TradingLimitsV2 (each pool token) — 1 day | 5,000,000 |
 
@@ -64,14 +62,15 @@ Pools where **USDX** is an external USD stablecoin (e.g. USDC, USDT, axlUSDC, AU
 
 ---
 
-## GBPm/USDm (oracle-priced FPMM, CDP strategy on Celo)
+## GBPm/USDm
 
-Oracle-priced **GBPm/USDm** pool. **Celo** uses CDP-based liquidity (Liquity v2 + CDP Liquidity Strategy). **Monad** uses FPMM, oracle, and risk controls only (no CDP).
+Oracle-priced **GBPm/USDm** pool deployed on both Celo and Monad. **Celo** has a GBPm CDP deployment (Liquity v2) and rebalancing uses the **CDP Liquidity Strategy**. **Monad** has no CDP deployment and no CDP Liquidity Strategy; rebalancing uses **OpenLiquidityStrategy** at [0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f](https://monadscan.com/address/0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f).
 
 {% tabs %}
 {% tab title="Celo Mainnet" %}
 | Parameter set | Parameter | Value | Units |
 |---------------|-----------|-------|-------|
+| **Pools** | Deployed pools | GBPm/USDm |
 | **FPMM** | LP fee (φ_LP) | 20 | bps |
 | **FPMM** | Protocol fee (φ_protocol) | 10 | bps |
 | **FPMM** | Rebalance incentive (ρ) | 6 | bps |
@@ -119,6 +118,8 @@ Oracle-priced **GBPm/USDm** pool. **Celo** uses CDP-based liquidity (Liquity v2 
 {% tab title="Monad" %}
 | Parameter set | Parameter | Value | Units |
 |---------------|-----------|-------|-------|
+| **Pools** | Deployed pools | GBPm/USDm |
+| **Liquidity strategy** | OpenLiquidityStrategy | [0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f](https://monadscan.com/address/0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f) | — |
 | **FPMM** | LP fee (φ_LP) | 10 | bps |
 | **FPMM** | Protocol fee (φ_protocol) | 5 | bps |
 | **FPMM** | Rebalance incentive (ρ) | 6 | bps |
@@ -134,41 +135,6 @@ Oracle-priced **GBPm/USDm** pool. **Celo** uses CDP-based liquidity (Liquity v2 
 | **Risk controls** | MedianDeltaBreaker threshold | 4 | % |
 | **Risk controls** | MedianDeltaBreaker cooldown | 900 | s |
 | **Risk controls** | MedianDeltaBreaker smoothing factor | 0.005 | — |
-
-† External Chainlink feed settings; not configurable by Mento governance.
-{% endtab %}
-{% endtabs %}
-
----
-
-## axlEUROC/EURm (Celo, Reserve strategy)
-
-Oracle-priced **axlEUROC/EURm** pool on **Celo**. **EURm** is reserve-backed; rebalancing uses **ReserveLiquidityStrategy** (no CDP).
-
-**Target pool:** axlEUROC/EURm.
-
-{% tabs %}
-{% tab title="Celo Mainnet" %}
-| Parameter set | Parameter | Value |
-|---------------|-----------|-------|
-| **Pools** | Target pool | axlEUROC/EURm |
-| **FPMM** | LP fee (φ_LP) | 30 bps |
-| **FPMM** | Protocol fee (φ_protocol) | 20 bps |
-| **FPMM** | Total fee (φ_total) | 50 bps |
-| **FPMM** | Rebalance incentive (ρ) | 1 bps |
-| **FPMM** | Rebalance threshold above (θ_above) | 5000 bps |
-| **FPMM** | Rebalance threshold below (θ_below) | 3333 bps |
-| **Reserve Strategy** | debtToken | EURm |
-| **Reserve Strategy** | rebalanceCooldown | 300 s |
-| **Reserve Strategy** | protocolIncentiveExpansion / Contraction | 0 % |
-| **Reserve Strategy** | liquiditySourceIncentiveExpansion / Contraction | 0 % |
-| **Oracle feed** | SortedOracles report expiry (v2 reference) | 360 s |
-| **Oracle feed** | Chainlink deviation threshold (EURC/USD)† | 0.30 % |
-| **Oracle feed** | Chainlink deviation threshold (EUR/USD)† | 0.50 % |
-| **Oracle feed** | Chainlink heartbeat (EURC/USD, EUR/USD)† | 240 s |
-| **Risk controls** | ValueDeltaBreaker threshold (v2 reference) | 0.50 % |
-| **Risk controls** | TradingLimitsV2 (each pool token) — 5 minutes (v2 reference) | 100,000 |
-| **Risk controls** | TradingLimitsV2 (each pool token) — 1 day (v2 reference) | 500,000 |
 
 † External Chainlink feed settings; not configurable by Mento governance.
 {% endtab %}
