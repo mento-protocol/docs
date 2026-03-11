@@ -1,10 +1,6 @@
 # Parameters
 
-Suggested launch parameters for Mento V3 pools. The values below are taken from the suggested parameter documents in the repository’s **parameters** folder:
-
-- **USDX/USDm:** `parameters/suggested_fpmm_usdx_usdm_parameters.pdf` (Celo and Monad)
-- **GBPm/USDm:** `parameters/suggested_fpmm_gbpm_usdm_parameters.pdf` (Celo and Monad)
-- **axlEUROC/EURm:** `parameters/suggested_fpmm_euroc_eurm_parameters.pdf` (Celo)
+Deployed parameters for Mento V3 pools. The tables below document the configuration in use for USDX/USDm, GBPm/USDm, and axlEUROC/EURm.
 
 Unless stated otherwise, **basis points (bps)** use denominator 10,000. Governance can change parameters over time; for current on-chain configuration, see [Addresses](addresses.md) and chain explorers.
 
@@ -14,12 +10,10 @@ Unless stated otherwise, **basis points (bps)** use denominator 10,000. Governan
 
 Pools where **USDX** is an external USD stablecoin (e.g. USDC, USDT, axlUSDC, AUSD) and **USDm** is reserve-backed. Rebalancing uses **ReserveLiquidityStrategy**, not CDP-based liquidity.
 
-**Target pools:**  
-**Celo:** USDC/USDm, axlUSDC/USDm, USDT/USDm  
-**Monad:** AUSD/USDm, USDC/USDm, USDT/USDm
+**Target pools:** Celo — USDC/USDm, axlUSDC/USDm, USDT/USDm. Monad — AUSD/USDm, USDC/USDm, USDT/USDm.
 
-### Celo
-
+{% tabs %}
+{% tab title="Celo Mainnet" %}
 | Parameter set | Parameter | Value |
 |---------------|-----------|-------|
 | **Pools** | Target pools | USDC/USDm, axlUSDC/USDm, USDT/USDm |
@@ -41,9 +35,9 @@ Pools where **USDX** is an external USD stablecoin (e.g. USDC, USDT, axlUSDC, AU
 | **Risk controls** | TradingLimitsV2 (each pool token) — 1 day | 1,000,000 |
 
 † External Chainlink feed settings; not configurable by Mento governance.
+{% endtab %}
 
-### Monad
-
+{% tab title="Monad" %}
 | Parameter set | Parameter | Value |
 |---------------|-----------|-------|
 | **Pools** | Target pools | AUSD/USDm, USDC/USDm, USDT/USDm |
@@ -65,15 +59,17 @@ Pools where **USDX** is an external USD stablecoin (e.g. USDC, USDT, axlUSDC, AU
 | **Risk controls** | TradingLimitsV2 (each pool token) — 1 day | 5,000,000 |
 
 † External Chainlink feed settings; not configurable by Mento governance.
+{% endtab %}
+{% endtabs %}
 
 ---
 
 ## GBPm/USDm (oracle-priced FPMM, CDP strategy on Celo)
 
-Oracle-priced **GBPm/USDm** pool. **Celo** uses CDP-based liquidity (Liquity v2 + CDP Liquidity Strategy). **Monad** is assumed to launch without CDP-based liquidity (FPMM, oracle, and risk controls only).
+Oracle-priced **GBPm/USDm** pool. **Celo** uses CDP-based liquidity (Liquity v2 + CDP Liquidity Strategy). **Monad** uses FPMM, oracle, and risk controls only (no CDP).
 
-### Celo (FPMM, oracle, risk controls, Liquity v2, CDP Strategy)
-
+{% tabs %}
+{% tab title="Celo Mainnet" %}
 | Parameter set | Parameter | Value | Units |
 |---------------|-----------|-------|-------|
 | **FPMM** | LP fee (φ_LP) | 20 | bps |
@@ -118,9 +114,9 @@ Oracle-priced **GBPm/USDm** pool. **Celo** uses CDP-based liquidity (Liquity v2 
 | **CDP Strategy** | REDEMPTION_SHORTFALL_TOLERANCE | ≈10⁻⁶ | USDm |
 
 † External Chainlink feed settings; not configurable by Mento governance.
+{% endtab %}
 
-### Monad (FPMM, oracle, risk controls only; no CDP)
-
+{% tab title="Monad" %}
 | Parameter set | Parameter | Value | Units |
 |---------------|-----------|-------|-------|
 | **FPMM** | LP fee (φ_LP) | 10 | bps |
@@ -140,6 +136,8 @@ Oracle-priced **GBPm/USDm** pool. **Celo** uses CDP-based liquidity (Liquity v2 
 | **Risk controls** | MedianDeltaBreaker smoothing factor | 0.005 | — |
 
 † External Chainlink feed settings; not configurable by Mento governance.
+{% endtab %}
+{% endtabs %}
 
 ---
 
@@ -147,8 +145,10 @@ Oracle-priced **GBPm/USDm** pool. **Celo** uses CDP-based liquidity (Liquity v2 
 
 Oracle-priced **axlEUROC/EURm** pool on **Celo**. **EURm** is reserve-backed; rebalancing uses **ReserveLiquidityStrategy** (no CDP).
 
-**Target pool:** axlEUROC/EURm (Celo).
+**Target pool:** axlEUROC/EURm.
 
+{% tabs %}
+{% tab title="Celo Mainnet" %}
 | Parameter set | Parameter | Value |
 |---------------|-----------|-------|
 | **Pools** | Target pool | axlEUROC/EURm |
@@ -171,12 +171,13 @@ Oracle-priced **axlEUROC/EURm** pool on **Celo**. **EURm** is reserve-backed; re
 | **Risk controls** | TradingLimitsV2 (each pool token) — 1 day (v2 reference) | 500,000 |
 
 † External Chainlink feed settings; not configurable by Mento governance.
+{% endtab %}
+{% endtabs %}
 
 ---
 
 ## Notes
 
 - **Token ordering:** Pools use canonical ordering where `token0` and `token1` are sorted by token address (`token0` is the smaller address).
-- **Oracle feed IDs and proxy addresses:** Chain-specific rate feed IDs and Chainlink proxy addresses are given in the full suggested parameter PDFs in the `parameters/` folder.
-- **v2 reference:** Values marked “v2 reference” are taken from the current Mento v2 configuration on Celo for continuity; v3 deployment may keep or adjust them.
-- For a detailed **GBPm/USDm** parameter reference (including rationale and monitoring), see [GBPm/USDm parameters reference](../reference/gbpm-usdm-parameters-reference.md).
+- **v2 reference:** Values marked “v2 reference” are aligned with the Mento v2 configuration on Celo.
+- For more detail on **GBPm/USDm** (rationale and monitoring), see [GBPm/USDm parameters reference](../reference/gbpm-usdm-parameters-reference.md).
