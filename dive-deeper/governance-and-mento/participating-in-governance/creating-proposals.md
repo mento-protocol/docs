@@ -234,7 +234,7 @@ Monitor each stage and be available to answer questions throughout.
 #### Contract References
 
 * [Mento Contracts GitHub](https://github.com/mento-protocol)
-* [Deployed addresses documentation](../../../build-on-mento/deployments/addresses.md)
+* [Deployed addresses documentation](../../../build/deployments/addresses.md)
 
 #### Support Channels
 

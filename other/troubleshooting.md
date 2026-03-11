@@ -1,6 +1,6 @@
 # Troubleshooting (users)
 
-Symptom → cause (one line) → fix. For **integrators** (reverts, SDK, addresses), see [Build: Troubleshooting](../build-on-mento/troubleshooting.md).
+Symptom → cause (one line) → fix. For **integrators** (reverts, SDK, addresses), see [Build: Troubleshooting](../build/troubleshooting.md).
 
 ---
 
@@ -9,7 +9,7 @@ Symptom → cause (one line) → fix. For **integrators** (reverts, SDK, address
 | Symptom | Cause | Fix |
 |---------|--------|-----|
 | I can't get stables | Wrong app or chain | Use the [Mento app](https://app.mento.org/) on a supported chain (e.g. Celo), or see [Getting Mento stables](getting-mento-stables/README.md). |
-| Swap failed / reverted | Oracle invalid or TradingLimitsV2 | Oracle may be stale or gated; or the pool's TradingLimitsV2 for that token was hit. Try again later or a smaller amount. See [Build: Troubleshooting](../build-on-mento/troubleshooting.md). |
+| Swap failed / reverted | Oracle invalid or TradingLimitsV2 | Oracle may be stale or gated; or the pool's TradingLimitsV2 for that token was hit. Try again later or a smaller amount. See [Build: Troubleshooting](../build/troubleshooting.md). |
 | I got less than I expected | Fee and/or rate | You get oracle rate **minus fee**. Check pool fee; re-quote right before swapping. |
 | Wrong token or pair | Selected wrong asset or pool | Confirm the pair (e.g. USDC/USDm, EUROC/EURm) and that you're on the right network. |
 
@@ -29,9 +29,9 @@ Symptom → cause (one line) → fix. For **integrators** (reverts, SDK, address
 | Symptom | Cause | Fix |
 |---------|--------|-----|
 | Can't borrow | Collateral or limits | Check minimum collateral and LTV; ensure you're using a supported CDP app (e.g. GBPm). |
-| Position liquidated | Collateral ratio fell below requirement | Repay debt or add collateral to avoid liquidation; see [CDP operations](cdp-operations.md). |
-| Stability pool deposit / withdraw issue | App or contract | Use the CDP app's support; for contract reverts see [Build: Troubleshooting](../build-on-mento/troubleshooting.md). |
+| Position liquidated | Collateral ratio fell below requirement | Repay debt or add collateral to avoid liquidation; see [CDP operations](../dive-deeper/cdp.md). |
+| Stability pool deposit / withdraw issue | App or contract | Use the CDP app's support; for contract reverts see [Build: Troubleshooting](../build/troubleshooting.md). |
 
 ---
 
-**More help:** [Getting Mento stables](getting-mento-stables/README.md) · [Swap & liquidity](swap-and-liquidity.md) · [CDP operations](cdp-operations.md) · [Build: Troubleshooting](../build-on-mento/troubleshooting.md) (integrators).
+**More help:** [Getting Mento stables](getting-mento-stables/README.md) · [Swap & liquidity](swap-and-liquidity.md) · [CDP operations](../dive-deeper/cdp.md) · [Build: Troubleshooting](../build/troubleshooting.md) (integrators).

@@ -63,5 +63,5 @@ Both wallets are self-custodial, meaning:
 ### Next Steps
 
 * [Getting Stables on Celo](on-celo.md) - Other ways to acquire Mento stables
-* [Bridge from Other Chains](../../how-to-source-mento-stables/from-other-chains.md) - Cross-chain options
+* [Bridge from Other Chains](../from-other-chains.md) - Cross-chain options
 * [Using the Mento Web App](https://app.mento.org/) - Desktop trading interface

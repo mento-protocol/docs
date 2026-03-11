@@ -56,4 +56,4 @@ Mento uses **CDPLiquidityStrategy** to rebalance FPMM pools that hold the CDP-ba
 
 ---
 
-**See also:** [Getting Mento stables](getting-mento-stables/README.md) · [Overview](../README.md) · [CDP smart contracts](../build/smart-contracts/cdps.md) (Build) · [Troubleshooting (integrators)](../build/troubleshooting.md)
+**See also:** [Getting Mento stables](../other/getting-mento-stables/README.md) · [Overview](../README.md) · [CDP smart contracts](../build/smart-contracts/cdps.md) (Build) · [Troubleshooting (integrators)](../build/troubleshooting.md)

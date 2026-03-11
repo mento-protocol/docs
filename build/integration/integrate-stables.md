@@ -81,7 +81,7 @@ For precise exchange rates, use the pool’s oracle (see [Oracles, price feeds &
 
 ### Step 5: Enable cross-stable swaps (optional)
 
-If your application needs to swap between Mento stables, use the [Mento SDK](../mento-sdk/) to get quotes and build swap transactions against Mento V3 FPMM pools. Swaps execute at the oracle rate (minus fee). See the SDK [Guides](../mento-sdk/guides/README.md) for getting exchange pairs and initiating a swap, and [Swap & liquidity](../../use/swap-and-liquidity.md) for the user-facing flow.
+If your application needs to swap between Mento stables, use the [Mento SDK](../mento-sdk/) to get quotes and build swap transactions against Mento V3 FPMM pools. Swaps execute at the oracle rate (minus fee). See the SDK [Guides](../mento-sdk/guides/README.md) for getting exchange pairs and initiating a swap, and [Swap & liquidity](../../other/swap-and-liquidity.md) for the user-facing flow.
 
 ## Working Examples
 
@@ -127,7 +127,7 @@ Mento stables are deployed on Celo and other supported chains. For cross-chain u
 
 ## Next steps
 
-* For swap functionality, see [Mento SDK](../mento-sdk/) and [Swap & liquidity](../../use/swap-and-liquidity.md)
+* For swap functionality, see [Mento SDK](../mento-sdk/) and [Swap & liquidity](../../other/swap-and-liquidity.md)
 * For oracle-backed price feeds (V3 OracleAdapter), see [Integrate Oracles](integrate-oracles.md)
 * For contract addresses and ABIs, see [Deployments](../deployments/README.md) and [Smart Contracts](../smart-contracts/)
 

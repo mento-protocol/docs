@@ -1,6 +1,6 @@
 # Troubleshooting (integrators)
 
-**Who this is for:** Integrators debugging quote/swap failures, SDK or RPC issues, or deployment/verification problems with Mento V3. For **user** issues (getting stables, swap failed in app), see [Use: Troubleshooting](../use/troubleshooting.md).
+**Who this is for:** Integrators debugging quote/swap failures, SDK or RPC issues, or deployment/verification problems with Mento V3. For **user** issues (getting stables, swap failed in app), see [Use: Troubleshooting](../other/troubleshooting.md).
 
 ---
 
@@ -32,4 +32,4 @@
 
 ---
 
-**More:** [Integration](integration/README.md) · [Smart contracts](smart-contracts/README.md) · [Deployments](deployments/README.md) · [Use: Troubleshooting](../use/troubleshooting.md).
+**More:** [Integration](integration/README.md) · [Smart contracts](smart-contracts/README.md) · [Deployments](deployments/README.md) · [Use: Troubleshooting](../other/troubleshooting.md).

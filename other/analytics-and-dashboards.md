@@ -38,8 +38,8 @@ _Coming soon: Additional analytics platforms and community-built dashboards_
 
 For deeper insights into what these metrics mean:
 
-* [The Reserve](../dive-deeper/fpmm/the-reserve.md) - Understand reserve composition and management
-* [Research & Economics](../dive-deeper/fpmm/research-and-economics.md) - Dive into the economic theory behind the metrics
+* [The Reserve](../dive-deeper/the-reserve.md) — Understand reserve composition and management
+* [Protocol Economics](../dive-deeper/protocol-economics.md) — Value flows, fees, and economic design
 
 ***
 

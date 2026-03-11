@@ -71,6 +71,6 @@
 
 ---
 
-**Parameter values (min debt, min collateral ratio, interest):** See [gbpm-usdm-parameters-reference.md](../reference/gbpm-usdm-parameters-reference.md) (from `parameters/suggested_fpmm_gbpm_usdm_parameters.pdf`).
+**Parameter values (min debt, min collateral ratio, interest):** See [gbpm-usdm-parameters-reference.md](../other/gbpm-usdm-parameters-reference.md) (from `parameters/suggested_fpmm_gbpm_usdm_parameters.pdf`).
 
 *Last synced from frontend-monorepo main and app UI; update when UI strings change.*

@@ -71,7 +71,7 @@ The documentation is split into four sections. Use the one that matches your goa
 **For:** Readers who want to understand how the protocol works under the hood.
 
 - **[FPMMs](dive-deeper/fpmm/README.md)** — Why Mento uses oracle pricing (and why curve-based AMMs don’t work well for FX), how Fixed-Price Market Makers work: the invariant, operations, rebalancing, and liquidity strategies. Subpages cover oracles & circuit breakers and TradingLimitsV2.
-- **[CDPs](use/cdp-operations.md)** — How collateralized debt positions back synthetic Mento stables (e.g. GBPm).
+- **[CDPs](dive-deeper/cdp.md)** — How collateralized debt positions back synthetic Mento stables (e.g. GBPm).
 - **[The Reserve](dive-deeper/the-reserve.md)** — How USDm and EURm are backed by the Reserve; two backing models (Reserve vs CDP).
 - **[Protocol Economics](dive-deeper/protocol-economics.md)** — Value flows, fees, incentives, and revenue (FPMM, CDP, MENTO).
 - **[Governance & MENTO](dive-deeper/governance-and-mento/README.md)** — How the protocol is governed, the MENTO token, tokenomics, and participation (voting, proposals, watchdogs).
@@ -88,14 +88,14 @@ The documentation is split into four sections. Use the one that matches your goa
 - **[Oracles](build/oracles/README.md)** — Technical details for oracle operators and integrators.
 - **[Troubleshooting (integrators)](build/troubleshooting.md)** — Common integration issues.
 
-### [Other](use/getting-mento-stables/README.md)
+### [Other](other/getting-mento-stables/README.md)
 
 **For:** Getting stables, lookup, and supporting material.
 
-- **[Getting Mento Stables](use/getting-mento-stables/README.md)** — Paths to obtain USDm, EURm, GBPm (app, Celo, mobile, other chains, CEX, on-ramp, automation).
-- **[Glossary](reference/glossary.md)** — Short definitions of terms (AMM, FPMM, LVR, oracle, rebalance, etc.).
-- **[GBPm/USDm parameters](reference/gbpm-usdm-parameters-reference.md)** — Recommended launch parameters for the GBPm/USDm deployment.
-- **[Analytics & Dashboards](reference/analytics-and-dashboards.md)** — Links to reserve and on-chain analytics.
+- **[Getting Mento Stables](other/getting-mento-stables/README.md)** — Paths to obtain USDm, EURm, GBPm (app, Celo, mobile, other chains, CEX, on-ramp, automation).
+- **[Glossary](other/glossary.md)** — Short definitions of terms (AMM, FPMM, LVR, oracle, rebalance, etc.).
+- **[GBPm/USDm parameters](other/gbpm-usdm-parameters-reference.md)** — Recommended launch parameters for the GBPm/USDm deployment.
+- **[Analytics & Dashboards](other/analytics-and-dashboards.md)** — Links to reserve and on-chain analytics.
 
 ---
 

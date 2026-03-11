@@ -113,7 +113,7 @@ Anyone can add liquidity by depositing **both** tokens in the **current reserve 
 - **Value per share** at the oracle (I = V/S) is preserved on every operation.
 - LPs earn **fees** from swap volume and may face **path-dependent** changes in composition when the oracle price moves between rebalances (so there can be “impermanent loss” in composition terms, but not from arbitrageurs picking off a stale quote).
 
-See [Swap & liquidity](../../use/swap-and-liquidity.md) for how to mint and burn in practice.
+See [Swap & liquidity](../../other/swap-and-liquidity.md) for how to mint and burn in practice.
 
 ---
 
