@@ -55,7 +55,6 @@
   * [Addresses](build/deployments/addresses.md)
   * [Verification](build/deployments/verification.md)
   * [Parameters](build/deployments/parameters.md)
-  * [MENTO Token Deployment](build/deployments/mento-token-deployment.md)
 * [Repository Overview](build/repository-overview.md)
 * [Troubleshooting (integrators)](build/troubleshooting.md)
 
