@@ -39,7 +39,7 @@ For **swap and liquidity** in general (not only “getting stables”), see [Swa
 
 ## Next steps
 
-- [Earn MERKL rewards on Monad (FPMMs)](../merkl-fpmm-rewards-monad.md) — Provide liquidity to USDC/USDm and GBPm/USDm on Monad and earn campaign rewards (launched March 2026).
+- [Earn Merkl rewards on Monad (FPMMs)](../merkl-fpmm-rewards-monad.md) — Provide liquidity to USDC/USDm and GBPm/USDm on Monad and earn campaign rewards (launched March 2026).
 - [Swap & liquidity (FPMM operations)](../swap-and-liquidity.md) — How to swap and add/remove liquidity.
 - [Overview](../../README.md) — DEX for FX, FPMMs, and where Mento stables fit in.
 - [FPMMs](../../dive-deeper/fpmm/README.md) — How pools and the oracle rate work.

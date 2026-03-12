@@ -1,6 +1,6 @@
-# Earn MERKL rewards on Mento FPMMs (Monad)
+# Earn Merkl rewards on Mento FPMMs (Monad)
 
-**The first Mento FPMMs are live on Monad** — and you can earn **MERKL campaign rewards** by providing liquidity to the **USDC/USDm** and **GBPm/USDm** pools. Campaigns launched on **March 12, 2026** (4pm CET) and are expected to run until **June 1st**, with rewards increasing over time.
+**The first Mento FPMMs are live on Monad** — and you can earn **Merkl campaign rewards** by providing liquidity to the **USDC/USDm** and **GBPm/USDm** pools. Campaigns launched on **March 12, 2026** (4pm CET) and are expected to run until **June 1st**, with rewards increasing over time.
 
 This page walks you through getting **USDm** and **GBPm** on Monad (or on Celo, then bridging) and adding liquidity to earn.
 
@@ -8,7 +8,7 @@ This page walks you through getting **USDm** and **GBPm** on Monad (or on Celo, 
 
 ## Why provide liquidity on these pools?
 
-- **Oracle-priced FPMMs** — Swaps use the fair FX rate; no curve slippage. As an LP you earn swap fees and, for the duration of the campaign, **MERKL rewards** on top.
+- **Oracle-priced FPMMs** — Swaps use the fair FX rate; no curve slippage. As an LP you earn swap fees and, for the duration of the campaign, **Merkl rewards** on top.
 - **Two pools, two ways to participate** — **USDC/USDm** (reserve-backed USDm) and **GBPm/USDm** (CDP-backed GBPm). Pick one or both.
 - **Simple path from any chain** — Swap into USDm or GBPm on **Monad** in the Mento app (no bridge needed). If you swap on **Celo** instead, bridge your Mento stables to Monad via [Portal Bridge](https://portalbridge.com/), then add liquidity in the [Mento app](https://app.mento.org/).
 
@@ -54,13 +54,13 @@ GBPm is created when users **borrow** against collateral in a CDP; it is not min
 
 ---
 
-## Step 2: Add liquidity and earn MERKL rewards
+## Step 2: Add liquidity and earn Merkl rewards
 
-Once you have **USDm** and/or **GBPm** (and the other side of the pair) on **Monad**, add liquidity to the FPMM pools in the Mento app. Your position earns swap fees and, for the campaign period, **MERKL rewards**.
+Once you have **USDm** and/or **GBPm** (and the other side of the pair) on **Monad**, add liquidity to the FPMM pools in the Mento app. Your position earns swap fees and, for the campaign period, **Merkl rewards**.
 
 ### Pool links (Monad)
 
-| Pool        | Add liquidity (Mento app) | MERKL campaign |
+| Pool        | Add liquidity (Mento app) | Merkl campaign |
 |------------|----------------------------|-----------------|
 | **USDC/USDm** | [app.mento.org/pools/monad/0x463c0d1F04bcd99A1efCF94AC2a75bc19Ea4A7E5](https://app.mento.org/pools/monad/0x463c0d1F04bcd99A1efCF94AC2a75bc19Ea4A7E5) | [View on Merkl](https://app.merkl.xyz/opportunities/monad/ERC20LOGPROCESSOR/0x463c0d1F04bcd99A1efCF94AC2a75bc19Ea4A7E5) |
 | **GBPm/USDm** | [app.mento.org/pools/monad/0xD0E9c1a718D2a693d41eacd4B2696180403Ce081](https://app.mento.org/pools/monad/0xD0E9c1a718D2a693d41eacd4B2696180403Ce081) | [View on Merkl](https://app.merkl.xyz/opportunities/monad/ERC20LOGPROCESSOR/0xD0E9c1a718D2a693d41eacd4B2696180403Ce081) |
@@ -72,7 +72,7 @@ Once you have **USDm** and/or **GBPm** (and the other side of the pair) on **Mon
 1. Open the pool link above (Mento app, Monad).
 2. Connect your wallet and ensure you’re on **Monad**.
 3. Enter amounts for both sides of the pair (e.g. USDC and USDm, or GBPm and USDm). The app shows the required ratio.
-4. Confirm. You’re now an LP and will earn swap fees plus MERKL rewards for the campaign period.
+4. Confirm. You’re now an LP and will earn swap fees plus Merkl rewards for the campaign period.
 
 ---
 

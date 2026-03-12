@@ -93,7 +93,7 @@ The documentation is split into four sections. Use the one that matches your goa
 **For:** Getting stables, lookup, and supporting material.
 
 - **[Getting Mento Stables](other/getting-mento-stables/README.md)** — Paths to obtain USDm, EURm, GBPm (app, Celo, mobile, other chains, CEX, on-ramp).
-- **[Earn MERKL rewards on Monad (FPMMs)](other/merkl-fpmm-rewards-monad.md)** — Provide liquidity to USDC/USDm and GBPm/USDm on Monad and earn campaign rewards.
+- **[Earn Merkl rewards on Monad (FPMMs)](other/merkl-fpmm-rewards-monad.md)** — Provide liquidity to USDC/USDm and GBPm/USDm on Monad and earn campaign rewards.
 - **[Analytics & Dashboards](other/analytics-and-dashboards.md)** — Links to reserve and on-chain analytics.
 - **[Glossary](other/glossary.md)** — Short definitions of terms (AMM, FPMM, LVR, oracle, rebalance, etc.).
 

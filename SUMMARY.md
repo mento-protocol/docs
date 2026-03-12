@@ -66,6 +66,6 @@
   * [From Other Chains](other/getting-mento-stables/from-other-chains.md)
   * [Via Centralized Exchanges](other/getting-mento-stables/via-centralized-exchanges.md)
   * [On-ramp Providers](other/getting-mento-stables/on-ramp-providers.md)
-* [Earn MERKL rewards on Monad (FPMMs)](other/merkl-fpmm-rewards-monad.md)
+* [Earn Merkl rewards on Monad (FPMMs)](other/merkl-fpmm-rewards-monad.md)
 * [Analytics & Dashboards](other/analytics-and-dashboards.md)
 * [Glossary](other/glossary.md)
