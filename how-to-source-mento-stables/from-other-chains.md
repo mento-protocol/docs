@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # From other Chains
 
 [SquidRouter V2](https://v2.app.squidrouter.com/) serves as an easy tool to access Mento stables. It allows you to mint and redeem Mento stables with other Celo assets and assets on various other blockchains. SquidRouter routes through the Mento Reserve, eliminating the risk of slippage commonly associated with traditional liquidity pools. This makes it highly efficient for large-volume transactions. You can mint USDm with USDC 1:1 without any slippage.

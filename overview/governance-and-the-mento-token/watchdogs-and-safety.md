@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Watchdogs & Safety
 
 Mento implements multiple protection mechanisms to safeguard the protocol during its maturation. The watchdog system provides an additional security layer during the critical early stages of decentralized governance.

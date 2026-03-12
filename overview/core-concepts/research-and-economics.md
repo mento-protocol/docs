@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Research & Economics
 
 The Mento Protocol represents a fundamental rethinking of how on-chain foreign exchange can work. By combining oracle-driven pricing with automated inventory management, Mento creates a system where stability emerges from aligned economic incentives rather than algorithmic supply controls.

@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Trading Limits
 
 The Mento stability mechanism relies on the ability to contract and expand the supply of Mento stable assets by allowing everyone to exchange stable assets with the Reserve against collateral assets and the other way around. The rate of expansion and contraction (i.e. _volume that can be traded in a unit of time_) is highly dependent on the **volatility** and the **liquidity** of the collateral in the pair. For example, when trading USDm for Celo with the Reserve, the amount that we can trade between two vAMM bucket updates has to be significantly lower than the amount we are able to trade when trading USDm against USDC. This is done in order to protect against oracle manipulation risk, which is greatly reduced when trading USDm against USDC.

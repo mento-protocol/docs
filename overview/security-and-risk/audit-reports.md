@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Audit Reports
 
 Security is paramount to the Mento Protocol. All major protocol upgrades and new features undergo comprehensive security audits by leading blockchain security firms before deployment to mainnet.

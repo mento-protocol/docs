@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Integrate Oracles
 
 This guide walks through integrating Mento's on-chain price feeds into your application. The [`SortedOracles`](https://github.com/celo-org/celo-monorepo/blob/master/packages/protocol/contracts/stability/SortedOracles.sol) contract aggregates FX rates from multiple oracle providers (Chainlink, Redstone) to provide reliable exchange rates for stable asset pairs. Mento relayers continuously push these rates on-chain to ensure fresh pricing data.

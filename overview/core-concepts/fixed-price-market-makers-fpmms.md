@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Fixed-Price Market Makers (FPMMs)
 
 Mento's exchange infrastructure enables users to swap between stable assets and collateral at predictable rates. Through Fixed-Price Market Makers (FPMMs) and modular liquidity strategies, the protocol provides deep liquidity while maintaining price stability.

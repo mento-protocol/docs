@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Price Sources
 
 Mento Oracle Clients aggregate data from multiple configured centralized cryptocurrency exchanges. They then calculate a volume-weighted average market price across exchanges.&#x20;

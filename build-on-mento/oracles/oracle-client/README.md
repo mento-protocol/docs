@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Oracle Client
 
 Mento Oracle Clients are off-chain programs that query and calculate exchange rates from centralized cryptocurrency exchanges and report them to the on-chain [SortedOracle](https://github.com/mento-protocol/mento-core/blob/develop/contracts/SortedOracles.sol) smart contract. The reported exchange rate is calculated as the volume-weighted average mid-price of configured exchange rates that are not excluded by safety conditions.&#x20;

@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # On Mobile
 
 Mobile wallets provide the easiest way for users to access and use Mento stables directly from their smartphones. Two primary options are available: Valora and MiniPay, both offering unique features for different user needs.

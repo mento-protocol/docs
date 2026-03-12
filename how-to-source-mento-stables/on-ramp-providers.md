@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # On-and-Offramp Providers
 
 If you don't want to use centralized exchanges and on-ramp crypto assets directly into your decentralized non-custodial wallet, you can use several on-ramp providers to do so.&#x20;

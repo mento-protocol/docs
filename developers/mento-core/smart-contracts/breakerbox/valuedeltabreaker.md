@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # ValueDeltaBreaker
 
 Breaker contract that will trigger when the current oracle median rate change relative to a reference value is greater than a calculated threshold. If this breaker is triggered for a rate feed it should be set to no trading mode.

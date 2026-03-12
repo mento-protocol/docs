@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Integrate the Broker
 
 This guide walks through integrating with Mento's Broker contract to execute swaps between stable assets and their collateral. The Broker serves as the main entry point for all Mento exchanges, handling trading limits, mint/burn operations, and routing to appropriate exchange providers.

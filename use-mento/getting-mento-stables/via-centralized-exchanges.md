@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Via Centralized Exchanges
 
 Centralized exchanges (CEXs) provide fiat on-ramps and simplified trading interfaces for acquiring assets that can be swapped for Mento stables. While some exchanges list Mento stables directly, most users will need to first acquire CELO or stablecoins and then swap on-chain.

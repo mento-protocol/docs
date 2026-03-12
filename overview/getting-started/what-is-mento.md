@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # What Is Mento?
 
 Mento is a decentralized, multi-currency stable asset protocol built for creating and exchanging stablecoins without relying on centralized intermediaries. At its core is a set of audited smart contracts designed for transparency, decentralization, and capital efficiency, enabling Mento to operate as the most robust onchain foreign exchange (FX) infrastructure.

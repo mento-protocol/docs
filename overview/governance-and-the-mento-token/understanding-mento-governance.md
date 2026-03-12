@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Understanding Mento Governance
 
 Mento governance empowers MENTO token holders to collectively shape the protocol's future. Through on-chain voting and community participation, governance ensures the protocol evolves to meet user needs while maintaining security and stability.

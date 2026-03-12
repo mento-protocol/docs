@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Stability Mechanisms
 
 Mento maintains stable asset pegs through economic incentives that allow market participants to profit from correcting price deviations. This approach creates a self-regulating system where stability emerges from rational market behavior combined with algorithmic bucket management.

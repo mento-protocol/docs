@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Exchange Providers
 
 The concept of exchange providers allows us to abstract how asset exchanges are priced from the [**Broker's**](broker.md) responsibilities. Given an _in asset_ and an _out asset_ and the _amount_ one wants to trade, an exchange provider can employ any mechanism in order to price the respective trade and manage its internal state as a result of executing such trades. It does this entirely virtually and never actually holds assets.

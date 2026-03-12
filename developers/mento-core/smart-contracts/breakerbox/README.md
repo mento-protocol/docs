@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # BreakerBox
 
 The BreakerBox checks the criteria defined in separate breaker contracts to determine whether or not buying or selling should be allowed for a specified rateFeedIDs. The contract stores references to all breakers that hold criteria to be checked, rateFeedIDs that can make use of the BreakerBox & their current trading.

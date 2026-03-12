@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Getting Exchange Pairs
 
 This guide will walk you through an example code snippet for instantiating the SDK and getting all tradeable pairs from exchanges configured in the broker contract within the Alfajores Celo testnet.&#x20;
