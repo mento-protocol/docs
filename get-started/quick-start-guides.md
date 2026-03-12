@@ -4,7 +4,7 @@ description: Do one thing now — swap at FX rates, add liquidity, or borrow a s
 
 # Quick Start Guides
 
-Choose what you want to do first — swap, add liquidity, borrow, earn (Stability pool), or integrate. For the big picture, see the [Overview](../README.md).
+Choose what you want to do first — swap, add liquidity, borrow, or earn (Stability pool). For the big picture, see the [Overview](../README.md).
 
 ---
 
@@ -29,6 +29,8 @@ You get the same rate you’d see off-chain for GBP/USD. No curve, no slippage. 
 4. Enter amounts for both tokens; the app shows the required ratio. Confirm. You’re now an LP and earn fees from swaps. 🎯
 
 [Swap & liquidity →](../other/swap-and-liquidity.md#adding-liquidity-mint)
+
+**On Monad:** Provide liquidity to **USDC/USDm** or **GBPm/USDm** and earn **Merkl campaign rewards**. See [Earn Merkl rewards on Monad (FPMMs)](../other/merkl-fpmm-rewards-monad.md).
 
 ---
 
@@ -63,15 +65,4 @@ The **Stability pool** is only available for **CDP-based stablecoins** (e.g. **G
 
 ---
 
-## Integrate (developers)
-
-1. **Install** the [Mento SDK](../build/mento-sdk/installation.md) or use the contracts directly.
-2. **Get pool address and pair info** from [Deployments](../build/deployments/addresses.md).
-3. **Quote** via pool or router (`getAmountOut` / `getAmountsOut`).
-4. **Swap** via the router or pool swap function.
-
-[Integration →](../build/integration/README.md)
-
----
-
-**More:** [Overview](../README.md) · [FPMMs](../dive-deeper/fpmm/README.md)
+**More:** [Overview](../README.md) · [FPMMs](../dive-deeper/fpmm/README.md) · [Earn Merkl rewards on Monad](../other/merkl-fpmm-rewards-monad.md)
