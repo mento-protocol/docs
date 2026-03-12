@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For current **Mento V3** docs, see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Smart Contracts
 
 The Mento protocol consists of a set of smart contracts, which are deployed on the[ Celo blockchain](https://celo.org/).

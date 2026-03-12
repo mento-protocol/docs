@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # The Reserve
 
 The Mento Reserve holds and manages the collateral assets that back Mento stablecoins. It serves as the protocol's treasury, ensuring that stable assets remain fully collateralized while enabling efficient liquidity management across the ecosystem.

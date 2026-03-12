@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # BreakerBox
 
 **BreakerBox**[ ](broken-reference)is an on-chain circuit breaker for oracles. It maintains a state for each price feed, whether trading is allowed or suspended. It is modular by design and allows for flexible addition and deletion of price feeds and individual breaking logic. Its conditions are checked and breakers are triggered if necessary by newly reported rates in SortedOracles.sol. For each requested swap, BiPoolManager.sol checks against this contract whether trading a specific pair is currently allowed or suspended.

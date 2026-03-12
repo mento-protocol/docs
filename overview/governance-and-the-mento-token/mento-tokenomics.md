@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # MENTO Tokenomics
 
 The MENTO token serves as the governance and value accrual mechanism for the Mento Protocol. Through carefully designed tokenomics, MENTO aligns the interests of token holders, users, and the protocol's long-term sustainability.

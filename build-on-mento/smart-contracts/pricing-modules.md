@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Pricing Modules
 
 Pricing Modules are utility contracts that implement the IPricingModule interface and are used by the BiPoolManager during swaps to price the swaps. A pricing module has to implement two functions:

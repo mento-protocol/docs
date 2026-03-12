@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # TradingLimits
 
 The `TradingLimits` library provides data structs and utility functions for defining and verifying trading limits on the net flow of an asset. It supports three types of limits:

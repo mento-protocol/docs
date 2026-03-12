@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Mint/burn with Mento
 
 Mento protocol allows users to deposit CELO and mint new stable assets into existence. Users can also burn stable assets to receive back the deposited CELO from the reserve.

@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For current **Mento V3** docs, see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Risks
 
 ### Introduction

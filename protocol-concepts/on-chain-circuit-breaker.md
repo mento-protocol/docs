@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # On-Chain Circuit Breaker
 
 The Mento protocol relies on off-chain oracle clients to provide crucial price data such as exchange rates of a specific token against various currencies such as USD, BRL and EUR. These rates are submitted to a smart contract - [SortedOracles](https://github.com/mento-protocol/mento-core/blob/main/contracts/oracles/SortedOracles.sol), which is essential for the stability mechanism. The price data that is submitted, is potentially subject to manipulation by the entity running the oracle client or other malicious actors. The protocol includes an on-chain circuit breaker as an additional security measure to protect the mechanism from any potential manipulation attacks or extreme market volatility.

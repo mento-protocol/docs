@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # ConstantSumPricingModule
 
 The ConstantSumPricingModule calculates the amount in and the amount out for a constant sum AMM.

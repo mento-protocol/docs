@@ -2,12 +2,6 @@
 description: A visual overview of the core smart contracts that make up the Mento Protocol
 ---
 
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
-
-
 # Architecture
 
 {% hint style="info" %}

@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For current **Mento V3** docs, see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Overview
 
 Mento's origins are on the [Celo blockchain](https://celo.org/), where the creation and redemption of stable assets is possible as well as several centralized and decentralized exchanges (CEXs and DEXs) are available for trading. You can also get stable assets via on-ramp providers in exchange for fiat currencies.

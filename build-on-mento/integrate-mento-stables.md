@@ -2,12 +2,6 @@
 hidden: true
 ---
 
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
-
-
 # Integrate Mento Stables
 
 To integrate Mento stables you need to be able to integrate the Celo blockchain, in case you are supporting on-chain transactions with your solution. Resources on how to integrate the Celo blockchain can be found here: [https://docs.celo.org/integration](https://docs.celo.org/integration).

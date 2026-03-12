@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Deployment Parameters
 
 Mento v2.0.0 contracts are configured via [Celo Governance Proposals](https://celo.stake.id/#/). The parametrization and deployment details can be found in the [Mento-Deployment](https://github.com/mento-protocol/mento-deployment) repository and in corresponding governance proposals.

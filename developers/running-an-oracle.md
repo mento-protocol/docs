@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Running an Oracle
 
 Oracles on Celo for Mento are an essential part of the stability mechanism. As of December 2022, there are 10 oracle clients, of which Mento Labs manages 8. There are[ ongoing decentralization efforts to add partners, community members, and validators](https://forum.celo.org/t/decentralized-oracles/3610). As of December 2022, one oracle is operated by a community member, and one by T-Systems MMS, a subsidiary of Deutsche Telekom.

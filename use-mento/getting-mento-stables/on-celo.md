@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # On Celo
 
 Mento stables are native to the Celo blockchain, giving you multiple options to acquire them directly on-chain. This guide covers the various methods available for obtaining USDm, EURm, BRLm, and XOFm on Celo.

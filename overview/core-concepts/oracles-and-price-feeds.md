@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Oracles & Price Feeds
 
 Oracles provide the real-world price data that enables Mento's stability mechanisms. They feed accurate exchange rates to the protocol, allowing stablecoins to maintain their pegs through arbitrage and fixed-price swaps.

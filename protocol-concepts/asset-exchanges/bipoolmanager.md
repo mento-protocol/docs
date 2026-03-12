@@ -2,12 +2,6 @@
 description: Exchange provider with two-asset virtual automated market maker pools
 ---
 
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
-
-
 # BiPoolManager
 
 The **BiPoolManager** is an [exchange provider ](exchange-providers.md)that generalizes the [vAMM](bipoolmanager.md#vamm) implementation previously used in Mento v1's Exchanges. It manages asset pools containing a pair of Mento assets, which can be either stable-to-collateral or stable-to-stable. A pool can be configured to use either a constant sum or a constant product pricing function via [pricing modules.](bipoolmanager.md#pricing-modules)

@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # From Other Chains
 
 Bridge assets from other blockchains to Celo and swap them for Mento stables. This guide covers the main bridging options and step-by-step instructions for obtaining USDm, EURm, BRLm, and XOFm from external chains.

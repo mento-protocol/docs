@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Getting a Quote
 
 After you have already [fetched all tradeable pairs](getting-exchange-pairs.md), you are ready to get price quotes directly from the `Broker` contract. In the example below we will do so for the `CELO/USDm` exchange.

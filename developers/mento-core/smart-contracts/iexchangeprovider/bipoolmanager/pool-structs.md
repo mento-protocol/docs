@@ -2,12 +2,6 @@
 description: The Pool exchange structure
 ---
 
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
-
-
 # Pool Structs
 
 The `PoolExchange` and `PoolConfig` structures are the underlying data structures used by the BiPoolManager to implement a vAMM bi-pool (i.e. a pool with two assets).&#x20;

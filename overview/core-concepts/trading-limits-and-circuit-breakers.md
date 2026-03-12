@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Trading Limits & Circuit Breakers
 
 Mento protects its stability mechanisms through automated safeguards that monitor trading activity and oracle behavior. These protective layers ensure the protocol can weather extreme market conditions while maintaining continuous operation during normal times.

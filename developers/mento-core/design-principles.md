@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Design Principles
 
 The system is designed in a way that allows many protocol changes by config parameter, not core contract changes. Components that are modular are

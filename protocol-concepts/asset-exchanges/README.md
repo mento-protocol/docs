@@ -2,10 +2,6 @@
 description: The Mento components that orchestrate asset exchanges
 ---
 
-> **Legacy documentation:** These are the **Mento V2** docs. For current **Mento V3** docs, see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Asset exchanges
 
 The Mento protocol provides a mechanism to exchange assets with the Mento Reserve. This mechanism serves two roles. The first role is in **service of the stability** of the protocol by providing arbitrageurs a way to trade stables assets with the reserve at a protocol-enforced rate with respect to the collateral, thus closing the arbitrage cycle with other markets (DEXs or CEXs) and enforcing the stable asset pegs. The second role is as a **distribution mechanism** for Mento stable assets by providing low slippage, and high bandwidth expansion capability against forms of collateral that support that.

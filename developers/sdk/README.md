@@ -2,12 +2,6 @@
 description: How to install and use the official mento protocol SDK
 ---
 
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
-
-
 # SDK
 
 The easiest way to interact with the Mento Protocol core contracts in Typescript/Javascript environments is through the SDK ([@mento-protocol/mento-sdk](https://www.npmjs.com/package/@mento-protocol/mento-sdk)). The SDK provides easy to use abstractions all the way from discovering exchanges and pairs to executing swaps.

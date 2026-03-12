@@ -5,12 +5,6 @@ description: >-
   governance ensures the protocol evolves to meet user nee
 ---
 
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
-
-
 # Overview
 
 Mento operates as a fully decentralized protocol governed by its community. Unlike traditional financial systems where central authorities make decisions, Mento distributes decision-making power among MENTO token holders who have a direct stake in the protocol's success.

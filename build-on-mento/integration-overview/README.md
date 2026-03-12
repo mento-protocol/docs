@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For current **Mento V3** docs, see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Integration Overview
 
 Mento provides a decentralized platform for multi-currency stable assets with built-in exchange capabilities. This guide covers the main integration paths for developers and protocols.

@@ -1,7 +1,3 @@
-> **Legacy documentation:** These are the **Mento V2** docs. For the current **Mento V3** documentation (FPMMs, CDPs, latest integrations), see **[docs.mento.org](https://docs.mento.org/)**.
-
----
-
 # Initiating a Swap
 
 After you have gotten a [price quote](getting-a-quote.md) from the Broker, you can use the sdk to create a swap transaction object which you can then submit to the network.
