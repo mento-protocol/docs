@@ -18,7 +18,7 @@ This page walks you through getting **USDm** and **GBPm** on Monad (or on Celo, 
 
 ### USDm (reserve-backed)
 
-USDm is backed by the Mento Reserve. You can get it in two main ways:
+USDm is backed by the [Mento Reserve](https://reserve.mento.org/). You can get it in two main ways:
 
 **Option A — On Monad**
 
