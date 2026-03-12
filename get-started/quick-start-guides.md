@@ -46,7 +46,7 @@ A **Trove** (CDP) lets you lock **USDm** as collateral and borrow another stable
    - Review the **loan summary** on the right, then confirm (**Enter collateral amount** / **Open Trove**).
 To earn from the Stability pool with your borrowed GBPm (or any CDP-based stable), switch to **Earn** (see below). 🎯
 
-[CDP operations →](../dive-deeper/cdp.md) · [Parameters (min debt, ratios, rates)](../other/gbpm-usdm-parameters-reference.md)
+[CDP operations →](../dive-deeper/cdp.md)
 
 ---
 
