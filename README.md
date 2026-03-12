@@ -77,25 +77,24 @@ The documentation is split into four sections. Use the one that matches your goa
 - **[Governance & MENTO](dive-deeper/governance-and-mento/README.md)** — How the protocol is governed, the MENTO token, tokenomics, and participation (voting, proposals, watchdogs).
 - **[Security](dive-deeper/security/README.md)** — Risk overview and audit reports.
 
-### [Build](build/integration/README.md)
+### [Build](build/repository-overview.md)
 
 **For:** Developers and protocols integrating with Mento V3.
 
+- **[Repository Overview](build/repository-overview.md)** — Mento repos and where to find code, contracts, and tooling.
 - **[Integration](build/integration/README.md)** — How to add Mento stables, use oracles, and find deployment addresses. Links to the SDK, smart contracts, and deployments.
 - **[Mento SDK](build/mento-sdk/README.md)** — JavaScript/TypeScript library for quotes and swaps.
 - **[Smart Contracts](build/smart-contracts/README.md)** — Contract reference (FPMM, oracles, limits, strategies).
 - **[Deployments](build/deployments/README.md)** — Addresses, verification, and parameters.
-- **[Oracles](build/oracles/README.md)** — Technical details for oracle operators and integrators.
-- **[Troubleshooting (integrators)](build/troubleshooting.md)** — Common integration issues.
+- **[Troubleshooting](build/troubleshooting.md)** — Common integration issues (swap/quote reverts, Router vs pool, mint/burn, rebalancing, oracle/breakers, SDK).
 
 ### [Other](other/getting-mento-stables/README.md)
 
 **For:** Getting stables, lookup, and supporting material.
 
-- **[Getting Mento Stables](other/getting-mento-stables/README.md)** — Paths to obtain USDm, EURm, GBPm (app, Celo, mobile, other chains, CEX, on-ramp, automation).
-- **[Glossary](other/glossary.md)** — Short definitions of terms (AMM, FPMM, LVR, oracle, rebalance, etc.).
-- **[GBPm/USDm parameters](other/gbpm-usdm-parameters-reference.md)** — Recommended launch parameters for the GBPm/USDm deployment.
+- **[Getting Mento Stables](other/getting-mento-stables/README.md)** — Paths to obtain USDm, EURm, GBPm (app, Celo, mobile, other chains, CEX, on-ramp).
 - **[Analytics & Dashboards](other/analytics-and-dashboards.md)** — Links to reserve and on-chain analytics.
+- **[Glossary](other/glossary.md)** — Short definitions of terms (AMM, FPMM, LVR, oracle, rebalance, etc.).
 
 ---
 
