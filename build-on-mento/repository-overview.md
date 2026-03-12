@@ -2,6 +2,10 @@
 hidden: true
 ---
 
+> **Legacy documentation:** These are the **Mento V2** docs. For current **Mento V3** docs, see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Repository Overview
 
 Here you can find an overview of relevant [Mento GitHub repositories](https://github.com/mento-protocol).&#x20;

@@ -4,6 +4,10 @@ description: >-
   explains where you can do that.
 ---
 
+> **Legacy documentation:** These are the **Mento V2** docs. For current **Mento V3** docs, see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Trading guide
 
 There are three ways how the one can buy or sell mento stable assets:

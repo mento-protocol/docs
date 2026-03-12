@@ -1,3 +1,7 @@
+> **Legacy documentation:** These are the **Mento V2** docs. For current **Mento V3** docs, see **[docs.mento.org](https://docs.mento.org/)**.
+
+---
+
 # Why Mento?
 
 Stable value digital assets are a crucial building block in the web3 economy as they enable a stable store and transfer of value and provide for fast, secure, and low-cost transactions.&#x20;
