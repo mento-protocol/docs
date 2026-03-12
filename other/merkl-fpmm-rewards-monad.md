@@ -10,7 +10,7 @@ This page walks you through getting **USDm** and **GBPm** on Monad (or on Celo, 
 
 - **Oracle-priced FPMMs** — Swaps use the fair FX rate; no curve slippage. As an LP you earn swap fees and, for the duration of the campaign, **MERKL rewards** on top.
 - **Two pools, two ways to participate** — **USDC/USDm** (reserve-backed USDm) and **GBPm/USDm** (CDP-backed GBPm). Pick one or both.
-- **Simple path from any chain** — Swap on Celo or Monad, or bridge from Celo to Monad via [Portal Bridge](https://portalbridge.com/), then add liquidity in the [Mento app](https://app.mento.org/).
+- **Simple path from any chain** — Swap into USDm or GBPm on **Monad** in the Mento app (no bridge needed). If you swap on **Celo** instead, bridge your Mento stables to Monad via [Portal Bridge](https://portalbridge.com/), then add liquidity in the [Mento app](https://app.mento.org/).
 
 ---
 
@@ -45,7 +45,7 @@ GBPm is created when users **borrow** against collateral in a CDP; it is not min
 
 **Option B — Swap on Monad**
 
-- Go to [app.mento.org/pool/monad](https://app.mento.org/pool/monad) and swap into **GBPm** (e.g. USDm → GBPm) if the pool supports it.
+- Go to [app.mento.org/pool/monad](https://app.mento.org/pool/monad) and swap into **GBPm** (e.g. USDm → GBPm).
 
 **Option C — Swap on Celo, then bridge**
 
