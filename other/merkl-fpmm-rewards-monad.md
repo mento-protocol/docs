@@ -1,6 +1,6 @@
 # Earn Merkl rewards on Mento FPMMs (Monad)
 
-**The first Mento FPMMs are live on Monad** — and you can earn **Merkl campaign rewards** by providing liquidity to the **USDC/USDm** and **GBPm/USDm** pools. Campaigns launched on **March 12, 2026** (4pm CET) and are expected to run until **June 1st**, with rewards increasing over time.
+**The first Mento FPMMs are live on Monad** — and you can earn **Merkl campaign rewards** (paid in **USDm**) by providing liquidity to the **USDC/USDm** and **GBPm/USDm** pools. Campaigns launched on **March 12, 2026** (4pm CET) and are expected to run until **June 1st**, with rewards increasing over time.
 
 This page walks you through getting **USDm** and **GBPm** on Monad (or on Celo, then bridging) and adding liquidity to earn.
 
@@ -8,7 +8,7 @@ This page walks you through getting **USDm** and **GBPm** on Monad (or on Celo, 
 
 ## Why provide liquidity on these pools?
 
-- **Oracle-priced FPMMs** — Swaps use the fair FX rate; no curve slippage. As an LP you earn swap fees and, for the duration of the campaign, **Merkl rewards** on top.
+- **Oracle-priced FPMMs** — Swaps use the fair FX rate; no curve slippage. As an LP you earn swap fees and, for the duration of the campaign, **Merkl rewards paid in USDm** on top.
 - **Two pools, two ways to participate** — **USDC/USDm** (reserve-backed USDm) and **GBPm/USDm** (CDP-backed GBPm). Pick one or both.
 - **Simple path from any chain** — Swap into USDm or GBPm on **Monad** in the Mento app (no bridge needed). If you swap on **Celo** instead, bridge your Mento stables to Monad via [Portal Bridge](https://portalbridge.com/), then add liquidity in the [Mento app](https://app.mento.org/).
 
@@ -72,7 +72,7 @@ Once you have **USDm** and/or **GBPm** (and the other side of the pair) on **Mon
 1. Open the pool link above (Mento app, Monad).
 2. Connect your wallet and ensure you’re on **Monad**.
 3. Enter amounts for both sides of the pair (e.g. USDC and USDm, or GBPm and USDm). The app shows the required ratio.
-4. Confirm. You’re now an LP and will earn swap fees plus Merkl rewards for the campaign period.
+4. Confirm. You’re now an LP and will earn swap fees plus Merkl rewards (in **USDm**) for the campaign period.
 
 ---
 
@@ -81,7 +81,7 @@ Once you have **USDm** and/or **GBPm** (and the other side of the pair) on **Mon
 - **Start:** March 12, 2026, 4pm CET  
 - **Expected end:** June 1st (rewards increase over time).  
 - **Pools:** USDC/USDm and GBPm/USDm on Monad.  
-- **Rewards:** Distributed via [Merkl](https://app.merkl.xyz/) for liquidity provision in these FPMM pools. Check the Merkl links above for current APRs and claim instructions.
+- **Rewards:** Paid in **USDm** and distributed via [Merkl](https://app.merkl.xyz/) for liquidity provision in these FPMM pools. Check the Merkl links above for current APRs and claim instructions.
 
 ---
 
