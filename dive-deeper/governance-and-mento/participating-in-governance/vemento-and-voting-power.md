@@ -188,7 +188,7 @@ No, each address can only have one active lock. You can add to your existing loc
 
 <summary><strong>Do I earn anything while locked?</strong></summary>
 
-veMENTO holders don’t currently earn direct rewards but control how protocol revenue is allocated (including MENTO token buybacks and liquidity incentives), therefore controlling MENTO economics. Future governance proposals may introduce direct revenue sharing.
+veMENTO holders do not earn direct revenue-sharing rewards. Their role is to control how protocol revenue is allocated, including **protocol-driven MENTO token buybacks** and liquidity incentives. In the current design, protocol revenue is intended to reach MENTO holders **indirectly** through buybacks rather than through direct distributions to veMENTO holders.
 
 </details>
 

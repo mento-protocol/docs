@@ -1,6 +1,6 @@
 # The Reserve
 
-In Mento V3, **most Mento stablecoins are CDP-backed** (using Liquity v2–style CDPs). **Only USDm and EURm** are backed by collateral held in the **MENTO Reserve**. This page explains why that split exists and how the Reserve works for those two stables.
+In Mento V3, **most Mento stablecoins are CDP-backed** (using Liquity v2–style CDPs). This page focuses on the **Reserve-backed** assets documented in these V3 docs: **USDm** and **EURm**. It explains why that split exists and how the Reserve works for those two stables.
 
 ---
 
@@ -11,11 +11,11 @@ In Mento V3, **most Mento stablecoins are CDP-backed** (using Liquity v2–style
 | **Reserve-backed** | **USDm**, **EURm** | The Reserve holds high-quality fiat-backed collateral (e.g. USDC, USDT, USDS for USDm; EUROC for EURm). These stables can be backed **1:1** by such assets because they have liquid, high-quality counterparts that can be integrated onchain. |
 | **CDP-backed** | **GBPm** and others | No equivalent high-quality fiat-backed GBP (or other currency) stablecoin is integrated at scale yet. So these stables are minted via **Liquity v2–style CDPs**: users deposit **USDm** as collateral and borrow the synthetic stable (e.g. GBPm). When high-quality fiat-backed counterparts become available, governance can consider moving to Reserve-backed backing for them too. |
 
-So: the Reserve backs **only USDm and EURm**. Other Mento stables are **synthetic** and backed by CDPs (with USDm as collateral in the current design), until the ecosystem has suitable fiat-backed collateral to integrate.
+So, in the backing model documented here, the Reserve backs **USDm** and **EURm**. Other Mento stables are treated as **synthetic** and backed by CDPs (with USDm as collateral in the current design), until the ecosystem has suitable fiat-backed collateral to integrate.
 
 ---
 
-## Why only USDm and EURm are Reserve-backed
+## Why USDm and EURm are the documented Reserve-backed assets
 
 USDm and EURm have **high-quality, fiat-backed counterparts** that are already integrated and liquid on the chains where Mento deploys:
 

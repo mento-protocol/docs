@@ -75,18 +75,18 @@ MENTO captures value from protocol operations through multiple streams:
 1. **Trading Fees**: Collected on every swap through the protocol
 2. **Reserve Yield**: Returns from deployed reserve assets
 3. **CDP Interest(V3)**: Interest paid by synthetic stablecoin borrowers
-4. **Flash-swap Fees(V3)**: Premiums from inventory rebalancing operations
+4. **Rebalancing-related Fees (V3)**: Revenue associated with inventory rebalancing operations
 
 ### Revenue Distribution
 
 Governance controls how protocol revenue flows:
 
-* **veMENTO Stakers**: Receive portion of fees based on lock duration
+* **Protocol-driven MENTO buybacks**: Expected primary path for value to flow indirectly to MENTO holders
 * **Stability Pools**: Share of revenue for providing liquidation backstop
 * **Buyback & Burn**: Potential mechanism to reduce supply
 * **Treasury Growth**: Funding ongoing operations
 
-The exact distribution is governable, allowing the community to optimize for growth, sustainability, or value return as needed.
+The exact distribution is governable, allowing the community to optimize for growth, sustainability, or value return as needed. In the current design, protocol revenue is not shared directly with veMENTO holders; instead, value is expected to flow to MENTO holders indirectly through protocol-driven buybacks. Not every mechanism listed above is necessarily live at all times; some require explicit governance activation.
 
 ## veMENTO: Vote-Escrowed Governance
 
@@ -94,7 +94,7 @@ Following the successful Curve model, MENTO can be locked for veMENTO to gain:
 
 **Voting Power**: Longer locks (up to 4 years) receive proportionally more voting weight, encouraging long-term thinking.
 
-**Revenue Sharing**: veMENTO holders receive protocol revenues, with distributions weighted by lock duration.
+**Indirect Value Accrual**: Protocol revenue is intended to flow to MENTO holders indirectly through governance-directed MENTO token buybacks, while veMENTO determines how that revenue is allocated.
 
 **Governance Rights**: Participate in all protocol decisions including parameter changes, asset listings, and treasury management.
 
@@ -117,7 +117,7 @@ MENTO derives utility from several core functions:
 
 **Governance Power**: Control over a growing multi-chain stablecoin ecosystem
 
-**Revenue Rights**: Direct claim on protocol income streams
+**Revenue Rights**: Governance influence over how protocol income streams are allocated, including protocol-driven MENTO buybacks
 
 **Liquidity Incentives**: Rewards for providing essential liquidity
 

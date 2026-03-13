@@ -54,7 +54,7 @@ To earn from the Stability pool with your borrowed GBPm (or any CDP-based stable
 
 ## 📈 Earn — Stability pool
 
-The **Stability pool** is only available for **CDP-based stablecoins** (e.g. **GBPm**), not for Reserve-backed stables like USDm or EURm. Deposit into the pool to earn a share of **trove interest** (interest paid by borrowers), **liquidation gains** (when liquidations occur, your deposit repays debt and you receive collateral at a discount), and **protocol rewards**. No lock-up — withdraw anytime.
+The **Stability pool** is only available for **CDP-based stablecoins** (e.g. **GBPm**), not for Reserve-backed stables like USDm or EURm. Deposit into the pool to earn a share of **trove interest** (interest paid by borrowers) and **liquidation gains** (when liquidations occur, your deposit repays debt and you receive collateral at a discount). If the app shows additional claimable rewards, those are program-specific and may vary over time. No lock-up — withdraw anytime.
 
 1. Go to **[app.mento.org](https://app.mento.org/)** and **connect your wallet**.
 2. Switch to the **Earn** tab (top nav: Swap, Pool, Borrow, **Earn**).

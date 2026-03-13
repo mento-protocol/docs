@@ -12,19 +12,21 @@ Every swap pays a **fee** (split between **LP fee** and **protocol fee**). LPs e
 
 **Safety and governance.** TradingLimitsV2 (per-token net flow caps) and an **on-chain circuit breaker** (e.g. halt when the oracle is invalid or stale) protect pools when the oracle is wrong or manipulated. **Governance**—driven by **MENTO** token holders—controls protocol parameters (fees, rebalance incentives, TradingLimitsV2, circuit breaker thresholds), oracle and feed configuration, pool allowlists, and Reserve policy. See [Understanding Mento Governance](governance-and-mento/understanding-mento-governance.md) and [MENTO Tokenomics](governance-and-mento/mento-tokenomics.md).
 
-**MENTO token.** MENTO is the protocol's **governance and value-accrual token**. Holders vote on parameter changes, oracle config, and treasury use. Locking MENTO as **veMENTO** (vote-escrowed) increases voting power (longer lock = more weight) and can entitle holders to a share of **protocol revenue** (trading fees, reserve yield, CDP interest, rebalancing-related fees). A significant part of protocol revenue is expected to flow to MENTO token holders through **protocol-driven MENTO token buybacks**. Supply is capped at 1 billion; distribution includes community treasury, team/contributors, airdrops, and reserve safety fund. Revenue distribution (e.g. veMENTO stakers, stability pools, buyback-and-burn) is governable. See [MENTO Tokenomics](governance-and-mento/mento-tokenomics.md) and [veMENTO & Voting Power](governance-and-mento/participating-in-governance/vemento-and-voting-power.md).
+**MENTO token.** MENTO is the protocol's **governance and value-accrual token**. Holders vote on parameter changes, oracle config, and treasury use. Locking MENTO as **veMENTO** (vote-escrowed) increases voting power (longer lock = more weight). Governance can direct **protocol revenue** (trading fees, reserve yield, CDP interest, rebalancing-related fees) toward uses such as **MENTO buybacks**, treasury growth, and liquidity programs. In the current design, value is expected to flow to MENTO holders **indirectly** through **protocol-driven MENTO token buybacks**, not through direct revenue sharing with veMENTO holders. See [MENTO Tokenomics](governance-and-mento/mento-tokenomics.md) and [veMENTO & Voting Power](governance-and-mento/participating-in-governance/vemento-and-voting-power.md).
 
 ---
 
 ## Incentive structure (V3)
+
+Unless noted otherwise, the figures below are **examples of the mechanism**. For **current deployed values**, see [Parameters](../build/deployments/parameters.md).
 
 Incentives align five groups: **CDP borrowers**, **Stability Pool (SP) depositors**, **FPMM LPs**, **keepers/facilitators**, and **MENTO token holders**.
 
 | Actor | Role and incentives |
 |-------|---------------------|
 | **CDP borrowers** | Pay ongoing interest; can take a short position by selling the stable or earn by providing liquidity in the SP or FPMM. |
-| **Stability Pool** | Holds deposited stables to backstop liquidations; earns a **governable share** of borrower interest (`sp_yield_split`) plus **liquidation gains**. On **block expansions**, a **SP provider fee** (e.g. 0.25% of rebalance notional) is paid by FPMM LPs to SP providers. |
-| **FPMM LPs** | Earn trading fees at the oracle price; may receive MENTO emissions (governable). Fund rebalancing incentives (e.g. SP provider fee on expansions). |
+| **Stability Pool** | Holds deposited stables to backstop liquidations; earns a **governable share** of borrower interest (`SP_YIELD_SPLIT`) plus **liquidation gains**. In the currently documented **GBPm/Celo** deployment, `SP_YIELD_SPLIT = 75%`. |
+| **FPMM LPs** | Earn trading fees at the oracle price; may receive MENTO emissions (governable). On CDP-backed pools they also fund the pool's capped rebalancing incentives. |
 | **Keepers** | Earn bounties for triggering rebalances (e.g. block expansions, redemptions). |
 | **MENTO holders** | Govern parameters (fees, `sp_yield_split`, rebalance incentives, emissions) and treasury use (e.g. buy-backs, LP/SP incentives). |
 
@@ -32,14 +34,16 @@ Incentives align five groups: **CDP borrowers**, **Stability Pool (SP) depositor
 
 ## Revenue overview (CDP-backed pools)
 
+The table below uses the currently documented **GBPm on Celo** deployment as the concrete reference point where the docs provide one. Values may differ by pool and chain.
+
 | Source | Share / parameter | Recipient |
 |--------|-------------------|-----------|
-| Borrower interest | `sp_yield_split` (e.g. 60%) | Stability Pool depositors |
-| Borrower interest | `1 − sp_yield_split` (e.g. 40%) | Mento Protocol Treasury |
-| Liquidations | Liquidation penalty (e.g. 2%) | Stability Pool depositors |
-| Redemption fees | e.g. 0.5% of redemption notional | Redeemed CDPs |
+| Borrower interest | `SP_YIELD_SPLIT = 75%` | Stability Pool depositors |
+| Borrower interest | `25%` treasury share | Mento Protocol Treasury |
+| Liquidations | `LIQUIDATION_PENALTY_SP = 5%` | Stability Pool depositors |
+| Redemption fees | `REDEMPTION_FEE_FLOOR = 0.5%` | Redeemed CDPs |
 | FPMM trading fees | LP fee + optional protocol fee | FPMM LPs; protocol |
-| SP provider fee (expansions) | e.g. 0.25% of expansion notional | SP providers (paid by FPMM LPs) |
+| CDP strategy liquidity-source incentive | `0.05%` on expansion; `0.05%` on contraction; protocol split `0%` | Liquidity source used by the strategy |
 | MENTO emissions | Governable | LPs, keepers, partners (bootstrapping; expected to taper) |
 
 Reserve-backed pools (USDm, EURm) do not have CDP interest or SP; rebalancing is via the Reserve strategy with a capped rebalance incentive.

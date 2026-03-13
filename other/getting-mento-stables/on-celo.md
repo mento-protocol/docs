@@ -4,7 +4,7 @@ Mento stables are available on the Celo blockchain. This guide covers how to get
 
 ## Swap at oracle rate (USDm, EURm, BRLm, XOFm)
 
-The most direct way to get **Reserve-backed** Mento stables (USDm, EURm, BRLm, XOFm) is by swapping on the Mento protocol. FPMM pools use **oracle-based rates**: you get the same rate you see off-chain for the pair (e.g. EUR/USD). **There is no slippage** — the rate is fixed by the oracle for your trade size.
+The most direct way to get these Mento stables on Celo is by swapping on the Mento protocol. FPMM pools use **oracle-based rates**: you get the same rate you see off-chain for the pair (e.g. EUR/USD). **There is no slippage** — the rate is fixed by the oracle for your trade size.
 
 ### Using the Mento app
 
@@ -14,7 +14,7 @@ The most direct way to get **Reserve-backed** Mento stables (USDm, EURm, BRLm, X
 4. Choose your desired stable (USDm, EURm, BRLm, XOFm)
 5. Enter amount and confirm the swap
 
-The app shows the oracle rate and fees upfront. No curve, no slippage.
+The app shows the oracle rate and fees upfront. No curve, no slippage. In the backing model documented for **Mento V3**, **USDm** and **EURm** are Reserve-backed, while **GBPm** is CDP-backed.
 
 ## GBPm: borrow via CDP
 
