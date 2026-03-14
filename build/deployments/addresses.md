@@ -103,10 +103,24 @@ Addresses below are from the current deployment manifests. **Proxy vs implementa
 {% endtab %}
 
 {% tab title="Monad Mainnet (143)" %}
-<table><thead><tr><th>Contract</th><th>Address</th><th>Notes</th></tr></thead><tbody>
-<tr><td>GBPm</td><td><a href="https://monadscan.com/address/0xddF082068Caa5B941ED8c603ADf0cecBdBb59f8E">0xddF082068Caa5B941ED8c603ADf0cecBdBb59f8E</a></td><td>Token</td></tr>
-<tr><td>USDm</td><td><a href="https://monadscan.com/address/0x866a7e4611C127DCe1a14C6841D2eA962A68dc88">0x866a7e4611C127DCe1a14C6841D2eA962A68dc88</a></td><td>Token</td></tr>
-<tr><td>StableTokenSpoke</td><td><a href="https://monadscan.com/address/0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91">0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91</a></td><td>Token</td></tr>
+<table><thead><tr><th>Contract</th><th>Address</th><th>Implementation</th></tr></thead><tbody>
+<tr><td>ChainlinkRelayerFactory</td><td><a href="https://monadscan.com/address/0x71c2333928Af2dB247d9C0aa380DF1cCCa53899A">0x71c2333928Af2dB247d9C0aa380DF1cCCa53899A</a></td><td><a href="https://monadscan.com/address/0x9aFd679045B571066a6d8491C25d2D6ba5431d3f">0x9aFd679045B571066a6d8491C25d2D6ba5431d3f</a></td></tr>
+<tr><td>FPMMFactory</td><td><a href="https://monadscan.com/address/0xa849b475FE5a4B5C9C3280152c7a1945b907613b">0xa849b475FE5a4B5C9C3280152c7a1945b907613b</a></td><td><a href="https://monadscan.com/address/0xCC5bB0ba252082213ce1303CBfbA8D56CD872A8a">0xCC5bB0ba252082213ce1303CBfbA8D56CD872A8a</a></td></tr>
+<tr><td>FactoryRegistry</td><td><a href="https://monadscan.com/address/0x7b2f7d11eabD576782f77bF2CcA46a853410AdF6">0x7b2f7d11eabD576782f77bF2CcA46a853410AdF6</a></td><td><a href="https://monadscan.com/address/0x8124b66595Ff4E79B7F0c1b1101AFa501d219311">0x8124b66595Ff4E79B7F0c1b1101AFa501d219311</a></td></tr>
+<tr><td>OracleAdapter</td><td><a href="https://monadscan.com/address/0xa472fBBF4b890A54381977ac392BdF82EeC4383a">0xa472fBBF4b890A54381977ac392BdF82EeC4383a</a></td><td><a href="https://monadscan.com/address/0xc1B767756F582d124E76BB3e246f31e6aB256059">0xc1B767756F582d124E76BB3e246f31e6aB256059</a></td></tr>
+<tr><td>Router</td><td><a href="https://monadscan.com/address/0x4861840C2EfB2b98312B0aE34d86fD73E8f9B6f6">0x4861840C2EfB2b98312B0aE34d86fD73E8f9B6f6</a></td><td>—</td></tr>
+<tr><td>ReserveV2</td><td><a href="https://monadscan.com/address/0x4255Cf38e51516766180b33122029A88Cb853806">0x4255Cf38e51516766180b33122029A88Cb853806</a></td><td><a href="https://monadscan.com/address/0xC16d23E4789e2B214D71C1Df7820a4dDAb1Df5FF">0xC16d23E4789e2B214D71C1Df7820a4dDAb1Df5FF</a></td></tr>
+<tr><td>ReserveLiquidityStrategy</td><td><a href="https://monadscan.com/address/0xa0fB8b16ce6AF3634fF9F3f4F40E49E1C1ae4f0B">0xa0fB8b16ce6AF3634fF9F3f4F40E49E1C1ae4f0B</a></td><td><a href="https://monadscan.com/address/0x420FbDB50dadF0286144BFF91ed62A6893dee148">0x420FbDB50dadF0286144BFF91ed62A6893dee148</a></td></tr>
+<tr><td>OpenLiquidityStrategy</td><td><a href="https://monadscan.com/address/0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f">0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f</a></td><td><a href="https://monadscan.com/address/0x10e9bd0b70716dd9e0d41ca274a5846ff513e2b7">0x10e9bd0b70716dd9e0d41ca274a5846ff513e2b7</a></td></tr>
+<tr><td>FPMM (pool)</td><td><a href="https://monadscan.com/address/0x8cB0518a0510Ab62450F79f3cD9EE0cbdDB77F30">0x8cB0518a0510Ab62450F79f3cD9EE0cbdDB77F30</a></td><td>—</td></tr>
+<tr><td>BreakerBox</td><td><a href="https://monadscan.com/address/0x9fc1E0d10fb38954Da385B8B25aB2BbaF3241722">0x9fc1E0d10fb38954Da385B8B25aB2BbaF3241722</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>MarketHoursBreaker</td><td><a href="https://monadscan.com/address/0x0A18B8e7338eF8d6025529257aA5CCd5A14e0DAF">0x0A18B8e7338eF8d6025529257aA5CCd5A14e0DAF</a></td><td>—</td></tr>
+<tr><td>MedianDeltaBreaker</td><td><a href="https://monadscan.com/address/0x3E4F2Bca4f7192Be4C3c5E5bD4840F2E90a8Ba84">0x3E4F2Bca4f7192Be4C3c5E5bD4840F2E90a8Ba84</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>ValueDeltaBreaker</td><td><a href="https://monadscan.com/address/0xca2e7563dfC30bc94687F3deAcF682E1dBAffA13">0xca2e7563dfC30bc94687F3deAcF682E1dBAffA13</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>SortedOracles</td><td><a href="https://monadscan.com/address/0x6f92C745346057a61b259579256159458a0a6A92">0x6f92C745346057a61b259579256159458a0a6A92</a></td><td><a href="https://monadscan.com/address/0xbEe346578929D70F02C3c236D709F0EfFb0cb192">0xbEe346578929D70F02C3c236D709F0EfFb0cb192</a></td></tr>
+<tr><td>StableTokenSpoke</td><td><a href="https://monadscan.com/address/0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91">0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91</a></td><td>❌ Implementation</td></tr>
+<tr><td>GBPm</td><td><a href="https://monadscan.com/address/0xddF082068Caa5B941ED8c603ADf0cecBdBb59f8E">0xddF082068Caa5B941ED8c603ADf0cecBdBb59f8E</a></td><td><a href="https://monadscan.com/address/0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91">0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91</a></td></tr>
+<tr><td>USDm</td><td><a href="https://monadscan.com/address/0x866a7e4611C127DCe1a14C6841D2eA962A68dc88">0x866a7e4611C127DCe1a14C6841D2eA962A68dc88</a></td><td><a href="https://monadscan.com/address/0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91">0xa8caCd5d58F98Ee303fb54EF101AA4e277777E91</a></td></tr>
 </tbody></table>
 {% endtab %}
 {% endtabs %}
