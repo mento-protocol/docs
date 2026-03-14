@@ -2,6 +2,8 @@
 
 This guide describes how to use Mento V3’s **oracle** layer for FX rates in your application. In V3, FPMM pools get their swap rate from the **OracleAdapter**, which returns a rate only when it is **valid** (recent, trading not suspended, and for FX pairs, market hours open). Integrating with the **OracleAdapter** gives you the same rate and validity rules the pools use.
 
+This is important for fiat FX integrations because the reference markets are not 24/7: Chainlink FX feeds generally stop updating on weekends and certain holidays, and Mento’s FX-validity path intentionally mirrors those closures.
+
 **Contract reference:** [Smart Contracts > OracleAdapter](../smart-contracts/oracleadapter.md)
 
 ---
@@ -50,6 +52,8 @@ Use **getFXRateIfValid(rateFeedID)** when you need the same rate the FPMM would 
 - FX market is closed (when FX market hours are enforced).
 - Trading is suspended (BreakerBox).
 - There is no recent rate (stale).
+
+In the current `MarketHoursBreaker`, FX is treated as closed from **Friday 21:00 UTC** until **Sunday 23:00 UTC**, on **Dec 25** and **Jan 1**, and after **22:00 UTC** on **Dec 24** and **Dec 31**.
 
 ```solidity
 try adapter.getFXRateIfValid(rateFeedID) returns (uint256 num, uint256 denom) {

@@ -1,6 +1,6 @@
 # CDPs (Collateralized Debt Positions)
 
-On Mento V3, some stablecoins (e.g. **GBPm**) are **synthetic**: they are created when users **borrow** against collateral. Mento’s CDP system uses **USDm as the collateral asset**: you lock USDm and **borrow** other stables such as **GBPm**. This is a **stable-on-stable** setup rather than crypto collateral.
+On Mento V3, **CDP-backed stablecoins are FX stables**: they are created when users **borrow** against collateral. Mento’s CDP system uses **USDm as the collateral asset**: you lock USDm and **borrow** FX-pegged stables such as **GBPm**. This is a **stable-on-stable** setup rather than crypto collateral.
 
 ---
 
@@ -11,6 +11,8 @@ On Mento V3, some stablecoins (e.g. **GBPm**) are **synthetic**: they are create
 - **Stability pool** — Deposit the debt token (e.g. GBPm) into a stability pool used in liquidations; you may earn rewards.
 
 Troves can be **adjusted** (add/withdraw collateral, borrow more, repay) and **closed**. The system uses a **Stability Pool** and **liquidations** when troves become undercollateralized.
+
+Because all Mento CDPs are **FX CDPs**, they also inherit **FX market-hours restrictions** from `FXPriceFeed -> OracleAdapter -> MarketHoursBreaker`.
 
 ---
 
@@ -32,6 +34,39 @@ For full protocol and contract documentation (state variables, liquidation thres
 * **[Liquity v2 whitepaper](https://www.liquity.org/blog/liquity-v2-whitepaper)** — design and economics.
 
 For **Mento-specific** implementation (USDm collateral, FX oracles, multi-instance architecture, and FXPriceFeed), see the **[mento-protocol/bold README](https://github.com/mento-protocol/bold)**.
+
+---
+
+## Weekend And Holiday Impact
+
+Mento CDPs use `FXPriceFeed`, which reads the branch FX rate through `OracleAdapter.getFXRateIfValid(rateFeedID)`. As a result, normal price-dependent CDP actions are only available when the FX market is considered open.
+
+Under the current `MarketHoursBreaker`, FX is treated as closed:
+
+- from **Friday 21:00 UTC** until **Sunday 23:00 UTC**
+- on **Dec 25** and **Jan 1**
+- after **22:00 UTC** on **Dec 24** and **Dec 31**
+
+### Not Possible While FX Markets Are Closed
+
+- **Open a trove**
+- **Adjust a trove**: add collateral, withdraw collateral, borrow more, repay, or make a combined adjustment
+- **Close a trove**
+- **Normal liquidations**
+- **Normal redemptions**
+- **Some advanced rate-management actions** if they require a fresh price for upfront-fee or collateral-ratio checks
+
+### Still Possible While FX Markets Are Closed
+
+- **Deposit to the Stability Pool**
+- **Withdraw from the Stability Pool**
+- **Claim existing Stability Pool collateral gains**
+
+So the Stability Pool itself is **not shut down on weekends**. The important limitation is indirect: if liquidations are blocked, the Stability Pool will generally **not receive new liquidation-driven gains** until the FX market reopens.
+
+### Emergency Shutdown Mode
+
+If a branch has already entered **shutdown**, `FXPriceFeed` returns its `lastValidPrice` instead of reading the live FX oracle path. In that emergency mode, shutdown-specific operations such as **urgent redemption** are governed by shutdown logic rather than the ordinary market-hours gate.
 
 ---
 

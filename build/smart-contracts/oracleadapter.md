@@ -2,6 +2,8 @@
 
 The **OracleAdapter** is the single interface the FPMM pool uses to obtain the swap rate. It returns a rate only when it is **valid**; otherwise it reverts. Validity combines: **recency** of the feed, **trading mode** from BreakerBox (e.g. trading suspended when a breaker has tripped), and, for FX pairs, **FX market hours**. The pool calls `getFXRateIfValid(rateFeedID)` on every quote and swap; if the adapter reverts, the swap path reverts.
 
+This matters for fiat FX feeds because the reference markets are not 24/7: Chainlink FX rates typically stop updating on weekends and certain holidays, and Mento mirrors that by rejecting FX-priced swaps when the configured market-hours breaker says the market is closed.
+
 **Contract:** [mento-protocol/mento-core](https://github.com/mento-protocol/mento-core) — `contracts/oracles/OracleAdapter.sol`
 
 ---
@@ -72,6 +74,8 @@ Each price feed is identified by a **rateFeedID** (an address). For CELO/cStable
   2. **Trading mode** for this feed is bidirectional (`breakerBox.getRateFeedTradingMode(rateFeedID) == TRADING_MODE_BIDIRECTIONAL`).  
   3. **Recent rate:** `medianTimestamp(rateFeedID) >= block.timestamp - reportExpiry` (report expiry comes from `sortedOracles.getTokenReportExpirySeconds(rateFeedID)`).  
   Otherwise reverts with `FXMarketClosed`, `TradingSuspended`, or `NoRecentRate`.
+
+  In the current `MarketHoursBreaker`, FX is treated as closed from **Friday 21:00 UTC** until **Sunday 23:00 UTC**, on **Dec 25** and **Jan 1**, and after **22:00 UTC** on **Dec 24** and **Dec 31**.
 
 - **getRateIfValid(rateFeedID)** — Same as above but **does not** check FX market hours. Used when market-hours gating is not required.
 

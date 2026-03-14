@@ -128,6 +128,8 @@ Oracle-priced **GBPm/USDm** pool deployed on both Celo and Monad. **Celo** has a
 
 The following parameters apply to the **CDP system** (Bold / Liquity v2 fork) used for GBPm on Celo. This is a separate deployment from the GBPm/USDm FPMM pool; the pool uses [CDPLiquidityStrategy](smart-contracts/liquidity-strategies.md#cdpliquiditystrategy) to rebalance against the CDP. CDP contract addresses are in [Addresses](addresses.md#cdp-bold--liquity-v2-fork).
 
+Because Mento CDPs are **FX CDPs**, the branch price feed is gated by FX market hours through `FXPriceFeed -> OracleAdapter -> MarketHoursBreaker`. In practice, normal price-dependent trove operations, liquidations, and standard redemptions are unavailable while the FX market is closed (for example on weekends), while regular Stability Pool deposit / withdraw / claim flows remain available.
+
 | Parameter | Value | Units |
 |-----------|-------|-------|
 | MIN_DEBT | 1,000 | GBPm |
