@@ -4,6 +4,8 @@
 
 This page walks you through getting **USDm** and **GBPm** on Monad (or on Celo, then bridging) and adding liquidity to earn.
 
+One important difference between the two campaign pools: **GBPm/USDm** is an **FX-priced** pool and inherits **FX market-hours restrictions** from `OracleAdapter -> MarketHoursBreaker`, while **USDC/USDm** is **not** subject to that specific weekend/holiday gate.
+
 ---
 
 ## Why provide liquidity on these pools?
@@ -73,6 +75,30 @@ Once you have **USDm** and/or **GBPm** (and the other side of the pair) on **Mon
 2. Connect your wallet and ensure you’re on **Monad**.
 3. Enter amounts for both sides of the pair (e.g. USDC and USDm, or GBPm and USDm). The app shows the required ratio.
 4. Confirm. You’re now an LP and will earn swap fees plus Merkl rewards (in **USDm**) for the campaign period.
+
+---
+
+## Weekend And Holiday Impact
+
+The two campaign pools do **not** behave the same way on weekends and holidays:
+
+- **USDC/USDm** — not subject to the FX market-hours breaker
+- **GBPm/USDm** — subject to the FX market-hours breaker because it depends on a live GBP/USD-style FX rate
+
+Under the current `MarketHoursBreaker`, FX is treated as closed:
+
+- from **Friday 21:00 UTC** until **Sunday 23:00 UTC**
+- on **Dec 25** and **Jan 1**
+- after **22:00 UTC** on **Dec 24** and **Dec 31**
+
+### What This Means In Practice
+
+- On **GBPm/USDm**, **quotes and swaps** are unavailable while FX markets are closed
+- On **GBPm/USDm**, **rebalancing** is also unavailable while FX markets are closed
+- On **USDC/USDm**, this specific FX weekend/holiday restriction does **not** apply
+- If you already hold both tokens, **adding or removing liquidity** is not blocked by this FX market-hours gate at the pool level
+
+If you want to enter the **GBPm/USDm** campaign by swapping into GBPm first, do that while FX markets are open, or wait until the market reopens.
 
 ---
 

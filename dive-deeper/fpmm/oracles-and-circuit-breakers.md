@@ -2,6 +2,8 @@
 
 This page explains how **oracles** and **price feeds** work in Mento V3, and how **circuit breakers** gate trading. An **oracle** is an external source of price data that the protocol trusts. In V3, each FPMM pool uses an oracle to set the **swap rate**: every swap executes at that rate (minus fee), so oracle quality and validity are central to safety.
 
+For **FX-priced FPMMs**, this also means pool activity inherits **FX market-hours restrictions** from `OracleAdapter -> MarketHoursBreaker`. In practice, affected pools can be unavailable for quoting and swapping on weekends and certain holidays even if the last oracle price is still on-chain.
+
 ---
 
 ## Why oracles matter in Mento V3
@@ -25,6 +27,32 @@ In Mento V3, pools get the oracle rate through an **OracleAdapter**. The pool ca
 - **FX market hours** (if configured) — For FX pairs, the adapter may only consider the rate valid during certain hours when reference markets are open.
 
 So the **OracleAdapter** is the single interface the pool uses: it combines the raw price feed (e.g. from Chainlink or from an on-chain median of reports) with **validity** and **breaker** logic. If the adapter says the rate is invalid, the pool does not swap.
+
+---
+
+## Weekend And Holiday Impact
+
+For FX-priced FPMMs, `OracleAdapter.getFXRateIfValid(rateFeedID)` checks not only recency and trading mode, but also whether the FX market is currently considered open.
+
+Under the current `MarketHoursBreaker`, FX is treated as closed:
+
+- from **Friday 21:00 UTC** until **Sunday 23:00 UTC**
+- on **Dec 25** and **Jan 1**
+- after **22:00 UTC** on **Dec 24** and **Dec 31**
+
+### Not Possible While FX Markets Are Closed
+
+- **Quote or swap** on affected FX-priced pools such as **GBPm/USDm** or **EURm/USDm**
+- **Rebalance** affected FX-priced pools, because the pool cannot read a valid FX rate
+- **App or SDK flows** that depend on a live FX quote for those pools
+
+### Still Possible While FX Markets Are Closed
+
+- **Add liquidity** (`mint`) to an existing pool if you already hold both tokens in the required ratio
+- **Remove liquidity** (`burn`) from an existing pool
+- Use pools that do **not** rely on FX market-hours gating, such as **USDC/USDm**
+
+So the weekend/holiday restriction is not a generic shutdown of all FPMMs. It specifically affects **FX-priced pool operations that require a live valid FX rate**.
 
 ---
 

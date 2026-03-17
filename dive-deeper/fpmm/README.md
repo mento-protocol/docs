@@ -2,6 +2,8 @@
 
 This page is the **reference** for how FPMMs work in Mento V3: why Mento uses oracle pricing, the invariant, operations, rebalancing, and configuration.
 
+Because **FX-priced FPMMs** read rates through `OracleAdapter.getFXRateIfValid(rateFeedID)`, they also inherit **FX market-hours restrictions** from `OracleAdapter -> MarketHoursBreaker`.
+
 ---
 
 ## Why oracle pricing? (and why not curve-based AMMs)
@@ -64,6 +66,32 @@ So “value per LP share at the oracle” is the **single number** that the prot
 *The “Preserved” column holds when we ignore fees and incentives; in practice, swap fees and the rebalance incentive affect the exact accounting.*
 
 Every swap also satisfies **value protection**: after the swap, the pool’s reserve value at the oracle (in one chosen numéraire) must not be less than before (once fee value is credited). If the oracle is wrong and trading is not halted, value can still be extracted compared to a fair price.
+
+---
+
+## Weekend And Holiday Impact
+
+FX-priced FPMMs use `OracleAdapter.getFXRateIfValid(rateFeedID)` for quotes, swaps, and rebalancing checks. As a result, those actions are only available when the FX market is considered open.
+
+Under the current `MarketHoursBreaker`, FX is treated as closed:
+
+- from **Friday 21:00 UTC** until **Sunday 23:00 UTC**
+- on **Dec 25** and **Jan 1**
+- after **22:00 UTC** on **Dec 24** and **Dec 31**
+
+### Not Possible While FX Markets Are Closed
+
+- **Quote or swap** on affected FX-priced pools such as **GBPm/USDm** or **EURm/USDm**
+- **Rebalance** affected FX-priced pools, because the pool cannot read a valid FX rate
+- **App or SDK flows** that depend on a live FX quote for those pools
+
+### Still Possible While FX Markets Are Closed
+
+- **Add liquidity** (`mint`) to an existing pool if you already hold both tokens in the required ratio
+- **Remove liquidity** (`burn`) from an existing pool
+- Use pools that do **not** rely on FX market-hours gating, such as **USDC/USDm**
+
+So the weekend/holiday restriction does **not** shut down all FPMM activity. It specifically gates **FX-priced pool operations that require a live valid FX rate**.
 
 ---
 
