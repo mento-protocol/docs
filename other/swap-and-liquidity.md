@@ -16,7 +16,7 @@ If any of these fail, the swap reverts.
 
 ### How to swap in practice
 
-1. **Use the Mento app** — [app.mento.org](https://app.mento.org/): connect your wallet, choose the pair (e.g. USDC ↔ USDm), enter amount, and submit. The app will quote the oracle rate (minus fee) and execute the swap.
+1. **Use the Mento app** — [app.mento.org](https://app.mento.org/?chain=42220): connect your wallet, choose the pair (e.g. USDC ↔ USDm), enter amount, and submit. The app will quote the oracle rate (minus fee) and execute the swap.
 2. **Integrate** — Use the pool’s `getAmountOut` for a quote and the router or pool’s swap function to execute. See [Integration](../build/integration/README.md) and the [Smart Contracts](../build/smart-contracts/README.md).
 
 ---
@@ -30,7 +30,7 @@ If any of these fail, the swap reverts.
 
 ### How to add liquidity in practice
 
-1. **Mento app** — [app.mento.org](https://app.mento.org/): connect wallet, select the pool, enter amounts for both tokens (the app will show the required ratio), and confirm.
+1. **Mento app** — [app.mento.org](https://app.mento.org/pools?chain=42220): connect wallet, select the pool, enter amounts for both tokens (the app will show the required ratio), and confirm.
 2. **Contracts** — Call the pool’s mint function with the two token amounts; you receive LP tokens.
 
 ---

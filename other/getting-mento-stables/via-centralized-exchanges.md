@@ -38,7 +38,7 @@ Most users acquire Mento stables by:
    * Enter your Celo wallet address
    * Confirm withdrawal
 3. **Swap for Mento Stables**
-   * Visit [app.mento.org](https://app.mento.org/)
+   * Visit [app.mento.org](https://app.mento.org/?chain=42220)
    * Connect wallet with CELO
    * Swap CELO → USDm, EURm, etc
 

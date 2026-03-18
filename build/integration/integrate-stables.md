@@ -115,7 +115,7 @@ Mento stables are deployed on Celo and other supported chains. For cross-chain u
 
 ## Testing
 
-1. Get testnet CELO from the [Celo Faucet](https://faucet.celo.org/), then swap for your desired token on the [Mento App](https://app.mento.org)
+1. Get testnet CELO from the [Celo Faucet](https://faucet.celo.org/), then swap for your desired token on the [Mento App](https://app.mento.org/?chain=42220)
 2. Use Alfajores testnet addresses for development
 3. Test all ERC-20 operations (transfer, approve, etc.)
 4. Verify fiat value display matches user expectations

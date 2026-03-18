@@ -50,7 +50,7 @@ Tokens bridged using the Portal bridge will arrive in your wallet within a few m
 
 Once your tokens arrive on Celo:
 
-* Swap to Mento stables on [app.mento.org](https://app.mento.org/)
+* Swap to Mento stables on [app.mento.org](https://app.mento.org/?chain=42220)
 * Or use DEXs like Uniswap, Curve, or Ubeswap
 
 ## Multichain Future with Wormhole NTT

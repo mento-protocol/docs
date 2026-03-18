@@ -10,7 +10,7 @@ Choose what you want to do first — swap, add liquidity, borrow, or earn (Stabi
 
 ## ✨ Your first on-chain FX swap — no slippage
 
-1. Go to **[app.mento.org](https://app.mento.org/)** and **connect your wallet** (header; e.g. MetaMask, Valora) on a supported chain (e.g. Celo).
+1. Go to **[app.mento.org](https://app.mento.org/?chain=42220)** and **connect your wallet** (header; e.g. MetaMask, Valora) on a supported chain (e.g. Celo).
 2. On the swap screen, click **Select** next to **From** and choose the token you’re selling (e.g. USDC). Click **Select** next to **To** and choose the token you’re buying (e.g. GBPm). Enter the amount — or click **MAX** to use your full balance.
 3. Click **Swap**. If the app asks for token approval first, confirm **Approve …**, then click **Swap** again.
 4. On the confirmation screen, check the rate and fees, then click **Confirm Swap**.
@@ -24,7 +24,7 @@ You get the same rate you’d see off-chain for GBP/USD. No curve, no slippage. 
 ## 💧 Add liquidity and earn fees
 
 1. **Get both tokens** — Use the swap flow above to get each side of the pair (e.g. some GBPm and some USDm), or source them elsewhere (CEX, bridge).
-2. Go to **[app.mento.org](https://app.mento.org/)** and **connect your wallet**.
+2. Go to **[app.mento.org](https://app.mento.org/pools?chain=42220)** and **connect your wallet**.
 3. Open **Pools** or **Liquidity**. Select a pool (e.g. **GBPm/USDm**).
 4. Enter amounts for both tokens; the app shows the required ratio. Confirm. You’re now an LP and earn fees from swaps. 🎯
 
@@ -38,7 +38,7 @@ You get the same rate you’d see off-chain for GBP/USD. No curve, no slippage. 
 
 A **Trove** (CDP) lets you lock **USDm** as collateral and borrow another stable (e.g. GBPm) against it. You set your own interest rate; there’s no fixed repayment schedule. Keep your collateral ratio above the minimum or the position can be liquidated.
 
-1. Go to **[app.mento.org](https://app.mento.org/)** and **connect your wallet** (e.g. Celo).
+1. Go to **[app.mento.org](https://app.mento.org/borrow?chain=42220)** and **connect your wallet** (e.g. Celo).
 2. Open **Borrow**. Select the asset to borrow (e.g. **GBPm**) in the **dropdown at the top right**, then click **+ Open Your First Trove**.
 3. On the **Open a Trove** screen:
    - **COLLATERAL** — Enter how much USDm to deposit (or **MAX**). Your balance is shown next to the field.
@@ -56,7 +56,7 @@ To earn from the Stability pool with your borrowed GBPm (or any CDP-based stable
 
 The **Stability pool** is only available for **CDP-based stablecoins** (e.g. **GBPm**), not for Reserve-backed stables like USDm or EURm. Deposit into the pool to earn a share of **trove interest** (interest paid by borrowers) and **liquidation gains** (when liquidations occur, your deposit repays debt and you receive collateral at a discount). If the app shows additional claimable rewards, those are program-specific and may vary over time. No lock-up — withdraw anytime.
 
-1. Go to **[app.mento.org](https://app.mento.org/)** and **connect your wallet**.
+1. Go to **[app.mento.org](https://app.mento.org/earn?chain=42220)** and **connect your wallet**.
 2. Switch to the **Earn** tab (top nav: Swap, Pool, Borrow, **Earn**).
 3. Select the asset (e.g. **GBPm**) in the currency selector. You'll see the **Stability pool** for that asset: total deposits, pool APY, avg. borrow rate.
 4. Under **Deposit**, enter an amount (or use **25%**, **50%**, **75%**, **MAX**). Optionally check **Claim rewards with deposit** to claim pending rewards when you deposit. Click **Enter amount to deposit** (or the active deposit button) to confirm. No lock-up — you can withdraw anytime. 🎯

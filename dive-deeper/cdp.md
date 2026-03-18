@@ -18,7 +18,7 @@ Because all Mento CDPs are **FX CDPs**, they also inherit **FX market-hours rest
 
 ## How to do it
 
-**Via the Mento app:** Use the **[Mento app](https://app.mento.org/)** for borrow, repay, and stability pool flows. Connect your wallet (e.g. on Celo), select the CDP product (e.g. GBPm), deposit USDm as collateral, and borrow the stable.
+**Via the Mento app:** Use the **[Mento app](https://app.mento.org/borrow?chain=42220)** for borrow, repay, and stability pool flows. Connect your wallet (e.g. on Celo), select the CDP product (e.g. GBPm), deposit USDm as collateral, and borrow the stable.
 
 **Via the SDK:** For programmatic or integrator use, the **[Mento SDK](../build/mento-sdk/README.md)** provides `mento.borrow`: open/adjust/close troves, read trove data and system params, and predict upfront fees. See [Borrow (CDP)](../build/mento-sdk/guides/borrow.md). The SDK identifies each CDP system by the **debt token** (the stable you borrow, e.g. GBPm).
 

@@ -14,8 +14,8 @@
 
 | Path | When to use it | Where |
 |------|----------------|--------|
-| **Mento app (swap)** | You have USDC, USDT, EUROC, or another supported token and want USDm, EURm, etc. | [app.mento.org](https://app.mento.org/) — connect wallet, choose pair, swap at oracle rate. |
-| **Mento app (borrow)** | You want to borrow a Mento stable (e.g. GBPm) against collateral. | [app.mento.org](https://app.mento.org/) — CDP / borrow flow. |
+| **Mento app (swap)** | You have USDC, USDT, EUROC, or another supported token and want USDm, EURm, etc. | [app.mento.org](https://app.mento.org/?chain=42220) — connect wallet, choose pair, swap at oracle rate. |
+| **Mento app (borrow)** | You want to borrow a Mento stable (e.g. GBPm) against collateral. | [app.mento.org](https://app.mento.org/borrow?chain=42220) — CDP / borrow flow. |
 | **On Celo** | You are on Celo and want to swap or add liquidity on Celo. | Same app; select Celo network. See [On Celo](on-celo.md) for Celo-specific notes. |
 | **On mobile** | You prefer a mobile wallet or app. | See [On mobile](on-mobile.md). |
 | **From another chain** | You hold assets on another chain and want Mento stables. | Bridge to a chain where Mento V3 is deployed, then use the app or a DEX there. See [From other chains](from-other-chains.md). |
@@ -28,7 +28,7 @@
 
 For most users, the simplest path is:
 
-1. Go to **[app.mento.org](https://app.mento.org/)**.
+1. Go to **[app.mento.org](https://app.mento.org/?chain=42220)**.
 2. Connect your wallet on a supported chain (e.g. Celo).
 3. To **get USDm or EURm**: choose the pair (e.g. USDC ↔ USDm) and **swap** at the oracle rate.
 4. To **get GBPm** (or other CDP-backed stables): use the **borrow** flow (collateralize and borrow).
