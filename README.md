@@ -22,6 +22,8 @@ For FX, the fair rate is already known off-chain. We don’t need the pool to *d
 
 Every Mento V3 swap pool is an FPMM. Each pool is tied to an **oracle** (external price feed) and **always quotes that rate** (minus a fee).
 
+**Today, Chainlink is the only oracle source used in Mento V3.** In practice, that means Mento's FX-priced pools use a **Chainlink-backed rate path** through the `OracleAdapter`.
+
 - No reserve-based curve → no curve-based slippage, no LVR from a stale pool price.
 - When the oracle is accurate, traders get the FX rate and **liquidity providers (LPs)** aren’t drained by arbitrage.
 
@@ -45,7 +47,7 @@ That makes the design natural: the core is to enforce that all operations are co
 
 ### How the protocol is structured
 
-Beyond the invariant, the protocol uses several building blocks—each with a different role. **Trading limits and the circuit breaker** protect the pool when the oracle is wrong, stale, or manipulated. **Liquidity strategies** address the fact that with no curve, reserves can become one-sided as users trade; they rebalance so the pool stays usable. **Fees and incentives** fund the protocol and reward different actors (LPs, keepers, governance); the swap spread in particular also adds a band where arbitrage is unprofitable if the oracle is slightly off.
+Beyond the invariant, the protocol uses several building blocks—each with a different role. **Trading limits and the circuit breaker** protect the pool when the oracle is wrong, stale, or manipulated. **Today that oracle path is Chainlink-only.** **Liquidity strategies** address the fact that with no curve, reserves can become one-sided as users trade; they rebalance so the pool stays usable. **Fees and incentives** fund the protocol and reward different actors (LPs, keepers, governance); the swap spread in particular also adds a band where arbitrage is unprofitable if the oracle is slightly off.
 
 | Piece | Role |
 |-------|------|
@@ -70,7 +72,7 @@ The documentation is split into four sections. Use the one that matches your goa
 
 **For:** Readers who want to understand how the protocol works under the hood.
 
-- **[FPMMs](dive-deeper/fpmm/README.md)** — Why Mento uses oracle pricing (and why curve-based AMMs don’t work well for FX), how Fixed-Price Market Makers work: the invariant, operations, rebalancing, and liquidity strategies. Subpages cover oracles & circuit breakers and TradingLimitsV2.
+- **[FPMMs](dive-deeper/fpmm/README.md)** — Why Mento uses oracle pricing (and why curve-based AMMs don’t work well for FX), how Fixed-Price Market Makers work, and how Mento currently relies on Chainlink as its oracle source. Subpages cover oracles & circuit breakers and TradingLimitsV2.
 - **[CDPs](dive-deeper/cdp.md)** — How collateralized debt positions back synthetic Mento stables (e.g. GBPm).
 - **[The Reserve](dive-deeper/the-reserve.md)** — How USDm and EURm are backed by the Reserve; two backing models (Reserve vs CDP).
 - **[Protocol Economics](dive-deeper/protocol-economics.md)** — Value flows, fees, incentives, and revenue (FPMM, CDP, MENTO).
@@ -82,7 +84,7 @@ The documentation is split into four sections. Use the one that matches your goa
 **For:** Developers and protocols integrating with Mento V3.
 
 - **[Repository Overview](build/repository-overview.md)** — Mento repos and where to find code, contracts, and tooling.
-- **[Integration](build/integration/README.md)** — How to add Mento stables, use oracles, and find deployment addresses. Links to the SDK, smart contracts, and deployments.
+- **[Integration](build/integration/README.md)** — How to add Mento stables, use Mento's Chainlink-backed oracle path, and find deployment addresses. Links to the SDK, smart contracts, and deployments.
 - **[Mento SDK](build/mento-sdk/README.md)** — JavaScript/TypeScript library for quotes and swaps.
 - **[Smart Contracts](build/smart-contracts/README.md)** — Contract reference (FPMM, oracles, limits, strategies).
 - **[Deployments](build/deployments/README.md)** — Addresses, verification, and parameters.

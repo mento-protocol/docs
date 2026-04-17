@@ -54,7 +54,7 @@ IOracleAdapter.RateInfo memory info = adapter.getRate(rateFeedID);
 
 | Field | Meaning |
 |-------|--------|
-| `sortedOracles` | Source of the median rate and timestamp for a given `rateFeedID`. |
+| `sortedOracles` | Source contract from which the adapter reads the current Chainlink-backed rate and timestamp for a given `rateFeedID`. |
 | `breakerBox` | Provides **trading mode** per rate feed (e.g. bidirectional vs suspended). |
 | `marketHoursBreaker` | Provides **FX market open/closed** for the current block timestamp. |
 | `l2SequencerUptimeFeed` | Optional Chainlink L2 sequencer feed; if set, can be used to gate on sequencer uptime. |
@@ -85,7 +85,7 @@ Each price feed is identified by a **rateFeedID** (an address). For CELO/cStable
 
 ## Rate source
 
-- **getRate(rateFeedID)** — Returns a **RateInfo** struct: `(numerator, denominator, tradingMode, isRecent, isFXMarketOpen)` without reverting. The actual rate comes from `sortedOracles.medianRate(rateFeedID)`. The adapter normalizes the denominator (SortedOracles uses 1e24; the adapter exposes 1e18 after scaling).  
+- **getRate(rateFeedID)** — Returns a **RateInfo** struct: `(numerator, denominator, tradingMode, isRecent, isFXMarketOpen)` without reverting. The actual rate comes from `sortedOracles.medianRate(rateFeedID)`. In current Mento V3 deployments, that path is Chainlink-backed. The adapter normalizes the denominator (SortedOracles uses 1e24; the adapter exposes 1e18 after scaling).  
   So the pool always gets the rate via the **validity-gated** path (`getFXRateIfValid`), not the raw median.
 
 ---

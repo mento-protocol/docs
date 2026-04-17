@@ -2,6 +2,8 @@
 
 This page explains how **oracles** and **price feeds** work in Mento V3, and how **circuit breakers** gate trading. An **oracle** is an external source of price data that the protocol trusts. In V3, each FPMM pool uses an oracle to set the **swap rate**: every swap executes at that rate (minus fee), so oracle quality and validity are central to safety.
 
+**Today, Chainlink is the only oracle source used in Mento V3.** The `OracleAdapter` is the protocol's validity-gated interface to that Chainlink-backed rate path.
+
 For **FX-priced FPMMs**, this also means pool activity inherits **FX market-hours restrictions** from `OracleAdapter -> MarketHoursBreaker`. In practice, affected pools can be unavailable for quoting and swapping on weekends and certain holidays even if the last oracle price is still on-chain.
 
 ---
@@ -26,7 +28,7 @@ In Mento V3, pools get the oracle rate through an **OracleAdapter**. The pool ca
 - **Trading mode** — A **BreakerBox** (or similar) can put feeds into a state where "trading" is suspended (e.g. after a large price move or during certain hours). The adapter checks this and may return "invalid" so the pool reverts the swap.
 - **FX market hours** (if configured) — For FX pairs, the adapter may only consider the rate valid during certain hours when reference markets are open.
 
-So the **OracleAdapter** is the single interface the pool uses: it combines the raw price feed (e.g. from Chainlink or from an on-chain median of reports) with **validity** and **breaker** logic. If the adapter says the rate is invalid, the pool does not swap.
+So the **OracleAdapter** is the single interface the pool uses: it combines the current **Chainlink-backed** price feed with **validity** and **breaker** logic. If the adapter says the rate is invalid, the pool does not swap.
 
 ---
 
@@ -69,12 +71,12 @@ Different breaker types exist; governance configures thresholds and cooldowns. *
 
 ---
 
-## Price sources and aggregation (background)
+## Current price source
 
-Behind the adapter, the protocol may use one or more **price sources**:
+Mento V3 currently uses **Chainlink as its only oracle source**.
 
-- **Chainlink** — Decentralized oracle network; many pairs have a Chainlink price feed. The adapter (or an underlying contract) may read from a Chainlink aggregator and enforce heartbeat and deviation checks.
-- **On-chain median (e.g. SortedOracles)** — Some deployments use a contract where multiple **reporters** submit prices and the contract stores a **median** and timestamps. Reports older than an **expiry** are considered stale. The OracleAdapter may read from this median and apply the same validity and breaker checks.
+- **Chainlink** — The economic price source for Mento V3 pools today. The adapter uses a Chainlink-backed rate path and enforces recency, trading-mode, and FX-market-hours checks before a pool can trade on that rate.
+- **OracleAdapter validity layer** — The adapter does more than return a price: it also checks whether trading should be allowed right now. So the production oracle path is not just "read Chainlink," but "read the Chainlink-backed rate and apply Mento validity rules."
 
 **Rate feed ID** — Each pool is configured with a **reference rate feed ID** (an identifier for the pair, e.g. USDC/USD). That ID is used when the pool asks the OracleAdapter for the rate. Governance or deployment config sets which feed each pool uses and whether to **invert** the rate.
 
@@ -84,7 +86,7 @@ Behind the adapter, the protocol may use one or more **price sources**:
 
 | Component | Role |
 |-----------|------|
-| **Oracle** | External source of price data; the pool uses it as the swap rate (minus fee). |
+| **Oracle** | External source of price data; in Mento V3 today this is Chainlink, and the pool uses that rate as the swap rate (minus fee). |
 | **OracleAdapter** | Contract the pool calls to get the rate; returns a rate only if **valid** (recent, trading allowed, breakers not tripped, etc.). |
 | **BreakerBox** | Monitors feeds and can set **trading mode** so the adapter refuses to return a rate (swaps revert). |
 | **Circuit breaker** | Rule that, when triggered (e.g. price move too large), halts trading for that feed until cooldown and normalization. |

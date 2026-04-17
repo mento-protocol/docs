@@ -1,6 +1,6 @@
 # Integration Overview
 
-**Who this is for:** Developers and protocols that want to add Mento stables, use Mento oracles, or look up deployment addresses. Mento V3 is a DEX for on-chain FX: FPMM pools swap at the oracle rate. This guide covers the main integration paths and points to the [SDK](../mento-sdk/README.md), [Smart Contracts](../smart-contracts/README.md), and [Deployments](../deployments/README.md) for implementation details.
+**Who this is for:** Developers and protocols that want to add Mento stables, use Mento's oracle path, or look up deployment addresses. Mento V3 is a DEX for on-chain FX: FPMM pools swap at the oracle rate. Today, that oracle source is **Chainlink**. This guide covers the main integration paths and points to the [SDK](../mento-sdk/README.md), [Smart Contracts](../smart-contracts/README.md), and [Deployments](../deployments/README.md) for implementation details.
 
 ## Integration Guides
 
@@ -10,7 +10,7 @@ Add support for Mento stable assets (USDm, EURm, GBPm, etc.) in your DeFi protoc
 
 ### [Integrate Oracles](integrate-oracles.md)
 
-Use Mento's price feed infrastructure for reliable FX rates in DeFi protocols, analytics, or risk management.
+Use Mento's Chainlink-backed oracle path for reliable FX rates in DeFi protocols, analytics, or risk management.
 
 ### [Deployments & addresses](integrate-mento-stables.md)
 

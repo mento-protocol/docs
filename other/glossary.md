@@ -17,7 +17,7 @@ Short definitions for terms used in the Mento V3 docs. For full context, see [Ov
 | **Liquidity strategy** | A smart contract allowlisted by a pool that can call the pool's rebalance function (e.g. Reserve, CDP). |
 | **LVR** (loss-versus-rebalancing) | In curve-based AMMs, loss to LPs when arbitrageurs trade against a stale pool price. In an FPMM the pool always quotes the oracle, so LVR from a stale curve is zero. |
 | **Mento stables** | Mento stablecoins: USDm, EURm, GBPm, and others. Track fiat; obtainable via swap (FPMM) or borrow (CDP). |
-| **Oracle** | An external price feed the protocol trusts. In V3, each pool uses an oracle to set the swap rate. |
+| **Oracle** | An external price feed the protocol trusts. In Mento V3 today, this oracle source is Chainlink, and each pool uses that rate to set the swap price. |
 | **Rebalance** | When the pool's reserve ratio drifts from the oracle, an allowlisted **liquidity strategy** can take one token from the pool and return the other at the oracle rate (capped incentive). |
 | **Reserves** | The two tokens held by a pool. Swaps change composition; **value at oracle** is preserved (minus fees). |
 | **TradingLimitsV2** | Mento V3 mechanism: caps on per-token net flow over 5-minute and 1-day windows. Limits how much the pool can be drained in one go. (TradingLimits v1 applied to Mento V2.) |

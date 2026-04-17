@@ -1,6 +1,6 @@
 # Fixed-Price Market Makers (FPMMs)
 
-This page is the **reference** for how FPMMs work in Mento V3: why Mento uses oracle pricing, the invariant, operations, rebalancing, and configuration.
+This page is the **reference** for how FPMMs work in Mento V3: why Mento uses oracle pricing, the invariant, operations, rebalancing, and configuration. Today, the oracle source behind that pricing path is **Chainlink**.
 
 Because **FX-priced FPMMs** read rates through `OracleAdapter.getFXRateIfValid(rateFeedID)`, they also inherit **FX market-hours restrictions** from `OracleAdapter -> MarketHoursBreaker`.
 
@@ -13,7 +13,7 @@ Most DEXs use **curve-based AMMs** (constant-function market makers, or CFMMs): 
 1. **LVR (loss-versus-rebalancing)** — Arbitrageurs trade against the stale quote at better-than-fair prices. LPs effectively “sell low and buy high”; the loss to LPs equals arbitrageur profit. It’s a structural cost of the design.
 2. **Slippage** — Traders don’t get the market rate; they execute **along the curve**. Execution price depends on trade size (price impact), so even small trades can get a worse rate than the true FX rate.
 
-In CFMMs, the **curvature** of the trading function governs both: a flatter curve gives lower slippage but higher LVR. You cannot tune a CFMM so that everyone gets the fair rate with no cost. For **FX and stablecoins**, the fair rate already exists off-chain (spot, CEX). So we don’t need the pool to *discover* the price — we need it to **use** it. That is what **oracle pricing** does: the pool quotes an external **oracle** rate (minus a fee). No reserve-based curve, no curve-based slippage, no LVR from a stale pool price. Risks shift to **oracle** quality and **inventory**; the protocol addresses those with **TradingLimitsV2**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
+In CFMMs, the **curvature** of the trading function governs both: a flatter curve gives lower slippage but higher LVR. You cannot tune a CFMM so that everyone gets the fair rate with no cost. For **FX and stablecoins**, the fair rate already exists off-chain (spot, CEX). So we don’t need the pool to *discover* the price — we need it to **use** it. That is what **oracle pricing** does: the pool quotes an external **oracle** rate (minus a fee). In Mento V3 today, that oracle source is **Chainlink**. No reserve-based curve, no curve-based slippage, no LVR from a stale pool price. Risks shift to **oracle** quality and **inventory**; the protocol addresses those with **TradingLimitsV2**, **circuit breakers**, and **rebalancing** by allowlisted strategies.
 
 ---
 
@@ -125,7 +125,7 @@ Each FPMM is configured with parameters such as:
 - **LP fee** and **protocol fee** — Deducted from swaps; the remainder is the rate the user gets (oracle minus fee).
 - **Rebalance incentive** — Maximum share of the rebalance amount the strategy may keep; the pool enforces a minimum repayment.
 - **Rebalance thresholds** — How far the reserve price must deviate from the oracle (above/below) before rebalancing is allowed.
-- **Oracle** — Which price feed (e.g. OracleAdapter + rate feed ID) and whether to invert the rate.
+- **Oracle** — Which Chainlink-backed price feed (via `OracleAdapter` + rate feed ID) the pool uses, and whether to invert the rate.
 - **Trading limits** — Per-token caps over 5-minute and 1-day windows (TradingLimitsV2).
 - **Circuit breakers** — The pool uses the OracleAdapter/BreakerBox so that swaps can be halted when the oracle is invalid, stale, or when breakers trip.
 

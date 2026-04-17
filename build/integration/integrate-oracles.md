@@ -2,6 +2,8 @@
 
 This guide describes how to use Mento V3’s **oracle** layer for FX rates in your application. In V3, FPMM pools get their swap rate from the **OracleAdapter**, which returns a rate only when it is **valid** (recent, trading not suspended, and for FX pairs, market hours open). Integrating with the **OracleAdapter** gives you the same rate and validity rules the pools use.
 
+**Today, Chainlink is the only oracle source used in Mento V3.** If you integrate Mento's oracle path, you are integrating a Chainlink-backed rate plus Mento's validity checks.
+
 This is important for fiat FX integrations because the reference markets are not 24/7: Chainlink FX feeds generally stop updating on weekends and certain holidays, and Mento’s FX-validity path intentionally mirrors those closures.
 
 **Contract reference:** [Smart Contracts > OracleAdapter](../smart-contracts/oracleadapter.md)
@@ -12,19 +14,19 @@ This is important for fiat FX integrations because the reference markets are not
 
 The **OracleAdapter** is the single interface FPMM pools use for the swap rate. It:
 
-- Reads the **median rate** from the underlying oracle feed (e.g. SortedOracles, which aggregates Chainlink, Redstone, etc.).
+- Reads the current **Chainlink-backed** rate from the underlying feed path used by Mento.
 - Checks **recency** (report not older than the configured expiry).
 - Checks **trading mode** from **BreakerBox** (e.g. trading suspended when a circuit breaker has tripped).
 - For FX pairs, checks **FX market hours** (optional; can restrict trading to reference market hours).
 
-If any check fails, the adapter **reverts**. So when you use the adapter, you get a rate that is valid for trading at that moment—the same guarantee the pool uses. Directly reading SortedOracles or other feeds does not include these validity checks.
+If any check fails, the adapter **reverts**. So when you use the adapter, you get a rate that is valid for trading at that moment: the same guarantee the pool uses. Directly reading lower-level feed contracts does not include these validity checks.
 
 ---
 
 ## Common use cases
 
 - **DeFi protocols** — Real-time FX rates for collateral valuation, liquidation thresholds, or cross-currency logic.
-- **Price feed aggregators** — Combine Mento’s validity-gated rates with other sources.
+- **Price feed aggregators** — Combine Mento’s validity-gated Chainlink-backed rates with other sources.
 - **Cross-border applications** — Remittance calculators, multi-currency wallets, or international payment systems.
 - **Stable asset pricing** — Understand and replicate how Mento FPMM pools price swaps (oracle rate minus fee).
 
