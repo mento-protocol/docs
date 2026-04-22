@@ -29,6 +29,8 @@ Every Mento V3 swap pool is an FPMM. Each pool is tied to an **oracle** (externa
 
 This design relies on **high-quality stablecoins** that accurately reflect the underlying fiat currencies—something that should increasingly be the case as the stablecoin space matures. Mento’s **circuit breakers** trip when those stablecoins move too far off peg, so trading can be halted until conditions are safe again.
 
+For **Mento v2**, **Chainlink** is also the primary oracle.
+
 ### One invariant for all operations
 
 Every FPMM pool keeps one number constant: **value at the oracle per LP share**,
