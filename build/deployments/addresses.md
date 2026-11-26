@@ -72,6 +72,63 @@ Addresses below are from the current deployment manifests. **Proxy vs implementa
 </tbody></table>
 {% endtab %}
 
+{% tab title="Monad Mainnet (143)" %}
+<table><thead><tr><th>Contract</th><th>Address</th><th>Implementation</th></tr></thead><tbody>
+<tr><td>ChainlinkRelayerFactory</td><td><a href="https://monadscan.com/address/0x71c2333928Af2dB247d9C0aa380DF1cCCa53899A">0x71c2333928Af2dB247d9C0aa380DF1cCCa53899A</a></td><td><a href="https://monadscan.com/address/0x9aFd679045B571066a6d8491C25d2D6ba5431d3f">0x9aFd679045B571066a6d8491C25d2D6ba5431d3f</a></td></tr>
+<tr><td>FPMMFactory</td><td><a href="https://monadscan.com/address/0xa849b475FE5a4B5C9C3280152c7a1945b907613b">0xa849b475FE5a4B5C9C3280152c7a1945b907613b</a></td><td><a href="https://monadscan.com/address/0xCC5bB0ba252082213ce1303CBfbA8D56CD872A8a">0xCC5bB0ba252082213ce1303CBfbA8D56CD872A8a</a></td></tr>
+<tr><td>FactoryRegistry</td><td><a href="https://monadscan.com/address/0x7b2f7d11eabD576782f77bF2CcA46a853410AdF6">0x7b2f7d11eabD576782f77bF2CcA46a853410AdF6</a></td><td><a href="https://monadscan.com/address/0x8124b66595Ff4E79B7F0c1b1101AFa501d219311">0x8124b66595Ff4E79B7F0c1b1101AFa501d219311</a></td></tr>
+<tr><td>OracleAdapter</td><td><a href="https://monadscan.com/address/0xa472fBBF4b890A54381977ac392BdF82EeC4383a">0xa472fBBF4b890A54381977ac392BdF82EeC4383a</a></td><td><a href="https://monadscan.com/address/0xc1B767756F582d124E76BB3e246f31e6aB256059">0xc1B767756F582d124E76BB3e246f31e6aB256059</a></td></tr>
+<tr><td>Router</td><td><a href="https://monadscan.com/address/0x4861840C2EfB2b98312B0aE34d86fD73E8f9B6f6">0x4861840C2EfB2b98312B0aE34d86fD73E8f9B6f6</a></td><td>—</td></tr>
+<tr><td>ReserveV2</td><td><a href="https://monadscan.com/address/0x4255Cf38e51516766180b33122029A88Cb853806">0x4255Cf38e51516766180b33122029A88Cb853806</a></td><td><a href="https://monadscan.com/address/0xC16d23E4789e2B214D71C1Df7820a4dDAb1Df5FF">0xC16d23E4789e2B214D71C1Df7820a4dDAb1Df5FF</a></td></tr>
+<tr><td>ReserveLiquidityStrategy</td><td><a href="https://monadscan.com/address/0xa0fB8b16ce6AF3634fF9F3f4F40E49E1C1ae4f0B">0xa0fB8b16ce6AF3634fF9F3f4F40E49E1C1ae4f0B</a></td><td><a href="https://monadscan.com/address/0x420FbDB50dadF0286144BFF91ed62A6893dee148">0x420FbDB50dadF0286144BFF91ed62A6893dee148</a></td></tr>
+<tr><td>OpenLiquidityStrategy</td><td><a href="https://monadscan.com/address/0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f">0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f</a></td><td><a href="https://monadscan.com/address/0x10e9bd0b70716dd9e0d41ca274a5846ff513e2b7">0x10e9bd0b70716dd9e0d41ca274a5846ff513e2b7</a></td></tr>
+<tr><td>FPMM implementation</td><td><a href="https://monadscan.com/address/0x8cB0518a0510Ab62450F79f3cD9EE0cbdDB77F30">0x8cB0518a0510Ab62450F79f3cD9EE0cbdDB77F30</a></td><td>❌ Implementation</td></tr>
+<tr><td>FPMM pool: GBPm/USDm</td><td><a href="https://monadscan.com/address/0xD0E9c1a718D2a693d41eacd4B2696180403Ce081">0xD0E9c1a718D2a693d41eacd4B2696180403Ce081</a></td><td>—</td></tr>
+<tr><td>FPMM pool: USDC/USDm</td><td><a href="https://monadscan.com/address/0x463c0d1F04bcd99A1efCF94AC2a75bc19Ea4A7E5">0x463c0d1F04bcd99A1efCF94AC2a75bc19Ea4A7E5</a></td><td>—</td></tr>
+<tr><td>FPMM pool: AUSD/USDm</td><td><a href="https://monadscan.com/address/0xb0a0264Ce6847F101b76ba36A4a3083ba489F501">0xb0a0264Ce6847F101b76ba36A4a3083ba489F501</a></td><td>—</td></tr>
+<tr><td>FPMM pool: USDm/USDT0</td><td><a href="https://monadscan.com/address/0x0A59be741AD49c6C2E0a2d30a57eD8f5ffa5DEB8">0x0A59be741AD49c6C2E0a2d30a57eD8f5ffa5DEB8</a></td><td>—</td></tr>
+<tr><td>FPMM pool: EURm/USDm</td><td><a href="https://monadscan.com/address/0x93e15A22fDa39FEfcCCe82D387A09cCF030EAD61">0x93e15A22fDa39FEfcCCe82D387A09cCF030EAD61</a></td><td>—</td></tr>
+<tr><td>FPMM pool: JPYm/USDm</td><td><a href="https://monadscan.com/address/0x4DF3f08977743Ad95aB31b8dC203EAe885Ae9D32">0x4DF3f08977743Ad95aB31b8dC203EAe885Ae9D32</a></td><td>—</td></tr>
+<tr><td>FPMM pool: USDm/CHFm</td><td><a href="https://monadscan.com/address/0xDC81135fD82f02Cae736E261FB676B716663e8b8">0xDC81135fD82f02Cae736E261FB676B716663e8b8</a></td><td>—</td></tr>
+<tr><td>BreakerBox</td><td><a href="https://monadscan.com/address/0x9fc1E0d10fb38954Da385B8B25aB2BbaF3241722">0x9fc1E0d10fb38954Da385B8B25aB2BbaF3241722</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>MarketHoursBreaker</td><td><a href="https://monadscan.com/address/0x0A18B8e7338eF8d6025529257aA5CCd5A14e0DAF">0x0A18B8e7338eF8d6025529257aA5CCd5A14e0DAF</a></td><td>—</td></tr>
+<tr><td>MedianDeltaBreaker</td><td><a href="https://monadscan.com/address/0x3E4F2Bca4f7192Be4C3c5E5bD4840F2E90a8Ba84">0x3E4F2Bca4f7192Be4C3c5E5bD4840F2E90a8Ba84</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>ValueDeltaBreaker</td><td><a href="https://monadscan.com/address/0xca2e7563dfC30bc94687F3deAcF682E1dBAffA13">0xca2e7563dfC30bc94687F3deAcF682E1dBAffA13</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>SortedOracles</td><td><a href="https://monadscan.com/address/0x6f92C745346057a61b259579256159458a0a6A92">0x6f92C745346057a61b259579256159458a0a6A92</a></td><td><a href="https://monadscan.com/address/0xbEe346578929D70F02C3c236D709F0EfFb0cb192">0xbEe346578929D70F02C3c236D709F0EfFb0cb192</a></td></tr>
+<tr><td>StableTokenSpoke</td><td><a href="https://monadscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td><td>❌ Implementation</td></tr>
+<tr><td>GBPm</td><td><a href="https://monadscan.com/address/0x39bb4E0a204412bB98e821d25e7d955e69d40Fd1">0x39bb4E0a204412bB98e821d25e7d955e69d40Fd1</a></td><td><a href="https://monadscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td></tr>
+<tr><td>USDm</td><td><a href="https://monadscan.com/address/0xBC69212B8E4d445b2307C9D32dD68E2A4Df00115">0xBC69212B8E4d445b2307C9D32dD68E2A4Df00115</a></td><td><a href="https://monadscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td></tr>
+<tr><td>EURm</td><td><a href="https://monadscan.com/address/0x4D502d735B4C574B487Ed641ae87cEaE884731C7">0x4D502d735B4C574B487Ed641ae87cEaE884731C7</a></td><td><a href="https://monadscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td></tr>
+<tr><td>JPYm</td><td><a href="https://monadscan.com/address/0x22f6A6752800eAB67b84748FeFc3cC658384aF72">0x22f6A6752800eAB67b84748FeFc3cC658384aF72</a></td><td><a href="https://monadscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td></tr>
+<tr><td>CHFm</td><td><a href="https://monadscan.com/address/0xF64e91fFEf7ef43aA314F0Bc2AC39f770797990C">0xF64e91fFEf7ef43aA314F0Bc2AC39f770797990C</a></td><td><a href="https://monadscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td></tr>
+</tbody></table>
+{% endtab %}
+
+{% tab title="Polygon Mainnet (137)" %}
+<table><thead><tr><th>Contract</th><th>Address</th><th>Implementation</th></tr></thead><tbody>
+<tr><td>ChainlinkRelayerFactory</td><td><a href="https://polygonscan.com/address/0x71c2333928Af2dB247d9C0aa380DF1cCCa53899A">0x71c2333928Af2dB247d9C0aa380DF1cCCa53899A</a></td><td><a href="https://polygonscan.com/address/0x9aFd679045B571066a6d8491C25d2D6ba5431d3f">0x9aFd679045B571066a6d8491C25d2D6ba5431d3f</a></td></tr>
+<tr><td>FPMMFactory</td><td><a href="https://polygonscan.com/address/0xa849b475FE5a4B5C9C3280152c7a1945b907613b">0xa849b475FE5a4B5C9C3280152c7a1945b907613b</a></td><td><a href="https://polygonscan.com/address/0xCC5bB0ba252082213ce1303CBfbA8D56CD872A8a">0xCC5bB0ba252082213ce1303CBfbA8D56CD872A8a</a></td></tr>
+<tr><td>FactoryRegistry</td><td><a href="https://polygonscan.com/address/0x7b2f7d11eabD576782f77bF2CcA46a853410AdF6">0x7b2f7d11eabD576782f77bF2CcA46a853410AdF6</a></td><td><a href="https://polygonscan.com/address/0x8124b66595Ff4E79B7F0c1b1101AFa501d219311">0x8124b66595Ff4E79B7F0c1b1101AFa501d219311</a></td></tr>
+<tr><td>OracleAdapter</td><td><a href="https://polygonscan.com/address/0xa472fBBF4b890A54381977ac392BdF82EeC4383a">0xa472fBBF4b890A54381977ac392BdF82EeC4383a</a></td><td><a href="https://polygonscan.com/address/0xc1B767756F582d124E76BB3e246f31e6aB256059">0xc1B767756F582d124E76BB3e246f31e6aB256059</a></td></tr>
+<tr><td>Router</td><td><a href="https://polygonscan.com/address/0x1Eb1D6692057949D6129ee7742C53be019b22408">0x1Eb1D6692057949D6129ee7742C53be019b22408</a></td><td>—</td></tr>
+<tr><td>ReserveV2</td><td><a href="https://polygonscan.com/address/0x4255Cf38e51516766180b33122029A88Cb853806">0x4255Cf38e51516766180b33122029A88Cb853806</a></td><td><a href="https://polygonscan.com/address/0xC16d23E4789e2B214D71C1Df7820a4dDAb1Df5FF">0xC16d23E4789e2B214D71C1Df7820a4dDAb1Df5FF</a></td></tr>
+<tr><td>ReserveLiquidityStrategy</td><td><a href="https://polygonscan.com/address/0xa0fB8b16ce6AF3634fF9F3f4F40E49E1C1ae4f0B">0xa0fB8b16ce6AF3634fF9F3f4F40E49E1C1ae4f0B</a></td><td><a href="https://polygonscan.com/address/0x420FbDB50dadF0286144BFF91ed62A6893dee148">0x420FbDB50dadF0286144BFF91ed62A6893dee148</a></td></tr>
+<tr><td>OpenLiquidityStrategy</td><td><a href="https://polygonscan.com/address/0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f">0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f</a></td><td><a href="https://polygonscan.com/address/0x10e9bd0b70716dd9e0d41ca274a5846ff513e2b7">0x10e9bd0b70716dd9e0d41ca274a5846ff513e2b7</a></td></tr>
+<tr><td>FPMM implementation</td><td><a href="https://polygonscan.com/address/0x8cB0518a0510Ab62450F79f3cD9EE0cbdDB77F30">0x8cB0518a0510Ab62450F79f3cD9EE0cbdDB77F30</a></td><td>❌ Implementation</td></tr>
+<tr><td>FPMM pool: USDC/USDm</td><td><a href="https://polygonscan.com/address/0x463c0d1F04bcd99A1efCF94AC2a75bc19Ea4A7E5">0x463c0d1F04bcd99A1efCF94AC2a75bc19Ea4A7E5</a></td><td>—</td></tr>
+<tr><td>FPMM pool: EURm/USDm</td><td><a href="https://polygonscan.com/address/0x93e15A22fDa39FEfcCCe82D387A09cCF030EAD61">0x93e15A22fDa39FEfcCCe82D387A09cCF030EAD61</a></td><td>—</td></tr>
+<tr><td>FPMM pool: EURm/EUROP</td><td><a href="https://polygonscan.com/address/0xCd8C6811d975981F57E7fB32e59f0BeE66aF3201">0xCd8C6811d975981F57E7fB32e59f0BeE66aF3201</a></td><td>—</td></tr>
+<tr><td>BreakerBox</td><td><a href="https://polygonscan.com/address/0x9fc1E0d10fb38954Da385B8B25aB2BbaF3241722">0x9fc1E0d10fb38954Da385B8B25aB2BbaF3241722</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>MarketHoursBreaker</td><td><a href="https://polygonscan.com/address/0x0A18B8e7338eF8d6025529257aA5CCd5A14e0DAF">0x0A18B8e7338eF8d6025529257aA5CCd5A14e0DAF</a></td><td>—</td></tr>
+<tr><td>MedianDeltaBreaker</td><td><a href="https://polygonscan.com/address/0x3E4F2Bca4f7192Be4C3c5E5bD4840F2E90a8Ba84">0x3E4F2Bca4f7192Be4C3c5E5bD4840F2E90a8Ba84</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>ValueDeltaBreaker</td><td><a href="https://polygonscan.com/address/0xca2e7563dfC30bc94687F3deAcF682E1dBAffA13">0xca2e7563dfC30bc94687F3deAcF682E1dBAffA13</a></td><td>❌ Non-upgradable</td></tr>
+<tr><td>SortedOracles</td><td><a href="https://polygonscan.com/address/0x6f92C745346057a61b259579256159458a0a6A92">0x6f92C745346057a61b259579256159458a0a6A92</a></td><td><a href="https://polygonscan.com/address/0xbEe346578929D70F02C3c236D709F0EfFb0cb192">0xbEe346578929D70F02C3c236D709F0EfFb0cb192</a></td></tr>
+<tr><td>StableTokenSpoke</td><td><a href="https://polygonscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td><td>❌ Implementation</td></tr>
+<tr><td>EURm</td><td><a href="https://polygonscan.com/address/0x4D502d735B4C574B487Ed641ae87cEaE884731C7">0x4D502d735B4C574B487Ed641ae87cEaE884731C7</a></td><td><a href="https://polygonscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td></tr>
+<tr><td>USDm</td><td><a href="https://polygonscan.com/address/0xBC69212B8E4d445b2307C9D32dD68E2A4Df00115">0xBC69212B8E4d445b2307C9D32dD68E2A4Df00115</a></td><td><a href="https://polygonscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td></tr>
+</tbody></table>
+{% endtab %}
+
 {% tab title="Celo Sepolia (11142220)" %}
 <table><thead><tr><th>Contract</th><th>Address</th><th>Implementation</th></tr></thead><tbody>
 <tr><td>FPMMFactory</td><td><a href="https://sepolia.celoscan.io/address/0x353ED52bF8482027C0e0b9e3c0e5d96A9F680980">0x353ED52bF8482027C0e0b9e3c0e5d96A9F680980</a></td><td><a href="https://sepolia.celoscan.io/address/0x5e2a42d760aa6969c3da49b249ec181115887391">0x5e2a42d760aa6969c3da49b249ec181115887391</a></td></tr>
@@ -107,31 +164,6 @@ Addresses below are from the current deployment manifests. **Proxy vs implementa
 <tr><td>MentoToken</td><td><a href="https://sepolia.celoscan.io/address/0x07867fd40EB56b4380bE39c88D0a7EA59Aa99A20">0x07867fd40EB56b4380bE39c88D0a7EA59Aa99A20</a></td><td>❌ Non-upgradable</td></tr>
 <tr><td>MentoGovernor</td><td><a href="https://sepolia.celoscan.io/address/0x23173Ac37b8E4e5a60d787aC543B3F51e8f398b4">0x23173Ac37b8E4e5a60d787aC543B3F51e8f398b4</a></td><td><a href="https://sepolia.celoscan.io/address/0x910a940a53c12982ae2277392c5cfa03aa8c602b">0x910a940a53c12982ae2277392c5cfa03aa8c602b</a></td></tr>
 <tr><td>TimelockController</td><td><a href="https://sepolia.celoscan.io/address/0x74c44Be99937815173A3C56274331e0A05611e0D">0x74c44Be99937815173A3C56274331e0A05611e0D</a></td><td><a href="https://sepolia.celoscan.io/address/0x32346936c5baf3c7b53ea3fe40b405efd3a3e656">0x32346936c5baf3c7b53ea3fe40b405efd3a3e656</a></td></tr>
-</tbody></table>
-{% endtab %}
-
-{% tab title="Monad Mainnet (143)" %}
-<table><thead><tr><th>Contract</th><th>Address</th><th>Implementation</th></tr></thead><tbody>
-<tr><td>ChainlinkRelayerFactory</td><td><a href="https://monadscan.com/address/0x71c2333928Af2dB247d9C0aa380DF1cCCa53899A">0x71c2333928Af2dB247d9C0aa380DF1cCCa53899A</a></td><td><a href="https://monadscan.com/address/0x9aFd679045B571066a6d8491C25d2D6ba5431d3f">0x9aFd679045B571066a6d8491C25d2D6ba5431d3f</a></td></tr>
-<tr><td>FPMMFactory</td><td><a href="https://monadscan.com/address/0xa849b475FE5a4B5C9C3280152c7a1945b907613b">0xa849b475FE5a4B5C9C3280152c7a1945b907613b</a></td><td><a href="https://monadscan.com/address/0xCC5bB0ba252082213ce1303CBfbA8D56CD872A8a">0xCC5bB0ba252082213ce1303CBfbA8D56CD872A8a</a></td></tr>
-<tr><td>FactoryRegistry</td><td><a href="https://monadscan.com/address/0x7b2f7d11eabD576782f77bF2CcA46a853410AdF6">0x7b2f7d11eabD576782f77bF2CcA46a853410AdF6</a></td><td><a href="https://monadscan.com/address/0x8124b66595Ff4E79B7F0c1b1101AFa501d219311">0x8124b66595Ff4E79B7F0c1b1101AFa501d219311</a></td></tr>
-<tr><td>OracleAdapter</td><td><a href="https://monadscan.com/address/0xa472fBBF4b890A54381977ac392BdF82EeC4383a">0xa472fBBF4b890A54381977ac392BdF82EeC4383a</a></td><td><a href="https://monadscan.com/address/0xc1B767756F582d124E76BB3e246f31e6aB256059">0xc1B767756F582d124E76BB3e246f31e6aB256059</a></td></tr>
-<tr><td>Router</td><td><a href="https://monadscan.com/address/0x4861840C2EfB2b98312B0aE34d86fD73E8f9B6f6">0x4861840C2EfB2b98312B0aE34d86fD73E8f9B6f6</a></td><td>—</td></tr>
-<tr><td>ReserveV2</td><td><a href="https://monadscan.com/address/0x4255Cf38e51516766180b33122029A88Cb853806">0x4255Cf38e51516766180b33122029A88Cb853806</a></td><td><a href="https://monadscan.com/address/0xC16d23E4789e2B214D71C1Df7820a4dDAb1Df5FF">0xC16d23E4789e2B214D71C1Df7820a4dDAb1Df5FF</a></td></tr>
-<tr><td>ReserveLiquidityStrategy</td><td><a href="https://monadscan.com/address/0xa0fB8b16ce6AF3634fF9F3f4F40E49E1C1ae4f0B">0xa0fB8b16ce6AF3634fF9F3f4F40E49E1C1ae4f0B</a></td><td><a href="https://monadscan.com/address/0x420FbDB50dadF0286144BFF91ed62A6893dee148">0x420FbDB50dadF0286144BFF91ed62A6893dee148</a></td></tr>
-<tr><td>OpenLiquidityStrategy</td><td><a href="https://monadscan.com/address/0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f">0x54e2Ae8c8448912E17cE0b2453bAFB7B0D80E40f</a></td><td><a href="https://monadscan.com/address/0x10e9bd0b70716dd9e0d41ca274a5846ff513e2b7">0x10e9bd0b70716dd9e0d41ca274a5846ff513e2b7</a></td></tr>
-<tr><td>FPMM implementation</td><td><a href="https://monadscan.com/address/0x8cB0518a0510Ab62450F79f3cD9EE0cbdDB77F30">0x8cB0518a0510Ab62450F79f3cD9EE0cbdDB77F30</a></td><td>❌ Implementation</td></tr>
-<tr><td>FPMM pool: GBPm/USDm</td><td><a href="https://monadscan.com/address/0xD0E9c1a718D2a693d41eacd4B2696180403Ce081">0xD0E9c1a718D2a693d41eacd4B2696180403Ce081</a></td><td>—</td></tr>
-<tr><td>FPMM pool: USDC/USDm</td><td><a href="https://monadscan.com/address/0x463c0d1F04bcd99A1efCF94AC2a75bc19Ea4A7E5">0x463c0d1F04bcd99A1efCF94AC2a75bc19Ea4A7E5</a></td><td>—</td></tr>
-<tr><td>FPMM pool: AUSD/USDm</td><td><a href="https://monadscan.com/address/0xb0a0264Ce6847F101b76ba36A4a3083ba489F501">0xb0a0264Ce6847F101b76ba36A4a3083ba489F501</a></td><td>—</td></tr>
-<tr><td>BreakerBox</td><td><a href="https://monadscan.com/address/0x9fc1E0d10fb38954Da385B8B25aB2BbaF3241722">0x9fc1E0d10fb38954Da385B8B25aB2BbaF3241722</a></td><td>❌ Non-upgradable</td></tr>
-<tr><td>MarketHoursBreaker</td><td><a href="https://monadscan.com/address/0x0A18B8e7338eF8d6025529257aA5CCd5A14e0DAF">0x0A18B8e7338eF8d6025529257aA5CCd5A14e0DAF</a></td><td>—</td></tr>
-<tr><td>MedianDeltaBreaker</td><td><a href="https://monadscan.com/address/0x3E4F2Bca4f7192Be4C3c5E5bD4840F2E90a8Ba84">0x3E4F2Bca4f7192Be4C3c5E5bD4840F2E90a8Ba84</a></td><td>❌ Non-upgradable</td></tr>
-<tr><td>ValueDeltaBreaker</td><td><a href="https://monadscan.com/address/0xca2e7563dfC30bc94687F3deAcF682E1dBAffA13">0xca2e7563dfC30bc94687F3deAcF682E1dBAffA13</a></td><td>❌ Non-upgradable</td></tr>
-<tr><td>SortedOracles</td><td><a href="https://monadscan.com/address/0x6f92C745346057a61b259579256159458a0a6A92">0x6f92C745346057a61b259579256159458a0a6A92</a></td><td><a href="https://monadscan.com/address/0xbEe346578929D70F02C3c236D709F0EfFb0cb192">0xbEe346578929D70F02C3c236D709F0EfFb0cb192</a></td></tr>
-<tr><td>StableTokenSpoke</td><td><a href="https://monadscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td><td>❌ Implementation</td></tr>
-<tr><td>GBPm</td><td><a href="https://monadscan.com/address/0x39bb4E0a204412bB98e821d25e7d955e69d40Fd1">0x39bb4E0a204412bB98e821d25e7d955e69d40Fd1</a></td><td><a href="https://monadscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td></tr>
-<tr><td>USDm</td><td><a href="https://monadscan.com/address/0xBC69212B8E4d445b2307C9D32dD68E2A4Df00115">0xBC69212B8E4d445b2307C9D32dD68E2A4Df00115</a></td><td><a href="https://monadscan.com/address/0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e">0x6A8ff60A89F3f359Fa16F45076d6DD1712B5e62e</a></td></tr>
 </tbody></table>
 {% endtab %}
 {% endtabs %}
